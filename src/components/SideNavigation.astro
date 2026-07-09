@@ -1,0 +1,83 @@
+---
+import PageTreeItem from "./PageTreeItem.astro";
+import {
+  buildChildPagesByParent,
+  buildNavPages,
+  buildTopLevelGroups,
+  getNormalizedBase,
+  normalizePath,
+  stripBase,
+} from "../util/contentNavigation.js";
+
+const base = import.meta.env.BASE_URL ?? import.meta.env.base;
+const normalizedBase = getNormalizedBase(base);
+const currentPath = normalizePath(Astro.url.pathname);
+const currentRoutePath = normalizePath(
+  stripBase(currentPath, normalizedBase) || "/",
+);
+const markdownModules = import.meta.glob("/src/pages/**/*.md", {
+  eager: true,
+});
+const markdownPages = buildNavPages(markdownModules, normalizedBase);
+const orderedTopLevelGroups = buildTopLevelGroups(markdownPages);
+const childPagesByParentPath = buildChildPagesByParent(markdownPages);
+---
+
+<nav class="lap-side-navigation" aria-label="Markdown pages">
+  <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Documentation</h2>
+  {
+    orderedTopLevelGroups.length > 0 ? (
+      orderedTopLevelGroups.map((group) => (
+        <>
+          {group.name && (
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+              {group.name}
+            </h3>
+          )}
+          <ul class="govuk-list lap-side-navigation__list">
+            {group.pages.map((page) => {
+              const isCurrentPage = currentPath === normalizePath(page.href);
+              const childPages =
+                page.routePath === "/"
+                  ? []
+                  : (childPagesByParentPath.get(page.routePath) ?? []);
+              const shouldRevealChildren =
+                page.routePath === "/"
+                  ? currentRoutePath === "/"
+                  : currentRoutePath === page.routePath ||
+                    currentRoutePath.startsWith(`${page.routePath}/`);
+
+              return (
+                <PageTreeItem
+                  page={page}
+                  childPages={childPages}
+                  shouldRevealChildren={shouldRevealChildren}
+                  isCurrentPage={isCurrentPage}
+                  currentPath={currentPath}
+                  currentRoutePath={currentRoutePath}
+                  childPagesByParentPath={childPagesByParentPath}
+                />
+              );
+            })}
+          </ul>
+        </>
+      ))
+    ) : (
+      <p class="govuk-body-s govuk-!-margin-bottom-0">
+        No markdown pages found in this folder.
+      </p>
+    )
+  }
+</nav>
+
+<style lang="scss">
+  .lap-side-navigation {
+    padding-left: 0;
+  }
+
+  .lap-side-navigation__dash {
+    display: inline-block;
+    margin-right: 8px;
+    width: 10px;
+  }
+</style>

@@ -1,0 +1,13 @@
+@use "../../node_modules/govuk-frontend/dist/govuk/index.scss" as * with (
+  $govuk-assets-path: "/public/assets/"
+);
+
+:root {
+  --govuk-brand-colour: #{govuk-organisation-colour("department-for-environment-food-rural-affairs")};
+}
+
+.govuk-header__defra-logo {
+  width: auto;
+  max-width: 100%;
+  height: 80px;
+}

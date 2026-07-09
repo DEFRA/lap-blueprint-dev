@@ -1,0 +1,18 @@
+---
+const { page, isCurrentPage, isNested = false } = Astro.props;
+---
+
+{
+  isNested && (
+    <span aria-hidden="true" class="lap-side-navigation__dash">
+      —
+    </span>
+  )
+}
+<a
+  class={`govuk-link${isCurrentPage ? " govuk-!-font-weight-bold" : ""}`}
+  href={page.href}
+  aria-current={isCurrentPage ? "page" : undefined}
+>
+  {page.label}
+</a>

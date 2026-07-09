@@ -1,0 +1,71 @@
+---
+import PageItem from "./PageItem.astro";
+import PageTreeItem from "./PageTreeItem.astro";
+import { type NavPage, normalizePath } from "../util/contentNavigation.js";
+
+const {
+  page,
+  childPages,
+  shouldRevealChildren,
+  isCurrentPage,
+  currentPath,
+  currentRoutePath,
+  childPagesByParentPath,
+  isNested,
+} = Astro.props;
+
+const isRootActiveSection = !isNested && shouldRevealChildren;
+---
+
+<li
+  class={"lap-side-navigation__item" +
+    (!isNested ? " lap-side-navigation__item--root" : "") +
+    (isRootActiveSection ? " lap-side-navigation__item--active" : "")}
+>
+  <PageItem page={page} isCurrentPage={isCurrentPage} isNested={isNested} />
+
+  {
+    shouldRevealChildren && childPages.length > 0 && (
+      <ul class="govuk-list lap-side-navigation__list">
+        {childPages.map((childPage: NavPage) => {
+          const isCurrentChildPage =
+            currentPath === normalizePath(childPage.href);
+          const grandChildPages =
+            childPagesByParentPath.get(childPage.routePath) ?? [];
+          const shouldRevealGrandChildren =
+            currentRoutePath === childPage.routePath ||
+            currentRoutePath.startsWith(`${childPage.routePath}/`);
+
+          return (
+            <PageTreeItem
+              page={childPage}
+              childPages={grandChildPages}
+              shouldRevealChildren={shouldRevealGrandChildren}
+              isCurrentPage={isCurrentChildPage}
+              currentPath={currentPath}
+              currentRoutePath={currentRoutePath}
+              childPagesByParentPath={childPagesByParentPath}
+              isNested={true}
+            />
+          );
+        })}
+      </ul>
+    )
+  }
+</li>
+
+<style lang="scss">
+  li.lap-side-navigation__item--root {
+    border-left: 4px solid transparent;
+    padding-left: 15px;
+    margin-top: 10px;
+  }
+
+  li.lap-side-navigation__item--root.lap-side-navigation__item--active {
+    border-left-color: var(--govuk-brand-colour);
+  }
+
+  ul.lap-side-navigation__list {
+    padding-left: 15px;
+  }
+</style>
