@@ -1,6 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: AI Tools and License Requests Processes
+title: License Requests and Processes
+order: 1
 group: Tools
 ---
 
