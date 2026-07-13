@@ -1,8 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: AI Configurations across Defra State
-order: 0
-group: Tools
+title: Agent catalogue
+order: 6
+group: Blueprint
 ---
 
 # Purpose
@@ -13,7 +13,7 @@ Use this the information below to get information on approved AI tooling and exi
 
 Use these links to view the current state of AI tools available within Defra from AI Toolkit portal, including guidance on approved tools and how to request access.
 
-- [Deliver with AI](https://digital.defra.gov.uk/ai-toolkit/deliver-with-ai) 
+- [Deliver with AI](https://digital.defra.gov.uk/ai-toolkit/deliver-with-ai)
 - [AI Radar Diagram](https://digital.defra.gov.uk/ai-toolkit/tools/diagram)
 
 ## Github Copilot specific Tools/Examples for Defra
@@ -41,7 +41,7 @@ Use this link for Practical setup guidance for configuring GitHub Copilot in Def
 
 ## DefraGroup AI SDLC Playbook
 
-- [Contains AI-related development guidance, standards, and supporting material](https://github.com/DEFRA/defra-ai-sdlc) 
+- [Contains AI-related development guidance, standards, and supporting material](https://github.com/DEFRA/defra-ai-sdlc)
 
 ## AICE (AI Centre of Excellence) Resources
 
@@ -50,7 +50,7 @@ Use this link for Practical setup guidance for configuring GitHub Copilot in Def
 
 ## Copilot Ralph
 
-- [Iterative AI Development Loop Tool, an orchestration pattern invoking Agents](https://github.com/JanDeDobbeleer/copilot-ralph) 
+- [Iterative AI Development Loop Tool, an orchestration pattern invoking Agents](https://github.com/JanDeDobbeleer/copilot-ralph)
 
 ## Get help with GitHub Copilot
 

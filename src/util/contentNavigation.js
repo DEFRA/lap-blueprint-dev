@@ -108,9 +108,18 @@ export function toLabel(value) {
   return value
     .split(/[-_]/)
     .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .map((part) => part[0].toUpperCase() + part.slice(1))
     .join(" ");
 }
+
+/**
+ * Comparator that sorts by order ascending, then label alphabetically.
+ * @param {{ order: number, label: string }} a
+ * @param {{ order: number, label: string }} b
+ * @returns {number}
+ */
+const byOrderThenLabel = (a, b) =>
+  a.order - b.order || a.label.localeCompare(b.label);
 
 /**
  * Builds normalized navigation pages from markdown modules.
@@ -120,6 +129,7 @@ export function toLabel(value) {
  */
 export function buildNavPages(markdownModules, normalizedBase) {
   return Object.entries(markdownModules)
+    .filter(([path]) => !path.split("/").at(-1)?.startsWith("_"))
     .map(([path, module]) => {
       const markdownModule = /** @type {MarkdownModule} */ (module || {});
       const relativePath = path.replace("/src/pages/", "");
@@ -131,7 +141,7 @@ export function buildNavPages(markdownModules, normalizedBase) {
           ? null
           : pageRoutePath.split("/").slice(0, -1).join("/") || "/";
       const segments = routePath.split("/").filter(Boolean);
-      const slug = segments[segments.length - 1] || "";
+      const slug = segments.at(-1) ?? "";
       const title = markdownModule.frontmatter?.title;
       const order = Number.isFinite(markdownModule.frontmatter?.order)
         ? Number(markdownModule.frontmatter?.order)
@@ -158,7 +168,7 @@ export function buildNavPages(markdownModules, normalizedBase) {
         groupOrder,
       };
     })
-    .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
+    .sort(byOrderThenLabel);
 }
 
 /**
@@ -175,9 +185,7 @@ export function buildTopLevelGroups(markdownPages) {
 
     if (existingGroup) {
       existingGroup.pages.push(page);
-      existingGroup.pages.sort(
-        (a, b) => a.order - b.order || a.label.localeCompare(b.label),
-      );
+      existingGroup.pages.sort(byOrderThenLabel);
       existingGroup.order = Math.min(existingGroup.order, page.groupOrder);
       return groupsByName;
     }
@@ -209,9 +217,7 @@ export function buildChildPagesByParent(markdownPages) {
       const existingPages = pagesByParentPath.get(parentPath) || [];
 
       existingPages.push(page);
-      existingPages.sort(
-        (a, b) => a.order - b.order || a.label.localeCompare(b.label),
-      );
+      existingPages.sort(byOrderThenLabel);
       pagesByParentPath.set(parentPath, existingPages);
 
       return pagesByParentPath;
@@ -225,23 +231,12 @@ export function buildChildPagesByParent(markdownPages) {
  * @returns {Map<string, string>}
  */
 export function buildLabelsByRoute(markdownModules, normalizedBase) {
-  return Object.entries(markdownModules).reduce((labels, [path, module]) => {
-    const markdownModule = /** @type {MarkdownModule} */ (module || {});
-    const relativePath = path.replace("/src/pages/", "");
-    const routePath = relativePath.replace(/\.md$/, "");
-    const normalizedRoutePath = normalizeRoutePath(routePath);
-    const slug = routePath.split("/").filter(Boolean).pop() || "";
-    const title = markdownModule.frontmatter?.title;
-    const route = normalizeHref(
-      withBase(`/${normalizedRoutePath}`, normalizedBase),
-    );
-
-    labels.set(
-      route,
-      typeof title === "string" && title.trim() ? title : toLabel(slug),
-    );
-    return labels;
-  }, new Map());
+  return new Map(
+    buildNavPages(markdownModules, normalizedBase).map(({ href, label }) => [
+      href,
+      label,
+    ]),
+  );
 }
 
 /**
