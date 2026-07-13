@@ -1,7 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: "LAP PII Screener"
-order: 0
+order: 2
 group: Tools
 ---
 
