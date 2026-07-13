@@ -24,16 +24,13 @@ const childPagesByParentPath = buildChildPagesByParent(markdownPages);
 ---
 
 <nav class="lap-side-navigation" aria-label="Markdown pages">
-  <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Documentation</h2>
   {
     orderedTopLevelGroups.length > 0 ? (
       orderedTopLevelGroups.map((group) => (
         <>
-          {group.name && (
-            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-              {group.name}
-            </h3>
-          )}
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+            {group.name || "Documentation"}
+          </h3>
           <ul class="govuk-list lap-side-navigation__list">
             {group.pages.map((page) => {
               const isCurrentPage = currentPath === normalizePath(page.href);
