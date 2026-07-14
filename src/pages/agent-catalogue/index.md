@@ -15,6 +15,7 @@ Use these links to view the current state of AI tools available within Defra fro
 
 - [Deliver with AI](https://digital.defra.gov.uk/ai-toolkit/deliver-with-ai)
 - [AI Radar Diagram](https://digital.defra.gov.uk/ai-toolkit/tools/diagram)
+- [AI Patterns: Reusable proofs of concept from Defra teams.](https://digital.defra.gov.uk/ai-toolkit/patterns)
 
 ## Github Copilot specific Tools/Examples for Defra
 
