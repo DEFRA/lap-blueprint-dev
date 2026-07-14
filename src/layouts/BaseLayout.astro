@@ -4,15 +4,17 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import SideNavigation from "../components/SideNavigation.astro";
 
 const base = import.meta.env.BASE_URL;
+const {
+  frontmatter: { title },
+} = Astro.props;
+const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
 ---
 
 <!doctype html>
 <html lang="en" class="govuk-template">
   <head>
     <meta charset="utf-8" />
-    <title>
-      GOV.UK - The best place to find government services and information
-    </title>
+    <title>{pageTitle}</title>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, viewport-fit=cover"
