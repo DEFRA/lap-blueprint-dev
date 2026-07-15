@@ -4,9 +4,7 @@ import Breadcrumbs from "../components/Breadcrumbs.astro";
 import SideNavigation from "../components/SideNavigation.astro";
 
 const base = import.meta.env.BASE_URL;
-const {
-  frontmatter: { title },
-} = Astro.props;
+const { frontmatter: { title } = {} } = Astro.props;
 const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
 ---
 
@@ -29,12 +27,12 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
     />
     <link
       rel="mask-icon"
-      href={`${base}/assets/images/govuk-icon-mask.svg`}
+      href={`${base}/assets/images/defra-icon-mask.svg`}
       color="#008531"
     />
     <link
       rel="apple-touch-icon"
-      href={`${base}/assets/images/govuk-icon-180.png`}
+      href={`${base}/assets/images/defra-icon-180.png`}
     />
     <link rel="manifest" href={`${base}/assets/manifest.json`} />
   </head>
