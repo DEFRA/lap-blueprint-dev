@@ -3,8 +3,8 @@ import { satteri } from "@astrojs/markdown-satteri";
 import { govukMarkdown } from "./src/util/govukMarkdown.js";
 
 export default defineConfig({
-  site: "https://danny-may.github.io",
-  base: "/lap",
+  site: "https://defra.github.io",
+  base: "/lap-blueprint",
   trailingSlash: "always",
   vite: {
     css: {
