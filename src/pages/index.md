@@ -7,6 +7,7 @@ group: "Blueprint"
 # Purpose
 
 Use this page to route quickly into the Blueprint sections and find the right next step for common LAP delivery tasks.
+This is a test.
 
 ## Mission statement
 
