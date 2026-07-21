@@ -27,7 +27,7 @@ https://defra.sharepoint.com/sites/mve-defra-m365copilotexperimenttrialmemberson
 
 ### Supplier Owned Claude Code Licences
 
-Suppliers may use their own Claude Code licences and devices, provided they comply with DEFRA's existing AI, security and data-handling guidance. This aligns with the existing DEFRA position that the determining factor is not the AI tool itself, but the classification and sensitivity of the information/data/code being processed.
+Suppliers may use their own Claude Code licences and devices, provided they comply with DEFRA's existing AI, security and data-handling guidance.
 
 This aligns with the existing DEFRA position that the determining factor is **not the AI tool itself**, but the **classification and sensitivity of the information, data, or code being processed**.
 
@@ -46,7 +46,7 @@ This aligns with the existing DEFRA position that the determining factor is **no
 
 ### US-Based Inference Models
 
-the guidance from AI Toolkit is quite straight forward. The inference model location, source code whether it is legacy or not is irrelevant for data that is below off-sen. https://digital.defra.gov.uk/ai-toolkit
+The guidance from AI Toolkit is quite straight forward. The inference model location, source code whether it is legacy or not is irrelevant for data that is below Offical Sensitive. https://digital.defra.gov.uk/ai-toolkit
 
 Also given that Anthropic's Claude inference models currently operate outside the UK/EU and are predominantly hosted within the US, if EU-based inference models are required, suppliers could potentially utilise Claude models through platforms such as **AWS Bedrock**, which should provide an EU-hosted inference option.
 
