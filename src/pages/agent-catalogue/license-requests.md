@@ -46,7 +46,9 @@ This aligns with the existing DEFRA position that the determining factor is **no
 
 ### US-Based Inference Models
 
-Given that Anthropic's Claude inference models currently operate outside the UK/EU and are predominantly hosted within the US, if EU-based inference models are required, suppliers could potentially utilise Claude models through platforms such as **AWS Bedrock**, which should provide an EU-hosted inference option.
+the guidance from AI Toolkit is quite straight forward. The inference model location, source code whether it is legacy or not is irrelevant for data that is below off-sen. https://digital.defra.gov.uk/ai-toolkit
+
+Also given that Anthropic's Claude inference models currently operate outside the UK/EU and are predominantly hosted within the US, if EU-based inference models are required, suppliers could potentially utilise Claude models through platforms such as **AWS Bedrock**, which should provide an EU-hosted inference option.
 
 ## Get help with GitHub Copilot
 
