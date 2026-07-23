@@ -29,7 +29,7 @@ Source system owners, delivery leads, engineers, and governance approvers respon
 flowchart TD
     Upload([Current source holder uploads source code as a ZIP file to LAP SharePoint])
     Extract["Download and extract ZIP to DEFRA laptop (Delete the .git folder or any other history if it exists)"]
-    Screen[Run <a class="govuk-link" href="./p-001-scan-code-for-pii/">LAP PII screener tool</a> on local files to remove PII. Note: Files that are not plaintext e.g. word/excel/pdf are not handled by the tool and may need manual cleaning.]
+    Screen[Run <a class="govuk-link" href="../p-001-scan-code-for-pii/">LAP PII screener tool</a> on local files to remove PII. Note: Files that are not plaintext e.g. word/excel/pdf are not handled by the tool and may need manual cleaning.]
     Approve["***TBC: Get approval from the IAO (Information Asset Owner) that the source code is free of PII ***"]
     Init[Initialize local repository:<pre><code>git init</code></pre>]
     Remote[Add GitHub remote:<pre><code>git remote add origin https://github.com/DEFRA/my-cool-repo.git</code></pre>]
