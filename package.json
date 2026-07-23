@@ -10,6 +10,7 @@
     "copy:govuk-assets": "gulp buildGovukAssets"
   },
   "dependencies": {
+    "astro-mermaid": "^2.1.0",
     "govuk-frontend": "^6.3.0"
   },
   "devDependencies": {
