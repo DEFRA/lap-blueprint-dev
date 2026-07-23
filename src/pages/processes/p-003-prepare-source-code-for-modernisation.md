@@ -50,8 +50,8 @@ flowchart TD
     Readonly --> Delete
     Delete --> Modernize
 
-    classDef startPoint stroke:#2e7d32,stroke-width:2px,color:#1b5e20
-    classDef termination stroke:#c62828,stroke-width:2px,color:#b71c1c
+    classDef startPoint stroke:#2e7d32,stroke-width:2px
+    classDef termination stroke:#c62828,stroke-width:2px
     class Upload startPoint
     class Modernize termination
 ```
