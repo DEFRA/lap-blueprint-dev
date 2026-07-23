@@ -39,34 +39,41 @@ Applies to any LAP application requiring a non-production sandbox Azure environm
 **For Higher Environments:**
 Progression to development, test, pre-production, or production environments requires a Cloud Design Review Board (CDRB) review and approval to ensure the proposed solution meets architecture, security, governance, and operational standards.
 
-**Decision Tree / Flow Diagram:**
+**Flow Diagram:**
 
-```ascii
-Ready to request sandbox environment?
-|
-Yes
-|
-Step 1: Obtain Project Code from PMO
-    |
-Step 2: Complete Service Registration Form
-    |
-Step 3: Wait for Service Code generation (~5 business days)
-    |
-Step 4: Complete Shopping List (Technical Definition)
-    |
-Step 5: Raise ServiceNow catalogue request with Service Code & Shopping List
-    |
-Step 6: Submit for CCoE sprint review (fortnightly cadence)
-    |
-Step 7: CCoE allocation and build (1-2 business days after sprint allocation)
-    |
-Step 8: Receive provisioning notification via MyIT
-    |
-Sandbox Environment Ready for Use
-    |
-Higher Environment Needed?
-|- No --> Proceed with sandbox-based development
-|- Yes --> Initiate CDRB review and approval process
+```mermaid
+flowchart TD
+  Start["Ready to request sandbox environment?"]
+  ProjectCode["Obtain project code (PMO)"]
+  ServiceRegistration["Submit service registration form"]
+  ServiceCode["Service code generated (~5 business days)"]
+  TechDefinition["Define technical requirements (shopping list)"]
+  CatalogueRequest["Submit ServiceNow catalogue request"]
+  SprintReview["CCoE sprint review and prioritisation"]
+  Build["CCoE sandbox build (1-2 business days after allocation)"]
+  Provisioned["Provisioning notification received (MyIT)"]
+  Ready["Sandbox Environment Ready for Use"]
+  Higher{"Higher Environment Needed?"}
+  Proceed["Proceed with sandbox-based development"]
+  CDRB["Initiate CDRB review and approval process"]
+
+  Start --> ProjectCode
+  ProjectCode --> ServiceRegistration
+  ServiceRegistration --> ServiceCode
+  ServiceCode --> TechDefinition
+  TechDefinition --> CatalogueRequest
+  CatalogueRequest --> SprintReview
+  SprintReview --> Build
+  Build --> Provisioned
+  Provisioned --> Ready
+  Ready --> Higher
+  Higher -- No --> Proceed
+  Higher -- Yes --> CDRB
+
+  classDef startPoint stroke:#2e7d32
+  classDef termination stroke:#c62828
+  class Start startPoint
+  class CDRB,Proceed termination
 ```
 
 **Who To Contact:**

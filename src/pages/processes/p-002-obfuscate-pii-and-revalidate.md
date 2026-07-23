@@ -28,20 +28,27 @@ Engineers performing the updates, delivery leads accountable for release risk, a
 
 **Decision Tree / Flow Diagram:**
 
-```ascii
-P-001 reported findings that block sharing/AI use?
-|
-Yes
-|
-Run obfuscation review (P-002)
-|
-Apply approved replacements
-|
-Rescan (P-001)
-|
-High/Critical findings remain?
-|- No --> Approve for next delivery stage
-|- Yes --> Manual remediation + governance review; repeat P-002/P-001
+```mermaid
+flowchart TD
+	Start["P-001 reported findings that block sharing/AI use?"]
+	Review["Run obfuscation review (P-002)"]
+	Apply["Apply approved replacements"]
+	Rescan["Rescan (P-001)"]
+	Remaining{"High/Critical findings remain?"}
+	Approve["Approve for next delivery stage"]
+	Manual["Manual remediation + governance review; repeat P-002/<a class='govuk-link' href='../p-001-scan-code-for-pii/'>P-001</a>"]
+
+	Start --> Review
+	Review --> Apply
+	Apply --> Rescan
+	Rescan --> Remaining
+	Remaining -- No --> Approve
+	Remaining -- Yes --> Manual
+
+  classDef startPoint stroke:#2e7d32
+  classDef termination stroke:#c62828
+	class Start startPoint
+	class Manual,Approve termination
 ```
 
 **Who To Contact:**

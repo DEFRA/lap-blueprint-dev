@@ -45,8 +45,9 @@ This creates a self-documenting system for understanding how AI instructions wor
 
 - AI assistants must _never_ remove HTML comments explaining the purpose and design of each section.
 - HTML comments provide essential context for understanding the instructional design and MUST remain intact.
+- AI assistants must _never_ modify their definitions (`/.github/agents/*`, `.github/copilot-instructions.md`, etc) unless explicitly instructed to do so by a human reviewer.
 
-<CRIITICAL_REQUIREMENT type="MANDATORY">
+<CRITICAL_REQUIREMENT type="MANDATORY">
 <HTML_COMMENT presence="REQUIRED">
 AUDIENCE: Primarily humans, but applicable to all AI coding assistants
 DESIGN PHILOSOPHY: Maximum clarity and comprehensiveness through clear explanations

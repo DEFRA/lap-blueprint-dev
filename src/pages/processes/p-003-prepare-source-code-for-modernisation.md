@@ -23,37 +23,37 @@ Source system owners, delivery leads, engineers, and governance approvers respon
   - Details on how to do this are here: https://defra.github.io/software-development-standards/processes/github_access/
 - You have a DEFRA laptop capable of running the PII screener.
 
-**Step-by-step**
+**Flow diagram**
 
 ```mermaid
 flowchart TD
-    Upload([Current source holder uploads source code as a ZIP file to LAP SharePoint])
-    Extract["Download and extract ZIP to DEFRA laptop (Delete the .git folder or any other history if it exists)"]
-    Screen[Run <a class="govuk-link" href="../p-001-scan-code-for-pii/">LAP PII screener tool</a> on local files to remove PII. Note: Files that are not plaintext e.g. word/excel/pdf are not handled by the tool and may need manual cleaning.]
-    Approve["***TBC: Get approval from the IAO (Information Asset Owner) that the source code is free of PII ***"]
-    Init[Initialize local repository:<pre><code>git init</code></pre>]
-    Remote[Add GitHub remote:<pre><code>git remote add origin https://github.com/DEFRA/my-cool-repo.git</code></pre>]
-    Commit[Commit clean legacy source code]
-    Push[Push to GitHub]
-    Readonly[Owner of the original legacy code must mark it as read-only unless a critical issue is found]
-    Delete[Delete the ZIP from the LAP Sharepoint]
-    Modernize([Modernize the application in github])
+  Upload([Current source holder uploads source code as a ZIP file to LAP SharePoint])
+  Extract["Download and extract ZIP to DEFRA laptop (Delete the .git folder or any other history if it exists)"]
+  Screen[Run <a class="govuk-link" href="../p-001-scan-code-for-pii/">LAP PII screener tool</a> on local files to remove PII. Note: Files that are not plaintext e.g. word/excel/pdf are not handled by the tool and may need manual cleaning.]
+  Approve["***TBC: Get approval from the IAO (Information Asset Owner) that the source code is free of PII ***"]
+  Init[Initialize local repository:<pre><code>git init</code></pre>]
+  Remote[Add GitHub remote:<pre><code>git remote add origin https://github.com/DEFRA/my-cool-repo.git</code></pre>]
+  Commit[Commit clean legacy source code]
+  Push[Push to GitHub]
+  Readonly[Owner of the original legacy code must mark it as read-only unless a critical issue is found]
+  Delete[Delete the ZIP from the LAP Sharepoint]
+  Modernize([Modernize the application in github])
 
-    Upload --> Extract
-    Extract --> Screen
-    Screen --> Approve
-    Approve --> Init
-    Init --> Remote
-    Remote --> Commit
-    Commit --> Push
-    Push --> Readonly
-    Readonly --> Delete
-    Delete --> Modernize
+  Upload --> Extract
+  Extract --> Screen
+  Screen --> Approve
+  Approve --> Init
+  Init --> Remote
+  Remote --> Commit
+  Commit --> Push
+  Push --> Readonly
+  Readonly --> Delete
+  Delete --> Modernize
 
-    classDef startPoint stroke:#2e7d32,stroke-width:2px
-    classDef termination stroke:#c62828,stroke-width:2px
-    class Upload startPoint
-    class Modernize termination
+  classDef startPoint stroke:#2e7d32
+  classDef termination stroke:#c62828
+  class Upload startPoint
+  class Modernize termination
 ```
 
 **Who To Contact:**
