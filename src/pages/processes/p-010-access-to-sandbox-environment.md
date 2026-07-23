@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: "P-003: Access to Sandbox"
+title: "P-010: Access to Sandbox"
 ---
 
-# Process Page - P-003: How to Request and Provision a Sandbox Environment
+# P-010: How to Request and Provision a Sandbox Environment
 
-**Process ID:** P-003
+**Process ID:** P-010
 
 **Title:** How to request and provision a sandbox environment through the Cloud Centre of Excellence (CCoE)
 
@@ -176,7 +176,7 @@ Higher Environment Needed?
 - Project Code must be valid and verified by PMO before process initiation
 
 **Data Handling:**
-Production data cannot be used in sandbox environments before PII sanitisation. Refer to P-001 (Scan Code for PII) and P-002 (Obfuscate and Revalidate) if production data needs to be used in sandbox testing.
+Production data cannot be used in sandbox environments before PII sanitisation. Refer to P-001 (Scan Code for PII) and P-002 (Obfuscate PII and Revalidate) if production data needs to be used in sandbox testing.
 
 **Source:** DEFRA Cloud Centre of Excellence  
 **Owner:** AI Enablement Team (Omar Adili, Rinaz Jainudeen)

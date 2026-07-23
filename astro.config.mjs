@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import { satteri } from "@astrojs/markdown-satteri";
 import { govukMarkdown } from "./src/util/govukMarkdown.js";
+import mermaid from "astro-mermaid";
 
 export default defineConfig({
   site: "https://defra.github.io",
@@ -13,6 +14,12 @@ export default defineConfig({
       },
     },
   },
+  integrations: [
+    mermaid({
+      theme: "neutral",
+      autoTheme: true,
+    }),
+  ],
   markdown: {
     shikiConfig: {
       theme: "github-light",

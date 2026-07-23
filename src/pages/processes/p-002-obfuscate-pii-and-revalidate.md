@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: "P-002: Obfuscate and Revalidate"
+title: "P-002: Obfuscate PII and Revalidate"
 ---
 
-# Process Page - P-002: How to Remove or Obfuscate PII and Revalidate
+# P-002: How to Obfuscate PII and Revalidate
 
 **Process ID:** P-002
 
-**Title:** How to remove or obfuscate sensitive values safely and confirm the code is clear
+**Title:** How to remove or obfuscate PII safely and confirm the code is clear
 
 **What You're Trying To Do:**
 Replace or remove sensitive values found in code while preserving working software, then verify that the updated code can be safely shared or used with AI tooling.

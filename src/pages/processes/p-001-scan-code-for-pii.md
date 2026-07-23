@@ -3,7 +3,7 @@ layout: "@lap/layouts/BaseLayout.astro"
 title: "P-001: Check Source Code for PII"
 ---
 
-# Process Page - P-001: How to Check Source Code for PII Before AI Use or Sharing
+# P-001: How to Check Source Code for PII Before AI Use or Sharing
 
 **Process ID:** P-001
 
@@ -30,7 +30,7 @@ Project managers, delivery leads, engineers, architects, security reviewers, and
 5. Decide one of three outcomes:
    - **No findings:** proceed to the next process or delivery stage.
    - **Low-risk findings only:** fix in normal sprint flow and rescan before release.
-   - **Any high-risk findings (PII/secrets):** stop sharing/AI use and move immediately to P-002 (obfuscation/removal and recheck).
+   - **Any high-risk findings (PII/secrets):** stop sharing/AI use and move immediately to P-002 (obfuscate PII/remove and recheck).
 6. Record the decision and report location in project governance notes.
 
 **Decision Tree / Flow Diagram:**
@@ -46,7 +46,7 @@ Findings present?
 |- No --> Proceed with planned activity
 |- Yes --> Any High/Critical PII or secrets?
           |- No --> Remediate in delivery plan; rescan before release
-          |- Yes --> Stop onward use and run P-002 (remove/obfuscate + rescan)
+          |- Yes --> Stop onward use and run P-002 (remove/obfuscate PII + rescan)
 ```
 
 **Who To Contact:**
