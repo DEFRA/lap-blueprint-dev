@@ -33,23 +33,9 @@ const childPagesByParentPath = buildChildPagesByParent(markdownPages);
           </h3>
           <ul class="govuk-list lap-side-navigation__list">
             {group.pages.map((page) => {
-              const isCurrentPage = currentPath === normalizePath(page.href);
-              const childPages =
-                page.routePath === "/"
-                  ? []
-                  : (childPagesByParentPath.get(page.routePath) ?? []);
-              const shouldRevealChildren =
-                page.routePath === "/"
-                  ? currentRoutePath === "/"
-                  : currentRoutePath === page.routePath ||
-                    currentRoutePath.startsWith(`${page.routePath}/`);
-
               return (
                 <PageTreeItem
                   page={page}
-                  childPages={childPages}
-                  shouldRevealChildren={shouldRevealChildren}
-                  isCurrentPage={isCurrentPage}
                   currentPath={currentPath}
                   currentRoutePath={currentRoutePath}
                   childPagesByParentPath={childPagesByParentPath}

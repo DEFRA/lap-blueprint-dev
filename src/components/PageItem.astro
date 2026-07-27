@@ -1,14 +1,10 @@
 ---
-const { page, isCurrentPage, isNested = false } = Astro.props;
+import { normalizePath } from "../util/contentNavigation.js";
+
+const { page, currentPath } = Astro.props;
+const isCurrentPage = currentPath === normalizePath(page.href);
 ---
 
-{
-  isNested && (
-    <span aria-hidden="true" class="lap-side-navigation__dash">
-      —
-    </span>
-  )
-}
 <a
   class={`govuk-link${isCurrentPage ? " govuk-!-font-weight-bold" : ""}`}
   href={page.href}

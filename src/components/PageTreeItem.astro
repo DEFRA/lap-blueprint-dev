@@ -1,19 +1,26 @@
 ---
 import PageItem from "./PageItem.astro";
 import PageTreeItem from "./PageTreeItem.astro";
-import { type NavPage, normalizePath } from "../util/contentNavigation.js";
+import { type NavPage } from "../util/contentNavigation.js";
 
 const {
   page,
-  childPages,
-  shouldRevealChildren,
-  isCurrentPage,
   currentPath,
   currentRoutePath,
   childPagesByParentPath,
-  isNested,
+  depth = 0,
 } = Astro.props;
 
+const isNested = depth > 0;
+const childPages =
+  depth === 0 && page.routePath === "/"
+    ? []
+    : (childPagesByParentPath.get(page.routePath) ?? []);
+const shouldRevealChildren =
+  page.routePath === "/"
+    ? currentRoutePath === "/"
+    : currentRoutePath === page.routePath ||
+      currentRoutePath.startsWith(`${page.routePath}/`);
 const isRootActiveSection = !isNested && shouldRevealChildren;
 ---
 
@@ -22,30 +29,19 @@ const isRootActiveSection = !isNested && shouldRevealChildren;
     (!isNested ? " lap-side-navigation__item--root" : "") +
     (isRootActiveSection ? " lap-side-navigation__item--active" : "")}
 >
-  <PageItem page={page} isCurrentPage={isCurrentPage} isNested={isNested} />
+  <PageItem page={page} currentPath={currentPath} />
 
   {
     shouldRevealChildren && childPages.length > 0 && (
       <ul class="govuk-list lap-side-navigation__list">
         {childPages.map((childPage: NavPage) => {
-          const isCurrentChildPage =
-            currentPath === normalizePath(childPage.href);
-          const grandChildPages =
-            childPagesByParentPath.get(childPage.routePath) ?? [];
-          const shouldRevealGrandChildren =
-            currentRoutePath === childPage.routePath ||
-            currentRoutePath.startsWith(`${childPage.routePath}/`);
-
           return (
             <PageTreeItem
               page={childPage}
-              childPages={grandChildPages}
-              shouldRevealChildren={shouldRevealGrandChildren}
-              isCurrentPage={isCurrentChildPage}
               currentPath={currentPath}
               currentRoutePath={currentRoutePath}
               childPagesByParentPath={childPagesByParentPath}
-              isNested={true}
+              depth={depth + 1}
             />
           );
         })}
@@ -66,6 +62,10 @@ const isRootActiveSection = !isNested && shouldRevealChildren;
   }
 
   ul.lap-side-navigation__list {
-    padding-left: 15px;
+    padding-left: 20px;
+  }
+
+  li:not(.lap-side-navigation__item--root) {
+    list-style-type: "— ";
   }
 </style>
