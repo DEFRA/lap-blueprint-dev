@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: License Requests and Processes
-order: 1
+title: How to access default tools and license
+order: 2
 group: Tools
 ---
 
 ## Purpose
 
-Use this link to view the current state of AI tools available within Defra, including guidance on approved tools and how to request access.
+Use this link to view the current state of AI tools available within DEFRA, including guidance on approved tools and how to request access.
 
 AI Tools Radar Diagram : https://digital.defra.gov.uk/ai-toolkit/tools/diagram
 
