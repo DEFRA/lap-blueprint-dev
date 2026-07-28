@@ -17,7 +17,11 @@ Teams are responsible for ensuring their agent is lawful, secure, ethical, trans
 
 ### Required DEFRA Guidance
 
-The following guidance documents must be reviewed and adhered to:
+Thsi below resource could be used to conform to Defra software development standards and generally good coding standards that comply with DDTS code quality standards etc.
+ 
+- [Software Development Standards](https://defra.github.io/software-development-standards/guides/github_copilot/)
+
+The following guidance documents could also be reviewed and adhered to:
 
 - [Right Approach](https://github.com/DEFRA/defra-ai-agents/blob/main/playbook/pages/getting-started/right-approach.md)
 - [AI Checklist](https://github.com/DEFRA/defra-ai-agents/blob/main/playbook/pages/getting-started/ai-checklist.md)
