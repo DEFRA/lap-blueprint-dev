@@ -51,6 +51,7 @@ Use this link for Practical setup guidance for configuring GitHub Copilot in DEF
 
 ## Copilot Ralph
 
+- [Autonomous AI coding agent loop runner](https://github.com/DEFRA/ralph)
 - [Iterative AI Development Loop Tool, an orchestration pattern invoking Agents](https://github.com/JanDeDobbeleer/copilot-ralph)
 
 ## Get help with GitHub Copilot
