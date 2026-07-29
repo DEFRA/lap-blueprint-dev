@@ -40,6 +40,12 @@ Use this link for Practical setup guidance for configuring GitHub Copilot in DEF
 - [Project for Legacy Modernisation Playbook](https://github.com/DEFRA/defra-ai-legacy-modernisation)
 - [DEFRA AI Legacy Modernisation Playbook Portal](https://defra.github.io/defra-ai-legacy-modernisation/)
 
+## DEFRA Group Modernization Playbook
+
+A step-by-step guide to using AI-assisted reverse engineering to produce Product Requirements Documents from legacy application artefacts, developed by Defra's Legacy Application Programme.
+
+- [Defra AI Modernisation Playbook](https://github.com/DEFRA/defra-ai-modernisation-playbook)
+
 ## DEFRA Group AI SDLC Playbook
 
 - [Contains AI-related development guidance, standards, and supporting material](https://github.com/DEFRA/defra-ai-sdlc)
