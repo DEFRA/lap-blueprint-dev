@@ -20,24 +20,41 @@ Applies to any LAP application requiring a non-production sandbox Azure environm
 
 **Step-by-Step:**
 
-1. **Obtain a Project Code** – Before requesting a sandbox environment, work with PMO to obtain a valid project code (for example, DEFCOOD3P652) to ensure costs can be correctly attributed and tracked.
+**Step 1** – Obtain valid Project Code\
+**Owner:** PMO.\
+Before requesting a sandbox environment, ensure you have the correct project code from LAP PMO (for example, **DEFCOOD3P652**) to ensure CCoE consumption costs in Azure (and AWS) are correctly recharged to your project.
 
-2. **Complete the Service Registration Form** – Project Manager completes the Service Registration Form (See Template 1 below) with project details, service owner, cost centre, and project code. This form generates the required Service Code.
+**Step 2** — Complete the Service Registration Form _(See 7.1 Template 1)_
+**Owner:** Project Manager.
+This includes project details, service owner, cost centre and project code.
+This Service Registration Form generates the Service Code.
 
-3. **Wait for Service Code Generation** – CCoE FinOps Finance Team generates a 3-letter Service Code. Typical lead time: ~5 working days. The Service Code is required for the next steps.
+**Step 3** — The Service Code is generated
+**Owner:** CCoE FinOps Finance Team . ~5 working day lead time.
+Produces a 3-letter Service Code. This is then required in step 5.
 
-4. **Complete the Shopping List** – Technical Lead defines the technical environment requirements using the Shopping List template (See Template 2 below): containers, key vault, storage, database, networking, AI components, monitoring, etc.
+**Step 4** — Complete the Shopping List _(See 7.2 Template 2)_
+**Owner:** Technical Lead
+The technical definition of the environment: containers, key vault, storage, database, networking, AI components, monitoring.
 
-5. **Raise MyIT (ServiceNow) Catalogue Request** – Project Manager submits the request in ServiceNow (See Template 3 below), including the Service Code and Shopping List as attachments.
+**Step 5** — Raise MyIT (ServiceNow) Catalogue Request _(See 7.3_ _Template 3)_
+**Owner:** Project Manager
+Include the Service Code and attach the Shopping List _(See 7.2 Template 2) to the request._
 
-6. **Submit for Sprint Review** – CCoE engineering team reviews and prioritises the request in the next sprint cycle (fortnightly cadence). Lead time: typically 2 weeks for allocation.
+**Step 6** – Sprint Review with Engineering Prioritisation
+**Owner:** Cloud Centre of Excellence (CCoE)
+Lead time: Fortnightly sprint cadence
+Submit the request to the CCoE for inclusion in the next sprint review. The CCoE engineering team will review and prioritise in the next sprint cycle.
 
-7. **Sprint Allocation and Build** – Once allocated to a sprint, CCoE builds the sandbox environment. Typical build time: 1-2 business days.
+**Step 7** — Sprint Allocation
+**Owner:** Cloud Centre of Excellence (CCoE)
+Approved → Queued → Allocated to Sprint → Built.
 
-8. **Receive Provisioning Notification** – Requestor is automatically notified through MyIT (ServiceNow) when the sandbox environment has been provisioned and is ready for use.
+**Step 8** — Sandbox Provisioned
+The requestor is automatically notified through **MyIT (ServiceNow)** when the sandbox environment has been provisioned and is ready for use. The notification will reference the associated request number.
 
-**For Higher Environments:**
-Progression to development, test, pre-production, or production environments requires a Cloud Design Review Board (CDRB) review and approval to ensure the proposed solution meets architecture, security, governance, and operational standards.
+CDRB Review (Higher Environments Only)
+For environments beyond the sandbox (for example, development, test, pre-production, or production), a **Cloud Design Review Board (CDRB)** review and approval is required to ensure the proposed solution meets architecture, security, governance, and operational standards before provisioning can proceed.
 
 **Flow Diagram:**
 
