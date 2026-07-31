@@ -5,7 +5,7 @@ PROMPTING: Keep the YAML minimal; AI should respect this glob when proposing edi
 
 ---
 
-applyTo: "**/\*.js, **/_.astro, \*\*/_.scss"
+applyTo: "\*\*/\*.js, \*\*/\*.astro, \*\*/\*.scss"
 
 <!--
 SECTION PURPOSE: Introduce mandatory frontend guidance.

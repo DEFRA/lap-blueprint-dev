@@ -1,6 +1,6 @@
 /**
  * @typedef {Object} MarkdownModule
- * @property {{ title?: string, order?: number, group?: string, groupOrder?: number }=} frontmatter
+ * @property {{ title?: string, order?: number, group?: string, groupOrder?: number, hidden?: boolean }=} frontmatter
  */
 
 /**
@@ -129,7 +129,14 @@ const byOrderThenLabel = (a, b) =>
  */
 export function buildNavPages(markdownModules, normalizedBase) {
   return Object.entries(markdownModules)
-    .filter(([path]) => !path.split("/").at(-1)?.startsWith("_"))
+    .filter(([path, module]) => {
+      if (path.split("/").at(-1)?.startsWith("_")) {
+        return false;
+      }
+
+      const markdownModule = /** @type {MarkdownModule} */ (module || {});
+      return markdownModule.frontmatter?.hidden !== true;
+    })
     .map(([path, module]) => {
       const markdownModule = /** @type {MarkdownModule} */ (module || {});
       const relativePath = path.replace("/src/pages/", "");

@@ -32,7 +32,7 @@ export default defineConfig({
       type: "shiki",
     },
     processor: satteri({
-      hastPlugins: [govukMarkdown],
+      hastPlugins: [...govukMarkdown],
     }),
   },
 });
