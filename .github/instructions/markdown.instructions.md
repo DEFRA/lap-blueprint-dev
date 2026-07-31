@@ -3,9 +3,9 @@ SECTION PURPOSE: Frontmatter defines scope for Markdown authoring rules.
 PROMPTING: Keep the YAML minimal so tools can match Markdown files directly.
 -->
 
----
-
 applyTo: "src/pages/\*\*/\*.md"
+
+---
 
 <!--
 SECTION PURPOSE: Introduce repository-specific Markdown guidance.
