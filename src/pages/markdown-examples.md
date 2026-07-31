@@ -30,10 +30,10 @@ You can use headings, paragraphs, lists, blockquotes, tables, and fenced code bl
 - or
 - [ ] Third
 
-| [details]                                                                              |
-| -------------------------------------------------------------------------------------- |
-| View source (md)                                                                       |
-| <pre><code class="language-md">- [ ] First<br>- [x] Second<br>- [ ] Third</code></pre> |
+| [details]                                                                                      |
+| ---------------------------------------------------------------------------------------------- |
+| View source (md)                                                                               |
+| <pre><code class="language-md">- [ ] First<br>- [x] Second<br>- or<br>- [ ] Third</code></pre> |
 
 ### Blockquote example
 
