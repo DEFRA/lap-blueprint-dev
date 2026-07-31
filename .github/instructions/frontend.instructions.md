@@ -1,10 +1,5 @@
-<!--
-SECTION PURPOSE: Frontmatter defines scope (which files are governed by these rules).
-PROMPTING: Keep the YAML minimal; AI should respect this glob when proposing edits.
--->
-
-applyTo: "\*\*/\*.js, \*\*/\*.astro, \*\*/\*.scss"
-
+---
+applyTo: "**/*.js, **/*.astro, **/*.scss"
 ---
 
 <!--
