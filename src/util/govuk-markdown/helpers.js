@@ -6,9 +6,7 @@
  * @returns {import('hast').Element[]} Matching child elements.
  */
 export function getChildElements(node, tagName) {
-  if (!Array.isArray(node.children)) return [];
-
-  return node.children.filter(
+  return asArray(node.children).filter(
     (child) =>
       child?.type === "element" && (!tagName || child.tagName === tagName),
   );
@@ -38,9 +36,7 @@ export function cloneNode(node) {
   return {
     ...node,
     properties: node.properties ? { ...node.properties } : node.properties,
-    children: Array.isArray(node.children)
-      ? node.children.map(cloneNode)
-      : node.children,
+    children: asArray(node.children).map(cloneNode),
   };
 }
 
@@ -59,9 +55,7 @@ export function isAsciiCodeBlock(node) {
 
   if (!codeChild || !codeChild.properties) return false;
 
-  const classNames = Array.isArray(codeChild.properties.className)
-    ? codeChild.properties.className
-    : [];
+  const classNames = asArray(codeChild.properties.className);
 
   return classNames.includes("language-ascii") || classNames.includes("ascii");
 }
@@ -74,6 +68,20 @@ export function isAsciiCodeBlock(node) {
  * @returns {string[]} Merged unique class names.
  */
 export function mergeClassNames(existingClasses, nextClasses) {
-  const existing = Array.isArray(existingClasses) ? existingClasses : [];
+  const existing = asArray(existingClasses);
   return [...new Set([...existing, ...nextClasses])];
+}
+
+/**
+ * Converts a value to an array, preserving iterable values.
+ *
+ * @template T
+ * @param {T|T[]|Iterable<T>|null|undefined} value - The value to convert to an array.
+ * @returns {T[]} The value as an array.
+ */
+export function asArray(value) {
+  if (Array.isArray(value)) return value;
+  if (Symbol.iterator in Object(value)) return Array.from(value);
+  if (value === undefined || value === null) return [];
+  return [value];
 }

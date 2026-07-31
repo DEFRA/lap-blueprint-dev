@@ -1,6 +1,11 @@
 import { defineHastPlugin } from "satteri";
 import { DETAILS_TABLE_HEADER_TEXT } from "../constants.js";
-import { cloneNode, getChildElements, getRowCells } from "../helpers.js";
+import {
+  asArray,
+  cloneNode,
+  getChildElements,
+  getRowCells,
+} from "../helpers.js";
 
 /**
  * Rewrites a one-column markdown table into a GOV.UK details component.
@@ -66,9 +71,7 @@ export const detailsTablePlugin = defineHastPlugin({
                 properties: {
                   className: ["govuk-details__summary-text"],
                 },
-                children: Array.isArray(summaryCells[0].children)
-                  ? summaryCells[0].children.map(cloneNode)
-                  : [],
+                children: asArray(summaryCells[0].children).map(cloneNode),
               },
             ],
           },
@@ -78,9 +81,7 @@ export const detailsTablePlugin = defineHastPlugin({
             properties: {
               className: ["govuk-details__text"],
             },
-            children: Array.isArray(bodyCells[0].children)
-              ? bodyCells[0].children.map(cloneNode)
-              : [],
+            children: asArray(bodyCells[0].children).map(cloneNode),
           },
         ],
       });

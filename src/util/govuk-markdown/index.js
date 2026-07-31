@@ -2,6 +2,7 @@ import { detailsTablePlugin } from "./plugins/detailsTablePlugin.js";
 import { tableRowHeaderPlugin } from "./plugins/tableRowHeaderPlugin.js";
 import { buttonLinkPlugin } from "./plugins/buttonLinkPlugin.js";
 import { govukClassPlugin } from "./plugins/govukClassPlugin.js";
+import { taskListPlugin } from "./plugins/taskListPlugin.js";
 
 /**
  * Ordered GOV.UK markdown transforms.
@@ -17,4 +18,5 @@ export const govukMarkdown = [
   tableRowHeaderPlugin,
   buttonLinkPlugin,
   govukClassPlugin,
+  taskListPlugin,
 ];

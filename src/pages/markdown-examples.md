@@ -23,6 +23,18 @@ You can use headings, paragraphs, lists, blockquotes, tables, and fenced code bl
 | View source (md)                                                                          |
 | <pre><code class="language-md">- First item<br>- Second item<br>- Third item</code></pre> |
 
+### Checkboxes example
+
+- [ ] First
+- [x] Second
+- or
+- [ ] Third
+
+| [details]                                                                              |
+| -------------------------------------------------------------------------------------- |
+| View source (md)                                                                       |
+| <pre><code class="language-md">- [ ] First<br>- [x] Second<br>- [ ] Third</code></pre> |
+
 ### Blockquote example
 
 > This is a standard Markdown blockquote.

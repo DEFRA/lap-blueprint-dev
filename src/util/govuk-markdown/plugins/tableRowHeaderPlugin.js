@@ -1,4 +1,5 @@
 import { defineHastPlugin } from "satteri";
+import { asArray } from "../helpers";
 
 /**
  * Ensures each table row's first data cell is rendered as a row header.
@@ -14,18 +15,14 @@ export const tableRowHeaderPlugin = defineHastPlugin({
      * @param {import('hast').Element} node - The matched HAST element node.
      */
     visit(node) {
-      if (!Array.isArray(node.children)) return;
-
-      const firstDataCellIndex = node.children.findIndex(
+      const firstDataCellIndex = asArray(node.children).findIndex(
         (child) => child?.type === "element" && child.tagName === "td",
       );
 
       if (firstDataCellIndex === -1) return;
 
       const firstDataCell = node.children[firstDataCellIndex];
-      const existingClasses = Array.isArray(firstDataCell.properties?.className)
-        ? firstDataCell.properties.className
-        : [];
+      const existingClasses = asArray(firstDataCell.properties?.className);
       const nonCellClasses = existingClasses.filter(
         (className) => className !== "govuk-table__cell",
       );
