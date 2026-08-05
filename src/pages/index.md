@@ -42,4 +42,4 @@ Provide a practical, shared Blueprint that helps delivery teams modernise legacy
 | [Playbooks](./playbooks/)             | End-to-end journeys that connect several processes.        |
 | [Standards](./standards/)             | Mandatory requirements and governance expectations.        |
 | [Reusable assets](./reusable-assets/) | Templates, scripts, prompt libraries, and reusable packs.  |
-| [Agent catalogue](./agent-catalogue/) | Approved tools and agents, with access and usage guidance. |
+| [AI Catalogue](./agent-catalogue/) | Approved tools and AI Artefacts (Agents, Prompts, Instructions, Sills etc...), with access and usage guidance. |
