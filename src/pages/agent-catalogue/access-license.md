@@ -19,9 +19,14 @@ see https://digital.defra.gov.uk/ai-toolkit/tools/github-copilot.
 
 ## Microsoft 365 Copilot Request Access Information
 
-Currently, there is no information available on the AI Toolkit reference. The only guidance currently available for Microsoft 365 Copilot is through the Microsoft Copilot Community of Interest, which can be accessed using the link below:
+Currently, there is no information available on the AI Toolkit reference. The only guidance currently available for Microsoft 365 Copilot is through the Microsoft Copilot Community of Interest, which can be accessed using the link below,please visit this page if you are outside DDTS:
 
-https://defra.sharepoint.com/sites/mve-defra-m365copilotexperimenttrialmembersonly/SitePages/2%20M365%20Copilot%20Licences.aspx?e=N1DWgI&isSPOFile=1&TeamsCID=ea9c3f99-0144-4970-b070-a9310b6c0600&OR=Teams-HL&CT=1783439164966
+- [FULL Copilot Licences for Business Areas](https://defra.sharepoint.com/sites/mve-defra-m365copilotexperimenttrialmembersonly/SitePages/2%20M365%20Copilot%20Licences.aspx?e=N1DWgI&isSPOFile=1&TeamsCID=ea9c3f99-0144-4970-b070-a9310b6c0600&OR=Teams-HL&CT=1783439164966)
+
+Full Copilot Licence for DDTS (if you are DDTS Staff only):
+
+- [Full Copilot for DDTS](https://defra.sharepoint.com/:u:/r/teams/Team177/SitePages/Full-Copilot-for-DDTS.aspx?d=w13f94698414e47b69b31b16d3175a4ec&csf=1&web=1&e=MceRBw&isSPOFile=1)
+
 
 ## Claude Code Governance and Assurance
 
