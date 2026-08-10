@@ -32,12 +32,12 @@ Provide a practical, shared Blueprint that helps delivery teams modernise legacy
 | [details]                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------- |
 | How to Request Access to OpenVPN for Suppliers?                                                                       |
-| [Process P-08](./processes/p-08-request-access-to-open-vpn-for-suppliers/) explains how to Request Access to OpenVPN for Suppliers. |
+| [Process P-008](./processes/p-008-request-access-to-open-vpn-for-suppliers/) explains how to Request Access to OpenVPN for Suppliers. |
 
 | [details]                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------- |
 | How to Access to Azure Virtual Desktop?                                                                       |
-| [Process P-09](./processes/p-09-access-to-azure-virtual-desktop/) explains how to Access to Azure Virtual Desktop. |
+| [Process P-009](./processes/p-009-access-to-azure-virtual-desktop/) explains how to Access to Azure Virtual Desktop. |
 
 | [details]                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------- |

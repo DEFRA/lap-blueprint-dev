@@ -1,7 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: "P-001: Acquiring Source Code for Modernisation"
-order: 1
 ---
 
 # P-001: How to Acquire Source Code for Modernisation

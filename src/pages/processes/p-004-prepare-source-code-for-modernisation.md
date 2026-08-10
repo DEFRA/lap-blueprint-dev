@@ -1,7 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: "P-004: Prepare Source Code for Modernisation"
-order: 4
 ---
 
 # P-004: How to Prepare Source Code for Modernisation

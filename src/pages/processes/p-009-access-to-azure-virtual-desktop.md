@@ -1,12 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: "P-09: Access to Azure Virtual Desktop"
-order: 9
+title: "P-009: Access to Azure Virtual Desktop"
 ---
 
-# P-09: How to Access to Azure Virtual Desktop
+# P-009: How to Access to Azure Virtual Desktop
 
-**Process ID:** P-09
+**Process ID:** P-009
 
 **Title:** How to Access to Azure Virtual Desktop
 

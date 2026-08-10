@@ -1,7 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: "P-010: Access to Sandbox"
-order: 10
 ---
 
 # P-010: How to Request and Provision a Sandbox Environment

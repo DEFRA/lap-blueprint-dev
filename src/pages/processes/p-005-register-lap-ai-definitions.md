@@ -1,7 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: "P-005: How to add your LAP AI Artefacts to our LAMAI's AI Directory"
-order: 5
 ---
 
 # P-005: How to add your LAP AI Artefacts to our LAMAI's AI Directory

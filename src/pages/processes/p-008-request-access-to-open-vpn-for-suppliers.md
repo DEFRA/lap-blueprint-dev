@@ -1,12 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: "P-08: Ruesting access to OpenVPN for suppliers"
-order: 8
+title: "P-008: Ruesting access to OpenVPN for suppliers"
 ---
 
-# P-08: How to Request Access to OpenVPN for Suppliers
+# P-008: How to Request Access to OpenVPN for Suppliers
 
-**Process ID:** P-08
+**Process ID:** P-008
 
 **Title:** How to Request Access to OpenVPN for Suppliers
 

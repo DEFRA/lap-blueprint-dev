@@ -1,7 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: "P-003: Obfuscate PII and Revalidate"
-order: 3
 ---
 
 # P-003: How to Obfuscate PII and Revalidate

@@ -1,7 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: "P-002: Check Source Code for PII"
-order: 2
 ---
 
 # P-002: How to Check Source Code for PII Before AI Use or Sharing
