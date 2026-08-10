@@ -1,11 +1,12 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: "P-003: Prepare Source Code for Modernisation"
+title: "P-004: Prepare Source Code for Modernisation"
+order: 4
 ---
 
-# P-003: How to Prepare Source Code for Modernisation
+# P-004: How to Prepare Source Code for Modernisation
 
-**Process ID:** P-003
+**Process ID:** P-004
 
 **Title:** How to onboard legacy source code safely and prepare it for modernisation
 

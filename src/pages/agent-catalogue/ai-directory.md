@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: AI Agent Directory
+title: AI Directory
 order: 4
 group: Tools
 ---
 
 # Purpose
 
-Use this to find agents that are being used across LAP and DEFRA etc.. Please ensure that all submitted definitions are clearly documented, follow the agreed naming standards, and align with the prerequisites and governance requirements outlined earlier in the [How to add your LAP AI Agent to our LAMAI's Agent Directory](../register-lap-ai-definitions/) section.
+Use this to find AI Definitions sucha sAgents, Instructions, Prompts, Skills that are being used across LAP and DEFRA
 
 ### Agents, Instructions, Skills, Prompts
 

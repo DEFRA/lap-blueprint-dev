@@ -1,11 +1,12 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: "P-002: Obfuscate PII and Revalidate"
+title: "P-003: Obfuscate PII and Revalidate"
+order: 3
 ---
 
-# P-002: How to Obfuscate PII and Revalidate
+# P-003: How to Obfuscate PII and Revalidate
 
-**Process ID:** P-002
+**Process ID:** P-003
 
 **Title:** How to remove or obfuscate PII safely and confirm the code is clear
 
