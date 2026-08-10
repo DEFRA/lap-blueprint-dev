@@ -21,8 +21,23 @@ Provide a practical, shared Blueprint that helps delivery teams modernise legacy
 
 | [details]                                                                                                                                                                    |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| How do I aquire legacy source code for LAP modernisation?                                                                                                                   |
+| [Process P-001](./processes/p-001-acquiring-source-code-for-modernisation/) covers how to acquire Source Code for Modernisation |
+
+| [details]                                                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | How do I prepare legacy source code for LAP modernisation?                                                                                                                   |
-| [Process P-003](./processes/p-003-prepare-source-code-for-modernisation/) covers the onboarding flow from source handover through screening, approval, and repository setup. |
+| [Process P-004](./processes/p-004-prepare-source-code-for-modernisation/) covers the onboarding flow from source handover through screening, approval, and repository setup. |
+
+| [details]                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------- |
+| How to Request Access to OpenVPN for Suppliers?                                                                       |
+| [Process P-008](./processes/p-008-request-access-to-open-vpn-for-suppliers/) explains how to Request Access to OpenVPN for Suppliers. |
+
+| [details]                                                                                                               |
+| ----------------------------------------------------------------------------------------------------------------------- |
+| How to Access to Azure Virtual Desktop?                                                                       |
+| [Process P-009](./processes/p-009-access-to-azure-virtual-desktop/) explains how to Access to Azure Virtual Desktop. |
 
 | [details]                                                                                                               |
 | ----------------------------------------------------------------------------------------------------------------------- |
@@ -32,7 +47,7 @@ Provide a practical, shared Blueprint that helps delivery teams modernise legacy
 | [details]                                                                                                                                                                                                           |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | How do I register a LAP AI agent in the directory?                                                                                                                                                                  |
-| Follow [How to add your LAP AI Agent to our LAMAI's Agent Directory](./agent-catalogue/register-lap-ai-definitions/) and browse the [AI Agent Directory](./agent-catalogue/ai-directory/) for existing definitions. |
+| Follow [How to add your LAP AI Agent to our LAMAI's AI Directory](./processes/p-005-register-lap-ai-definitions/) and browse the [AI Directory](./agent-catalogue/ai-directory/) for existing definitions. |
 
 ## Sections
 

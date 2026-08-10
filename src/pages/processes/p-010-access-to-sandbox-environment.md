@@ -39,7 +39,12 @@ The technical definition of the environment: containers, key vault, storage, dat
 
 **Step 5** — Raise MyIT (ServiceNow) Catalogue Request (_See Template 3_)\
 **Owner:** Project Manager\
-Include the Service Code and attach the Shopping List (_See Template 2_) to the request.
+Include the Service Code and attach the Shopping List (_See Template 2_) to the request. Also provide a descriptive Service Name, which will be applied as the ServiceNameTag to deployed resources for identification and management purposes.
+Format:
+Service Name: <Brief name or description of the environment>
+Example:
+Service Name: LAP RPA Tenancy Upgrade (Atos/Microsoft)
+
 
 **Step 6** – Sprint Review with Engineering Prioritisation\
 **Owner:** Cloud Centre of Excellence (CCoE)\
@@ -51,10 +56,10 @@ Submit the request to the CCoE for inclusion in the next sprint review. The CCoE
 Approved → Queued → Allocated to Sprint → Built.
 
 **Step 8** — Sandbox Provisioned\
-The requestor is automatically notified through **MyIT (ServiceNow)** when the sandbox environment has been provisioned and is ready for use. The notification will reference the associated request number.
+The requestor is automatically notified through **MyIT (ServiceNow)** when the sandbox environment has been provisioned and is ready for use. The notification will reference the associated request number and the name of the subscription created, for example AZD-ACD-SND. and the Azure DevOps repository used to deploy the project.
 
 CDRB Review (Higher Environments Only)\
-For environments beyond the sandbox (for example, development, test, pre-production, or production), a **Cloud Design Review Board (CDRB)** review and approval is required to ensure the proposed solution meets architecture, security, governance, and operational standards before provisioning can proceed.
+For environments beyond the Sandbox (for example, Development, Test, Pre-Production, or Production), a Cloud Design Review Board (CDRB) review and approval is required. This ensures the proposed solution meets architecture, security, governance, and operational standards before provisioning can proceed. CDRB sessions are held every Wednesday morning. Please refer to the CCoE Engagement Guide for details on the review process and how to schedule a CDRB.
 
 **Flow Diagram:**
 
@@ -139,7 +144,7 @@ flowchart TD
 Tracking table (to be populated as real requests go through the process):
 | Application<br> | Project Code obtained<br> | Service Registration Form completed<br> | Service Code issued<br> | Shopping List completed<br> | ServiceNow Request reference<br> | Sprint Review planned<br> | Sprint allocated<br> | Sandbox provisioned<br> |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| <br><br> | <br><br> | <br><br> | <br><br> | <br><br> | <br><br> | <br><br> | <br><br> | <br><br> |
+| Example:<br>CORE DEFRA LAP MS Accelerated AI Delivery<br> | DEFCOOD301354<br> | Yes<br> | ACD<br> | Yes<br> | RITM1424918<br> | <br> | Yes<br> | AZD-ACD-SND1<br> |
 
 
 ### Template 1 — Service Registration Form (Step 2)

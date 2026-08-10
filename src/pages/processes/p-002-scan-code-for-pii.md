@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: "P-001: Check Source Code for PII"
+title: "P-002: Check Source Code for PII"
 ---
 
-# P-001: How to Check Source Code for PII Before AI Use or Sharing
+# P-002: How to Check Source Code for PII Before AI Use or Sharing
 
-**Process ID:** P-001
+**Process ID:** P-002
 
 **Title:** How to check source code for personal data (PII) before AI use, sharing, or release
 
