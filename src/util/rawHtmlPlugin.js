@@ -2,8 +2,6 @@ import { fromHtml } from "hast-util-from-html";
 import { toHtml } from "hast-util-to-html";
 import { defineHastPlugin } from "satteri";
 
-const PROCESSED_PARENTS_KEY = "govukMarkdownRawHtmlProcessedParents";
-
 /**
  * Rebuilds a parent's children by serializing the full sibling fragment and
  * reparsing it as HTML.
@@ -43,14 +41,10 @@ export const rawHtmlPlugin = defineHastPlugin({
     const parent = ctx.parent(node);
     if (!parent) return;
 
-    const processedParents =
-      ctx.data[PROCESSED_PARENTS_KEY] instanceof WeakSet
-        ? ctx.data[PROCESSED_PARENTS_KEY]
-        : (ctx.data[PROCESSED_PARENTS_KEY] = new WeakSet());
+    // Rebuild each parent only once: when visiting its first raw child.
+    const firstRawChild = parent.children.find((child) => child.type === "raw");
+    if (firstRawChild !== node) return;
 
-    if (processedParents.has(parent)) return;
-
-    processedParents.add(parent);
     materializeParentChildren(parent, ctx);
   },
 });

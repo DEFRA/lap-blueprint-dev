@@ -144,7 +144,7 @@ Common examples:
 - links: `class="govuk-link"`
 - buttons rendered as anchors: `govuk-button`
 
-Prefer the custom Markdown shorthand when available, for example the `[details]` table syntax instead of hand-writing a details block.
+Prefer the custom Markdown shorthand when available.
 
 <!--
 SECTION PURPOSE: Document the repository's relative-link rules driven by Astro output and GitHub Pages deployment.
