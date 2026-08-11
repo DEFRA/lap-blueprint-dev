@@ -4,6 +4,7 @@ import { govukMarkdown } from "./src/util/govukMarkdown.js";
 import { rawHtmlPlugin } from "./src/util/rawHtmlPlugin.js";
 import { mermaidThemeConfig } from "./src/util/mermaidTheme.js";
 import mermaid from "astro-mermaid";
+import pagefind from "astro-pagefind";
 
 export default defineConfig({
   site: "https://defra.github.io",
@@ -23,6 +24,7 @@ export default defineConfig({
         ...mermaidThemeConfig,
       },
     }),
+    pagefind(),
   ],
   markdown: {
     shikiConfig: {

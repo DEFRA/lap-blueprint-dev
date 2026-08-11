@@ -1,0 +1,462 @@
+<div class="lap-search" data-module="lap-search">
+  <label class="govuk-visually-hidden" for="lap-search-input">Search</label>
+  <div class="lap-search__wrapper">
+    <div
+      class="govuk-visually-hidden"
+      role="status"
+      aria-atomic="true"
+      aria-live="polite"
+      data-lap-search-status
+    >
+    </div>
+    <input
+      id="lap-search-input"
+      class="lap-search__input"
+      type="search"
+      name="search"
+      autocomplete="off"
+      aria-autocomplete="list"
+      aria-controls="lap-search-listbox"
+      aria-expanded="false"
+      role="combobox"
+      placeholder="Search"
+    />
+    <ul
+      id="lap-search-listbox"
+      class="lap-search__menu lap-search__menu--hidden"
+      role="listbox"
+      aria-label="Search results"
+      tabindex="-1"
+    >
+      <template data-lap-option-tpl>
+        <li
+          class="lap-search__option"
+          role="option"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <span data-lap-title></span>
+          <span class="govuk-visually-hidden" data-lap-sep>, </span>
+          <span class="lap-search__option-section" data-lap-section></span>
+        </li>
+      </template>
+      <template data-lap-no-results-tpl>
+        <li class="lap-search__no-results" role="option" aria-disabled="true">
+          No results found
+        </li>
+      </template>
+    </ul>
+  </div>
+</div>
+
+<style lang="scss">
+  .lap-search {
+    position: relative;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    &__wrapper {
+      display: block;
+      position: relative;
+    }
+
+    &__input {
+      box-sizing: border-box;
+      width: 100%;
+      height: 2.5rem;
+      margin-bottom: 0;
+      // Search icon inlined as SVG; padding-left leaves room for it
+      padding: 5px 5px 5px 35px;
+      border: 2px solid #ffffff;
+      border-radius: 0;
+      appearance: none;
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 36 36' width='40' height='40'%3E%3Cpath d='M25.7 24.8L21.9 21c.7-1 1.1-2.2 1.1-3.5 0-3.6-2.9-6.5-6.5-6.5S10 13.9 10 17.5s2.9 6.5 6.5 6.5c1.6 0 3-.6 4.1-1.5l3.7 3.7 1.4-1.4zM12 17.5c0-2.5 2-4.5 4.5-4.5s4.5 2 4.5 4.5-2 4.5-4.5 4.5-4.5-2-4.5-4.5z' fill='%23484949'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left -2px center;
+      background-size: 40px 40px;
+      font-family: "GDS Transport", arial, sans-serif;
+      font-size: 1.1875rem;
+      line-height: 1.31579;
+      color: var(--govuk-text-colour, #0b0c0c);
+
+      &::placeholder {
+        color: var(--govuk-secondary-text-colour, #484949);
+      }
+
+      &:focus {
+        outline: 3px solid var(--govuk-focus-colour, #ffdd00);
+        outline-offset: 0;
+        border-color: var(--govuk-focus-text-colour, #0b0c0c);
+        box-shadow: inset 0 0 0 2px;
+      }
+
+      &[aria-expanded="true"] {
+        box-shadow:
+          inset 2px 2px 0 0,
+          inset -2px 0 0 0;
+      }
+    }
+
+    &__menu {
+      position: absolute;
+      z-index: 100;
+      top: calc(100% - 2px);
+      left: 0;
+      width: 100%;
+      max-height: 342px;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      overflow-y: auto;
+      color: var(--govuk-text-colour, #0b0c0c);
+      background-color: #ffffff;
+      border-top: 5px solid #ffffff;
+      box-shadow: 0 5px 5px var(--govuk-secondary-text-colour, #484949);
+      list-style: none;
+
+      &--hidden {
+        display: none;
+      }
+
+      &--visible {
+        display: block;
+      }
+    }
+
+    &__option {
+      display: block;
+      padding: 10px;
+      border-bottom: 1px solid var(--govuk-border-colour, #b1b4b6);
+      cursor: pointer;
+      font-family: "GDS Transport", arial, sans-serif;
+      font-size: 1.1875rem;
+      line-height: 1.31579;
+
+      &:first-child {
+        border-top: none;
+      }
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:nth-child(even):not(.lap-search__option--focused):not(:hover) {
+        background-color: #fafafa;
+      }
+
+      &--focused,
+      &:hover {
+        border-color: var(--govuk-brand-colour, #1d70b8);
+        color: #ffffff;
+        background-color: var(--govuk-brand-colour, #1d70b8);
+
+        .lap-search__option-section {
+          color: inherit;
+        }
+      }
+    }
+
+    &__option-section {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.25;
+      color: var(--govuk-secondary-text-colour, #484949);
+    }
+
+    &__no-results {
+      padding: 10px;
+      color: var(--govuk-secondary-text-colour, #484949);
+      background-color: #ffffff;
+      font-family: "GDS Transport", arial, sans-serif;
+      font-size: 1.1875rem;
+      cursor: not-allowed;
+    }
+  }
+</style>
+
+<script>
+  // @ts-nocheck -- intentional JavaScript; JSDoc annotations provide type documentation
+  /**
+   * Initialises the GDS-styled search box backed by the pagefind JS API.
+   * @param {HTMLElement} container - The `.lap-search` root element
+   * @returns {Promise<void>}
+   */
+  async function initSearch(container) {
+    container.dataset.lapSearchInitialised = true;
+    const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+    const pagefindUrl = `${base}/pagefind/pagefind.js`;
+
+    /** @type {any} */
+    let pagefind;
+    try {
+      pagefind = await import(/* @vite-ignore */ pagefindUrl);
+      await pagefind.init();
+    } catch {
+      // Search is unavailable (e.g. dev mode before build); fail silently
+      return;
+    }
+
+    const input = /** @type {HTMLInputElement} */ (
+      container.querySelector('[role="combobox"]')
+    );
+    const listbox = /** @type {HTMLElement} */ (
+      container.querySelector('[role="listbox"]')
+    );
+    const statusEl = /** @type {HTMLElement} */ (
+      container.querySelector("[data-lap-search-status]")
+    );
+    const optionTpl = /** @type {HTMLTemplateElement} */ (
+      container.querySelector("[data-lap-option-tpl]")
+    );
+    const noResultsTpl = /** @type {HTMLTemplateElement} */ (
+      container.querySelector("[data-lap-no-results-tpl]")
+    );
+
+    /** @type {number} */
+    let activeIndex = -1;
+
+    /** @type {Array<{url: string, title: string, section: string|null}>} */
+    let currentResults = [];
+
+    /** @type {ReturnType<typeof setTimeout> | undefined} */
+    let debounceTimer;
+
+    /**
+     * Announces a message to screen readers via the ARIA live region.
+     * @param {string} message
+     * @returns {void}
+     */
+    function announce(message) {
+      statusEl.textContent = message;
+    }
+
+    /**
+     * Shows the results listbox and marks the input as expanded.
+     * @returns {void}
+     */
+    function showListbox() {
+      listbox.classList.remove("lap-search__menu--hidden");
+      listbox.classList.add("lap-search__menu--visible");
+      input.setAttribute("aria-expanded", "true");
+    }
+
+    /**
+     * Hides the results listbox and resets the expanded/active state.
+     * @returns {void}
+     */
+    function hideListbox() {
+      listbox.classList.remove("lap-search__menu--visible");
+      listbox.classList.add("lap-search__menu--hidden");
+      input.setAttribute("aria-expanded", "false");
+      input.removeAttribute("aria-activedescendant");
+      activeIndex = -1;
+    }
+
+    /**
+     * Moves keyboard focus to the option at the given index.
+     * @param {number} index
+     * @returns {void}
+     */
+    function setActiveOption(index) {
+      const options = /** @type {NodeListOf<HTMLElement>} */ (
+        listbox.querySelectorAll('[role="option"]:not([aria-disabled])')
+      );
+
+      options.forEach((opt, i) => {
+        const isFocused = i === index;
+        opt.classList.toggle("lap-search__option--focused", isFocused);
+        opt.setAttribute("aria-selected", String(isFocused));
+        if (isFocused) {
+          input.setAttribute("aria-activedescendant", opt.id);
+        }
+      });
+
+      activeIndex = index;
+    }
+
+    /**
+     * Navigates the browser to the given URL.
+     * @param {string} url
+     * @returns {void}
+     */
+    function navigateTo(url) {
+      window.location.href = url;
+    }
+
+    /**
+     * Returns humanized parent breadcrumb segments for a result URL.
+     * @param {string} url
+     * @returns {string[]}
+     */
+    function sectionFromUrl(url) {
+      const path = url.replace(/\?.*$/, "").replace(/\/$/, "");
+      const withoutBase = base ? path.replace(base, "") : path;
+      const segments = withoutBase.split("/").filter(Boolean);
+      return segments
+        .slice(0, -1)
+        .map((s) =>
+          s.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+        );
+    }
+
+    /**
+     * Renders a list of results into the listbox, or shows a no-results message.
+     * @param {Array<{url: string, title: string, section: string|null}>} items
+     * @returns {void}
+     */
+    function renderResults(items) {
+      currentResults = items;
+      activeIndex = -1;
+      listbox.innerHTML = "";
+
+      if (items.length === 0) {
+        listbox.appendChild(noResultsTpl.content.cloneNode(true));
+        showListbox();
+        announce("No results found");
+        return;
+      }
+
+      const total = items.length;
+
+      items.forEach((item, i) => {
+        const fragment = /** @type {DocumentFragment} */ (
+          optionTpl.content.cloneNode(true)
+        );
+        const li = /** @type {HTMLElement} */ (fragment.querySelector("li"));
+        li.id = `lap-search-option-${i}`;
+        li.setAttribute("aria-posinset", String(i + 1));
+        li.setAttribute("aria-setsize", String(total));
+
+        const title = /** @type {HTMLElement} */ (
+          fragment.querySelector("[data-lap-title]")
+        );
+        if (title) {
+          title.textContent = item.title;
+        }
+
+        if (item.section) {
+          const section = /** @type {HTMLElement} */ (
+            fragment.querySelector("[data-lap-section]")
+          );
+          if (section) {
+            section.textContent = `in ${item.section}`;
+          }
+        } else {
+          fragment.querySelector("[data-lap-sep]")?.remove();
+          fragment.querySelector("[data-lap-section]")?.remove();
+        }
+
+        // Prevent blur from firing before click completes
+        li.addEventListener("mousedown", (e) => e.preventDefault());
+        li.addEventListener("click", () => navigateTo(item.url));
+
+        listbox.appendChild(fragment);
+      });
+
+      showListbox();
+      const count = items.length;
+      announce(`${count} result${count !== 1 ? "s" : ""} available`);
+    }
+
+    /**
+     * Searches pagefind for the given query after a short debounce.
+     * @param {string} query
+     * @returns {void}
+     */
+    function performSearch(query) {
+      clearTimeout(debounceTimer);
+
+      if (!query.trim()) {
+        hideListbox();
+        announce("");
+        return;
+      }
+
+      debounceTimer = setTimeout(async () => {
+        const search = await pagefind.search(query);
+        const topResults = search.results.slice(0, 8);
+        const data = await Promise.all(
+          topResults.map(
+            /** @param {any} r @returns {Promise<any>} */
+            (r) => r.data(),
+          ),
+        );
+
+        const items = data.map(
+          /** @param {any} d @returns {{url: string, title: string, section: string|null}} */
+          (d) => {
+            const subUrl = d.sub_results?.[0]?.url;
+            const pageTitle = d.meta?.title?.replace(/ - DEFRA LAP$/, "");
+            const parents = sectionFromUrl(d.url);
+            const parts =
+              subUrl?.includes("#") && pageTitle
+                ? [...parents, pageTitle]
+                : parents;
+            return {
+              url: subUrl ?? d.url,
+              title: d.sub_results?.[0]?.title ?? pageTitle ?? d.url,
+              section: parts.length > 0 ? parts.join(" › ") : null,
+            };
+          },
+        );
+
+        renderResults(items);
+      }, 200);
+    }
+
+    input.addEventListener("input", (e) => {
+      performSearch(/** @type {HTMLInputElement} */ (e.target).value);
+    });
+
+    input.addEventListener("keydown", (e) => {
+      const options = listbox.querySelectorAll(
+        '[role="option"]:not([aria-disabled])',
+      );
+      const count = options.length;
+      const isOpen = listbox.classList.contains("lap-search__menu--visible");
+
+      switch (e.key) {
+        case "ArrowDown":
+          e.preventDefault();
+          if (!isOpen) return;
+          setActiveOption(Math.min(activeIndex + 1, count - 1));
+          break;
+        case "ArrowUp":
+          e.preventDefault();
+          if (!isOpen) return;
+          setActiveOption(Math.max(activeIndex - 1, 0));
+          break;
+        case "Enter":
+          e.preventDefault();
+          if (activeIndex >= 0 && currentResults[activeIndex]) {
+            navigateTo(currentResults[activeIndex].url);
+          }
+          break;
+        case "Escape":
+          hideListbox();
+          break;
+      }
+    });
+
+    input.addEventListener("focus", () => {
+      if (input.value.trim() && currentResults.length > 0) {
+        renderResults(currentResults);
+      } else if (input.value.trim()) {
+        performSearch(input.value);
+      }
+    });
+
+    input.addEventListener("blur", () => {
+      // Delay so mousedown on an option fires before the listbox hides
+      setTimeout(hideListbox, 150);
+    });
+  }
+
+  document
+    .querySelectorAll(
+      "[data-module='lap-search']:not([data-lap-search-initialised])",
+    )
+    .forEach((el) => initSearch(/** @type {HTMLElement} */ (el)));
+</script>
