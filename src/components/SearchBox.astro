@@ -1,13 +1,4 @@
----
-const base = import.meta.env.BASE_URL.replace(/\/$/, "");
----
-
-<div
-  class="lap-search"
-  data-pagefind-url={`${base}/pagefind/pagefind.js`}
-  data-base={base}
-  data-module="lap-search"
->
+<div class="lap-search" data-module="lap-search">
   <label class="govuk-visually-hidden" for="lap-search-input">Search</label>
   <div class="lap-search__wrapper">
     <div
@@ -193,7 +184,8 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
    */
   async function initSearch(container) {
     container.dataset.lapSearchInitialised = true;
-    const pagefindUrl = /** @type {string} */ (container.dataset.pagefindUrl);
+    const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+    const pagefindUrl = `${base}/pagefind/pagefind.js`;
 
     /** @type {any} */
     let pagefind;
@@ -226,8 +218,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 
     /** @type {Array<{url: string, title: string, section: string|null}>} */
     let currentResults = [];
-
-    const base = container.dataset.base ?? "";
 
     /** @type {ReturnType<typeof setTimeout> | undefined} */
     let debounceTimer;
