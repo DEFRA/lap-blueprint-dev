@@ -2,6 +2,7 @@
 import "../styles/global.scss";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import SideNavigation from "../components/SideNavigation.astro";
+import Search from "astro-pagefind/components/Search.astro";
 
 const base = import.meta.env.BASE_URL;
 const { frontmatter: { title } = {} } = Astro.props;
@@ -56,7 +57,7 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
     >
     <header class="govuk-template__header">
       <div class="govuk-header">
-        <div class="govuk-header__container govuk-width-container">
+        <div class="govuk-header__container govuk-width-container lap-header-bar">
           <div class="govuk-header__logo">
             <a href={base} class="govuk-header__homepage-link">
               <img
@@ -67,6 +68,13 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
                 height="40"
               />
             </a>
+          </div>
+          <div class="lap-header-search">
+            <Search
+              instance="search"
+              className="lap-pagefind-search"
+              searchboxOptions={{ placeholder: "Search the site", shortcut: "mod+k" }}
+            />
           </div>
         </div>
       </div>
@@ -79,7 +87,7 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
           </aside>
           <div class="govuk-grid-column-two-thirds">
             <Breadcrumbs />
-            <slot />
+          <slot />
           </div>
         </div>
       </main>
@@ -147,6 +155,16 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
         </div>
       </div>
     </footer>
+    <style lang="scss">
+      .lap-search-wrapper {
+        margin-bottom: 1.5rem;
+      }
+
+      .lap-pagefind-search {
+        width: 100%;
+        max-width: 720px;
+      }
+    </style>
     <script type="module">
       import { initGovUK } from "./BaseLayout.js";
       initGovUK();
