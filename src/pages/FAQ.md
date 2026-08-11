@@ -7,8 +7,6 @@ order: 1
 
 ## Frequently asked questions
 
-## Frequently asked questions
-
 <details>
 <summary>How do I get a GitHub Copilot license or access approved AI tools?</summary>
 
