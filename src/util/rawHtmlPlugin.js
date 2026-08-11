@@ -2,6 +2,8 @@ import { fromHtml } from "hast-util-from-html";
 import { toHtml } from "hast-util-to-html";
 import { defineHastPlugin } from "satteri";
 
+const DOC_MATERIALIZED_KEY = "govukMarkdownRawHtmlDocMaterialized";
+
 /**
  * Rebuilds a parent's children by serializing the full sibling fragment and
  * reparsing it as HTML.
@@ -28,6 +30,27 @@ function materializeParentChildren(parent, ctx) {
 }
 
 /**
+ * Returns the highest parent reachable from the current node.
+ *
+ * @param {import('hast').Raw} node - Starting raw node.
+ * @param {import('satteri').HastVisitorContext} ctx - The visitor context.
+ * @returns {import('hast').Parent | undefined} Topmost parent, usually the root.
+ */
+function getTopmostParent(node, ctx) {
+  const initialParent = ctx.parent(node);
+  if (!initialParent) return undefined;
+
+  let topParent = initialParent;
+  let parent = ctx.parent(topParent);
+  while (parent) {
+    topParent = parent;
+    parent = ctx.parent(topParent);
+  }
+
+  return topParent;
+}
+
+/**
  * Materializes raw HTML fragments into concrete HAST nodes so later element
  * visitors can normalize and decorate them.
  */
@@ -38,13 +61,12 @@ export const rawHtmlPlugin = defineHastPlugin({
    * @param {import('satteri').HastVisitorContext} ctx - The visitor context.
    */
   raw(node, ctx) {
-    const parent = ctx.parent(node);
-    if (!parent) return;
+    if (ctx.data[DOC_MATERIALIZED_KEY]) return;
 
-    // Rebuild each parent only once: when visiting its first raw child.
-    const firstRawChild = parent.children.find((child) => child.type === "raw");
-    if (firstRawChild !== node) return;
+    const topParent = getTopmostParent(node, ctx);
+    if (!topParent) return;
 
-    materializeParentChildren(parent, ctx);
+    ctx.data[DOC_MATERIALIZED_KEY] = true;
+    materializeParentChildren(topParent, ctx);
   },
 });
