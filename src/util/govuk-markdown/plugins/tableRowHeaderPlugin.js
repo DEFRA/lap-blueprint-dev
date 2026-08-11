@@ -1,5 +1,5 @@
 import { defineHastPlugin } from "satteri";
-import { asArray } from "../helpers";
+import { asArray, mergeProperties } from "../helpers";
 
 /**
  * Ensures each table row's first data cell is rendered as a row header.
@@ -30,11 +30,10 @@ export const tableRowHeaderPlugin = defineHastPlugin({
       node.children[firstDataCellIndex] = {
         ...firstDataCell,
         tagName: "th",
-        properties: {
-          ...(firstDataCell.properties ?? {}),
+        properties: mergeProperties(firstDataCell.properties, {
           className: [...nonCellClasses, "govuk-table__header"],
           scope: firstDataCell.properties?.scope ?? "row",
-        },
+        }),
       };
     },
   },

@@ -18,10 +18,16 @@ You can use headings, paragraphs, lists, blockquotes, tables, and fenced code bl
 - Second item
 - Third item
 
-| [details]                                                                                 |
-| ----------------------------------------------------------------------------------------- |
-| View source (md)                                                                          |
-| <pre><code class="language-md">- First item<br>- Second item<br>- Third item</code></pre> |
+<details>
+<summary>View source (md)</summary>
+
+```md
+- First item
+- Second item
+- Third item
+```
+
+</details>
 
 ### Checkboxes example
 
@@ -30,19 +36,30 @@ You can use headings, paragraphs, lists, blockquotes, tables, and fenced code bl
 - or
 - [ ] Third
 
-| [details]                                                                                      |
-| ---------------------------------------------------------------------------------------------- |
-| View source (md)                                                                               |
-| <pre><code class="language-md">- [ ] First<br>- [x] Second<br>- or<br>- [ ] Third</code></pre> |
+<details>
+<summary>View source (md)</summary>
+
+```md
+- [ ] First
+- [x] Second
+- or
+- [ ] Third
+```
+
+</details>
 
 ### Blockquote example
 
 > This is a standard Markdown blockquote.
 
-| [details]                                                                              |
-| -------------------------------------------------------------------------------------- |
-| View source (md)                                                                       |
-| <pre><code class="language-md">\> This is a standard Markdown blockquote.</code></pre> |
+<details>
+<summary>View source (md)</summary>
+
+```md
+> This is a standard Markdown blockquote.
+```
+
+</details>
 
 ### Code block example
 
@@ -50,10 +67,16 @@ You can use headings, paragraphs, lists, blockquotes, tables, and fenced code bl
 npm run build
 ```
 
-| [details]                                                                         |
-| --------------------------------------------------------------------------------- |
-| View source (md)                                                                  |
-| <pre><code class="language-md">\`\`\`bash<br>npm run build<br>\`\`\`</code></pre> |
+<details>
+<summary>View source (md)</summary>
+
+````md
+```bash
+npm run build
+```
+````
+
+</details>
 
 ## Internal links
 
@@ -63,10 +86,16 @@ Internal page links should be relative, omit the .md extension, and end with a t
 - [Processes index](#)
 - [Process P-001](#)
 
-| [details]                                                                                                                                                   |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| View source (md)                                                                                                                                            |
-| <pre><code class="language-md">- \[Home](./)<br>- \[Processes index](./processes/)<br>- \[Process P-001](./processes/p-001-scan-code-for-pii/)</code></pre> |
+<details>
+<summary>View source (md)</summary>
+
+```md
+- [Home](./)
+- [Processes index](./processes/)
+- [Process P-001](./processes/p-001-scan-code-for-pii/)
+```
+
+</details>
 
 ## GOV.UK button links
 
@@ -74,24 +103,39 @@ Prefix link text with button! to render a GOV.UK button.
 
 [button!Start now](#)
 
-| [details]                                                                    |
-| ---------------------------------------------------------------------------- |
-| View source (md)                                                             |
-| <pre><code class="language-md">\[button!Start now](./some/page)</code></pre> |
+<details>
+<summary>View source (md)</summary>
 
-## Details shorthand
+```md
+[button!Start now](./some/page)
+```
 
-Use a one-column table with [details] in the header and two body rows.
+</details>
 
-| [details]                        |
-| -------------------------------- |
-| How do I request sandbox access? |
-| Follow [Process P-010](#).       |
+## Details blocks
 
-| [details]                                                                                                                                                            |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| View source (md)                                                                                                                                                     |
-| <pre><code class="language-md">\| [details] \|<br>\| \-\-\- \|<br>\| How do I request sandbox access? \|<br>\| Follow [Process P-010](./some/page). \| </code></pre> |
+Use `<details>` and `<summary>` HTML tags. The Markdown pipeline automatically adds GOV.UK classes.
+
+<details>
+<summary>How do I request sandbox access?</summary>
+
+Follow [Process P-010](#).
+
+</details>
+
+<details>
+<summary>View source (md)</summary>
+
+```md
+<details>
+<summary>How do I request sandbox access?</summary>
+
+Follow [Process P-010](./some/page).
+
+</details>
+```
+
+</details>
 
 ## Tables and row headers
 
@@ -103,10 +147,18 @@ Markdown tables are supported and styled. The first body-column cell is transfor
 | Lists      | Yes     |
 | Mermaid    | Yes     |
 
-| [details]                                                                                                                                                                     |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| View source (md)                                                                                                                                                              |
-| <pre><code class="language-md">\| Capability \| Support \|<br>\| ---------- \| ------- \|<br>\| Headings \| Yes \|<br>\| Lists \| Yes \|<br>\| Mermaid \| Yes \|</code></pre> |
+<details>
+<summary>View source (md)</summary>
+
+```md
+| Capability | Support |
+| ---------- | ------- |
+| Headings   | Yes     |
+| Lists      | Yes     |
+| Mermaid    | Yes     |
+```
+
+</details>
 
 ## Mermaid diagrams
 
@@ -124,10 +176,24 @@ flowchart TD
   Check -- Yes --> Rework
 ```
 
-| [details]                                                                                                                                                                                                                                                                       |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| View source (md)                                                                                                                                                                                                                                                                |
-| <pre><code class="language-md">\`\`\`mermaid<br>flowchart TD<br> Start["Start"]<br> Check{"Need review?"}<br> Continue["Continue"]<br> Rework["Rework"]<br><br> Start \-\-\>; Check<br> Check \-\- No \-\-\>; Continue<br> Check \-\- Yes \-\-\>; Rework<br>\`\`\`</code></pre> |
+<details>
+<summary>View source (md)</summary>
+
+````md
+```mermaid
+flowchart TD
+  Start["Start"]
+  Check{"Need review?"}
+  Continue["Continue"]
+  Rework["Rework"]
+
+  Start --> Check
+  Check -- No --> Continue
+  Check -- Yes --> Rework
+```
+````
+
+</details>
 
 ## ASCII fences
 
@@ -139,10 +205,18 @@ ASCII code fences are supported and rendered as inset text.
 +--------------------+
 ```
 
-| [details]                                                                                                                                         |
-| ------------------------------------------------------------------------------------------------------------------------------------------------- |
-| View source (md)                                                                                                                                  |
-| <pre><code class="language-md">\`\`\`ascii<br>+--------------------+<br>\| Example plain text \|<br>+--------------------+<br>\`\`\`</code></pre> |
+<details>
+<summary>View source (md)</summary>
+
+````md
+```ascii
++--------------------+
+| Example plain text |
++--------------------+
+```
+````
+
+</details>
 
 ## Embedded HTML
 
@@ -150,7 +224,11 @@ If you use raw HTML, add GOV.UK classes manually.
 
 <a class="govuk-link" href="#">Standards section</a>
 
-| [details]                                                                                                             |
-| --------------------------------------------------------------------------------------------------------------------- |
-| View source (md)                                                                                                      |
-| <pre><code class="language-md">\<a class=\"govuk-link\" href=\"./standards/\"\>;Standards section\</a\>;</code></pre> |
+<details>
+<summary>View source (md)</summary>
+
+```md
+<a class="govuk-link" href="./standards/">Standards section</a>
+```
+
+</details>

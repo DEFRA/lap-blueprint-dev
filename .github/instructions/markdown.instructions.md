@@ -66,25 +66,9 @@ Example:
 
 This renders as a GOV.UK button and the `button!` prefix is removed from the visible label.
 
-### Details Shorthand
+### Details blocks
 
-To render a GOV.UK details component without embedding raw HTML, use a one-column Markdown table with:
-
-- a single header cell containing `[details]`
-- exactly two body rows
-- row 1 as the summary text
-- row 2 as the details body text
-
-Example:
-
-```md
-| [details]                                                        |
-| ---------------------------------------------------------------- |
-| How do I request access?                                         |
-| Follow [Process P-010](../p-010-access-to-sandbox-environment/). |
-```
-
-This is transformed into a GOV.UK details component and should ALWAYS be used instead of hand-writing a details block in raw HTML.
+To render a GOV.UK details component you can use the `<details>` and `<summary>` HTML tags directly. You dont need to worry about adding the GOV.UK classes because the Markdown pipeline automatically adds them.
 
 ### ASCII Fences
 
@@ -158,10 +142,9 @@ When embedding HTML anywhere in a Markdown file:
 Common examples:
 
 - links: `class="govuk-link"`
-- details: `govuk-details`, `govuk-details__summary`, `govuk-details__summary-text`, `govuk-details__text`
 - buttons rendered as anchors: `govuk-button`
 
-Prefer the custom Markdown shorthand when available, for example the `[details]` table syntax instead of hand-writing a details block.
+Prefer the custom Markdown shorthand when available.
 
 <!--
 SECTION PURPOSE: Document the repository's relative-link rules driven by Astro output and GitHub Pages deployment.
