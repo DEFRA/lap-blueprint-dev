@@ -1,5 +1,5 @@
 import { defineHastPlugin } from "satteri";
-import { TAG_CLASS_MAP } from "../constants.js";
+import { TAG_ATTRIBUTE_MAP } from "../constants.js";
 import { isAsciiCodeBlock, mergeClassNames } from "../helpers.js";
 
 /**
@@ -8,14 +8,14 @@ import { isAsciiCodeBlock, mergeClassNames } from "../helpers.js";
 export const govukClassPlugin = defineHastPlugin({
   name: "govuk-markdown-classes",
   element: {
-    filter: Object.keys(TAG_CLASS_MAP),
+    filter: Object.keys(TAG_ATTRIBUTE_MAP),
     /**
      * @param {import('hast').Element} node - The matched HAST element node.
      * @param {import('satteri').HastVisitorContext} ctx - The visitor context.
      */
     visit(node, ctx) {
-      const classes = TAG_CLASS_MAP[node.tagName];
-      if (!classes) return;
+      const attributes = TAG_ATTRIBUTE_MAP[node.tagName];
+      if (!attributes) return;
 
       // Only decorate ASCII code fences as GOV.UK inset text blocks.
       if (node.tagName === "pre" && !isAsciiCodeBlock(node)) return;
@@ -32,8 +32,10 @@ export const govukClassPlugin = defineHastPlugin({
       ctx.setProperty(
         node,
         "className",
-        mergeClassNames(node.properties?.className, classes),
+        mergeClassNames(node.properties?.className, attributes.class),
       );
+      if (attributes.dataModule)
+        ctx.setProperty(node, "data-module", attributes.dataModule);
     },
   },
 });

@@ -1,6 +1,7 @@
 import { defineConfig } from "astro/config";
 import { satteri } from "@astrojs/markdown-satteri";
 import { govukMarkdown } from "./src/util/govukMarkdown.js";
+import { rawHtmlPlugin } from "./src/util/rawHtmlPlugin.js";
 import { mermaidThemeConfig } from "./src/util/mermaidTheme.js";
 import mermaid from "astro-mermaid";
 
@@ -32,7 +33,7 @@ export default defineConfig({
       type: "shiki",
     },
     processor: satteri({
-      hastPlugins: [...govukMarkdown],
+      hastPlugins: [rawHtmlPlugin, ...govukMarkdown],
     }),
   },
 });

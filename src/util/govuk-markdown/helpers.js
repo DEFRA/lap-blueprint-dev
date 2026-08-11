@@ -73,6 +73,36 @@ export function mergeClassNames(existingClasses, nextClasses) {
 }
 
 /**
+ * Shallow-merges two HAST property bags into a new object.
+ *
+ * Uses property-aware merge behavior for known composite properties:
+ * - className: merged with stable deduplication.
+ *
+ * @param {import('hast').Properties|undefined} existingProperties - Existing element properties.
+ * @param {import('hast').Properties|undefined} nextProperties - Properties to apply on top.
+ * @returns {import('hast').Properties} Merged properties.
+ */
+export function mergeProperties(existingProperties, nextProperties) {
+  const mergedProperties = {
+    ...(existingProperties ?? {}),
+    ...(nextProperties ?? {}),
+  };
+
+  const hasExistingClassName =
+    existingProperties && "className" in existingProperties;
+  const hasNextClassName = nextProperties && "className" in nextProperties;
+
+  if (hasExistingClassName || hasNextClassName) {
+    mergedProperties.className = mergeClassNames(
+      existingProperties?.className,
+      asArray(nextProperties?.className),
+    );
+  }
+
+  return mergedProperties;
+}
+
+/**
  * Converts a value to an array, preserving iterable values.
  *
  * @template T

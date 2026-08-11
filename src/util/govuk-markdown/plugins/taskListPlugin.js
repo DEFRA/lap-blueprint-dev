@@ -76,10 +76,28 @@ export const taskListPlugin = defineHastPlugin({
         type: "element",
         tagName: "div",
         properties: {
-          className: ["govuk-checkboxes"],
-          "data-module": "govuk-checkboxes",
+          className: ["govuk-form-group"],
         },
-        children: items,
+        children: [
+          {
+            type: "element",
+            tagName: "fieldset",
+            properties: {
+              className: ["govuk-fieldset"],
+            },
+            children: [
+              {
+                type: "element",
+                tagName: "div",
+                properties: {
+                  className: ["govuk-checkboxes"],
+                  "data-module": "govuk-checkboxes",
+                },
+                children: items,
+              },
+            ],
+          },
+        ],
       });
     },
   },

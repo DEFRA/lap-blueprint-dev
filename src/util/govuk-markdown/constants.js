@@ -12,30 +12,32 @@ export const DETAILS_TABLE_HEADER_TEXT = "[details]";
 
 /**
  * Maps HTML element tag names to their corresponding GOV.UK Design System CSS classes.
- * @type {Record<string, string[]>}
+ * @type {Record<string, {class: string[], dataModule: string}>}
  */
-export const TAG_CLASS_MAP = {
-  h1: ["govuk-heading-xl"],
-  h2: ["govuk-heading-l"],
-  h3: ["govuk-heading-m"],
-  h4: ["govuk-heading-s"],
-  h5: ["govuk-heading-s"],
-  h6: ["govuk-heading-s"],
-  p: ["govuk-body"],
-  a: ["govuk-link"],
-  pre: ["govuk-inset-text"],
-  ul: ["govuk-list", "govuk-list--bullet"],
-  ol: ["govuk-list", "govuk-list--number"],
-  hr: [
-    "govuk-section-break",
-    "govuk-section-break--l",
-    "govuk-section-break--visible",
-  ],
-  table: ["govuk-table"],
-  thead: ["govuk-table__head"],
-  tbody: ["govuk-table__body"],
-  tr: ["govuk-table__row"],
-  th: ["govuk-table__header"],
-  td: ["govuk-table__cell"],
-  caption: ["govuk-table__caption"],
+export const TAG_ATTRIBUTE_MAP = {
+  h1: { class: ["govuk-heading-xl"] },
+  h2: { class: ["govuk-heading-l"] },
+  h3: { class: ["govuk-heading-m"] },
+  h4: { class: ["govuk-heading-s"] },
+  h5: { class: ["govuk-heading-s"] },
+  h6: { class: ["govuk-heading-s"] },
+  p: { class: ["govuk-body"] },
+  a: { class: ["govuk-link"] },
+  pre: { class: ["govuk-inset-text"] },
+  ul: { class: ["govuk-list", "govuk-list--bullet"] },
+  ol: { class: ["govuk-list", "govuk-list--number"] },
+  hr: {
+    class: [
+      "govuk-section-break",
+      "govuk-section-break--l",
+      "govuk-section-break--visible",
+    ],
+  },
+  table: { class: ["govuk-table"] },
+  thead: { class: ["govuk-table__head"] },
+  tbody: { class: ["govuk-table__body"] },
+  tr: { class: ["govuk-table__row"] },
+  th: { class: ["govuk-table__header"] },
+  td: { class: ["govuk-table__cell"] },
+  caption: { class: ["govuk-table__caption"] },
 };
