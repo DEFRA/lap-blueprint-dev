@@ -1,8 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
-title: AI Catalogue
-order: 5
+title: PII scanning
+order: 2
 ---
 
-# AI Catalogue
+# PII scanning

@@ -1,8 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
-title: AI Catalogue
+title: Sandbox Provisioning
 order: 5
 ---
 
-# AI Catalogue
+# Sandbox Provisioning

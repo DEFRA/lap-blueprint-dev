@@ -1,8 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
-title: AI Catalogue
-order: 5
+title: Open VPN Access
+order: 3
 ---
 
-# AI Catalogue
+# Open VPN Access
