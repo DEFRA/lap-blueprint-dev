@@ -1,8 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
-title: AI Catalogue
-order: 5
+title: GitHub Access
+order: 6
 ---
 
-# AI Catalogue
+# GitHub Access

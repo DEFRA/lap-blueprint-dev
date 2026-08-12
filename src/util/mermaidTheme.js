@@ -2,7 +2,7 @@ export const mermaidThemeConfig = {
   themeVariables: {
     // Token values sourced from govuk-frontend/dist/govuk/govuk-frontend.min.css (:root custom properties)
     // Typography source from govuk settings: dist/govuk/settings/_typography-font.scss
-    fontFamily: "GDS Transport, arial, sans-serif", // $govuk-font-family
+    fontFamily: "Arial, sans-serif", // $govuk-font-family
     fontSize: "19px", // GOV.UK default body size on tablet+ (typography responsive settings)
     background: "#fff", // --govuk-body-background-colour
     lineColor: "#484949", // --govuk-secondary-text-colour

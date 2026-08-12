@@ -1,8 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
-title: AI Catalogue
-order: 5
+title: Environment Readiness
+order: 7
 ---
 
-# AI Catalogue
+# Environment Readiness
