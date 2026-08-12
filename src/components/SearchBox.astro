@@ -448,10 +448,7 @@
       }
     });
 
-    input.addEventListener("blur", () => {
-      // Delay so mousedown on an option fires before the listbox hides
-      setTimeout(hideListbox, 150);
-    });
+    input.addEventListener("blur", hideListbox);
   }
 
   document
