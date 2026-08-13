@@ -6,11 +6,3 @@ order: 4
 ---
 
 # Standards, Patterns & Templates
-
-## Standards
-
-### WCAG 2.2
-
-test
-
-## Patterns & Templates
