@@ -3,7 +3,8 @@ layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
 title: Patterns & Templates
 order: 4
-hidden: true
 ---
 
 # Patterns & Templates
+
+The single source of truth for every standard and every reusable template.

@@ -3,7 +3,8 @@ layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
 title: Security
 order: 4
-hidden: true
 ---
 
 ## Security
+
+The single source of truth for every security related guidance and rules.

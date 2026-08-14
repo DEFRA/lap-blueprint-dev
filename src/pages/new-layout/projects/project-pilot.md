@@ -1,7 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
-title: D2R2 Playbook
+title: Project Pilot Case Study
 ---
 
-# D2R2 Project Modernisation Playbook
+# Project Pilot Case Study

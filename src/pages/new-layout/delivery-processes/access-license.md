@@ -2,10 +2,18 @@
 layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
 title: How to access default tools and license
-order: 5
+order: 4
 ---
 
-## Purpose
+# How to access default tools and licens
+
+**Title:** How to access default tools and licens
+
+**What You're Trying To Do:**
+Use this information to learn about how to access default tools and license
+
+**Who This Is For:**
+Ai Artefact Developers, Suppliers who are responsible for building Agentic Works, delivery leads, engineers, and anyone who is responsible for developing or using AI Definitions (Agents, Prompts, Instructions, Skills etc...) before modernisation and AI-assisted workflows begin.
 
 Use this link to view the current state of AI tools available within DEFRA, including guidance on approved tools and how to request access.
 
