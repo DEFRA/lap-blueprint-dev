@@ -1,8 +1,0 @@
----
-layout: "@lap/layouts/BaseLayout.astro"
-phase: alpha
-title: AI Catalogue
-order: 5
----
-
-# AI Catalogue
