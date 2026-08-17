@@ -50,28 +50,28 @@ These standards must be reviewed and satisfied prior to submitting a LAP AI Agen
 
 1. Clone the [DEFRA AI config examples repository](https://github.com/DEFRA/defra-ai-config-examples).
 
-2. Ensure that all new definitions follow the LAP naming convention:
-
-LAP-(your AI definition name)
-
-    For example:
-
-    - LAP-Casework-Agent
-    - LAP-Document-Summariser
-    - LAP-Inspection-Skill
+2. Ensure that all new definitions follow the LAP naming convention:\
+   LAP-(your AI definition name)\
+   For example:
+   - LAP-Casework-Agent
+   - LAP-Document-Summariser
+   - LAP-Inspection-Skill
 
 3. Following the navigation structure please place your LAP specific AI definitions under relevant sections. Please make sure default.html is updated so navigation updates could take place for your definitions:
 
+   ```ascii
    Agents
    ├── ...
    └── LAP Implementations
-   ├── GitHub Copilot
-   ├── your agent
-   ├── Claude
-   ├── Speckit
-   ├── OpenAI
-   └── Other
-   - Any other supporting AI configuration files such as images or docs etc...should go in the repo under assets and link accordingly from your definition documentation
+       ├── GitHub Copilot
+       ├── your agent
+       ├── Claude
+       ├── Speckit
+       ├── OpenAI
+       └── Other
+   ```
+
+   Any other supporting AI configuration files such as images or docs etc...should go in the repo under assets and link accordingly from your definition documentation
 
    Please follow same structure in case you have other AI definitions such as Instructions, Prompts and Skills
 
