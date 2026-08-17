@@ -5,9 +5,11 @@ title: AI Directory
 order: 5
 ---
 
-Use this page to find AI Artefats that are being used in AI Directory.
+# AI Directory
 
-### Agents, Instructions, Skills, Prompts
+Use this page to find AI Artefacts that are being used in AI Directory.
+
+## Agents, Instructions, Skills, Prompts
 
 - [Current available AGENTS conforming to DEFRA standards](https://defra.github.io/defra-ai-config-examples/pages/agents/)
 

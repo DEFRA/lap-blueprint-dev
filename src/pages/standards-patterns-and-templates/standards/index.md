@@ -2,7 +2,7 @@
 layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
 title: Standards
-order: 4
+order: 0
 ---
 
 # Standards

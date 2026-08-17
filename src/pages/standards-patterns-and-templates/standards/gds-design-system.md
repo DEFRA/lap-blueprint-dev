@@ -44,8 +44,8 @@ For Agentic AI-driven modernisation initiatives, the GOV.UK Design System should
 
 ### References
 
-- https://design-system.service.gov.uk/
-- https://www.gov.uk/guidance/government-design-principles
-- https://www.gov.uk/service-manual
-- https://www.gov.uk/service-toolkit
-- https://www.gov.uk/guidance/use-govuk-domains-and-the-govuk-design-system
+- [GOV.UK Design System](https://design-system.service.gov.uk/)
+- [GOV.UK Design Principles](https://www.gov.uk/guidance/government-design-principles)
+- [GOV.UK Service Manual](https://www.gov.uk/service-manual)
+- [GOV.UK Service Toolkit](https://www.gov.uk/service-toolkit)
+- [Using GOV.UK domains and the GOV.UK Design System](https://www.gov.uk/guidance/use-govuk-domains-and-the-govuk-design-system)

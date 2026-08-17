@@ -7,4 +7,4 @@ order: 4
 
 # Architecture
 
-The single source of truth for every arcitecture and every reusable template.
+The single source of truth for every architecture and every reusable template.

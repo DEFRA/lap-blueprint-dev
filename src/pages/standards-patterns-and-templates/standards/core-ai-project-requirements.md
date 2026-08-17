@@ -14,7 +14,7 @@ The core requirements that apply to all AI enabled modernisation projects is set
 ## Core Requirements
 When engaged on a project a supplier is expected to design, build, and evidence delivery against the following requirements.
 
-1. **Agentic AI by Default****
+1. **Agentic AI by Default**
 The Programme has adopted an ‘Agentic AI by Default’ posture. Suppliers shall demonstrate how AI agents and emerging AI more generally has been considered by default throughout solution design, delivery, testing and operation. Any decision not to use Agentic AI for a relevant use case must be justified. All AI capabilities must comply with DEFRA AI policies, governance requirements, security controls, and responsible AI guardrails.
 
 2. **GDS based Back Office Operational User Interface**
