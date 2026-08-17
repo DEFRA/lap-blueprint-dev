@@ -28,9 +28,11 @@ const childPagesByParentPath = buildChildPagesByParent(markdownPages);
     orderedTopLevelGroups.length > 0 ? (
       orderedTopLevelGroups.map((group) => (
         <>
-          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-            {group.name || "Documentation"}
-          </h3>
+          {group.name && (
+            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+              {group.name}
+            </h3>
+          )}
           <ul class="govuk-list lap-side-navigation__list">
             {group.pages.map((page) => {
               return (

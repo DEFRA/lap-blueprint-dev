@@ -130,7 +130,7 @@ const byOrderThenLabel = (a, b) =>
 export function buildNavPages(markdownModules, normalizedBase) {
   return Object.entries(markdownModules)
     .filter(([path, module]) => {
-      if (path.split("/").at(-1)?.startsWith("_")) {
+      if (path.split("/").some((x) => x.startsWith("_"))) {
         return false;
       }
 
