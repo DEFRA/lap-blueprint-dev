@@ -122,6 +122,17 @@ const byOrderThenLabel = (a, b) =>
   a.order - b.order || a.label.localeCompare(b.label);
 
 /**
+ * Parses a finite numeric value from frontmatter-like input.
+ * @param {unknown} value
+ * @param {number} fallback
+ * @returns {number}
+ */
+function toFiniteNumber(value, fallback) {
+  const numericValue = Number(value);
+  return Number.isFinite(numericValue) ? numericValue : fallback;
+}
+
+/**
  * Builds normalized navigation pages from markdown modules.
  * @param {Record<string, unknown>} markdownModules
  * @param {string} normalizedBase
@@ -150,16 +161,15 @@ export function buildNavPages(markdownModules, normalizedBase) {
       const segments = routePath.split("/").filter(Boolean);
       const slug = segments.at(-1) ?? "";
       const title = markdownModule.frontmatter?.title;
-      const order = Number.isFinite(markdownModule.frontmatter?.order)
-        ? Number(markdownModule.frontmatter?.order)
-        : 0;
+      const order = toFiniteNumber(markdownModule.frontmatter?.order, 0);
       const group =
         typeof markdownModule.frontmatter?.group === "string"
           ? markdownModule.frontmatter.group.trim()
           : "";
-      const groupOrder = Number.isFinite(markdownModule.frontmatter?.groupOrder)
-        ? Number(markdownModule.frontmatter?.groupOrder)
-        : 0;
+      const groupOrder = toFiniteNumber(
+        markdownModule.frontmatter?.groupOrder,
+        0,
+      );
 
       return {
         parentPath: parentRoutePath,

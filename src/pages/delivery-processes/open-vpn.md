@@ -129,7 +129,7 @@ flowchart TD
 
 Once your request has been approved, follow these steps to download the client software and connect.
 
-1. Browse to [https://openvpn.azure.defra.cloud](https://openvpn.azure.defra.cloud).
+1. Browse to the [DEFRA OpenVPN portal](https://openvpn.azure.defra.cloud).
 2. At the authentication prompt, select **Sign In via SAML**.
 3. Enter your usual credentials for connecting to OpenVPN with your DEFRA account and password.
 4. If you haven't set up multi-factor authentication (MFA) before, you'll be prompted to configure it for the account now.

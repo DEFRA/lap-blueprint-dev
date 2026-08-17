@@ -2,7 +2,7 @@
 layout: "@lap/layouts/BaseLayout.astro"
 phase: alpha
 title: Patterns & Templates
-order: 4
+order: 1
 ---
 
 # Patterns & Templates

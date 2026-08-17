@@ -62,7 +62,7 @@ Before deployment, teams should be able to answer:
 
 #### References
 
-- https://www.microsoft.com/ai/principles-and-approach
-- https://support.microsoft.com/privacy/what-is-responsible-ai
-- https://www.microsoft.com/ai/responsible-ai
-- https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/ai/RAIS-Reference-Guide-v2.pdf
+- [Microsoft AI principles and approach](https://www.microsoft.com/ai/principles-and-approach)
+- [What is responsible AI? (Microsoft Support)](https://support.microsoft.com/privacy/what-is-responsible-ai)
+- [Microsoft Responsible AI](https://www.microsoft.com/ai/responsible-ai)
+- [Microsoft Responsible AI Standard reference guide (PDF)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/bade/documents/products-and-services/en-us/ai/RAIS-Reference-Guide-v2.pdf)

@@ -39,10 +39,10 @@ These updates improve usability across desktop and mobile experiences.
 
 ### References
 
-- https://www.w3.org/TR/WCAG22/
-- https://www.w3.org/WAI/standards-guidelines/wcag/
-- https://www.w3.org/WAI/WCAG22/Understanding/
-- https://www.w3.org/WAI/WCAG22/quickref/
+- [WCAG 2.2 specification (W3C)](https://www.w3.org/TR/WCAG22/)
+- [W3C WCAG standards and guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/)
+- [Understanding WCAG 2.2 (W3C)](https://www.w3.org/WAI/WCAG22/Understanding/)
+- [WCAG 2.2 quick reference (W3C)](https://www.w3.org/WAI/WCAG22/quickref/)
 
 ### AI Considerations
 
