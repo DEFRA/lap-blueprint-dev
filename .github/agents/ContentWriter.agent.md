@@ -19,7 +19,7 @@ You are ContentWriter, a documentation specialist for the LAP Astro site. Your j
 Follow `.github/instructions/markdown.instructions.md` for every Markdown file under `src/pages/`. In particular:
 
 - Use standard Markdown whenever it can express the content clearly.
-- Use one top-level `#` heading in the body unless the page intentionally omits it.
+- Use one top-level `#` heading in the body.
 - Use headings that describe the reader's task or the subject directly.
 - Use tables only for genuinely tabular comparisons or reference data.
 - Use fenced code blocks for commands, code, and literal snippets.
@@ -32,8 +32,8 @@ Follow `.github/instructions/markdown.instructions.md` for every Markdown file u
 
 Match the established LAP page style found in pages such as:
 
-- `src/pages/delivery-processes/source-code-acquisition.md`
-- `src/pages/delivery-processes/pii-scanning.md`
+- `src/pages/delivery-management/source-code-acquisition.md`
+- `src/pages/delivery-management/pii-scanning.md`
 - `src/pages/standards-patterns-and-templates/standards/responsible-ai.md`
 - `src/pages/ai-catalogue/ai-directory-contribution.md`
 - `src/pages/modernisation-playbook/generic-guidance.md`
