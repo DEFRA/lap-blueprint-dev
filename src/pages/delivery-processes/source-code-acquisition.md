@@ -36,7 +36,7 @@ Source code acquisition follows these broad phases:
 2. **Obtain approvals**: Secure business and supplier management consent to release the code
 3. **Transfer securely**: Agree on a transfer method and receive the code safely
 4. **Receive and store**: Download the code and store it according to governance requirements
-5. **Sanitise**: Remove sensitive data using the [LAP PII Screener](./pii-scanning/)
+5. **Sanitise**: Remove sensitive data using the [LAP PII Screener](../pii-scanning/)
 6. **Get IAO sign-off**: Confirm the code is clean and ready for modernisation
 
 The exact steps and people involved depend on who currently hosts and supports the application, but the overall shape remains the same.
@@ -48,9 +48,9 @@ Make sure the following are in place:
 - The current source code owner has been identified and located
 - The application has been identified and prioritised for modernisation
 - A DEFRA GitHub repository is ready to receive the source code
-- You have appropriate access to DEFRA GitHub (see [GitHub Access](./github-access/) for details)
+- You have appropriate access to DEFRA GitHub (see [GitHub Access](../github-access/) for details)
 - You have access to a dedicated LAP SharePoint for secure code storage
-- You have a DEFRA laptop or dev container available to run the [PII Screener](./pii-scanning/) (screening must be done locally on DEFRA infrastructure)
+- You have a DEFRA laptop or dev container available to run the [PII Screener](../pii-scanning/) (screening must be done locally on DEFRA infrastructure)
 
 ## Identify and validate the application
 
@@ -150,7 +150,7 @@ Before the code can be moved into your GitHub repository or used in modernisatio
 
 ### Run the LAP PII Screener
 
-Use the [LAP PII Screener](./pii-scanning/) tool to scan the code locally:
+Use the [LAP PII Screener](../pii-scanning/) tool to scan the code locally:
 
 1. Run the PII Screener according to its documentation
 2. If needed, use the Obfuscate PII feature to remove personal data
@@ -168,13 +168,13 @@ The tool will find:
 For each finding:
 
 1. Determine whether the sensitive value is still needed in the code (e.g., a hardcoded test email) or can be removed
-2. Remove the value, replace it with a placeholder or environment variable, or redact it using the [PII Screener's obfuscation feature](./pii-scanning/)
+2. Remove the value, replace it with a placeholder or environment variable, or redact it using the [PII Screener's obfuscation feature](../pii-scanning/)
 3. Re-run the scanner to confirm the finding is resolved
 4. Document what was found and how it was remediated
 
 Some findings may require discussion with the original code owner (e.g., "is this hardcoded API key still in use?"). Don't guess. Ask.
 
-Non-plaintext files (Word, Excel, PDF, images) require manual review; the [PII Screener](./pii-scanning/) does not analyse these.
+Non-plaintext files (Word, Excel, PDF, images) require manual review; the [PII Screener](../pii-scanning/) does not analyse these.
 
 ### Obtain IAO sign-off
 
@@ -218,7 +218,7 @@ Once the clean code is successfully in GitHub:
 
 ## Key governance rules
 
-- **Screen on DEFRA infrastructure.** Download and scan the code on a DEFRA laptop so you can run the [personal data screener](./pii-scanning/) locally.
+- **Screen on DEFRA infrastructure.** Download and scan the code on a DEFRA laptop so you can run the [personal data screener](../pii-scanning/) locally.
 - **Remove version history.** Always delete the `.git` folder and other version history so historic versions containing sensitive data are not carried into the new repository.
 - **Create a clean repository.** Initialise a new repository and push the sanitised source code. Do not reuse the legacy repository or its history.
 - **Screening and IAO approval first.** Both must be complete before the code is used for modernisation or shared more widely.
