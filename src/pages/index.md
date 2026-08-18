@@ -13,13 +13,13 @@ The LAMAI Blueprint is a practical guide for delivery teams modernising legacy a
 ## User flow
 
 - **Start at Home:** Get a quick overview of what the LAMAI Blueprint is and how the site is organised.
-- **Use Getting started for new teams:** Jump directly to [Delivery Processes](./delivery-processes/) and [Frequently Asked Questions](./FAQs/) for onboarding essentials.
-- **Browse sections by need:** Choose from [Delivery Processes](./delivery-processes/), [Modernisation Playbook](./modernisation-playbook/), [Standards, Patterns and Templates](./standards-patterns-and-templates/), [Projects](./projects/), [AI Catalogue](./ai-catalogue/), or [Glossary of Terms](./glossary-of-terms/) based on your current task.
+- **Use Getting started for new teams:** Jump directly to [Delivery Management](./delivery-management/) and [Frequently Asked Questions](./FAQs/) for onboarding essentials.
+- **Browse sections by need:** Choose from [Delivery Management](./delivery-management/), [Modernisation Playbook](./modernisation-playbook/), [Standards, Patterns and Templates](./standards-patterns-and-templates/), [Projects](./projects/), [AI Catalogue](./ai-catalogue/), or [Glossary of Terms](./glossary-of-terms/) based on your current task.
 - **Drill into detail:** Open the relevant section page to find the specific guidance, process, or reference you need.
 
 ## Sections at a glance
 
-- [Delivery Processes](./delivery-processes/): Step-by-step guidance for common delivery tasks such as access, source-code handling, and environment setup.
+- [Delivery Management](./delivery-management/): Step-by-step guidance for common delivery tasks such as access, source-code handling, and environment setup.
 - [Modernisation Playbook](./modernisation-playbook/): End-to-end guidance that connects delivery activities into a coherent modernisation journey.
 - [Standards, Patterns and Templates](./standards-patterns-and-templates/): Policy-aligned standards and reusable templates to support consistent delivery.
 - [Projects](./projects/): Project-specific examples and references to help teams apply the blueprint in practice.
@@ -31,5 +31,5 @@ The LAMAI Blueprint is a practical guide for delivery teams modernising legacy a
 
 Start here if you are onboarding to a new delivery:
 
-- [Go to Delivery Processes](./delivery-processes/)
+- [Go to Delivery Management](./delivery-management/)
 - [Go to Frequently Asked Questions](./FAQs/)

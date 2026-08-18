@@ -13,7 +13,7 @@ order: 1
 
 </summary>
 
-[How to access default tools and license](../delivery-processes/access-license/) explains how to get a GitHub Copilot licence and access approved AI tools. You can then check [AICE AI Toolkit Links](../standards-patterns-and-templates/standards/ai-tooling-standards/) for approved tooling and practical references.
+[How to access default tools and license](../delivery-management/access-license/) explains how to get a GitHub Copilot licence and access approved AI tools. You can then check [AICE AI Toolkit Links](../standards-patterns-and-templates/standards/ai-tooling-standards/) for approved tooling and practical references.
 
 </details>
 
@@ -35,7 +35,7 @@ Follow [How to add your LAP AI Agent to our LAMAI's AI Directory](../ai-catalogu
 
 </summary>
 
-Yes. Source code must be scanned for PII and secrets before it is used with AI-assisted tools or shared outside the current team. See [PII scanning](../delivery-processes/pii-scanning/) for an overview of the tool and how to run it.
+Yes. Source code must be scanned for PII and secrets before it is used with AI-assisted tools or shared outside the current team. See [PII scanning](../delivery-management/pii-scanning/) for an overview of the tool and how to run it.
 
 </details>
 
@@ -57,7 +57,7 @@ Review the findings by severity. For any High or Critical findings you should st
 
 </summary>
 
-Source code acquisition is a multi-phase process: you need to identify the application owner, confirm the code is in scope, obtain business and supplier approvals, arrange secure transfer, and get IAO sign-off before modernisation work can begin. See [Source code acquisition](../delivery-processes/source-code-acquisition/) for the full process and approval routes.
+Source code acquisition is a multi-phase process: you need to identify the application owner, confirm the code is in scope, obtain business and supplier approvals, arrange secure transfer, and get IAO sign-off before modernisation work can begin. See [Source code acquisition](../delivery-management/source-code-acquisition/) for the full process and approval routes.
 
 </details>
 
@@ -68,7 +68,7 @@ Source code acquisition is a multi-phase process: you need to identify the appli
 
 </summary>
 
-DEFRA uses OpenVPN to give approved supplier personnel a secure, encrypted connection from their own devices into DEFRA networks. Each supplier user needs to be onboarded individually. See [Open VPN Access](../delivery-processes/open-vpn/) for the prerequisites, request steps, and first-time connection guidance.
+DEFRA uses OpenVPN to give approved supplier personnel a secure, encrypted connection from their own devices into DEFRA networks. Each supplier user needs to be onboarded individually. See [Open VPN Access](../delivery-management/open-vpn/) for the prerequisites, request steps, and first-time connection guidance.
 
 </details>
 
@@ -79,7 +79,7 @@ DEFRA uses OpenVPN to give approved supplier personnel a secure, encrypted conne
 
 </summary>
 
-Sandbox environments are provisioned by DEFRA's Cloud Centre of Excellence (CCoE) via a ServiceNow catalogue request. Before you start, make sure you have a valid LAP project code and that your technical lead can define the environment's required components. See [Sandbox Provisioning](../delivery-processes/sandbox-provisioning/) for the full request process and what to prepare upfront.
+Sandbox environments are provisioned by DEFRA's Cloud Centre of Excellence (CCoE) via a ServiceNow catalogue request. Before you start, make sure you have a valid LAP project code and that your technical lead can define the environment's required components. See [Sandbox Provisioning](../delivery-management/sandbox-provisioning/) for the full request process and what to prepare upfront.
 
 </details>
 
@@ -90,7 +90,7 @@ Sandbox environments are provisioned by DEFRA's Cloud Centre of Excellence (CCoE
 
 </summary>
 
-Before requesting access to the DEFRA GitHub organisation, each user must have two-factor authentication enabled and their full name set on their GitHub account. Access is then granted either as organisation membership or as an outside collaborator for specific repositories. See [GitHub Access](../delivery-processes/github-access/) for the account requirements and access routes.
+Before requesting access to the DEFRA GitHub organisation, each user must have two-factor authentication enabled and their full name set on their GitHub account. Access is then granted either as organisation membership or as an outside collaborator for specific repositories. See [GitHub Access](../delivery-management/github-access/) for the account requirements and access routes.
 
 </details>
 
@@ -101,6 +101,6 @@ Before requesting access to the DEFRA GitHub organisation, each user must have t
 
 </summary>
 
-Azure Virtual Desktop (AVD) gives approved supplier users a DEFRA-managed desktop hosted in Azure, rather than accessing DEFRA systems directly from their own devices. This is the preferred route when suppliers need access to DEFRA applications and services rather than just network connectivity. See [Azure Virtual Desktop Access](../delivery-processes/azure-virtual-desktop-access/) for the request and provisioning flow.
+Azure Virtual Desktop (AVD) gives approved supplier users a DEFRA-managed desktop hosted in Azure, rather than accessing DEFRA systems directly from their own devices. This is the preferred route when suppliers need access to DEFRA applications and services rather than just network connectivity. See [Azure Virtual Desktop Access](../delivery-management/azure-virtual-desktop-access/) for the request and provisioning flow.
 
 </details>
