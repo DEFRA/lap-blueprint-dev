@@ -1,7 +1,7 @@
 ---
 name: ContentWriter
 description: "Write and update Markdown pages for the LAP Astro site. Use when creating documentation, delivery processes, standards, playbooks, FAQs, glossary content, or AI catalogue entries that must follow the repository Markdown instructions and existing page voice."
-tools: [read, search, edit, execute]
+tools: [read, search, edit, execute, web/fetch]
 user-invocable: true
 argument-hint: "Describe the Markdown page or content you want written"
 ---

@@ -90,17 +90,3 @@ Delivery lead (process coordination), engineering lead (Ai Directory repository 
 - [AI Directory - PROMPTS](https://defra.github.io/defra-ai-config-examples/pages/prompts/)
 - [AI Directory - SKILLS](https://defra.github.io/defra-ai-config-examples/pages/skills/)
 
-**Status:**
-Draft (pending validation or approval by AICE and Defra Stakeholders on LAP Programme)
-
-Use this to find AI Definitions sucha sAgents, Instructions, Prompts, Skills that are being used across LAP and DEFRA
-
-### Agents, Instructions, Skills, Prompts
-
-- [Current available AGENTS conforming to DEFRA standards](https://defra.github.io/defra-ai-config-examples/pages/agents/)
-
-- [Current available INSTRUCTIONS conforming to DEFRA standards](https://defra.github.io/defra-ai-config-examples/pages/instructions/)
-
-- [Current available PROMPTS conforming to DEFRA standards](https://defra.github.io/defra-ai-config-examples/pages/prompts/)
-
-- [Current available SKILLS conforming to DEFRA standards](https://defra.github.io/defra-ai-config-examples/pages/skills/)
