@@ -15,4 +15,3 @@ Use these pages to plan delivery setup, secure access, and governance steps befo
 - [Azure Virtual Desktop Access](./azure-virtual-desktop-access/): Request and provisioning process for supplier access to DEFRA-managed AVD desktops, including required form information.
 - [Sandbox Provisioning](./sandbox-provisioning/): CCoE-led process for requesting a non-production Azure sandbox, from project code and service registration to sprint build and notification.
 - [GitHub Access](./github-access/): Entry points to the official DEFRA GitHub access guidance, including account requirements and organisation/repository access routes.
-- [Environment Readiness](./environment-readiness/): Placeholder page for environment readiness guidance.
