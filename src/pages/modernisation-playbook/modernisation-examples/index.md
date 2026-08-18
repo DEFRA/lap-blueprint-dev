@@ -1,6 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Modernisation Examples
+order: 2
 ---
 
 # Modernisation Examples
