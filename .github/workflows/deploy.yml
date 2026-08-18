@@ -40,6 +40,14 @@ jobs:
       - name: Copy GOV.UK assets
         run: npm run copy:govuk-assets
 
+      - name: Set environment variable for dev site
+        if: ${{ vars.IS_DEV_SITE == 'true' }}
+        run: |
+          echo "IS_DEV_SITE=true" >> $GITHUB_ENV
+          echo "User-agent: *" >> public/robots.txt
+          echo "Disallow: /" >> public/robots.txt
+          sed -i 's|/lap-blueprint/|/lap-blueprint-dev/|g' src/styles/global.scss
+
       - name: Build
         run: npm run build
 
