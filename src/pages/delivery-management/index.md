@@ -1,10 +1,10 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Delivery Processes
+title: Delivery Management
 order: 2
 ---
 
-# Delivery Processes
+# Delivery Management
 
 Use these pages to plan delivery setup, secure access, and governance steps before modernisation work starts.
 
