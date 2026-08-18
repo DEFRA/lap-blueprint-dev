@@ -1,6 +1,6 @@
 # LAP Blueprint
 
-A GOV.UK-styled documentation site for the Defra Legacy Application Programme (LAP). Built with [Astro](https://astro.build) and [GOV.UK Frontend](https://frontend.design-system.service.gov.uk), it publishes to GitHub Pages at `https://defra.github.io/lap-blueprint/`.
+A GOV.UK-styled documentation site for the Defra Legacy Application Programme (LAP). Built with [Astro](https://astro.build) and [GOV.UK Frontend](https://frontend.design-system.service.gov.uk), it publishes as a static [dev GitHub Pages](https://defra.github.io/lap-blueprint-dev/) site. Once content has been reviewed by stakeholders it can be merged into the [live repository](https://github.com/DEFRA/lap-blueprint) and deployed to the [live GitHub Pages](https://defra.github.io/lap-blueprint/) site.
 
 Content is authored in Markdown under `src/pages/` and rendered through a custom GOV.UK styling pipeline. Diagrams are written in Mermaid. Full-text search is powered by Pagefind and built automatically at build time.
 
@@ -41,9 +41,9 @@ Astro is configured with `trailingSlash: "always"`. A link to `../my-page` will 
 
 ### Relative links often need an extra `..`
 
-Pages are nested under section directories (e.g. `src/pages/delivery-processes/github-access.md`), so their URL is `/lap-blueprint/delivery-processes/github-access/`. A link from that page to the section index needs `../` (one level up to exit the slug) not `./`, and a link to a sibling page in a different section needs `../../other-section/page/`.
+Due to all links ending in a `/`, relative paths treat the current file as if it were a directory. This means that relative links to all files except for children must start with a `../` to go up one level out of the current file.
 
-If a link resolves to the wrong page or 404s, count the directory depth from the file's location and add one extra `..` for the trailing-slash segment.
+e.g. To go from `src/pages/test.md` (url path: `/lap-blueprint/test/`) to `src/pages/success.md` (url path: `/lap-blueprint/success/`), rather than the normal relative path of `./success`, you need to use `../success`.
 
 ### GOV.UK assets must be copied before first run
 
