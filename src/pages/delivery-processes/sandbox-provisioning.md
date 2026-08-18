@@ -125,7 +125,7 @@ flowchart TD
 
 Sandbox environments are for non-production use only. If your project needs a development, test, pre-production, or production environment, a Cloud Design Review Board (CDRB) review and approval is required before any provisioning can proceed.
 
-CDRB sessions are held every Wednesday morning. Refer to the CCoE Engagement Guide for details on how to schedule a review.
+CDRB sessions are held every Wednesday morning. Refer to the [CCoE Engagement Guide](https://defra.sharepoint.com/:b:/r/sites/T_Community242/Hosting/Tools%20and%20Templates/Engagement%20Guide/CCoE%20Engagement%20Guide.pdf?d=w5c1ea18893d24e12805851cf87526a7f&csf=1&web=1&e=Iyo5xP) for details on how to schedule a review.
 
 ## Contacts
 
