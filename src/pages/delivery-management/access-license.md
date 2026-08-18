@@ -35,7 +35,7 @@ For a full list of tools in each tier, see the [AI Toolkit tools catalogue](http
 
 A project, programme, or delivery team that needs GitHub Copilot licences should follow the existing Cloud Centre of Excellence (CCoE) process:
 
-1. Request an Azure subscription service code through [New Cloud Business Service/Application Registration](https://defra.sharepoint.com/:l:/s/def-ddts-cloud/FBgK86cyBo5PqWkyhE6U6J0B7Uw9ZoSO7feq3S9sCoypRg).
+1. Request an Azure subscription service code through [New Cloud Business Service/Application Registration](https://defra.sharepoint.com/:l:/s/def-ddts-cloud/FBGK86cyBo5PqWkyhE6U6J0B7Uw9ZoSO7feq3S9sCoypRg?nav=MTZhNDM5MjgtNmNkZC00ZDk3LTgzNmQtYjc0ZGNhOWE1OWUy).
 2. Raise a [CCoE Azure/AWS Non-Production Service Request](https://defragroup.service-now.com/esc?id=sc_cat_item&sys_id=cedac95b1b224510adf0eb53b24bcb63&table=sc_cat_item) in MyPortal to create a new GitHub cost centre linked to the service code. Include the Azure subscription service code and the GitHub handle of each person who needs a licence in the description field.
 
 See the [GitHub Copilot guidance on the AI Toolkit](https://digital.defra.gov.uk/ai-toolkit/tools/github-copilot) for the full process and usage guidance.

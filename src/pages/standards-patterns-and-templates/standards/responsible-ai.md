@@ -4,7 +4,7 @@ title: Responsible AI
 order: 4
 ---
 
-## Responsible AI
+# Responsible AI
 
 **Responsible AI** is the practice of designing, developing, deploying, and operating AI systems in a way that is ethical, trustworthy, transparent, secure, and accountable. It ensures that AI solutions deliver value while minimising risks such as bias, discrimination, misinformation, privacy breaches, security vulnerabilities, and unintended harmful outcomes. Responsible AI should be embedded throughout the entire AI lifecycle, from discovery and design through to deployment, monitoring, and retirement.
 
