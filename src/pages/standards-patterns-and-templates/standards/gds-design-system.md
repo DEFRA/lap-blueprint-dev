@@ -4,7 +4,7 @@ title: GDS Design System
 order: 4
 ---
 
-## GDS Design System
+# GDS Design System
 
 The **GOV.UK Design System (GDS Design System)** provides a collection of reusable styles, components, patterns, and guidance for building accessible, consistent, and user-centred government digital services. It is based on extensive user research and lessons learned across government services, helping teams avoid reinventing common solutions and focus on solving user needs.
 

@@ -4,7 +4,7 @@ title: WCAG 2.2
 order: 4
 ---
 
-## WCAG 2.2
+# WCAG 2.2
 
 The **Web Content Accessibility Guidelines (WCAG) 2.2** are global standards from the W3C for making digital services accessible to people with disabilities. They cover visual, auditory, physical, cognitive, and neurological accessibility needs and build on WCAG 2.0 and 2.1 while remaining backwards compatible.
 
