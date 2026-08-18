@@ -10,7 +10,7 @@ order: 4
 
 For legacy application modernisation initiatives using Agentic AI, Responsible AI should be treated as a non-functional requirement alongside security, accessibility, and performance. AI capabilities must be governed, monitored, and continuously assessed to ensure they remain aligned with business objectives, legal obligations, and user expectations.
 
-#### Core Responsible AI Principles
+## Core Responsible AI Principles
 
 The following principles should guide the design and implementation of all AI-enabled solutions:
 
@@ -21,7 +21,7 @@ The following principles should guide the design and implementation of all AI-en
 - **Transparency** – Users should understand when and how AI is being used.
 - **Accountability** – Human oversight and governance must remain in place.
 
-#### AI Governance Requirements
+## AI Governance Requirements
 
 All AI-enabled solutions should:
 
@@ -34,7 +34,7 @@ All AI-enabled solutions should:
 - Establish escalation and remediation processes for AI failures.
 - Ensure compliance with organisational, regulatory, and legal requirements.
 
-#### Agentic AI Considerations
+## Agentic AI Considerations
 
 Agentic AI systems introduce additional governance requirements because they can independently plan, reason, and perform actions. When implementing AI agents:
 
@@ -46,7 +46,7 @@ Agentic AI systems introduce additional governance requirements because they can
 - Continuously monitor agent behaviour and performance in production.
 - Ensure humans can intervene, override, or disable agent actions when necessary.
 
-#### Responsible AI Assessment Checklist
+## Responsible AI Assessment Checklist
 
 Before deployment, teams should be able to answer:
 
@@ -59,7 +59,7 @@ Before deployment, teams should be able to answer:
 - How will the solution be monitored and audited?
 - What happens if the AI produces an incorrect or harmful output?
 
-#### References
+## References
 
 - [Microsoft AI principles and approach](https://www.microsoft.com/ai/principles-and-approach)
 - [What is responsible AI? (Microsoft Support)](https://support.microsoft.com/privacy/what-is-responsible-ai)
