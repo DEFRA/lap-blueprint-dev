@@ -1,6 +1,5 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-phase: alpha
 title: Sandbox Provisioning
 order: 5
 ---
@@ -143,11 +142,11 @@ CDRB sessions are held every Wednesday morning. Refer to the [CCoE Engagement Gu
 
 Use these timings for planning. Actual timelines can vary based on queue, priority, and completeness of request information.
 
-| Stage              | Typical duration |
-| ------------------ | ---------------- |
-| Service code       | ~5 working days  |
-| Sprint allocation  | ~2 weeks         |
-| Sandbox build      | 1–2 working days |
+| Stage             | Typical duration |
+| ----------------- | ---------------- |
+| Service code      | ~5 working days  |
+| Sprint allocation | ~2 weeks         |
+| Sandbox build     | 1–2 working days |
 
 For project control, keep a simple tracker in your delivery notes:
 

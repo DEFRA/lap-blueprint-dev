@@ -1,6 +1,5 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-phase: alpha
 title: WCAG 2.2
 order: 4
 ---

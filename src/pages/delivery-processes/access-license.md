@@ -1,6 +1,5 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-phase: alpha
 title: How to access default tools and licences
 order: 4
 ---

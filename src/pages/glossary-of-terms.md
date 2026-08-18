@@ -1,6 +1,5 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-phase: alpha
 title: Glossary of terms
 order: 6
 ---

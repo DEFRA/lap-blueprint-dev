@@ -8,7 +8,7 @@ import pagefind from "astro-pagefind";
 
 export default defineConfig({
   site: "https://defra.github.io",
-  base: "/lap-blueprint",
+  base: process.env.IS_DEV_SITE ? "/lap-blueprint-dev" : "/lap-blueprint",
   trailingSlash: "always",
   vite: {
     css: {

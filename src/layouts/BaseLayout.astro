@@ -5,7 +5,18 @@ import SideNavigation from "../components/SideNavigation.astro";
 import SearchBox from "../components/SearchBox.astro";
 
 const base = import.meta.env.BASE_URL;
-const { frontmatter: { title, phase } = {} } = Astro.props;
+const isDev = !!import.meta.env.IS_DEV_SITE;
+const {
+  frontmatter: {
+    title,
+    phase = isDev
+      ? [
+          "review",
+          "This page is under review and therefore should not be read as official guidance",
+        ]
+      : undefined,
+  } = {},
+} = Astro.props;
 const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
 ---
 
@@ -38,7 +49,7 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
     <link rel="manifest" href={`${base}/assets/manifest.json`} />
   </head>
 
-  <body class="govuk-template__body">
+  <body class={"govuk-template__body" + (isDev ? " dev" : "")}>
     <script>
       document.body.className +=
         " js-enabled" +
@@ -79,11 +90,11 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
           <div class="govuk-phase-banner">
             <p class="govuk-phase-banner__content">
               <strong class="govuk-tag govuk-phase-banner__content__tag">
-                {phase.toUpperCase()}
+                {phase[0].toUpperCase()}
               </strong>
               <span class="govuk-phase-banner__text">
-                This is a new page and may change in the future – your feedback
-                will help us to improve it.
+                {phase[1] ??
+                  "This is a new page and may change in the future – your feedback will help us to improve it."}
               </span>
             </p>
           </div>

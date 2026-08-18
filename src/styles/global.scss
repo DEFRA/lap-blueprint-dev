@@ -5,6 +5,10 @@
 
 :root {
   --govuk-brand-colour: #{govuk-organisation-colour("department-for-environment-food-rural-affairs")};
+  
+}
+body.dev {
+  --govuk-brand-colour: red;
 }
 
 .govuk-header__defra-logo {
