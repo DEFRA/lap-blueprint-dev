@@ -1,9 +1,15 @@
 import { defineHastPlugin } from "satteri";
-import {
-  asArray,
-  getChildElements,
-  mergeProperties,
-} from "../helpers.js";
+import { asArray, getChildElements, mergeProperties } from "../helpers.js";
+
+const SUMMARY_TEXT_TAG_NAMES = new Set([
+  "span",
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+]);
 
 /**
  * Returns `nodes[0]` unchanged when it is already a sole `<tagName>` element;
@@ -27,6 +33,26 @@ function getOrCreateWrapper(nodes, tagName) {
 }
 
 /**
+ * Preserves a sole summary span or heading, ignoring surrounding whitespace;
+ * otherwise wraps all summary content in a new span.
+ *
+ * @param {import('hast').ElementContent[]} nodes - Summary children to inspect.
+ * @returns {import('hast').Element} The existing summary text element or a new span.
+ */
+function getOrCreateSummaryText(nodes) {
+  const meaningfulNodes = nodes.filter(
+    (node) => node.type !== "text" || node.value.trim().length > 0,
+  );
+  const summaryTextNode = meaningfulNodes[0];
+
+  return meaningfulNodes.length === 1 &&
+    summaryTextNode.type === "element" &&
+    SUMMARY_TEXT_TAG_NAMES.has(summaryTextNode.tagName)
+    ? summaryTextNode
+    : getOrCreateWrapper(nodes, "span");
+}
+
+/**
  * Transforms `<details>`/`<summary>` elements into GOV.UK Design System equivalents.
  */
 export const govukDetailsPlugin = defineHastPlugin({
@@ -44,7 +70,7 @@ export const govukDetailsPlugin = defineHastPlugin({
       const contentChildren = asArray(node.children).filter(
         (child) => child !== summaryNode,
       );
-      const span = getOrCreateWrapper(summaryNode.children, "span");
+      const summaryText = getOrCreateSummaryText(summaryNode.children);
       const div = getOrCreateWrapper(contentChildren, "div");
 
       ctx.replaceNode(node, {
@@ -63,11 +89,11 @@ export const govukDetailsPlugin = defineHastPlugin({
             children: [
               {
                 type: "element",
-                tagName: "span",
-                properties: mergeProperties(span.properties, {
+                tagName: summaryText.tagName,
+                properties: mergeProperties(summaryText.properties, {
                   className: ["govuk-details__summary-text"],
                 }),
-                children: span.children,
+                children: summaryText.children,
               },
             ],
           },

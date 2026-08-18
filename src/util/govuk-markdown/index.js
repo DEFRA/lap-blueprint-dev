@@ -7,7 +7,7 @@ import { govukDetailsPlugin } from "./plugins/govukDetailsPlugin.js";
 export const govukMarkdown = [
   tableRowHeaderPlugin,
   buttonLinkPlugin,
-  govukClassPlugin,
   taskListPlugin,
   govukDetailsPlugin,
+  govukClassPlugin,
 ];
