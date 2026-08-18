@@ -1,6 +1,6 @@
 import { defineHastPlugin } from "satteri";
 import { TAG_ATTRIBUTE_MAP } from "../constants.js";
-import { isAsciiCodeBlock, mergeClassNames } from "../helpers.js";
+import { asArray, isAsciiCodeBlock, mergeClassNames } from "../helpers.js";
 
 /**
  * Applies GOV.UK classes and related style cleanup to supported elements.
@@ -16,6 +16,12 @@ export const govukClassPlugin = defineHastPlugin({
     visit(node, ctx) {
       const attributes = TAG_ATTRIBUTE_MAP[node.tagName];
       if (!attributes) return;
+
+      const hasGovukClass = asArray(node.properties?.className).some(
+        (className) =>
+          typeof className === "string" && className.startsWith("govuk-"),
+      );
+      if (hasGovukClass) return;
 
       // Only decorate ASCII code fences as GOV.UK inset text blocks.
       if (node.tagName === "pre" && !isAsciiCodeBlock(node)) return;

@@ -176,8 +176,9 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
       </div>
     </footer>
     <script type="module">
-      import { initGovUK } from "./BaseLayout.js";
+      import { initDetailsFromFragment, initGovUK } from "./BaseLayout.js";
       initGovUK();
+      initDetailsFromFragment();
     </script>
   </body>
 </html>

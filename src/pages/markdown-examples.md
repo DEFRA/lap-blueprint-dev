@@ -116,8 +116,10 @@ Prefix link text with button! to render a GOV.UK button.
 
 Use `<details>` and `<summary>` HTML tags. The Markdown pipeline automatically adds GOV.UK classes.
 
+Add a heading inside the summary to render its text as a linked heading without the standard GOV.UK heading class.
+
 <details>
-<summary>How do I request sandbox access?</summary>
+<summary><h3>How do I request sandbox access?</h3></summary>
 
 Follow [Process P-010](#).
 
@@ -128,7 +130,7 @@ Follow [Process P-010](#).
 
 ```md
 <details>
-<summary>How do I request sandbox access?</summary>
+<summary><h3>How do I request sandbox access?</h3></summary>
 
 Follow [Process P-010](./some/page).
 
