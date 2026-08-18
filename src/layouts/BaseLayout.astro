@@ -5,7 +5,7 @@ import SideNavigation from "../components/SideNavigation.astro";
 import SearchBox from "../components/SearchBox.astro";
 
 const base = import.meta.env.BASE_URL;
-const { frontmatter: { title } = {} } = Astro.props;
+const { frontmatter: { title, phase } = {} } = Astro.props;
 const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
 ---
 
@@ -74,6 +74,21 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
       </div>
     </header>
     <div class="govuk-width-container">
+      {
+        phase && (
+          <div class="govuk-phase-banner">
+            <p class="govuk-phase-banner__content">
+              <strong class="govuk-tag govuk-phase-banner__content__tag">
+                {phase.toUpperCase()}
+              </strong>
+              <span class="govuk-phase-banner__text">
+                This is a new page and may change in the future – your feedback
+                will help us to improve it.
+              </span>
+            </p>
+          </div>
+        )
+      }
       <main class="govuk-main-wrapper" id="main-content">
         <div class="govuk-grid-row">
           <aside class="govuk-grid-column-one-third">
