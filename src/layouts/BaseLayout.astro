@@ -177,8 +177,10 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
     </footer>
     <script type="module">
       import { initDetailsFromFragment, initGovUK } from "./BaseLayout.js";
+      import { initMermaidLightbox } from "../util/mermaidLightbox.js";
       initGovUK();
       initDetailsFromFragment();
+      initMermaidLightbox();
     </script>
   </body>
 </html>

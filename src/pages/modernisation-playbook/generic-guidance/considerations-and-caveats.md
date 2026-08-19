@@ -81,26 +81,22 @@ Do not rely on historic cost estimates for planning or approval. Provider pricin
 
 Choose a model that is approved for the project and proportionate to the task.
 
-| Task type | Selection consideration |
-| --- | --- |
-| Routine curation and standard analysis | A mid-tier model may provide an appropriate balance of quality, speed and cost. |
-| Complex or high-risk analysis | A higher-capability model may be justified where evidence quality is especially important. |
-| High-volume, straightforward transformations | Prefer a capable but cost-effective option, then sample and review outputs for quality. |
+| Task type                                    | Selection consideration                                                                    |
+| -------------------------------------------- | ------------------------------------------------------------------------------------------ |
+| Routine curation and standard analysis       | A mid-tier model may provide an appropriate balance of quality, speed and cost.            |
+| Complex or high-risk analysis                | A higher-capability model may be justified where evidence quality is especially important. |
+| High-volume, straightforward transformations | Prefer a capable but cost-effective option, then sample and review outputs for quality.    |
 
 Model names, capabilities, pricing and availability change over time. Confirm the current options with the provider documentation and organisational AI-tooling guidance before making a project-wide choice.
 
 ## Troubleshooting
 
-| Situation | Action |
-| --- | --- |
+| Situation                                                    | Action                                                                                                                                     |
+| ------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | Content curation does not finish for a large number of files | Process the work in smaller, resumable batches. Preserve completed outputs and verify the expected output count before moving to analysis. |
-| A Mermaid diagram does not render | Validate the affected output, correct the syntax and rerun the page or output validation. |
-| An analysis agent stops before completion | Rerun the analysis from the original inputs. Review the regenerated output for completeness before accepting it. |
-| A plugin or extension is unavailable | Check its installation and configuration, then start a new AI assistant session so configuration changes can be recognised. |
-| Generated output is incomplete or inaccurate | Return to the relevant source material, improve the inputs or evidence, rerun the affected stage and repeat human review. |
+| A Mermaid diagram does not render                            | Validate the affected output, correct the syntax and rerun the page or output validation.                                                  |
+| An analysis agent stops before completion                    | Rerun the analysis from the original inputs. Review the regenerated output for completeness before accepting it.                           |
+| A plugin or extension is unavailable                         | Check its installation and configuration, then start a new AI assistant session so configuration changes can be recognised.                |
+| Generated output is incomplete or inaccurate                 | Return to the relevant source material, improve the inputs or evidence, rerun the affected stage and repeat human review.                  |
 
 For issues that affect information security, personal data, source-code access or operational safety, stop automated processing and follow the appropriate project escalation route.
-
-## Source material
-
-This page adapts the AI-Enabled Legacy Modernisation Playbook guidance on [Considerations & Caveats](https://defra.github.io/defra-ai-modernisation-playbook/pages/considerations/), [Information Governance](https://defra.github.io/defra-ai-modernisation-playbook/pages/considerations/information-governance/), [PII Handling](https://defra.github.io/defra-ai-modernisation-playbook/pages/considerations/pii-handling/), [AI Output Quality](https://defra.github.io/defra-ai-modernisation-playbook/pages/considerations/ai-quality/), [Cost & Token Usage](https://defra.github.io/defra-ai-modernisation-playbook/pages/considerations/cost-and-tokens/), [Model Selection](https://defra.github.io/defra-ai-modernisation-playbook/pages/considerations/model-selection/) and [Troubleshooting](https://defra.github.io/defra-ai-modernisation-playbook/pages/considerations/troubleshooting/).

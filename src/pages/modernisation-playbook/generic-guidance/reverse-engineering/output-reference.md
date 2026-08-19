@@ -12,15 +12,15 @@ Use this reference with the [Process](../process/) guidance when reviewing gener
 
 ## Output lifecycle
 
-| Category | Artefact | Location | Purpose |
-| --- | --- | --- | --- |
-| Intermediate | HTML mock-ups | `output/html/` | Machine-readable representations of legacy application screens |
-| Intermediate | Curated transcripts | `output/transcripts/` | Focused stakeholder evidence with off-topic content removed |
-| Analysis | Domain analysis | `output/domain-analysis.md` | Domain language, boundaries, actors and rules |
-| Analysis | Interaction analysis | `output/interaction-analysis.md` | Screens, workflows and navigation |
-| Analysis | Application analysis | `output/application-analysis.md` | Architecture, application behaviour and integrations |
-| Analysis | Database analysis | `output/database-analysis.md` | Schema, database logic and data constraints |
-| Final deliverable | Product Requirements Document | `output/PRD.md` | Stakeholder-facing requirements for the replacement application |
+| Category          | Artefact                      | Location                         | Purpose                                                         |
+| ----------------- | ----------------------------- | -------------------------------- | --------------------------------------------------------------- |
+| Intermediate      | HTML mock-ups                 | `output/html/`                   | Machine-readable representations of legacy application screens  |
+| Intermediate      | Curated transcripts           | `output/transcripts/`            | Focused stakeholder evidence with off-topic content removed     |
+| Analysis          | Domain analysis               | `output/domain-analysis.md`      | Domain language, boundaries, actors and rules                   |
+| Analysis          | Interaction analysis          | `output/interaction-analysis.md` | Screens, workflows and navigation                               |
+| Analysis          | Application analysis          | `output/application-analysis.md` | Architecture, application behaviour and integrations            |
+| Analysis          | Database analysis             | `output/database-analysis.md`    | Schema, database logic and data constraints                     |
+| Final deliverable | Product Requirements Document | `output/PRD.md`                  | Stakeholder-facing requirements for the replacement application |
 
 ## Intermediate artefacts
 
@@ -138,7 +138,3 @@ Where the analysis provides sufficient evidence, the PRD can cover:
 - open questions, known limitations and a domain glossary
 
 Before stakeholder review, verify that all four analysis files are used as sources, requirements are traceable to evidence, domain terms are consistent, open questions record genuine ambiguities and all Mermaid diagrams render correctly. The Application Product Owner approves the PRD at the end of the [PRD review and sign-off](../process/) stage.
-
-## Source material
-
-This page adapts the AI-Enabled Legacy Modernisation Playbook's [Output Reference overview](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/output-reference/) and its guidance on [HTML mock-ups](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/output-reference/html-mockups/), [curated transcripts](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/output-reference/curated-transcripts/), [domain analysis](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/output-reference/domain-analysis/), [interaction analysis](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/output-reference/interaction-analysis/), [application analysis](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/output-reference/application-analysis/), [database analysis](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/output-reference/database-analysis/) and [the PRD](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/output-reference/prd/).

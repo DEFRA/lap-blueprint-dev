@@ -80,11 +80,12 @@ npm run build
 
 ## Internal links
 
-Internal page links should be relative, omit the .md extension, and end with a trailing slash.
+Internal page links should be relative, omit the .md extension, and end with a trailing slash. Use `~/` to link from the site root when that is clearer than repeated parent segments.
 
 - [Home](#)
 - [Processes index](#)
 - [Process P-001](#)
+- [AI catalogue](~/ai-catalogue/)
 
 <details>
 <summary>View source (md)</summary>
@@ -93,6 +94,7 @@ Internal page links should be relative, omit the .md extension, and end with a t
 - [Home](./)
 - [Processes index](./processes/)
 - [Process P-001](./processes/p-001-scan-code-for-pii/)
+- [AI catalogue](~/ai-catalogue/)
 ```
 
 </details>

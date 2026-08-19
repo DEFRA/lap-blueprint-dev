@@ -6,9 +6,11 @@ import { mermaidThemeConfig } from "./src/util/mermaidTheme.js";
 import mermaid from "astro-mermaid";
 import pagefind from "astro-pagefind";
 
+const base = process.env.IS_DEV_SITE ? "/lap-blueprint-dev" : "/lap-blueprint";
+
 export default defineConfig({
   site: "https://defra.github.io",
-  base: process.env.IS_DEV_SITE ? "/lap-blueprint-dev" : "/lap-blueprint",
+  base,
   trailingSlash: "always",
   vite: {
     css: {
@@ -35,7 +37,7 @@ export default defineConfig({
       type: "shiki",
     },
     processor: satteri({
-      hastPlugins: [rawHtmlPlugin, ...govukMarkdown],
+      hastPlugins: [rawHtmlPlugin, ...govukMarkdown({ baseUrl: base })],
     }),
   },
 });
