@@ -49,30 +49,44 @@ These standards must be reviewed and satisfied prior to submitting a LAP AI Agen
 
 1. Clone the [DEFRA AI config examples repository](https://github.com/DEFRA/defra-ai-config-examples).
 
-2. Ensure that all new definitions follow the LAP naming convention:\
+2. Ensure that all new definitions has the LAP prefix:\
    LAP-(your AI definition name)\
    For example:
-   - LAP-Casework-Agent
-   - LAP-Document-Summariser
-   - LAP-Inspection-Skill
+   - lap-casework...
+   - lap-document...
+   - lap-inspection...
 
-3. Following the navigation structure please place your LAP specific AI definitions under relevant sections. Please make sure default.html is updated so navigation updates could take place for your definitions:
+3. Following the navigation structure please place your LAP specific AI definitions under relevant sections. Please make sure **default.html** is updated so navigation updates could take place for your definitions:
+
+   3.1 Follow existing navigation structure in "default.html" as below:
 
    ```ascii
    Agents
    ├── ...
    └── LAP Implementations
        ├── GitHub Copilot
-       ├── your agent
+       ├────── your agents links to the correct file
        ├── Claude
        ├── Speckit
        ├── OpenAI
        └── Other
    ```
+   3.2 Follow existing folder structure in the repository to place your agents
 
-   Any other supporting AI configuration files such as images or docs etc...should go in the repo under assets and link accordingly from your definition documentation
+      ```ascii
+   Agents
+   ├── ...
+       ├── lap-gitHub-copilot
+       ├────── your agents files go here
+       ├── lap-claude
+       ├── lap-speckit
+       ├── lap-openAI
+       └── lap-other
+   ```
 
-   Please follow same structure in case you have other AI definitions such as Instructions, Prompts and Skills
+   **Please follow same structure in case you have other AI definitions such as Instructions, Prompts and Skills**
+
+   Any other supporting AI configuration files such as images or docs etc...should go in the repo under assets and link accordingly from your definition documentation   
 
 4. Create a Pull Request (PR) and once it is reviewed, please kindly merge your changes into the repository. You may need contributor access to the repo, please contact the Owners/Contributors of the [DEFRA AI config examples repository](https://github.com/DEFRA/defra-ai-config-examples) or Contact "neil.davies@defra.gov.uk" as the Program Manager for LAP programme or "AICapabilitiesEnablement@defra.gov.uk" for both contributor access to the review and have your PR reviewed.
 
@@ -85,8 +99,6 @@ Delivery lead (process coordination), engineering lead (Ai Directory repository 
 
 **Related Agent/Tool Links:**
 
-- [AI Directory - AGENTS](https://defra.github.io/defra-ai-config-examples/pages/agents/)
-- [AI Directory - INSTRUCTIONS](https://defra.github.io/defra-ai-config-examples/pages/instructions/)
-- [AI Directory - PROMPTS](https://defra.github.io/defra-ai-config-examples/pages/prompts/)
-- [AI Directory - SKILLS](https://defra.github.io/defra-ai-config-examples/pages/skills/)
+- [AI Directory - AGENTS](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/)
+- [AI Directory - SKILLS](https://defra.github.io/defra-ai-config-examples/pages/skills/lap-gitHub-copilot/)
 
