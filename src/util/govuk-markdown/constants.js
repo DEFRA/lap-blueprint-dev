@@ -22,7 +22,7 @@ export const TAG_ATTRIBUTE_MAP = {
   h5: { class: ["govuk-heading-s"] },
   h6: { class: ["govuk-heading-s"] },
   p: { class: ["govuk-body"] },
-  a: { class: ["govuk-link"] },
+  a: { class: ["govuk-link", "govuk-link--no-visited-state"] },
   pre: { class: ["govuk-inset-text"] },
   ul: { class: ["govuk-list", "govuk-list--bullet"] },
   ol: { class: ["govuk-list", "govuk-list--number"] },

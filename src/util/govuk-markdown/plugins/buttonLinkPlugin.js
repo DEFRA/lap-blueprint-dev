@@ -1,6 +1,7 @@
 import { defineHastPlugin } from "satteri";
 import { BUTTON_LINK_PREFIX } from "../constants.js";
 import { asArray, mergeProperties } from "../helpers.js";
+import { TAG_ATTRIBUTE_MAP } from "../constants.js";
 
 /**
  * Matches link text flagged for GOV.UK button styling.
@@ -30,7 +31,7 @@ export const buttonLinkPlugin = defineHastPlugin({
       const existing = asArray(node.properties?.className);
       const cleanLabel = text.replace(BUTTON_LINK_PREFIX, "").trimStart();
       const nonLinkClasses = existing.filter(
-        (className) => className !== "govuk-link",
+        (className) => !TAG_ATTRIBUTE_MAP.a.class.includes(className),
       );
 
       ctx.replaceNode(node, {
