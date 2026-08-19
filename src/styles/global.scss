@@ -11,6 +11,10 @@ body.dev {
   --govuk-brand-colour: red;
 }
 
+.govuk-header__homepage-link {
+  display: inline-block;
+}
+
 .govuk-header__defra-logo {
   width: auto;
   max-width: 100%;
