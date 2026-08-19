@@ -9,11 +9,11 @@ The Re-Engineering process takes an approved PRD and turns it into reviewed, imp
 
 ## Input and outputs
 
-| Type | Location | Purpose |
-| --- | --- | --- |
-| Input | `output/PRD.md` | The approved requirements for the legacy application |
-| Intermediate output | `output/features/FT-*.md` | One feature specification for each independently deliverable unit of work |
-| Delivery output | Target application repository | Implemented, tested and reviewed features |
+| Type                | Location                      | Purpose                                                                   |
+| ------------------- | ----------------------------- | ------------------------------------------------------------------------- |
+| Input               | `output/PRD.md`               | The approved requirements for the legacy application                      |
+| Intermediate output | `output/features/FT-*.md`     | One feature specification for each independently deliverable unit of work |
+| Delivery output     | Target application repository | Implemented, tested and reviewed features                                 |
 
 ## The six phases
 
@@ -58,11 +58,11 @@ Each feature should:
 
 Order features from the bottom up:
 
-| Build layer | Typical content |
-| --- | --- |
-| Lowest | Shared reference data, core entities and data models |
-| Middle | Domain screens, workflows and business capabilities |
-| Highest | Authentication, authorisation, navigation shells, landing pages and dashboards |
+| Build layer | Typical content                                                                |
+| ----------- | ------------------------------------------------------------------------------ |
+| Lowest      | Shared reference data, core entities and data models                           |
+| Middle      | Domain screens, workflows and business capabilities                            |
+| Highest     | Authentication, authorisation, navigation shells, landing pages and dashboards |
 
 The feature plan records identifiers, titles, priorities, build layers and dependencies. A feature's build layer is one greater than the highest layer of its upstream dependencies, or zero when it has none. Confirm the plan before feature specifications are generated.
 
@@ -136,7 +136,3 @@ Review:
 - `PROGRESS.md` for recurring failures, unresolved work, useful learning and commands that did not run as expected
 
 If issues are found, improve the implementation or update the relevant specification before continuing. When the feature is accepted, archive the loop artefacts and move to the next feature in build-layer order.
-
-## Source material
-
-This page adapts the [Re-Engineering process overview](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/process/) and its guidance for [feature decomposition](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/process/feature-decomposition/), [feature plan review](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/process/feature-plan-review/), [feature specification review and sign-off](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/process/feature-review-and-signoff/), [project setup](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/process/project-setup/), [autonomous build](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/process/autonomous-build/) and [implementation review](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/process/implementation-review/).

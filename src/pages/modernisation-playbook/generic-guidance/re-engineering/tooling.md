@@ -10,7 +10,7 @@ Re-Engineering combines feature decomposition with Ralph for iterative autonomou
 ## Toolchain
 
 ```mermaid
-flowchart LR
+flowchart TD
 	PRD["Approved PRD"]
 	Decomposition["Feature decomposition"]
 	Specifications["Feature specifications"]
@@ -49,13 +49,13 @@ Confirm current installation steps and supported backends in the [Ralph document
 
 ### Key commands
 
-| Command | Purpose |
-| --- | --- |
-| `ralph sandbox` | Enter the devcontainer sandbox before autonomous work |
-| `ralph init` | Initialise the shared workspace artefacts |
-| `ralph plan` | Create or update the implementation plan from the specification and codebase |
-| `ralph build` | Implement, test, commit and push plan items one at a time |
-| `ralph archive` | Archive loop artefacts before starting the next feature |
+| Command         | Purpose                                                                      |
+| --------------- | ---------------------------------------------------------------------------- |
+| `ralph sandbox` | Enter the devcontainer sandbox before autonomous work                        |
+| `ralph init`    | Initialise the shared workspace artefacts                                    |
+| `ralph plan`    | Create or update the implementation plan from the specification and codebase |
+| `ralph build`   | Implement, test, commit and push plan items one at a time                    |
+| `ralph archive` | Archive loop artefacts before starting the next feature                      |
 
 Always start autonomous work with `ralph sandbox`. Ralph can use non-interactive tool permissions; the devcontainer is the isolation boundary that prevents an unattended agent from operating directly on the host machine.
 
@@ -63,19 +63,19 @@ Before starting a build loop, review the proposed scope. When an explicit iterat
 
 ### Project artefacts
 
-| Artefact | Purpose |
-| --- | --- |
+| Artefact                   | Purpose                                                                               |
+| -------------------------- | ------------------------------------------------------------------------------------- |
 | `AGENTS.md` or `CLAUDE.md` | Operational instructions, commands, conventions and guardrails maintained by the team |
-| `IMPLEMENTATION_PLAN.md` | Prioritised work shared between agent iterations |
-| `PROGRESS.md` | Append-only log of activity, learning, failures and unresolved work |
-| `specs/` | Approved feature specifications that drive the current build |
-| `rules/` | Detailed project standards used by the agent when making implementation decisions |
+| `IMPLEMENTATION_PLAN.md`   | Prioritised work shared between agent iterations                                      |
+| `PROGRESS.md`              | Append-only log of activity, learning, failures and unresolved work                   |
+| `specs/`                   | Approved feature specifications that drive the current build                          |
+| `rules/`                   | Detailed project standards used by the agent when making implementation decisions     |
 
 ## Working across the two projects
 
 Re-Engineering normally uses a source project containing the PRD and feature specifications, and a separate target application project where the replacement is built.
 
-```text
+```ascii
 re-engineering-project/
 	output/
 		PRD.md
@@ -94,7 +94,3 @@ target-application-project/
 ```
 
 Copy one approved feature specification into the target project's `specs/` directory at a time. Complete the plan, build and implementation-review cycle before progressing to the next feature.
-
-## Source material
-
-This page adapts the [Re-Engineering Tooling](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/tooling/) and [Ralph](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/tooling/ralph/) guidance from the AI-Enabled Legacy Modernisation Playbook.

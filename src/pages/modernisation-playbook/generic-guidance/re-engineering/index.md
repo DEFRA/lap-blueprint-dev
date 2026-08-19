@@ -23,7 +23,3 @@ Features are implemented one at a time in build-layer order. Each completed impl
 
 - [Process](./process/): feature decomposition, reviews, project setup, autonomous build and implementation review
 - [Tooling](./tooling/): feature-decomposition agents, Ralph and the expected project layout
-
-## Source material
-
-This page adapts the [Re-Engineering overview](https://defra.github.io/defra-ai-modernisation-playbook/pages/re-engineering/) from the AI-Enabled Legacy Modernisation Playbook.

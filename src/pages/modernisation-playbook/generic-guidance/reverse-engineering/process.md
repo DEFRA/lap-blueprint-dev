@@ -12,11 +12,11 @@ The reverse engineering process turns legacy application artefacts into a Produc
 
 Collect all three mandatory input types. Omitting an input type will reduce the completeness of the resulting analysis and PRD.
 
-| Input | Suggested location | Contribution |
-| --- | --- | --- |
-| Source code | `src/` | Application behaviour, business rules and data model |
-| User interface screenshots | `screenshots/` | Visible screens, layouts and user workflows |
-| Stakeholder interview transcripts | `transcripts/` | Domain knowledge, business context and user perspectives not evident in code |
+| Input                             | Suggested location | Contribution                                                                 |
+| --------------------------------- | ------------------ | ---------------------------------------------------------------------------- |
+| Source code                       | `src/`             | Application behaviour, business rules and data model                         |
+| User interface screenshots        | `screenshots/`     | Visible screens, layouts and user workflows                                  |
+| Stakeholder interview transcripts | `transcripts/`     | Domain knowledge, business context and user perspectives not evident in code |
 
 Transcripts must be free of personally identifiable information before they are processed.
 
@@ -45,11 +45,11 @@ flowchart TD
 
 Gather complete, relevant source material before analysis begins.
 
-| Input | Requirements | Good practice |
-| --- | --- | --- |
-| Screenshots | Capture all screens and important states, including errors, confirmation dialogs and administrative views. Common image formats include PNG, JPG, GIF, BMP and WebP. | Capture populated and empty states, and views for each user role where applicable. Work through the application systematically rather than relying on memory. |
-| Source code | Include the complete solution, including database projects, SQL scripts and configuration files. | Consolidate code from multiple repositories under `src/` where possible. Partial source code can lead to incomplete analysis. |
-| Interview transcripts | Use plain-text transcripts from recorded interviews, with PII removed before processing. | Ask users to demonstrate and narrate real workflows. Separate recordings by topic or user role when this improves clarity. |
+| Input                 | Requirements                                                                                                                                                         | Good practice                                                                                                                                                 |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Screenshots           | Capture all screens and important states, including errors, confirmation dialogs and administrative views. Common image formats include PNG, JPG, GIF, BMP and WebP. | Capture populated and empty states, and views for each user role where applicable. Work through the application systematically rather than relying on memory. |
+| Source code           | Include the complete solution, including database projects, SQL scripts and configuration files.                                                                     | Consolidate code from multiple repositories under `src/` where possible. Partial source code can lead to incomplete analysis.                                 |
+| Interview transcripts | Use plain-text transcripts from recorded interviews, with PII removed before processing.                                                                             | Ask users to demonstrate and narrate real workflows. Separate recordings by topic or user role when this improves clarity.                                    |
 
 ### 2. Content curation
 
@@ -87,12 +87,12 @@ If an output fails review, rerun the relevant curation step against the original
 
 Specialist analysis roles examine the curated content and source code. The content and code analysis can run in parallel, while PRD synthesis waits for all analysis outputs.
 
-| Analyst | Focus | Output |
-| --- | --- | --- |
-| Business analyst | Domain language, bounded contexts, subdomains and context maps from curated transcripts and HTML mock-ups | `output/domain-analysis.md` |
-| Interaction analyst | Screen inventory, user workflows and navigation from HTML mock-ups and curated transcripts | `output/interaction-analysis.md` |
-| Application developer | Application workflows, behaviour, domain model, business rules and integration points from source code | `output/application-analysis.md` |
-| Database analyst | Schema, stored procedures, triggers, constraints and database business rules from SQL and database code | `output/database-analysis.md` |
+| Analyst               | Focus                                                                                                     | Output                           |
+| --------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| Business analyst      | Domain language, bounded contexts, subdomains and context maps from curated transcripts and HTML mock-ups | `output/domain-analysis.md`      |
+| Interaction analyst   | Screen inventory, user workflows and navigation from HTML mock-ups and curated transcripts                | `output/interaction-analysis.md` |
+| Application developer | Application workflows, behaviour, domain model, business rules and integration points from source code    | `output/application-analysis.md` |
+| Database analyst      | Schema, stored procedures, triggers, constraints and database business rules from SQL and database code   | `output/database-analysis.md`    |
 
 ```mermaid
 flowchart TD
@@ -136,7 +136,3 @@ Check the PRD against the source material and interview evidence:
 - **Domain language**: terms, bounded contexts and concepts reflect stakeholder understanding rather than only code-level naming.
 
 The phase ends when the Application Product Owner confirms that the PRD accurately represents the application and signs it off. The approved PRD is then ready for implementation planning.
-
-## Source material
-
-This page adapts the [Reverse Engineering process overview](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/process/) and its guidance for [gathering inputs](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/process/gather-inputs/), [content curation](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/process/content-curation/), [reviewing curated outputs](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/process/review-curated-outputs/), [analysis and PRD generation](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/process/analysis-and-prd/) and [PRD review and sign-off](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/process/prd-review-and-signoff/).

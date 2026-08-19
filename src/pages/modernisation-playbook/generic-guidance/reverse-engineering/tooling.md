@@ -29,10 +29,10 @@ Use the [Process](../process/) guidance to understand where these activities fit
 Before installing the plugin:
 
 1. Install and authenticate GitHub Copilot in Visual Studio Code. Follow the [official GitHub Copilot setup guide](https://code.visualstudio.com/docs/copilot/setup).
-2. Confirm that you have the required GitHub and repository access. See the local [GitHub Access](../../../../delivery-management/github-access/) guidance.
+2. Confirm that you have the required GitHub and repository access. See the local [GitHub Access](~/delivery-management/github-access/) guidance.
 3. In Visual Studio Code Settings, enable the settings documented by the plugin:
-	 - `chat.customAgentInSubagent.enabled`
-	 - `chat.useAgentSkills`
+   - `chat.customAgentInSubagent.enabled`
+   - `chat.useAgentSkills`
 4. Prepare a working project folder using the directory structure below.
 
 The availability of models, agents and plugin features can change. Check the plugin documentation and your organisation's current AI-tooling standards before beginning a delivery engagement.
@@ -70,18 +70,18 @@ Do not treat generated content as authoritative without review. The delivery tea
 
 Set up the project folder before running the plugin. Input directories hold material supplied by the team; the tooling creates the output directories and analysis files.
 
-| Directory | Type | Contents |
-| --- | --- | --- |
-| `screenshots/` | Input | User interface screenshots of the legacy application |
-| `transcripts/` | Input | PII-free stakeholder interview transcripts in plain text |
-| `src/` | Input | Legacy application source code |
-| `output/` | Generated | Analysis outputs and the PRD |
-| `output/html/` | Generated | Semantic HTML mock-ups created from screenshots |
-| `output/transcripts/` | Generated | Curated interview transcripts |
+| Directory             | Type      | Contents                                                 |
+| --------------------- | --------- | -------------------------------------------------------- |
+| `screenshots/`        | Input     | User interface screenshots of the legacy application     |
+| `transcripts/`        | Input     | PII-free stakeholder interview transcripts in plain text |
+| `src/`                | Input     | Legacy application source code                           |
+| `output/`             | Generated | Analysis outputs and the PRD                             |
+| `output/html/`        | Generated | Semantic HTML mock-ups created from screenshots          |
+| `output/transcripts/` | Generated | Curated interview transcripts                            |
 
 Use the following layout as a starting point:
 
-```text
+```ascii
 project/
 	screenshots/
 		home.png
@@ -107,7 +107,7 @@ project/
 
 The HTML mock-ups and curated transcripts are intermediate artefacts that can be regenerated from the original inputs. Consider excluding them from version control:
 
-```text
+```ascii
 # Regeneratable intermediate outputs
 output/html/
 output/transcripts/
@@ -122,7 +122,3 @@ Commit the PRD and four analysis files because they are delivery outputs:
 - `output/database-analysis.md`
 
 Store and control access to input artefacts according to the project's information governance arrangements. Do not use version control exclusions as a substitute for removing PII or secrets before processing material.
-
-## Source material
-
-This page adapts the [Reverse Engineering Tooling](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/tooling/), [GitHub Copilot](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/tooling/copilot/) and [Project Directory Structure](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/tooling/directory-structure/) guidance from the AI-Enabled Legacy Modernisation Playbook.

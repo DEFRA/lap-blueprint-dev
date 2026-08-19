@@ -16,7 +16,7 @@ COMPLIANCE: Treat the rules below as the default for all authored Markdown conte
 - Prefer Markdown over raw HTML whenever Markdown can express the content clearly.
 - When raw HTML is required anywhere in a Markdown file, add the appropriate GOV.UK classes manually because automatic GOV.UK class decoration only applies to Markdown-generated HTML.
 - Use Mermaid diagrams instead of ASCII flow diagrams for process, journey, and decision flows.
-- Follow the internal link rules exactly: internal page links must be relative, must end with a trailing `/`, and must omit the source `.md` extension.
+- Follow the internal link rules exactly: internal page links must be relative or use the `~/` site-root shorthand, must end with a trailing `/`, and must omit the source `.md` extension.
 
 </CRITICAL_REQUIREMENT>
 
@@ -157,11 +157,12 @@ This repository is deployed through Astro to GitHub Pages with trailing slashes 
 
 ### Required Rules
 
-1. Internal page links must be relative.
+1. Internal page links must be relative, or use `~/` when linking from the site root is clearer.
 2. Internal page links must end with a trailing `/`.
 3. Internal page links must omit the `.md` extension.
 4. Links to sibling pages must start with `../`.
-5. The same rules apply in Markdown links, raw HTML `href` values, and Mermaid node labels.
+5. Markdown links and raw HTML `href` values that start with `~/` are replaced with the configured Astro base URL (`import.meta.env.BASE_URL`) during Markdown rendering.
+6. Internal links in Mermaid node labels should continue to use standard relative links unless they are plain HTML anchors that the Markdown pipeline can transform.
 
 ### Examples
 
@@ -175,6 +176,12 @@ Correct child-page link from an index page:
 
 ```md
 [Process P-001](./p-001-scan-code-for-pii/)
+```
+
+Correct site-root shorthand link:
+
+```md
+[AI catalogue](~/ai-catalogue/)
 ```
 
 Incorrect forms:

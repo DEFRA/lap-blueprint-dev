@@ -10,9 +10,12 @@ Reverse engineering takes a legacy application and produces a Product Requiremen
 
 ## Inputs and outcome
 
-The phase needs three input types:
+The phase needs some input types:
 
 - complete source code for the application
+
+These inputs are optional, but can improve the results drastically:
+
 - screenshots of the application's user interface
 - transcripts from interviews with application users and product owners
 
@@ -31,7 +34,3 @@ The outcome is a PRD that stakeholders have reviewed and signed off, ready for [
 - [Process](./process/): the five-phase journey, inputs, review gates and final outcome
 - [Tooling](./tooling/): AI coding assistants, plugins and project structure
 - [Output Reference](./output-reference/): artefacts produced during reverse engineering
-
-## Source material
-
-This page adapts the [Reverse Engineering overview](https://defra.github.io/defra-ai-modernisation-playbook/pages/reverse-engineering/) from the AI-Enabled Legacy Modernisation Playbook.
