@@ -91,11 +91,11 @@ The request follows five steps. Some are handled for you; the table shows who is
 | ---- | -------------------------------------------------------------------------- | ------------------------- |
 | 1    | Request a Cloud account (only if you don't already have DEFRA credentials) | Supplier PMO              |
 | 2    | Cloud account created                                                      | DEFRA PMO                 |
-| 3    | Request OpenVPN access using the Microsoft form                            | The user requiring access |
+| 3    | Request OpenVPN access using the portal linked below                       | The user requiring access |
 | 4    | Request reviewed and approved                                              | DEFRA, via ServiceNow     |
 | 5    | Follow the instructions to download and connect                            | The user requiring access |
 
-To submit your request, complete the [OpenVPN access request form](https://forms.office.com/pages/responsepage.aspx?id=UCQKdycCYkyQx044U38RAnewVW-y76FOg9x9-9NzhU1UNzMxNDc5TkY1WU5IQ0cxUTNQNlRGUkRPRSQlQCN0PWcu).
+To submit your request, complete the information requested on the [OpenVPN access portal](https://defragroup.service-now.com/esc?id=kb_article&table=kb_knowledge&sys_id=ce3cafdb83627d10eb2fa940ceaad384).
 
 Once you've submitted the form, you should receive:
 
