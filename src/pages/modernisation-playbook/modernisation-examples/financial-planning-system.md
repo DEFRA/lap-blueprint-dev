@@ -119,16 +119,20 @@ Taken from the codebase manifest and configuration files.
 
 ## Benefits, outcomes and success metrics
 
-| Benefit / outcome | Evidence / metric | Status |
+The main benefits are financial and operational. The rebuild has delivered the
+foundations for each; the pound and time figures need a post-go-live baseline to
+confirm.
+
+| Benefit / outcome | How it is delivered | Status |
 |---|---|---|
-| Automated test coverage exceeds 90% Defra threshold | 94.5% line coverage, 79.4% branch coverage; 122 tests passing (coverage report generated 09/07/2026) | Achieved |
-| WCAG 2.2 AA accessibility compliance | govuk-frontend 6.3.0 applied throughout; automated axe-core audit tooling in the repository; GDS component patterns used for all interactive elements | Achieved |
-| GDS / GOV.UK Design System compliance | Tudor Crown header, GOV.UK footer, GDS Transport font, service navigation, labelled form controls, error summaries present in codebase | Achieved |
-| Web-accessible — no desktop installation required | Application is a browser-based Blazor Server app; authorised users can access it from any supported browser | Achieved |
-| Structured authentication and role-based access control | Microsoft Entra ID (OpenID Connect) integrated; data scoped per user to assigned profit centres, programmes, categories, test owners, and project groups | Achieved |
-| Secrets not in source code | Secrets management integrated; no credentials in application configuration files; container runs as a non-root user | Achieved |
-| Observability from day one | Application Insights telemetry and structured logging wired in at application startup | Achieved |
-| Infrastructure provisioned repeatably via code | Azure Bicep templates cover all required cloud resources | Achieved |
-| All 20 planned feature areas implemented | FT-001 to FT-020 — from reference data and resource management through to programme profitability, audit, snapshots, and surveillance reporting | Achieved |
-| Reduction in user support burden from desktop access issues | To be confirmed — requires post-go-live measurement | To be confirmed |
-| Time saved per planning cycle compared with the legacy application | To be confirmed — requires a baseline from legacy operation and a post-go-live comparison | To be confirmed |
+| Lower support and running costs | Browser-based access removes the need to install and maintain Microsoft Access on managed desktops, and the support effort that desktop-only access created | Delivered; saving to be quantified |
+| Time saved each planning cycle | Calculations, plan-vs-actual comparison and reporting are automated rather than maintained by hand in Access | Delivered; time saving to be quantified |
+| Reduced business-continuity and key-person risk | An ageing, hard-to-maintain Access/VBA application is replaced by a supported, layered .NET application with 94.5% automated test coverage across 122 tests | Achieved |
+| Lower risk of inappropriate access to financial data | Microsoft Entra ID sign-in with role-based, per-user data scoping replaces reliance on Windows file permissions | Achieved |
+| Stronger financial governance and auditability | A structured audit trail and Application Insights telemetry provide traceability that Access could not | Achieved |
+| No loss of capability | All 20 feature areas reproduced, from project cost planning through to programme profitability | Achieved |
+| Meets the public sector accessibility legal duty | WCAG 2.2 AA met through the GOV.UK Design System, with automated axe-core checks in the repository | Achieved |
+
+The two financial measures — reduction in desktop-support cost and time saved per
+planning cycle — need a baseline from legacy operation and a comparison after go-live
+before they can be reported as figures.
