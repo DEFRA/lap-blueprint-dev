@@ -18,25 +18,23 @@ title: Financial Planning System (FPS) modernisation example
 
 ## Project summary
 
-The Financial Planning System (FPS), also known as MAP (Management Accounting
-Planning), is the primary financial planning and cost management tool for the Animal
-and Plant Health Agency (APHA), a Defra group organisation. The system is used to
-plan the annual costs of delivering scientific and veterinary services across multiple
-government and externally funded programmes. It manages staff time, laboratory test
-requirements, animal usage, and exceptional expenditure at the project level, and
-compares those plans against actuals drawn from the corporate PACT time-recording and
-finance system.
+The Financial Planning System (FPS), also called MAP (Management Accounting
+Planning), is the main financial planning and cost management tool for the Animal and
+Plant Health Agency (APHA), a Defra group organisation. It plans the annual cost of
+delivering scientific and veterinary services across government and externally funded
+programmes — staff time, laboratory tests, animal usage and exceptional spend at
+project level — then compares those plans against actuals from the corporate PACT
+time-recording and finance system.
 
-FPS was originally built as a Microsoft Access desktop application and maintained over
-many years. It was modernised to a .NET 10 Blazor web application, bringing it in line
-with Defra software development standards and GDS design principles. Authorised users
-can now access the service from any supported browser without needing a desktop
-installation.
+FPS began as a Microsoft Access desktop application. It has been modernised into a
+.NET 10 Blazor web application that meets Defra software development standards and GDS
+design principles. Authorised users now reach the service from any supported browser,
+with no desktop install.
 
-The modernisation reproduces all 20 planned feature areas — covering project cost
-planning, programme management, resource and charge-rate management, laboratory
-services, plan-vs-actual reporting, snapshot management, audit, and administration —
-with 94.5% automated line coverage across 122 tests.
+The rebuild reproduces all 20 feature areas — project cost planning, programme
+management, resource and charge-rate management, laboratory services, plan-vs-actual
+reporting, snapshots, audit and administration — with 94.5% line coverage across 122
+tests.
 
 | At a glance | |
 |---|---|
@@ -49,123 +47,67 @@ with 94.5% automated line coverage across 122 tests.
 
 ### As-is
 
-FPS was a Microsoft Access desktop application with business logic embedded in VBA
-behind form-based screens. This created tight coupling between the user interface and
-the underlying calculations, making the application difficult to test in isolation,
-difficult to extend safely, and impossible to audit for security or accessibility
-compliance.
+FPS was a Microsoft Access desktop application with its business logic embedded in VBA
+behind form-based screens. The user interface and the calculations were tightly
+coupled, so the application was hard to test, risky to change and impossible to audit
+for security or accessibility.
 
-The application ran only on managed Windows desktops. Users needed Access installed on
-their machine to use the service. There were approximately 80 screens arranged into 18
-functional areas, covering the full lifecycle of financial planning from project
-creation through to programme-level profitability reporting.
+It ran only on managed Windows desktops with Access installed — around 80 screens
+across 18 functional areas, covering the full planning lifecycle from creating a
+project to programme-level profitability reporting.
 
-Because logic lived in VBA event handlers, there was no automated test coverage and no
-way to verify that a change to a calculation had not broken another part of the
-application. Access to the application was controlled at the Windows file-system level,
-with no identity provider integration, no role-based authorisation policies, and no
-fine-grained data scoping. There was no structured logging, no telemetry, and no
-accessibility compliance.
+Key pain points:
 
-Key pain points driving modernisation:
-
-- **Desktop-only** — users required a managed Windows machine with Access installed; no browser or remote access.
-- **No automated testing** — VBA code changes could silently break calculations with no safety net.
-- **Poor accessibility** — the form-based desktop UI did not meet WCAG 2.2 AA standards.
-- **No structured authentication** — no identity provider; access relied on Windows file permissions rather than role-based policies.
-- **Hard to maintain** — business logic tightly coupled to UI event handlers; no separation of concerns or layered architecture.
-- **No observability** — no structured logging, no telemetry, and no audit trail beyond what Access provided natively.
+- **Desktop-only** — needed a managed Windows machine with Access; no browser or remote access.
+- **No automated testing** — a VBA change could silently break a calculation elsewhere.
+- **Poor accessibility** — the form-based desktop UI did not meet WCAG 2.2 AA.
+- **Weak access control** — no identity provider or role-based policies; access relied on Windows file permissions.
+- **Hard to maintain** — logic tied to UI event handlers, with no separation of concerns.
+- **No observability** — no structured logging, telemetry or real audit trail.
 
 ### To-be
 
-The target is a cloud-hosted Blazor web application accessible from any supported
-browser. The application is containerised for repeatable deployment and uses a managed
-relational database. Infrastructure is defined as code so that environments can be
-provisioned consistently.
+The target is a cloud-hosted Blazor web application, reached from any supported
+browser, containerised for repeatable deployment and backed by a managed relational
+database. Infrastructure is defined as code.
 
-**Accessibility and design** — The GOV.UK Design System (govuk-frontend) is used for
-all user interface components, ensuring the service meets the GDS style and WCAG 2.2
-AA accessibility standard throughout. Accessibility is treated as an acceptance
-criterion, not a post-delivery retrofit.
+- **Accessibility and design** — the GOV.UK Design System (govuk-frontend) is used for every component, so the service meets GDS style and WCAG 2.2 AA. Accessibility is an acceptance criterion, not a retrofit.
+- **Security** — authentication uses Microsoft Entra ID (OpenID Connect); authorisation uses ASP.NET Core policy handlers that scope each user to their assigned profit centres, programmes, categories, test owners and project groups. Secrets stay out of the codebase and the container runs as a non-root user.
+- **Testability** — automated coverage exceeds the Defra 90% threshold, across unit, Blazor component and integration tests.
+- **Observability** — Application Insights and structured logging are wired in from the start.
+- **Resilience** — the app applies database migrations and seed data on startup, so a new environment needs only a connection string.
 
-**Security** — Authentication is provided through Microsoft Entra ID using the OpenID
-Connect standard. Authorisation is enforced through ASP.NET Core policy-based handlers
-with fine-grained data scoping: each user's access is limited to the profit centres,
-programmes, categories, test owners, and project groups they are assigned to. Secrets
-are managed outside the codebase and the application container runs as a non-root user.
-
-**Testability and quality** — Automated test coverage exceeds the Defra 90% threshold.
-Unit, component (Blazor), and integration tests cover the full service layer and
-authorisation logic.
-
-**Observability** — Application Insights telemetry and structured logging are wired in
-from the start, providing distributed tracing and request metrics.
-
-**Resilience** — The application applies database migrations and idempotent seed data
-automatically on startup, so deploying to a new environment requires only a connection
-string. Infrastructure is provisioned via infrastructure-as-code templates.
-
-The domain model and business logic from the legacy application are faithfully
-reproduced in the new system, preserving all bounded contexts: project cost planning,
-programme and contract management, resource and charge-rate management, laboratory
-services, plan-vs-actual comparison, snapshot and historical comparison, access control,
-reference data, audit, and department income and surveillance reporting.
+The domain model and business logic are reproduced faithfully, preserving every
+bounded context: project cost planning, programme and contract management, resource
+and charge-rate management, laboratory services, plan-vs-actual comparison, snapshots,
+access control, reference data, audit, and department income and surveillance
+reporting.
 
 ### Steps taken
 
-1. **Legacy system analysed** — The Access application and its database were
-   reverse-engineered into four structured analyses: domain analysis, application
-   analysis, database analysis, and interaction analysis. Together these established
-   the complete set of actors, domain terms, entities, screens, and business rules
-   before any new code was written.
+1. **Analysed the legacy system** — reverse-engineered the Access application and database into four analyses (domain, application, database, interaction), capturing every actor, term, entity, screen and business rule.
 
-2. **PRD produced** — The four analyses were synthesised into a Product Requirements
-   Document. The PRD defined the system's actors, domain model, bounded contexts, and
-   acceptance criteria across all functional areas, giving the team an authoritative
-   reference for the re-build.
+2. **Produced a PRD** — synthesised the analyses into a Product Requirements Document defining actors, domain model, bounded contexts and acceptance criteria.
 
-3. **Feature decomposition** — The PRD was decomposed into 20 traceable feature
-   tickets (FT-001 to FT-020), each with clear acceptance criteria mapped to
-   test cases. This gave a no-silent-loss traceability chain from legacy screen to
-   acceptance criterion to test.
+3. **Decomposed into features** — broke the PRD into 20 traceable feature tickets (FT-001 to FT-020), each with acceptance criteria mapped to tests, giving a no-silent-loss chain from screen to test.
 
-4. **Application re-engineered** — The application was rebuilt on .NET 10 Blazor
-   Interactive Server with Entity Framework Core, following a layered architecture
-   (Components/Pages, Services, ViewModels, Data/Entities). VBA form-event logic was
-   converted to type-safe C# service classes testable in isolation.
+4. **Re-engineered the application** — rebuilt on .NET 10 Blazor Interactive Server with Entity Framework Core in a layered architecture, converting VBA event logic into testable C# services.
 
-5. **GDS standards applied** — The GOV.UK Design System (govuk-frontend 6.3.0) was
-   integrated for all user interface components: Tudor Crown header, GOV.UK footer,
-   GDS service navigation, GDS Transport font, skip link, landmark regions, and
-   accessible table markup.
+5. **Applied GDS standards** — integrated the GOV.UK Design System (govuk-frontend 6.3.0): Tudor Crown header, GOV.UK footer, service navigation, GDS Transport font, skip link and accessible tables.
 
-6. **WCAG 2.2 AA baked in from the start** — Accessibility requirements were treated
-   as acceptance criteria: single `<h1>` per page, ordered headings, labelled form
-   controls, error summaries, minimum 24×24 px interactive targets, and visible focus
-   styles are all enforced in the component library.
+6. **Baked in WCAG 2.2 AA** — enforced one `<h1>` per page, ordered headings, labelled controls, error summaries, 24×24 px targets and visible focus styles in the component library.
 
-7. **Automated test suite built** — 122 tests were written alongside the application
-   code using xUnit, bUnit (for Blazor component testing), Moq (for service mocks),
-   and `WebApplicationFactory` (for integration tests), achieving 94.5% line coverage.
-   Generated EF Core migration files are excluded from coverage as non-testable
-   scaffolding.
+7. **Built the test suite** — wrote 122 tests with xUnit, bUnit, Moq and `WebApplicationFactory`, reaching 94.5% line coverage.
 
-8. **Automated accessibility audit added** — A Playwright + axe-core audit script was
-   built into the repository to run WCAG 2.2 AA checks across all application pages,
-   making it straightforward to include accessibility verification in the delivery
-   pipeline.
+8. **Added an accessibility audit** — a Playwright + axe-core script runs WCAG 2.2 AA checks across all pages, ready for the delivery pipeline.
 
-9. **Containerised** — A multi-stage Dockerfile produces a minimal runtime image
-   running as a non-root user, ready for cloud container hosting.
+9. **Containerised** — a multi-stage Dockerfile builds a minimal image that runs as a non-root user.
 
-10. **Infrastructure as code** — Azure Bicep templates were produced alongside the
-    application so the target cloud infrastructure can be provisioned consistently
-    across environments.
+10. **Infrastructure as code** — Azure Bicep templates provision the environment consistently.
 
 ## Tech stack
 
-The stack below is drawn from the codebase manifest and configuration files in the
-re-engineered application.
+Taken from the codebase manifest and configuration files.
 
 | Layer | Technology |
 |---|---|
