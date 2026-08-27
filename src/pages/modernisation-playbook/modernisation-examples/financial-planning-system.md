@@ -1,6 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Financial Planning System (FPS) modernisation example
+title: Financial Planning System (FPS) modernisation
 ---
 
 <!-- Provenance: synthesised from the project PRD and analyses (domain-analysis.md,
@@ -14,7 +14,7 @@ title: Financial Planning System (FPS) modernisation example
      Status: In delivery.
      Internal note — not rendered on the page. -->
 
-# Financial Planning System (FPS) modernisation example
+# Financial Planning System (FPS) modernisation
 
 ## Project summary
 
@@ -105,24 +105,51 @@ reporting.
 
 ## Tech stack
 
-Taken from the codebase manifest and configuration files.
+Grounded in the re-engineered codebase's project and configuration files, and in the
+legacy-system analyses for the "before" column.
 
-| Layer | Technology |
-|---|---|
-| Front end | Blazor Interactive Server (C# .NET 10), govuk-frontend 6.3.0 (GDS Design System), GDS Transport font |
-| Back end / services | C# .NET 10, ASP.NET Core, Entity Framework Core 10 |
-| Data | SQL Server, EF Core code-first migrations, ClosedXML (Excel export) |
-| CI/CD and quality | Azure Bicep (infrastructure-as-code), xUnit, bUnit, Moq, coverlet (code coverage), Playwright + axe-core (automated accessibility audit) |
-| Security and accessibility | Microsoft Entra ID (OpenID Connect), ASP.NET Core policy-based authorisation, Application Insights (observability), structured logging |
+| Layer | Legacy (as-is) | Modernised (to-be) |
+|-------|----------------|--------------------|
+| Language | VBA | C# |
+| Platform | Microsoft Access (desktop) | .NET 10 |
+| Front end | Access form-based screens (desktop UI), around 80 screens across 18 functional areas | Blazor Interactive Server, govuk-frontend 6.3.0 (GOV.UK Design System) with GDS Transport font, Tudor Crown header and GOV.UK footer |
+| Back end / services | Business logic embedded in VBA behind form event handlers, tightly coupled to the UI | Layered .NET solution: ASP.NET Core services with VBA event logic converted into testable C# services |
+| Data | Microsoft Access database, no code-first schema | SQL Server with Entity Framework Core 10 code-first migrations; ClosedXML for Excel export |
+| CI/CD & quality | No automated tests | Azure Bicep (infrastructure-as-code); xUnit, bUnit, Moq and coverlet (code coverage); Playwright + axe-core (automated accessibility audit) |
+| Security & accessibility | Windows file permissions, no identity provider; form-based desktop UI not meeting WCAG 2.2 AA | Microsoft Entra ID (OpenID Connect) with ASP.NET Core policy-based authorisation; Application Insights and structured logging; WCAG 2.2 AA GOV.UK components |
 
 ## Benefits, outcomes and success metrics
 
-The benefits below are delivered outcomes of the rebuild.
+Evidence-based outcomes of the rebuild are shown below.
 
-| Benefit / outcome | How it is delivered |
-|---|---|
-| Reduced business-continuity and key-person risk | An ageing, hard-to-maintain Access/VBA application is replaced by a supported, layered .NET application with 94.5% automated test coverage across 122 tests |
-| Lower risk of inappropriate access to financial data | Microsoft Entra ID sign-in with role-based, per-user data scoping replaces reliance on Windows file permissions |
-| Stronger financial governance and auditability | A structured audit trail and Application Insights telemetry provide traceability that Access could not |
-| No loss of capability | All 20 feature areas reproduced, from project cost planning through to programme profitability |
-| Meets the public sector accessibility legal duty | WCAG 2.2 AA met through the GOV.UK Design System, with automated axe-core checks in the repository |
+| Benefit / outcome | Evidence / metric | Status |
+|-------------------|-------------------|--------|
+| Moved off a desktop-only Access/VBA tool onto a supported, browser-based platform | The service is a cloud-hosted .NET 10 Blazor web application reached from any supported browser, with no Access install | Achieved |
+| Automated test coverage introduced where there was none | Coverage report (09/07/2026) shows 94.5% line coverage across 122 xUnit, bUnit and integration tests, exceeding the 90% target | Achieved |
+| No loss of capability | All 20 feature areas reproduced, from project cost planning through to programme profitability, decomposed into traceable feature tickets FT-001 to FT-020 | Achieved |
+| Standards-compliant, accessible user interface | GOV.UK Design System (govuk-frontend 6.3.0) with the Tudor Crown header, GOV.UK footer, GDS Transport font, skip link and accessible tables verified in the codebase; a Playwright + axe-core script runs WCAG 2.2 AA checks across all pages | Achieved |
+| Lower risk of inappropriate access to financial data | Microsoft Entra ID (OpenID Connect) sign-in with ASP.NET Core policy-based, per-user data scoping replaces reliance on Windows file permissions | Achieved |
+| Stronger financial governance and auditability | A structured audit trail and Application Insights telemetry provide traceability that Access could not | Achieved |
+
+### Lessons for reuse
+
+Other teams modernising a similar legacy application can reuse the following patterns:
+
+- **Analyse the legacy system into structured analyses first.** Reverse-engineering
+  the Access application and database into domain, application, database and
+  interaction analyses captured every actor, term, entity, screen and business rule
+  before any rebuild began.
+- **Decompose into small, traceable features.** Breaking the PRD into 20 feature
+  tickets (FT-001 to FT-020) with acceptance criteria mapped to tests gives a
+  no-silent-loss chain from screen to test.
+- **Convert UI-coupled logic into an isolated, testable layer.** Moving VBA
+  event-handler logic into C# services in a layered architecture makes the business
+  rules unit-testable and protects them during the UI rewrite.
+- **Adopt the GOV.UK Design System from the start** — header, footer, fonts and
+  accessible components — rather than retrofitting accessibility later.
+- **Automate the accessibility audit.** A Playwright + axe-core script running
+  WCAG 2.2 AA checks across all pages keeps accessibility verifiable in the delivery
+  pipeline.
+- **Make environments reproducible.** Applying migrations and seed data on startup,
+  with Bicep infrastructure-as-code, means a new environment needs only a connection
+  string.
