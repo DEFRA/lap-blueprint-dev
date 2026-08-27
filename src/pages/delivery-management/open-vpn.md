@@ -2,6 +2,7 @@
 layout: "@lap/layouts/BaseLayout.astro"
 title: Open VPN Access
 order: 3
+group: Design
 ---
 
 # Open VPN Access

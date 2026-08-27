@@ -1,0 +1,63 @@
+---
+import PageTreeItem from "./PageTreeItem.astro";
+import { buildPageGroups, type NavPage } from "../util/contentNavigation.js";
+
+const {
+  pages,
+  currentPath,
+  currentRoutePath,
+  childPagesByParentPath,
+  depth = 0,
+} = Astro.props;
+
+const groups = buildPageGroups(pages);
+---
+
+{
+  groups.map((group) =>
+    group.name ? (
+      <li class="lap-side-navigation__group">
+        <span class="govuk-heading-s lap-side-navigation__group-label">
+          {group.name}
+        </span>
+        <ul class="govuk-list lap-side-navigation__list">
+          {group.pages.map((page: NavPage) => (
+            <PageTreeItem
+              page={page}
+              currentPath={currentPath}
+              currentRoutePath={currentRoutePath}
+              childPagesByParentPath={childPagesByParentPath}
+              depth={depth + 1}
+            />
+          ))}
+        </ul>
+      </li>
+    ) : (
+      group.pages.map((page: NavPage) => (
+        <PageTreeItem
+          page={page}
+          currentPath={currentPath}
+          currentRoutePath={currentRoutePath}
+          childPagesByParentPath={childPagesByParentPath}
+          depth={depth}
+        />
+      ))
+    ),
+  )
+}
+
+<style lang="scss">
+  li.lap-side-navigation__group {
+    list-style-type: none;
+    margin-top: 10px;
+  }
+
+  ul.lap-side-navigation__list {
+    padding-left: 24px;
+  }
+
+  .lap-side-navigation__group-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+</style>

@@ -1,6 +1,6 @@
 ---
 import PageItem from "./PageItem.astro";
-import PageTreeItem from "./PageTreeItem.astro";
+import NavGroupList from "./NavGroupList.astro";
 import { type NavPage } from "../util/contentNavigation.js";
 
 const {
@@ -34,17 +34,13 @@ const isRootActiveSection = !isNested && shouldRevealChildren;
   {
     shouldRevealChildren && childPages.length > 0 && (
       <ul class="govuk-list lap-side-navigation__list">
-        {childPages.map((childPage: NavPage) => {
-          return (
-            <PageTreeItem
-              page={childPage}
-              currentPath={currentPath}
-              currentRoutePath={currentRoutePath}
-              childPagesByParentPath={childPagesByParentPath}
-              depth={depth + 1}
-            />
-          );
-        })}
+        <NavGroupList
+          pages={childPages as NavPage[]}
+          currentPath={currentPath}
+          currentRoutePath={currentRoutePath}
+          childPagesByParentPath={childPagesByParentPath}
+          depth={depth + 1}
+        />
       </ul>
     )
   }
@@ -62,7 +58,7 @@ const isRootActiveSection = !isNested && shouldRevealChildren;
   }
 
   ul.lap-side-navigation__list {
-    padding-left: 20px;
+    padding-left: 24px;
   }
 
   li:not(.lap-side-navigation__item--root) {

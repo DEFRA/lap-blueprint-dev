@@ -6,15 +6,19 @@ order: 5
 
 # How to add your LAP AI Artefacts to our LAMAI's AI Directory
 
-**Title:** How to add your LAP AI Artefacts to our LAMAI's AI Directory
+The AI Directory provides a trusted catalogue of AI agents, skills, prompts, accelerators, templates, and supporting artefacts that can be reused across Defra and, where appropriate, the wider government. To maintain quality, consistency, and security, all submissions must follow the review and assurance process set out below.
 
-**What You're Trying To Do:**
-Use the information below on how to add your LAP AI Artefacts to our LAMAI's AI Directory
+## Purpose
 
-**Who This Is For:**
-AI Artefact Developers, Suppliers who are responsible for building Agentic Works, delivery leads, engineers, and anyone who is responsible for developing or using AI Definitions (Agents, Prompts, Instructions, Skills etc...) before modernisation and AI-assisted workflows begin.
+The review and assurance process ensures that:
 
-**Prerequisites**
+- Artefacts are accurate, reusable, and appropriately documented.
+- Content aligns with Defra standards, governance, and best practice.
+- Security, compliance, and intellectual property considerations are assessed.
+- Users can be confident that published artefacts have been reviewed and approved.
+- The AI Directory remains a trusted source of governed AI assets.
+
+## Prerequisites
 
 Please proceed with the links and resources below to first make sure your AI Artefacts are compliant with DEFRA standards
 
@@ -45,60 +49,86 @@ These standards must be reviewed and satisfied prior to submitting a LAP AI Agen
 
 </details>
 
-**Step-by-Step:**
+## Review and assurance process
 
-1. Clone the [DEFRA AI config examples repository](https://github.com/DEFRA/defra-ai-config-examples).
+1. **Prepare your artefact**
 
-2. Ensure that all new definitions has the LAP prefix:\
-   LAP-(your AI definition name)\
-   For example:
-   - lap-casework...
-   - lap-document...
-   - lap-inspection...
+   Before submission, contributors should ensure the artefact includes:
+   - A clear name and description.
+   - Its intended purpose and use case.
+   - Any prerequisites or dependencies.
+   - Usage instructions.
+   - Relevant prompts, skills, or configuration details.
+   - Repository documentation, where applicable.
+   - Appropriate licensing and ownership information.
 
-3. Following the navigation structure please place your LAP specific AI definitions under relevant sections. Please make sure **default.html** is updated so navigation updates could take place for your definitions:
+   Contributors should also remove any sensitive, confidential, or environment-specific information prior to submission.
 
-   3.1 Follow existing navigation structure in "default.html" as below:
+2. **Submit a pull request**
 
-   ```ascii
-   Agents
-   ├── ...
-   └── LAP Implementations
-       ├── GitHub Copilot
-       ├────── your agents links to the correct file
-       ├── Claude
-       ├── Speckit
-       ├── OpenAI
-       └── Other
-   ```
-   3.2 Follow existing folder structure in the repository to place your agents
+   All new artefacts, updates, and enhancements must be submitted through a pull request (PR) to the approved repository.
 
-      ```ascii
-   Agents
-   ├── ...
-       ├── lap-gitHub-copilot
-       ├────── your agents files go here
-       ├── lap-claude
-       ├── lap-speckit
-       ├── lap-openAI
-       └── lap-other
-   ```
+   The pull request should include:
+   - A summary of the artefact.
+   - Its purpose and business value.
+   - Any dependencies or prerequisites.
+   - Details of testing undertaken.
+   - Any known limitations or considerations.
 
-   **Please follow same structure in case you have other AI definitions such as Instructions, Prompts and Skills**
+   The pull request acts as the formal review and assurance mechanism for inclusion in the AI Directory.
 
-   Any other supporting AI configuration files such as images or docs etc...should go in the repo under assets and link accordingly from your definition documentation   
+3. **Review and assurance**
 
-4. Create a Pull Request (PR) and once it is reviewed, please kindly merge your changes into the repository. You may need contributor access to the repo, please contact the Owners/Contributors of the [DEFRA AI config examples repository](https://github.com/DEFRA/defra-ai-config-examples) or Contact "neil.davies@defra.gov.uk" as the Program Manager for LAP programme or "AICapabilitiesEnablement@defra.gov.uk" for both contributor access to the review and have your PR reviewed.
+   Submitted pull requests will be reviewed by repository contributors and designated reviewers. Reviews may consider:
+   - Does the artefact perform its intended purpose?
+   - Is the documentation clear and complete?
+   - Can another team reuse the artefact successfully?
+   - No sensitive information is published.
+   - Content aligns with Defra security and governance requirements.
+   - Similar artefacts do not already exist within the directory.
 
-**Who To Contact:**
+4. **Approval**
+
+   Once review comments have been addressed, an approved reviewer may sign off the pull request. Approval confirms that the artefact:
+   - Meets minimum quality standards.
+   - Is suitable for publication.
+   - Can be shared through the AI Directory.
+
+5. **Merge and publish**
+
+   Following approval:
+   - The pull request may be merged into the repository.
+   - The artefact becomes available through the AI Directory.
+   - Associated directory entries and links may be updated to reflect the latest approved version.
+
+   The AI Directory will generally signpost users to the approved repository location rather than storing the artefact directly.
+
+## Ongoing ownership
+
+The submitting team remains responsible for maintaining their artefact, including:
+
+- Updating documentation.
+- Addressing defects or issues.
+- Managing future enhancements.
+- Ensuring continued relevance and accuracy.
+
+Where an artefact is no longer supported or maintained, it may be archived or removed from the directory.
+
+## Access and support
+
+If you require contributor access, assistance with submissions, or support with the review process, please contact:
+
+[AI Capabilities Enablement Team](mailto:LAP-AIEnablement@defra.gov.uk)
+
+## Review principle
+
+No AI artefact will be published to the AI Directory without an approved pull request review. The pull request process serves as the primary quality assurance, governance, and approval mechanism, ensuring that all published content is trusted, reusable, secure, and aligned with Defra standards.
+
+## Who To Contact
+
 Delivery lead (process coordination), engineering lead (Ai Directory repository contributor), AICapabilitiesEnablement@defra.gov.uk
 
-**Governance / Approval Gate:**
-
-**Related Blocker:** -
-
-**Related Agent/Tool Links:**
+## Related Agent/Tool Links
 
 - [AI Directory - AGENTS](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/)
 - [AI Directory - SKILLS](https://defra.github.io/defra-ai-config-examples/pages/skills/lap-gitHub-copilot/)
-

@@ -1,9 +1,8 @@
 ---
-import PageTreeItem from "./PageTreeItem.astro";
+import NavGroupList from "./NavGroupList.astro";
 import {
   buildChildPagesByParent,
   buildNavPages,
-  buildTopLevelGroups,
   getNormalizedBase,
   normalizePath,
   stripBase,
@@ -19,34 +18,23 @@ const markdownModules = import.meta.glob("/src/pages/**/*.md", {
   eager: true,
 });
 const markdownPages = buildNavPages(markdownModules, normalizedBase);
-const orderedTopLevelGroups = buildTopLevelGroups(markdownPages);
+const topLevelPages = markdownPages.filter(
+  (page) => page.parentPath === null || page.parentPath === "/",
+);
 const childPagesByParentPath = buildChildPagesByParent(markdownPages);
 ---
 
 <nav class="lap-side-navigation" aria-label="Markdown pages">
   {
-    orderedTopLevelGroups.length > 0 ? (
-      orderedTopLevelGroups.map((group) => (
-        <>
-          {group.name && (
-            <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
-              {group.name}
-            </h3>
-          )}
-          <ul class="govuk-list lap-side-navigation__list">
-            {group.pages.map((page) => {
-              return (
-                <PageTreeItem
-                  page={page}
-                  currentPath={currentPath}
-                  currentRoutePath={currentRoutePath}
-                  childPagesByParentPath={childPagesByParentPath}
-                />
-              );
-            })}
-          </ul>
-        </>
-      ))
+    topLevelPages.length > 0 ? (
+      <ul class="govuk-list lap-side-navigation__list">
+        <NavGroupList
+          pages={topLevelPages}
+          currentPath={currentPath}
+          currentRoutePath={currentRoutePath}
+          childPagesByParentPath={childPagesByParentPath}
+        />
+      </ul>
     ) : (
       <p class="govuk-body-s govuk-!-margin-bottom-0">
         No markdown pages found in this folder.

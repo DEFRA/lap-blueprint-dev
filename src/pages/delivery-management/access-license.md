@@ -2,6 +2,7 @@
 layout: "@lap/layouts/BaseLayout.astro"
 title: How to access default tools and licences
 order: 4
+group: Design
 ---
 
 # How to access default tools and licences
