@@ -7,7 +7,7 @@ title: Financial Planning System (FPS) modernisation example
      application-analysis.md, database-analysis.md, interaction-analysis.md — all
      produced during the legacy-system analysis phase) and the re-engineered codebase
      (FPSWeb/ directory, FPSWeb.csproj, package.json, FPSWeb.Tests.csproj,
-     accessibility/package.json, Dockerfile, coverage report dated 09/07/2026).
+     accessibility/package.json, coverage report dated 09/07/2026).
      Architecture requirements document (architecture-requirements.md) was not
      available at the time of writing; the To-be and Tech stack sections are therefore
      drawn from the PRD, analyses, and actual codebase files.
@@ -68,11 +68,11 @@ Key pain points:
 ### To-be
 
 The target is a cloud-hosted Blazor web application, reached from any supported
-browser, containerised for repeatable deployment and backed by a managed relational
-database. Infrastructure is defined as code.
+browser and backed by a managed relational database. Infrastructure is defined as
+code.
 
 - **Accessibility and design** — the GOV.UK Design System (govuk-frontend) is used for every component, so the service meets GDS style and WCAG 2.2 AA. Accessibility is an acceptance criterion, not a retrofit.
-- **Security** — authentication uses Microsoft Entra ID (OpenID Connect); authorisation uses ASP.NET Core policy handlers that scope each user to their assigned profit centres, programmes, categories, test owners and project groups. Secrets stay out of the codebase and the container runs as a non-root user.
+- **Security** — authentication uses Microsoft Entra ID (OpenID Connect); authorisation uses ASP.NET Core policy handlers that scope each user to their assigned profit centres, programmes, categories, test owners and project groups. Secrets stay out of the codebase.
 - **Testability** — automated coverage exceeds the Defra 90% threshold, across unit, Blazor component and integration tests.
 - **Observability** — Application Insights and structured logging are wired in from the start.
 - **Resilience** — the app applies database migrations and seed data on startup, so a new environment needs only a connection string.
@@ -101,9 +101,7 @@ reporting.
 
 8. **Added an accessibility audit** — a Playwright + axe-core script runs WCAG 2.2 AA checks across all pages, ready for the delivery pipeline.
 
-9. **Containerised** — a multi-stage Dockerfile builds a minimal image that runs as a non-root user.
-
-10. **Infrastructure as code** — Azure Bicep templates provision the environment consistently.
+9. **Infrastructure as code** — Azure Bicep templates provision the environment consistently.
 
 ## Tech stack
 
@@ -114,17 +112,17 @@ Taken from the codebase manifest and configuration files.
 | Front end | Blazor Interactive Server (C# .NET 10), govuk-frontend 6.3.0 (GDS Design System), GDS Transport font |
 | Back end / services | C# .NET 10, ASP.NET Core, Entity Framework Core 10 |
 | Data | SQL Server, EF Core code-first migrations, ClosedXML (Excel export) |
-| CI/CD and quality | Docker (multi-stage build), Azure Bicep (infrastructure-as-code), xUnit, bUnit, Moq, coverlet (code coverage), Playwright + axe-core (automated accessibility audit) |
+| CI/CD and quality | Azure Bicep (infrastructure-as-code), xUnit, bUnit, Moq, coverlet (code coverage), Playwright + axe-core (automated accessibility audit) |
 | Security and accessibility | Microsoft Entra ID (OpenID Connect), ASP.NET Core policy-based authorisation, Application Insights (observability), structured logging |
 
 ## Benefits, outcomes and success metrics
 
 The benefits below are delivered outcomes of the rebuild.
 
-| Benefit / outcome | How it is delivered | Status |
-|---|---|---|
-| Reduced business-continuity and key-person risk | An ageing, hard-to-maintain Access/VBA application is replaced by a supported, layered .NET application with 94.5% automated test coverage across 122 tests | Achieved |
-| Lower risk of inappropriate access to financial data | Microsoft Entra ID sign-in with role-based, per-user data scoping replaces reliance on Windows file permissions | Achieved |
-| Stronger financial governance and auditability | A structured audit trail and Application Insights telemetry provide traceability that Access could not | Achieved |
-| No loss of capability | All 20 feature areas reproduced, from project cost planning through to programme profitability | Achieved |
-| Meets the public sector accessibility legal duty | WCAG 2.2 AA met through the GOV.UK Design System, with automated axe-core checks in the repository | Achieved |
+| Benefit / outcome | How it is delivered |
+|---|---|
+| Reduced business-continuity and key-person risk | An ageing, hard-to-maintain Access/VBA application is replaced by a supported, layered .NET application with 94.5% automated test coverage across 122 tests |
+| Lower risk of inappropriate access to financial data | Microsoft Entra ID sign-in with role-based, per-user data scoping replaces reliance on Windows file permissions |
+| Stronger financial governance and auditability | A structured audit trail and Application Insights telemetry provide traceability that Access could not |
+| No loss of capability | All 20 feature areas reproduced, from project cost planning through to programme profitability |
+| Meets the public sector accessibility legal duty | WCAG 2.2 AA met through the GOV.UK Design System, with automated axe-core checks in the repository |
