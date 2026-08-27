@@ -2,11 +2,12 @@
 layout: "@lap/layouts/BaseLayout.astro"
 title: PII scanning
 order: 2
+group: Initiation and scoping
 ---
 
 # PII Screener tool
 
-The [LAP PII Screener](https://github.com/DEFRA/lap-pii-screener) is a multi-scanner static analysis tool that finds secrets, API keys, and personally identifiable information (PII) in source code repositories. It combines four independent scanning engines into a single CLI, deduplicates their results, maps every finding to a remediation guide and applicable regulation, and can optionally redact sensitive values directly in source files.
+The [LAP PII Screener](https://github.com/DEFRA/lap-pii-screener) is a multi-scanner static analysis tool that finds secrets, API keys, and personally identifiable information (PII) in source code repositories. It combines four scanners into a single CLI, deduplicates their results, maps every finding to remediation guidance and applicable regulation, and can optionally replace sensitive values directly in source files.
 
 The tool is intended to be run before source code is shared outside the current team, used with AI-assisted tooling, or moved into environments with wider access.
 
@@ -25,43 +26,45 @@ Organisations routinely store sensitive data in the wrong places — configurati
 | Passwords and credentials | Hardcoded passwords, database connection strings, private keys                                                                              |
 | Structured PII            | Email addresses, phone numbers, credit card numbers, NI numbers, NHS numbers, passports, dates of birth, SSNs, IBANs, sort codes, postcodes |
 | Unstructured PII          | Person names and addresses in comments or string literals (requires spaCy)                                                                  |
-| Security vulnerabilities  | SQL injection, XSS, broken auth, OWASP Top 10 (via Semgrep + SonarQube)                                                                     |
+| Security vulnerabilities  | SQL injection, XSS, broken authentication, and OWASP Top 10 patterns (via Semgrep and SonarQube)                                            |
 
 Every finding is enriched with a confidence score, the applicable regulation (UK GDPR, PCI DSS, PSR 2017), step-by-step remediation instructions, and cross-references to CWE and OWASP identifiers.
 
 ## How it works
 
-Four scanning engines run in parallel against the target directory. Their results are merged and deduplicated.
+The CLI requests all four scanners by default and skips scanners that are not available. Their results are merged, duplicate findings are deduplicated, and findings detected by multiple scanners include all the scanner names and receive a confidence boost.
 
-| Scanner       | What it contributes                                                                          |
-| ------------- | -------------------------------------------------------------------------------------------- |
-| **Gitleaks**  | Secret pattern matching — fast, purpose-built, 150+ service-specific rules                   |
-| **Semgrep**   | Code-structure-aware analysis — catches patterns that span multiple tokens                   |
-| **Presidio**  | Custom PII detection — structured regex with optional NLP named-entity recognition           |
-| **spaCy**     | NLP named-entity recognition for unstructured PII such as person names and addresses         |
-| **SonarQube** | Enterprise deep analysis — data-flow tracking, taint propagation, inter-procedural reasoning |
+| Scanner         | What it contributes                                                                                   |
+| --------------- | ----------------------------------------------------------------------------------------------------- |
+| **Gitleaks**    | Secret pattern matching — fast, purpose-built, 150+ service-specific rules                            |
+| **Semgrep**     | Code-structure-aware analysis — catches patterns that span multiple tokens                            |
+| **PII scanner** | Custom PII detection — built-in structured regex, with optional Presidio NER preferred over spaCy NER |
+| **SonarQube**   | Enterprise deep analysis — data-flow tracking, taint propagation, inter-procedural reasoning          |
 
-Gitleaks, Semgrep, and Presidio work without any extra infrastructure and are the default. spaCy is optional and enables unstructured PII detection. SonarQube is optional and requires Java 17 or Docker.
+Gitleaks, Semgrep, and the custom PII scanner form the baseline. The PII scanner's structured regex rules run without either NLP package. Presidio adds preferred named-entity detection for person names and locations in comments or string values; spaCy provides the fallback when Presidio is unavailable. SonarQube adds deeper inter-procedural and taint analysis and requires Java 17 with a local SonarQube instance, or a container runtime. The active scanner tier is shown by `sensitive-scanner status`.
 
 ## Prerequisites
 
-| Requirement     | Version | Notes                                      |
-| --------------- | ------- | ------------------------------------------ |
-| Python          | 3.11+   | Must be on PATH                            |
-| uv              | Latest  | Package manager — `pip install uv`         |
-| Java            | 17+     | Only needed for SonarQube                  |
-| Docker Engine   | Any     | Alternative to native Java for SonarQube   |
-| Internet access | —       | Required on first run to download binaries |
+| Requirement     | Version | Notes                                                  |
+| --------------- | ------- | ------------------------------------------------------ |
+| Python          | 3.11+   | Must be on PATH                                        |
+| uv              | Latest  | Package manager — `pip install uv`                     |
+| Java            | 17+     | Only needed for SonarQube                              |
+| Git             | Any     | Needed only when scanning Git commit history           |
+| Docker Desktop  | Any     | Alternative to local Python or Java, and for SonarQube |
+| Internet access | —       | Required on first run to download binaries             |
 
-### Dev container (alternative)
+The `sensitive-scanner setup` wizard downloads the Gitleaks binary and installs the required scanner dependencies. Use `sensitive-scanner setup --all` to install the optional spaCy and SonarQube components as well.
 
-The tool can also be run inside a dev container, which replaces the Python and uv installation with VS Code and Docker Engine.
+### Docker (alternative)
 
-| Requirement     | Version | Notes                                       |
-| --------------- | ------- | ------------------------------------------- |
-| VS Code         | Latest  | With the Dev Containers extension           |
-| Docker Engine   | Any     | Must be running before opening in container |
-| Internet access | —       | Required on first run to download the image |
+Docker lets you run the scanner without installing Python or Java locally. Clone the repository first, then run the script for your shell, passing the source directory to scan:
+
+```powershell
+./scripts/init-docker.ps1 -SourceDir C:\path\to\your-project
+```
+
+Inside the container, use `./scripts/init-full` for all optional components or `./scripts/init-slim` for the baseline, then run `./scripts/screener scan /source`. Docker Desktop, Docker via WSL, and Docker Engine on Linux are supported.
 
 ## Is this the right tool?
 
@@ -69,21 +72,41 @@ Use the PII Screener if you need to:
 
 - confirm source code is safe to share with other teams or use with AI tooling
 - produce an auditable report of sensitive data findings before a release or readiness review
-- interactively review and obfuscate PII in files while preserving working software
+- interactively review and obfuscate sensitive values in files while preserving working software
 
-It is a static analysis tool for source code repositories. It does not scan databases, running services, or binary files.
+It is a static analysis tool for source code repositories. It does not scan databases or running services, and binary file types are excluded automatically. The scanner can include Git history when `--history` is specified.
 
 ## Getting started
 
 Full documentation is maintained in the [GitHub repository](https://github.com/DEFRA/lap-pii-screener).
 
-| Document                                                                                            | What it covers                                                      |
-| --------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------- |
-| [Quick Start](https://github.com/DEFRA/lap-pii-screener/blob/main/QUICKSTART.md)                    | Zero to scanning in 6 steps                                         |
-| [Setup Guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/setup/setup.md)              | Full installation, SonarQube configuration, air-gapped environments |
-| [Scanning guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/guides/scanning.md)       | All scan options, exclusions, suppressions, CI integration          |
-| [Obfuscation guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/guides/obfuscation.md) | Interactive PII review, dry-run, apply, rollback, session files     |
-| [Reports guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/guides/reports.md)         | Report formats, what each contains, when to use each                |
+| Document                                                                                            | What it covers                                                                |
+| --------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [Quick Start](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/setup/QUICKSTART.md)         | Install the tool, run the setup wizard, scan a project, and check its status  |
+| [Setup Guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/setup/setup.md)              | Full installation, SonarQube, spaCy, Docker, MCP, and air-gapped environments |
+| [Docker Setup](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/setup/docker.md)            | Run the scanner in a container without local Python or Java installation      |
+| [Scanning guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/guides/scanning.md)       | Scan options, exclusions, suppressions, reports, and CI integration           |
+| [Obfuscation guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/guides/obfuscation.md) | Review, redact or replace findings, dry-run, apply, edit, and rollback        |
+| [Faker integration](https://github.com/DEFRA/lap-pii-screener/blob/main/FAKER_INTEGRATION.md)       | Optional realistic replacement values during obfuscation                      |
+| [Reports guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/guides/reports.md)         | Report formats, contents, and recommended uses                                |
+| [Copilot agent guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/guides/agent.md)     | Use the scanner from VS Code Copilot Chat through MCP                         |
+
+### Basic scan
+
+After installing the repository dependencies, run the setup wizard and scan the directory you want to assess:
+
+```powershell
+git clone https://github.com/DEFRA/lap-pii-screener C:\Github\lap-pii-screener
+cd C:\Github\lap-pii-screener
+pip install uv
+uv sync
+sensitive-scanner setup
+sensitive-scanner scan C:\path\to\your-project
+```
+
+The scanner writes console output by default. Save a report with `--format html`, `--format markdown`, or `--format json` and provide `--output`. Use `--history` when the scan must include deleted files and previous Git commits. By default, matched values are redacted; use `--show-secrets` only when strictly necessary because it writes actual sensitive values into the output.
+
+For regular scans, add a `sensitive-scanner.yaml` file to the project root to define scanners, output, exclusions, suppressions, and a `fail_on` severity threshold for CI.
 
 ## Use scan results as a delivery decision gate
 

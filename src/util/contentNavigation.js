@@ -1,6 +1,6 @@
 /**
  * @typedef {Object} MarkdownModule
- * @property {{ title?: string, order?: number, group?: string, groupOrder?: number, hidden?: boolean }=} frontmatter
+ * @property {{ title?: string, order?: number, group?: string, hidden?: boolean }=} frontmatter
  */
 
 /**
@@ -12,7 +12,6 @@
  * @property {string} slug
  * @property {number} order
  * @property {string} group
- * @property {number} groupOrder
  */
 
 /**
@@ -166,10 +165,6 @@ export function buildNavPages(markdownModules, normalizedBase) {
         typeof markdownModule.frontmatter?.group === "string"
           ? markdownModule.frontmatter.group.trim()
           : "";
-      const groupOrder = toFiniteNumber(
-        markdownModule.frontmatter?.groupOrder,
-        0,
-      );
 
       return {
         parentPath: parentRoutePath,
@@ -182,43 +177,46 @@ export function buildNavPages(markdownModules, normalizedBase) {
         slug,
         order,
         group,
-        groupOrder,
       };
     })
     .sort(byOrderThenLabel);
 }
 
 /**
- * Groups top-level pages by frontmatter group.
- * @param {NavPage[]} markdownPages
+ * Groups a set of sibling pages by frontmatter group. Ungrouped pages (group
+ * is an empty string) are always returned first as a group with a null name.
+ * Remaining groups are ordered by the lowest `order` value among their
+ * pages, and pages within each group are ordered by their own `order`.
+ * @param {NavPage[]} pages
  * @returns {NavGroup[]}
  */
-export function buildTopLevelGroups(markdownPages) {
-  const topLevelPages = markdownPages.filter(
-    (page) => page.parentPath === null || page.parentPath === "/",
-  );
-  const grouped = topLevelPages.reduce((groupsByName, page) => {
+export function buildPageGroups(pages) {
+  const groupsByName = pages.reduce((groupsByName, page) => {
     const existingGroup = groupsByName.get(page.group);
 
     if (existingGroup) {
       existingGroup.pages.push(page);
       existingGroup.pages.sort(byOrderThenLabel);
-      existingGroup.order = Math.min(existingGroup.order, page.groupOrder);
+      existingGroup.order = Math.min(existingGroup.order, page.order);
       return groupsByName;
     }
 
     groupsByName.set(page.group, {
       name: page.group,
-      order: page.groupOrder,
+      order: page.order,
       pages: [page],
     });
 
     return groupsByName;
   }, new Map());
 
-  return Array.from(grouped.values()).sort(
-    (a, b) => a.order - b.order || a.name.localeCompare(b.name),
-  );
+  return Array.from(groupsByName.values()).sort((a, b) => {
+    if (a.name === "" || b.name === "") {
+      return a.name === b.name ? 0 : a.name === "" ? -1 : 1;
+    }
+
+    return a.order - b.order || a.name.localeCompare(b.name);
+  });
 }
 
 /**
