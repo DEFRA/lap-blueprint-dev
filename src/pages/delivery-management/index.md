@@ -135,4 +135,4 @@ Following closure, responsibility for ongoing service operation, maintenance and
 
 </details>
 
-For further information please visit the DDTS Waterfall Delivery Governance: Waterfall delivery governance.
+For further information please visit the DDTS Waterfall Delivery Governance: [Waterfall delivery governance](https://defra.sharepoint.com/sites/def-ddts-portfoliohub/SitePages/Waterfall-delivery-governance.aspx?csf=1&web=1&share=EXN4-N0eZ_JLqvWa73uDlycBth5hKCeq5NZ9G3sAfYiakg&e=bDdpHS&CT=1787741957558&OR=OWA-NT-Mail&CID=e4cda44b-1c12-0a83-24d3-1efe8cd4e7cb&SI=NonSentItems&clickParams=eyJYLUFwcE5hbWUiOiJNaWNyb3NvZnQgT3V0bG9vayBXZWIgQXBwIiwiWC1BcHBWZXJzaW9uIjoiMjAyNjA4MTQwMDguMDkiLCJPUyI6IldpbmRvd3MgMTEifQ%3d%3d&SLSync=N&cidOR=Client#key-governance-points-during-waterfall-delivery-in-ddts).
