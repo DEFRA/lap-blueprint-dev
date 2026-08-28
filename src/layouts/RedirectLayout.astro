@@ -1,0 +1,44 @@
+---
+import { getNormalizedBase, normalizeHref, withBase } from "../util/contentNavigation.js";
+
+const base = import.meta.env.BASE_URL;
+const normalizedBase = getNormalizedBase(base);
+const {
+  frontmatter: { title, redirect },
+} = Astro.props;
+
+if (typeof redirect !== "string" || !redirect.trim()) {
+  throw new Error(
+    "RedirectLayout requires a non-empty `redirect` frontmatter value",
+  );
+}
+
+const redirectHref = normalizeHref(withBase(redirect.trim(), normalizedBase));
+const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
+---
+
+<!doctype html>
+<html lang="en" class="govuk-template">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta http-equiv="refresh" content={`0;url=${redirectHref}`} />
+    <link rel="canonical" href={redirectHref} />
+    <script define:vars={{ redirectHref }}>
+      window.location.replace(redirectHref);
+    </script>
+  </head>
+  <body class="govuk-template__body">
+    <p class="govuk-body">
+      This page has moved. If you are not redirected automatically, follow
+      the link below.
+    </p>
+    <p class="govuk-body">
+      <a class="govuk-link" href={redirectHref}>Continue to the new page</a>
+    </p>
+  </body>
+</html>

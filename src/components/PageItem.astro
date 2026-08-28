@@ -7,7 +7,7 @@ const isCurrentPage = currentPath === normalizePath(page.href);
 
 <a
   class={`govuk-link govuk-link--no-visited-state${isCurrentPage ? " govuk-!-font-weight-bold" : ""}`}
-  href={page.href}
+  href={page.linkHref}
   aria-current={isCurrentPage ? "page" : undefined}
 >
   {page.label}

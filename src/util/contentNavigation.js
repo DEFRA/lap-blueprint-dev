@@ -1,6 +1,6 @@
 /**
  * @typedef {Object} MarkdownModule
- * @property {{ title?: string, order?: number, group?: string, hidden?: boolean }=} frontmatter
+ * @property {{ title?: string, order?: number, group?: string, hidden?: boolean, redirect?: string }=} frontmatter
  */
 
 /**
@@ -8,6 +8,7 @@
  * @property {string|null} parentPath
  * @property {string} routePath
  * @property {string} href
+ * @property {string} linkHref
  * @property {string} label
  * @property {string} slug
  * @property {number} order
@@ -165,13 +166,19 @@ export function buildNavPages(markdownModules, normalizedBase) {
         typeof markdownModule.frontmatter?.group === "string"
           ? markdownModule.frontmatter.group.trim()
           : "";
+      const redirect =
+        typeof markdownModule.frontmatter?.redirect === "string"
+          ? markdownModule.frontmatter.redirect.trim()
+          : "";
+      const href = normalizeHref(
+        withBase(`/${normalizedRoutePath}`, normalizedBase),
+      );
 
       return {
         parentPath: parentRoutePath,
         routePath: pageRoutePath,
-        href: normalizeHref(
-          withBase(`/${normalizedRoutePath}`, normalizedBase),
-        ),
+        href,
+        linkHref: redirect ? normalizeHref(withBase(redirect, normalizedBase)) : href,
         label:
           typeof title === "string" && title.trim() ? title : toLabel(slug),
         slug,

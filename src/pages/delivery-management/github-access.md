@@ -1,7 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: GitHub Access
-order: 6
+order: 3
 group: Start-up and feasability
 ---
 
