@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: DEFRA Design System
-order: 4
+group: Standards
+order: 1.3
 ---
 
 # DEFRA Design System

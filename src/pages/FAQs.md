@@ -13,7 +13,7 @@ order: 1
 
 </summary>
 
-[How to access default tools and license](../delivery-management/access-license/) explains how to get a GitHub Copilot licence and access approved AI tools. You can then check [AICE AI Toolkit Links](../standards-patterns-and-templates/standards/ai-tooling-standards/) for approved tooling and practical references.
+[How to access default tools and license](../delivery-management/access-license/) explains how to get a GitHub Copilot licence and access approved AI tools. You can then check [AICE AI Toolkit Links](../standards-patterns-and-templates/ai-tooling-standards/) for approved tooling and practical references.
 
 </details>
 

@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Architecture
-order: 4
+group: Standards
+order: 1.2
 ---
 
 # Architecture

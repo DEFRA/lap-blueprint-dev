@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: GDS Design System
-order: 4
+group: Standards
+order: 1.4
 ---
 
 # GDS Design System

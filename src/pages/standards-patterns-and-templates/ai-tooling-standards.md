@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: AI Tooling Standards
-order: 4
+group: Standards
+order: 1.1
 ---
 
 # AI Tooling Standards

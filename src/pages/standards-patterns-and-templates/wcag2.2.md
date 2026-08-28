@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: WCAG 2.2
-order: 4
+group: Standards
+order: 1.8
 ---
 
 # WCAG 2.2

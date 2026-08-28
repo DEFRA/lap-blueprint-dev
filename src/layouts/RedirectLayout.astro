@@ -1,5 +1,9 @@
 ---
-import { getNormalizedBase, normalizeHref, withBase } from "../util/contentNavigation.js";
+import {
+  getNormalizedBase,
+  normalizeHref,
+  withBase,
+} from "../util/contentNavigation.js";
 
 const base = import.meta.env.BASE_URL;
 const normalizedBase = getNormalizedBase(base);
@@ -34,8 +38,8 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
   </head>
   <body class="govuk-template__body">
     <p class="govuk-body">
-      This page has moved. If you are not redirected automatically, follow
-      the link below.
+      This page has moved. If you are not redirected automatically, follow the
+      link below.
     </p>
     <p class="govuk-body">
       <a class="govuk-link" href={redirectHref}>Continue to the new page</a>

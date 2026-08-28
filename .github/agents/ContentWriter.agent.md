@@ -34,7 +34,7 @@ Match the established LAP page style found in pages such as:
 
 - `src/pages/delivery-management/source-code-acquisition.md`
 - `src/pages/delivery-management/pii-scanning.md`
-- `src/pages/standards-patterns-and-templates/standards/responsible-ai.md`
+- `src/pages/standards-patterns-and-templates/responsible-ai.md`
 - `src/pages/ai-catalogue/ai-directory-contribution.md`
 - `src/pages/modernisation-playbook/generic-guidance.md`
 

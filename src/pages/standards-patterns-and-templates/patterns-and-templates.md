@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Patterns & Templates
-order: 1
+group: Patterns & Templates
+order: 2
 ---
 
 # Patterns & Templates

@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Responsible AI
-order: 4
+group: Standards
+order: 1.5
 ---
 
 # Responsible AI

@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Security
-order: 4
+group: Standards
+order: 1.7
 ---
 
 # Security

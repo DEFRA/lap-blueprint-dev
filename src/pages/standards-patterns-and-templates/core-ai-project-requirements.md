@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Core AI Project Requirements
-order: 4
+group: Standards
+order: 1
 ---
 
 # Core AI project requirements
