@@ -2,7 +2,7 @@
 layout: "@lap/layouts/BaseLayout.astro"
 title: PII scanning
 order: 2
-group: Initiation and scoping
+group: Start-up and feasability
 ---
 
 # PII Screener tool

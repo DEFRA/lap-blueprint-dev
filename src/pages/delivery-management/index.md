@@ -40,7 +40,7 @@ Ongoing activities include stakeholder engagement, financial management, reporti
 </details>
 <details><summary>
 
-### 3. Define
+### 3. Define/Discovery
 
 </summary>
 

@@ -2,7 +2,7 @@
 layout: "@lap/layouts/BaseLayout.astro"
 title: Azure Virtual Desktop Access
 order: 4
-group: Design
+group: Define/Discovery
 ---
 
 # Azure Virtual Desktop Access
