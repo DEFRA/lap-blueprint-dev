@@ -12,7 +12,7 @@ These terms are defined for the purpose of their use within these guidelines. Th
 
 ### 2FA
 
-**Two-Factor Authentication.** A security method that requires two separate forms of verification before granting access — typically a password plus a one-time code from an authenticator app or SMS.
+**Two-Factor Authentication.** A security method that requires two separate forms of verification before granting access - typically a password plus a one-time code from an authenticator app or SMS.
 
 ### AI
 

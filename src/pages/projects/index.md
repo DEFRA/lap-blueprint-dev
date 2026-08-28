@@ -18,6 +18,6 @@ The team can provide:
 
 - Additional project information.
 - Modernisation best-practice guidance.
-- Information on available AI agents and accelerators.
+- Information on available AI agents.
 - Support for similar transformation initiatives.
 - Access to relevant artefacts, where appropriate.
