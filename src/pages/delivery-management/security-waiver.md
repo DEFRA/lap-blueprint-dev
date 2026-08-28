@@ -1,7 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Security Exception to Policy Request (Security Waiver)
-order: 4
+order: 2
 group: Initiation and scoping
 ---
 

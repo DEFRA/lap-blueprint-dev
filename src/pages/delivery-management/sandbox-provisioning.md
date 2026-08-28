@@ -2,7 +2,7 @@
 layout: "@lap/layouts/BaseLayout.astro"
 title: Sandbox Provisioning
 order: 5
-group: Design
+group: Define/Discovery
 ---
 
 # Sandbox Provisioning
