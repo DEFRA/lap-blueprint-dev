@@ -37,6 +37,8 @@ Key artefacts produced during this phase include the requirements document, bene
 
 Ongoing activities include stakeholder engagement, financial management, reporting, RAID management, document control, Whole Life Cost (WLC) planning and maintaining Secure-by-Design assurance.
 
+You can find information on the [core AI project requirements](../standards-patterns-and-templates/standards/core-ai-project-requirements/) page
+
 </details>
 <details><summary>
 

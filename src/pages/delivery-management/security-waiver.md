@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Security Exception to Policy Request (Security Waiver)
+title: Security Access Request
 order: 2
 group: Initiation and scoping
 ---
 
-# Security Exception to Policy Request (Security Waiver)
+# Security Access Request
 
-This guidance sets out how to request a Security Exception to Policy Request (a "Security Waiver") where a supplier, contractor or project resource needs access to Defra systems, services or environments but cannot meet the required security clearance prerequisites at the point they are due to start work.
+If an security exception is required this guidance sets out how to submit a Security Exception to Policy Request (a "Security Waiver") where a supplier, contractor or project resource needs access to Defra systems, services or environments but cannot meet the required security clearance prerequisites at the point they are due to start work.
 
 A waiver allows Defra Security to assess the risk and decide whether a temporary exception can be granted while security validation is completed. A waiver is a temporary exception only and is not a substitute for obtaining the correct level of clearance.
 
