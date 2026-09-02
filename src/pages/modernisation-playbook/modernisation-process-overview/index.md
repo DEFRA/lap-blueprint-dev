@@ -1,10 +1,10 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Generic Guidance
+title: Modernisation Process Overview
 order: 1
 ---
 
-# Generic Guidance
+# Modernisation Process Overview
 
 This guidance supports teams using AI-assisted reverse engineering to understand legacy applications and prepare them for modernisation. It brings together the delivery approach, the people involved, and the decisions needed to produce a Product Requirements Document (PRD) that stakeholders can approve.
 
