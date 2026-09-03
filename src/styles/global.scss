@@ -39,6 +39,10 @@ body.dev {
   font: inherit;
 }
 
+pre.astro-code {
+  @include govuk-font($size: 19);
+}
+
 // ─── Mermaid diagram lightbox ────────────────────────────────────────────────
 
 // Clickable diagram affordance

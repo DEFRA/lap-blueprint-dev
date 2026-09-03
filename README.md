@@ -33,6 +33,33 @@ npm run preview  # serves the built output locally
 | `public/assets/`           | Static assets (fonts, images, manifest)                        |
 | `gulpfile.js`              | Copies GOV.UK Frontend fonts and images into `public/assets/`  |
 
+## Page frontmatter
+
+Each Markdown page under `src/pages/` can include YAML frontmatter that controls how the page is rendered and where it appears in the navigation.
+
+| Field | Example | What it does |
+| ----- | ------- | ------------ |
+| `layout` | `@lap/layouts/BaseLayout.astro` | Selects the Astro layout used to render the page shell. Most pages use the standard GOV.UK layout; redirect pages use `RedirectLayout.astro`. |
+| `title` | `PII scanning` | Human-readable page title. This is displayed in the browser, breadcrumbs, and the sidebar navigation. |
+| `order` | `2` or `1.1` | Controls sort order in navigation. Lower values appear earlier; decimal values are accepted for ordering within a section. |
+| `group` | `Start-up and feasability` | Groups sibling pages together under a named section in the side navigation. Pages without a group stay ungrouped. |
+| `hidden` | `true` | Removes the page from the generated navigation. This is useful for internal or draft pages, examples, and special-case routes. |
+| `redirect` | `/standards-patterns-and-templates/core-ai-project-requirements/` | Used with `RedirectLayout.astro` to send the page to a different route instead of rendering its own content. |
+| `permalink` | `/404.html` | Astro route override for the output path. This is used for pages that must be emitted at a specific URL, such as the custom 404 page. |
+
+A typical page starts with frontmatter like this:
+
+```yaml
+---
+layout: "@lap/layouts/BaseLayout.astro"
+title: PII scanning
+order: 2
+group: Start-up and feasability
+---
+```
+
+This metadata is consumed by the site navigation builder when pages are rendered, so keeping the fields consistent makes the page ordering and grouping predictable.
+
 ## Common gotchas
 
 ### Internal links must end with a trailing `/`
