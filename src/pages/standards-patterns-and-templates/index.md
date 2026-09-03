@@ -8,27 +8,15 @@ order: 4
 
 Standards, Patterns & Templates brings together the baseline standards teams must follow and the reusable patterns and templates that support consistent delivery.
 
-## LAP Architecture Templates and Guidance
-
-The following resources provide access to the architecture templates and governance documentation that should be used when delivering solutions in alignment with Defra's architecture standards and processes.
-
-### Architecture Deliverables Templates
-
-Delivery Architecture teams should use the approved Solution Architecture templates and supporting artefacts when producing architecture deliverables for projects. These templates support consistency in architecture outputs across Defra.
-
-Access the templates:\
-https://defra.sharepoint.com/teams/Team3221/SitePages/Architecture-Deliverables-Templates.aspx
-
-### High Level Design (HLD) and Architecture Decision Record (ADR) Templates
-
-The Technical Design Authority (TDA) provides quality assurance for technology architectures being delivered to or built by Defra. It ensures solutions are aligned to business requirements and contribute to a consistent and integrated technology landscape. The TDA site contains the approved High Level Design (HLD) and Architecture Decision Record (ADR) templates.
-
-Access the TDA site:\
-https://defra.sharepoint.com/teams/Team3182/SitePages/Technical-Design-Authority.aspx
-
-### High Level Solution Architecture Template
-
-The Solution Design Authority (SDA) is responsible for architectural decision-making within delivery teams and for maintaining architectural integrity across digital capabilities. The SDA site provides access to the approved High Level Solution Architecture Design Template, alongside supporting architectural governance guidance.
-
-Access the SDA site:\
-https://defra.sharepoint.com/teams/Team3182/SitePages/Solution-Design-Authority.aspx
+| Page                                                            | Summary                                                                                                                                                        |
+| --------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Core AI project requirements](./core-ai-project-requirements/) | Requirements for AI-enabled modernisation projects, including agentic AI, accessibility, architecture, security, intellectual property and knowledge transfer. |
+| [AI Tooling Standards](./ai-tooling-standards/)                 | Approved AI tooling, AI Toolkit resources, GitHub Copilot configuration examples and related DEFRA modernisation and AI delivery resources.                    |
+| [Architecture](./architecture/)                                 | Architecture standards, strategies and guidance covering principles, technology, public services, integration and legacy modernisation.                        |
+| [DEFRA Design System](./defra-design-system/)                   | The source page for DEFRA design system information and reusable templates.                                                                                    |
+| [GDS Design System](./gds-design-system/)                       | GOV.UK design guidance, principles, service standards and tools for accessible, consistent and user-centred services.                                          |
+| [Responsible AI](./govuk-ai-playbook/)                          | The UK Government AI Playbook and supporting resources for using AI safely, effectively and securely in government organisations.                              |
+| [Risk Management Framework](./risk-management-framework/)       | An overview of the NIST AI Risk Management Framework and its relevance to managing AI risk across the lifecycle.                                               |
+| [Security](./security/)                                         | Security standards and guidance covering secure by design, public sector cyber security, data protection and AI security controls.                             |
+| [WCAG 2.2](./wcag2.2/)                                          | The authoritative accessibility guidance and conformance levels for designing, developing, testing and maintaining digital services.                           |
+| [Patterns & Templates](./patterns-and-templates/)               | Reusable CCoE templates for high-level designs, design decisions, governance summaries and technology patterns.                                                |
