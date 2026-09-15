@@ -1,14 +1,17 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: AI Catalogue
+title: AI Directory
 order: 5
 ---
 
-# AI Catalogue
+# AI Directory
 
-Use this index to find guidance on how to access AI Licenses and Tooling as well as registering your LAP AI Definitions
+Use these links to access the LAP-specific areas of Defra's AI Directory. Each directory includes an **LAP Implementations** section containing AI artefacts contributed by suppliers for Legacy Application Programme (LAP) modernisation work.
 
-| Process                                                                                      | When to follow this process                                                                   |
-| -------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
-| [How to add your LAP AI Artefacts to our LAMAI's AI Directory](./ai-directory-contribution/) | Use the information below on how to add your LAP AI Artefacts to our LAMAI's Agent Directory. |
-| [AI Directory](./ai-directory/)                                                              | Use this find agents that are being used across LAP and DEFRA etc.                            |
+The artefacts are grouped by type so delivery teams can find reusable definitions relevant to LAP implementations, including agents, instructions, prompts and skills.
+
+## Agents, Instructions, Skills, Prompts
+
+- [LAP-specific Agents in the AI Directory](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/): supplier-provided agents for LAP modernisation implementations
+
+- [LAP-specific Skills in the AI Directory](https://defra.github.io/defra-ai-config-examples/pages/skills/lap-gitHub-copilot/): supplier-provided skills for LAP modernisation implementations
