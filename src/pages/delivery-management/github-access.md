@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: GitHub Access
+title: GitHub access
 order: 1
 group: Start-up and feasability
 ---
 
-# GitHub Access
+# GitHub access
 
 Getting GitHub access in Defra covers account setup, joining the right Defra organisation, and requesting the correct level of repository access for your role.
 

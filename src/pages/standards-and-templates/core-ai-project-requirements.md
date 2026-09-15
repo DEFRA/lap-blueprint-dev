@@ -1,6 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Core AI Project Requirements
+title: Core AI project requirements
 group: Standards
 order: 1
 ---
@@ -11,7 +11,7 @@ The Legacy Application Programme (the ‘Programme’) has adopted an ‘AI by D
 
 The core requirements that apply to all AI-enabled modernisation projects are set out below. These requirements must be met for a proposal or Statement of Work to be deemed acceptable. Any deviation will be by exception and at the discretion of the Programme team.
 
-## Core Requirements
+## Core requirements
 
 When engaged on a project a supplier is expected to design, build, and evidence delivery against the following requirements.
 

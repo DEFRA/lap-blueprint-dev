@@ -1,12 +1,12 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Frequently Asked Questions
+title: Frequently asked questions
 navLabel: FAQs
 order: 6
 fullWidth: true
 ---
 
-# Frequently Asked Questions
+# Frequently asked questions
 
 <details>
 <summary>
@@ -194,7 +194,7 @@ Review the findings by severity. For any High or Critical findings you should st
 <details>
 <summary>
 
-## What is the difference between Reverse Engineering and Re-Engineering?
+## What is the difference between reverse engineering and re-engineering?
 
 </summary>
 
@@ -227,11 +227,11 @@ No. AI-generated content should be treated as a draft or starting point. Teams m
 <details>
 <summary>
 
-## How do I register a LAP AI agent in the directory?
+## How do I register a LAP AI artefact in the directory?
 
 </summary>
 
-Follow [How to add your LAP AI Agent to our LAMAI's AI Directory](../delivery-management/ai-directory-contribution/) and browse the [AI Directory](../ai-catalogue/) for existing definitions.
+Follow [How to add your LAP AI artefacts to our LAMAI's Artefact Directory](../delivery-management/ai-directory-contribution/) and browse the [Artefact Directory](../artefact-directory/) for existing definitions.
 
 </details>
 

@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: AI Tooling Standards
+title: AI tooling standards
 group: Standards
 order: 1.1
 ---
 
-# AI Tooling Standards
+# AI tooling standards
 
 Use the information below to find approved AI tooling and existing examples within Defra.
 
@@ -15,7 +15,7 @@ Use these links to view the current state of AI tools available within Defra fro
 
 - [Deliver with AI](https://digital.defra.gov.uk/ai-toolkit/deliver-with-ai)
 - [AI Radar Diagram](https://digital.defra.gov.uk/ai-toolkit/tools/diagram)
-- [AI Patterns: Reusable proofs of concept from Defra teams.](https://digital.defra.gov.uk/ai-toolkit/patterns)
+- [AI Patterns: Reusable proofs of concept from Defra teams](https://digital.defra.gov.uk/ai-toolkit/patterns)
 
 ## GitHub Copilot tools and examples for Defra
 
@@ -23,7 +23,7 @@ Use this link for Practical setup guidance for configuring GitHub Copilot in Def
 
 - [GHCP specific examples](https://defra.github.io/defra-ai-config-examples/)
 
-### Agents, Instructions, Skills, Prompts
+### Agents, instructions, skills, prompts
 
 - [Current available AGENTS conforming to Defra standards](https://defra.github.io/defra-ai-config-examples/pages/agents/)
 
@@ -50,7 +50,7 @@ A step-by-step guide to using AI-assisted reverse engineering to produce Product
 
 - [Contains AI-related development guidance, standards, and supporting material](https://github.com/DEFRA/defra-ai-sdlc)
 
-## AICE (AI Centre of Excellence) Resources
+## AICE (AI Centre of Excellence) resources
 
 - Includes prompt libraries, prompting guidance, and AI best practices.
 - [LAP Innovation agents for GitHub Copilot to aid in the reverse engineering of legacy applications.](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/)

@@ -85,7 +85,7 @@ Internal page links should be relative, omit the .md extension, and end with a t
 - [Home](#)
 - [Processes index](#)
 - [Process P-001](#)
-- [AI catalogue](~/ai-catalogue/)
+- [Artefact Directory](~/artefact-directory/)
 
 <details>
 <summary>View source (md)</summary>
@@ -94,7 +94,7 @@ Internal page links should be relative, omit the .md extension, and end with a t
 - [Home](./)
 - [Processes index](./processes/)
 - [Process P-001](./processes/p-001-scan-code-for-pii/)
-- [AI catalogue](~/ai-catalogue/)
+- [Artefact Directory](~/artefact-directory/)
 ```
 
 </details>

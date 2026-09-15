@@ -44,7 +44,7 @@ It assumes that readers are familiar with agile delivery practices and have acce
 
 The reverse engineering approach is designed for a small, T-shaped team. Each person has a primary specialism but can contribute outside it where the work requires. The LAP Innovation agents perform much of the initial analysis of code, screens and other artefacts; the team focuses on directing the work, validating outputs and engaging stakeholders.
 
-### Delivery Lead
+### Delivery lead
 
 The Delivery Lead coordinates the work and stakeholder engagement. Their responsibilities include:
 
@@ -64,7 +64,7 @@ The Developer is responsible for:
 - reviewing and correcting outputs for technical accuracy
 - escalating outputs that appear incomplete or incorrect
 
-### Business Analyst/User Researcher
+### Business analyst/user researcher
 
 The Business Analyst/User Researcher (BA/UR) gathers and validates business context. Their responsibilities include:
 
@@ -89,7 +89,7 @@ All three roles work together during PRD review and sign-off to ensure the docum
 
 External stakeholders provide access, context and final approval for reverse engineering outputs.
 
-### Programme Product Managers
+### Programme product managers
 
 Programme Product Managers connect the delivery team with the people who understand the legacy application. They:
 
@@ -98,7 +98,7 @@ Programme Product Managers connect the delivery team with the people who underst
 - schedule interviews and manage stakeholder availability
 - ensure that the appropriate people are involved at the right time
 
-### Application Product Owners
+### Application product owners
 
 Application Product Owners are the domain subject matter experts for the legacy application. They understand its intended purpose, the reasons for previous decisions and the business outcomes it supports.
 
@@ -109,7 +109,7 @@ They are responsible for:
 - clarifying ambiguities in AI-generated outputs
 - confirming that documented requirements represent the application's intended behaviour
 
-### Application Users
+### Application users
 
 Application Users provide the day-to-day context that cannot be reliably inferred from code or screenshots. Interviews should explore:
 

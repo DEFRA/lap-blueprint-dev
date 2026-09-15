@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Reverse Engineering
+title: Reverse engineering
 order: 3
 group: The process
 ---
 
-# Reverse Engineering
+# Reverse engineering
 
 Reverse engineering takes a legacy application and produces a Product Requirements Document (PRD) that explains the application's behaviour, purpose and the capabilities a modern replacement must provide. The [LAP Innovation agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) support the analysis of source code, user interface screenshots and stakeholder knowledge, while the delivery team directs the work, validates outputs and engages stakeholders.
 

@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: How to add your LAP AI Artefacts to our LAMAI's AI Directory
+title: How to add your LAP AI artefacts to our LAMAI's Artefact Directory
 order: 11
 group: Reuse and contribution
 ---
 
-# How to add your LAP AI Artefacts to our LAMAI's AI Directory
+# How to add your LAP AI artefacts to our LAMAI's Artefact Directory
 
-The AI Directory provides a trusted catalogue of AI agents, skills, prompts, accelerators, templates, and supporting artefacts that can be reused across Defra and, where appropriate, the wider government. To maintain quality, consistency, and security, all submissions must follow the review and assurance process set out below.
+The Artefact Directory provides a trusted catalogue of AI agents, skills, prompts, accelerators, templates, and supporting artefacts that can be reused across Defra and, where appropriate, the wider government. To maintain quality, consistency, and security, all submissions must follow the review and assurance process set out below.
 
 ## Purpose
 
@@ -17,7 +17,7 @@ The review and assurance process ensures that:
 - Content aligns with Defra standards, governance, and best practice.
 - Security, compliance, and intellectual property considerations are assessed.
 - Users can be confident that published artefacts have been reviewed and approved.
-- The AI Directory remains a trusted source of governed AI assets.
+- The Artefact Directory remains a trusted source of governed AI assets.
 
 ## Prerequisites
 
@@ -128,7 +128,7 @@ The pull request should include:
 - Details of testing undertaken.
 - Any known limitations or considerations.
 
-The pull request acts as the formal review and assurance mechanism for inclusion in the AI Directory.
+The pull request acts as the formal review and assurance mechanism for inclusion in the Artefact Directory.
 Please contact the Owners/Contributors of the [DEFRA AI config examples repository](https://github.com/DEFRA/defra-ai-config-examples) or contact the Program Manager for LAP programme or LAP-AIEnablement@defra.gov.uk to have your PR reviewed.
 
 </details>
@@ -158,7 +158,7 @@ Once review comments have been addressed, an approved reviewer may sign off the 
 
 - Meets minimum quality standards.
 - Is suitable for publication.
-- Can be shared through the AI Directory.
+- Can be shared through the Artefact Directory.
 
 </details>
 <details><summary>
@@ -170,10 +170,10 @@ Once review comments have been addressed, an approved reviewer may sign off the 
 Following approval:
 
 - The pull request may be merged into the repository.
-- The artefact becomes available through the AI Directory.
+- The artefact becomes available through the Artefact Directory.
 - Associated directory entries and links may be updated to reflect the latest approved version.
 
-The AI Directory will generally signpost users to the approved repository location rather than storing the artefact directly.
+The Artefact Directory will generally signpost users to the approved repository location rather than storing the artefact directly.
 
 </details>
 
@@ -196,13 +196,13 @@ If you require contributor access, assistance with submissions, or support with 
 
 ## Review principle
 
-No AI artefact will be published to the AI Directory without an approved pull request review. The pull request process serves as the primary quality assurance, governance, and approval mechanism, ensuring that all published content is trusted, reusable, secure, and aligned with Defra standards.
+No AI artefact will be published to the Artefact Directory without an approved pull request review. The pull request process serves as the primary quality assurance, governance, and approval mechanism, ensuring that all published content is trusted, reusable, secure, and aligned with Defra standards.
 
-## Who To Contact
+## Who to contact
 
-Delivery lead (process coordination), engineering lead (Ai Directory repository contributor), LAP-AIEnablement@defra.gov.uk, AICapabilitiesEnablement@defra.gov.uk
+Delivery lead (process coordination), engineering lead (Artefact Directory repository contributor), LAP-AIEnablement@defra.gov.uk, AICapabilitiesEnablement@defra.gov.uk
 
-## Related Agent/Tool Links
+## Related agent/tool links
 
-- [AI Directory - AGENTS](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/)
-- [AI Directory - SKILLS](https://defra.github.io/defra-ai-config-examples/pages/skills/lap-gitHub-copilot/)
+- [Artefact Directory - AGENTS](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/)
+- [Artefact Directory - SKILLS](https://defra.github.io/defra-ai-config-examples/pages/skills/lap-gitHub-copilot/)

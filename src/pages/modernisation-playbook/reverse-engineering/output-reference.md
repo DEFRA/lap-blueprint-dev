@@ -1,10 +1,10 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Output Reference
+title: Output reference
 order: 3
 ---
 
-# Output Reference
+# Output reference
 
 Reverse engineering produces intermediate artefacts, four analysis outputs, a Product Requirements Document (PRD) and a consolidated Open Items Register. Together, they create an evidence trail from supplied legacy application material to the requirements that stakeholders review and approve, and can be shared as a single offline documentation pack.
 
@@ -125,7 +125,7 @@ The analysis should cover:
 
 Confirm that all SQL and inline SQL is accounted for, stored procedures are classified, orphaned procedures are identified, and business rules are numbered with a criticality rating.
 
-## Product Requirements Document
+## Product requirements document
 
 The [`product-manager`](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-product-manager.agent) agent synthesises the four analysis outputs into `output/PRD.md`. The PRD is the final reverse engineering deliverable and describes the system to be rebuilt without prescribing implementation choices.
 

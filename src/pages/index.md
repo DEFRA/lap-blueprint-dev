@@ -39,7 +39,7 @@ The LAMAI Blueprint is a practical guide for teams modernising legacy applicatio
 <h3 class="govuk-heading-s lap-card__heading">Use AI safely</h3>
 <p class="govuk-body lap-card__desc">Learn about approved AI tools, use cases and guidance for delivery teams.</p>
 <ul class="govuk-list lap-card__links">
-<li><a class="govuk-link" href="./ai-catalogue/">AI Directory</a></li>
+<li><a class="govuk-link" href="./artefact-directory/">Artefact Directory</a></li>
 </ul>
 </div>
 <div class="lap-card">
@@ -66,4 +66,4 @@ Quick links to the resources teams use most often:
 - [Request a GitHub Copilot licence](./delivery-management/access-license/)
 - [Request a sandbox environment](./delivery-management/sandbox-provisioning/)
 - [Follow the reverse engineering process](./modernisation-playbook/reverse-engineering/process/)
-- [Browse approved AI tools](./ai-catalogue/)
+- [Browse approved AI tools](./artefact-directory/)
