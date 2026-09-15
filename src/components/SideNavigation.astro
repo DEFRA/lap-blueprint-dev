@@ -22,6 +22,25 @@ const topLevelPages = markdownPages.filter(
   (page) => page.parentPath === null || page.parentPath === "/",
 );
 const childPagesByParentPath = buildChildPagesByParent(markdownPages);
+
+// Show only the active area's sub-tree; fall back to all sections on
+// standalone pages that have no children (Home, FAQs, Glossary).
+const activeSection = topLevelPages.find(
+  (page) =>
+    page.routePath !== "/" &&
+    (currentRoutePath === page.routePath ||
+      currentRoutePath.startsWith(`${page.routePath}/`)),
+);
+const activeSectionChildPages = activeSection
+  ? (childPagesByParentPath.get(activeSection.routePath) ?? [])
+  : [];
+const activeSectionHasChildren = activeSectionChildPages.length > 0;
+// Render the active section's tiers directly, without the section itself as a
+// parent item; otherwise list the top-level sections.
+const navPages =
+  activeSection && activeSectionHasChildren
+    ? activeSectionChildPages
+    : topLevelPages.filter((page) => page.routePath !== "/");
 ---
 
 <nav class="lap-side-navigation" aria-label="Markdown pages">
@@ -29,7 +48,7 @@ const childPagesByParentPath = buildChildPagesByParent(markdownPages);
     topLevelPages.length > 0 ? (
       <ul class="govuk-list lap-side-navigation__list">
         <NavGroupList
-          pages={topLevelPages}
+          pages={navPages}
           currentPath={currentPath}
           currentRoutePath={currentRoutePath}
           childPagesByParentPath={childPagesByParentPath}

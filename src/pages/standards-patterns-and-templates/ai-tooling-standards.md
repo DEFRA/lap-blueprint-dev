@@ -7,7 +7,7 @@ order: 1.1
 
 # AI Tooling Standards
 
-Use this the information below to get information on approved AI tooling and existing examples within DEFRA state
+Use the information below to find approved AI tooling and existing examples within DEFRA.
 
 ## AI Toolkit
 
@@ -17,7 +17,7 @@ Use these links to view the current state of AI tools available within DEFRA fro
 - [AI Radar Diagram](https://digital.defra.gov.uk/ai-toolkit/tools/diagram)
 - [AI Patterns: Reusable proofs of concept from DEFRA teams.](https://digital.defra.gov.uk/ai-toolkit/patterns)
 
-## Github Copilot specific Tools/Examples for DEFRA
+## GitHub Copilot tools and examples for DEFRA
 
 Use this link for Practical setup guidance for configuring GitHub Copilot in DEFRA projects — agents, instructions, skills, prompts, and cross-tool configuration.
 
@@ -53,12 +53,12 @@ A step-by-step guide to using AI-assisted reverse engineering to produce Product
 ## AICE (AI Centre of Excellence) Resources
 
 - Includes prompt libraries, prompting guidance, and AI best practices.
-- [A Claude Code plugin for DEFRA's Legacy Application Programme (LAP) to aid in the reverse engineering of legacy applications.](https://github.com/DEFRA/claude-legacy-reveng-plugin)
+- [LAP Innovation agents for GitHub Copilot to aid in the reverse engineering of legacy applications.](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/)
 
 ## Copilot Ralph
 
-- [Autonomous AI coding agent loop runner](https://github.com/DEFRA/ralph)
-- [Iterative AI Development Loop Tool, an orchestration pattern invoking Agents](https://github.com/JanDeDobbeleer/copilot-ralph)
+- [Copilot Ralph — an iterative AI development loop tool powered by GitHub Copilot](https://github.com/JanDeDobbeleer/copilot-ralph)
+- [DEFRA Ralph — autonomous AI coding agent loop runner (archived; Claude and Codex backends)](https://github.com/DEFRA/ralph)
 
 ## Get help with GitHub Copilot
 

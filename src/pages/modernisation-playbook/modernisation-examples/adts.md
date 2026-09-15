@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Animal Disease Testing Service modernisation example
+title: Animal Disease Testing Service
 ---
 
 <!-- Provenance: synthesised from the project's PRD, architecture requirements and
      re-engineered codebase, with the legacy PHP/Laravel source read to ground the
      As-is. Status: In delivery. Internal note — not rendered on the page. -->
 
-# Animal Disease Testing Service modernisation example
+# Animal Disease Testing Service
 
 ## Project summary
 
@@ -23,44 +23,6 @@ The headline outcome is a like-for-like rebuild on a modern, supported stack —
 | Users | Veterinary-practice users, practice administrators, and central system administrators |
 | Status | In delivery |
 
-## Modernisation approach
-
-### As-is
-
-The legacy service was a server-rendered web application built on an out-of-support version of the PHP Laravel framework, using the framework's model-view-controller pattern and backed by a MySQL database. Authentication and authorisation used a third-party role-and-permission library, and integration with the external laboratory system used a PHP HTTP client across a set of laboratory API endpoints.
-
-The main constraints that drove modernisation were:
-
-- **An ageing, out-of-support framework and runtime**, increasing security and maintenance risk.
-- **Fragile data persistence** — an in-progress submission was stored as a single serialised code object in one column, rather than as structured, queryable data.
-- **Weak data integrity** — the database declared no foreign-key constraints, so referential integrity depended entirely on application code.
-- **Bespoke, tightly-coupled security logic** — the password policy, login throttling and impersonation auditing were custom application code, and secrets were held in application configuration.
-- **Reference-data-heavy behaviour** — 14 seeded lookup tables and an avian/non-avian branching model ran throughout the submission form, making the rules hard to follow and change.
-
-The legacy source was available and was read directly to establish this picture. The service handles submissions between veterinary practices and the national laboratory, so avoiding any loss of function during the rebuild was the primary constraint.
-
-### To-be
-
-The target is a cloud-hosted web application built on a modern, supported stack, with the same user journeys and administrative capability as the legacy service but with the constraints above removed. The shape of the target state is:
-
-- A **Node.js/Hapi web application** rendering GOV.UK Design System pages, replacing the PHP monolith.
-- A **managed PostgreSQL relational database** with a proper, migrated schema and enforced integrity, replacing MySQL and the serialised-object persistence.
-- The **laboratory (LIMS) integration** preserved as a dedicated service layer over the external API.
-- Non-functional goals baked in from the start: **secure by design** (OWASP-aligned), **WCAG 2.2 AA accessibility**, **observability**, and **resilience** appropriate to the service, with application secrets held in a managed secrets vault rather than in code.
-
-The target is described here as an approach and shape rather than a deployable design.
-
-### Steps taken
-
-The rebuild followed the Defra Legacy Application Programme (LAP) modernisation pipeline, so that functionality was traceable and nothing was silently lost:
-
-1. **Reverse-engineered the legacy system** from its source code and database into an evidence-cited Product Requirements Document, with headline counts (for example 117 routes, 58 controllers, 22 tables) and every business rule, workflow and screen catalogued and grounded to the code.
-2. **Applied the delivery and architecture standards** — Defra/GDS software development standards, the ≥90% test-coverage rule, WCAG 2.2 AA, secure-by-design and observability — as cross-cutting requirements.
-3. **Decomposed the PRD into 18 individually deliverable features** (71 user stories, 143 acceptance criteria), each mapped back to the requirements it satisfies in a traceability manifest.
-4. **Rebuilt the application feature by feature** on Node.js/Hapi and PostgreSQL, re-creating the reference-data model, the eight-step wizard, paired (second-of-pair) submissions, reporting and print outputs, and the full administration capability.
-5. **Wrote tests to the acceptance criteria** in Jest, including automated accessibility scans, and enforced a traceability check that fails the build if any acceptance criterion has no mapped test.
-6. **Ran a completeness audit** against the traceability manifest to confirm every feature, story and acceptance criterion was implemented and covered, and recorded the single explicit descope (development-only mock endpoints that were never part of production behaviour).
-
 ## Tech stack
 
 Grounded in the re-engineered codebase's manifest and configuration files.
@@ -74,6 +36,42 @@ Grounded in the re-engineered codebase's manifest and configuration files.
 | Security & accessibility | Cookie-based session authentication, CSRF protection, bcrypt password hashing, an input-sanitisation layer, secrets held in a managed vault, and automated accessibility scanning with jest-axe in the pipeline |
 
 Authentication is automatically bypassed in a local development environment (localhost defaults to development) so the service can be run and explored without a login, while remaining enforced everywhere else.
+
+## As-is
+
+The legacy service was a server-rendered web application built on an out-of-support version of the PHP Laravel framework, using the framework's model-view-controller pattern and backed by a MySQL database. Authentication and authorisation used a third-party role-and-permission library, and integration with the external laboratory system used a PHP HTTP client across a set of laboratory API endpoints.
+
+The main constraints that drove modernisation were:
+
+- **An ageing, out-of-support framework and runtime**, increasing security and maintenance risk.
+- **Fragile data persistence** — an in-progress submission was stored as a single serialised code object in one column, rather than as structured, queryable data.
+- **Weak data integrity** — the database declared no foreign-key constraints, so referential integrity depended entirely on application code.
+- **Bespoke, tightly-coupled security logic** — the password policy, login throttling and impersonation auditing were custom application code, and secrets were held in application configuration.
+- **Reference-data-heavy behaviour** — 14 seeded lookup tables and an avian/non-avian branching model ran throughout the submission form, making the rules hard to follow and change.
+
+The legacy source was available and was read directly to establish this picture. The service handles submissions between veterinary practices and the national laboratory, so avoiding any loss of function during the rebuild was the primary constraint.
+
+## To-be
+
+The target is a cloud-hosted web application built on a modern, supported stack, with the same user journeys and administrative capability as the legacy service but with the constraints above removed. The shape of the target state is:
+
+- A **Node.js/Hapi web application** rendering GOV.UK Design System pages, replacing the PHP monolith.
+- A **managed PostgreSQL relational database** with a proper, migrated schema and enforced integrity, replacing MySQL and the serialised-object persistence.
+- The **laboratory (LIMS) integration** preserved as a dedicated service layer over the external API.
+- Non-functional goals baked in from the start: **secure by design** (OWASP-aligned), **WCAG 2.2 AA accessibility**, **observability**, and **resilience** appropriate to the service, with application secrets held in a managed secrets vault rather than in code.
+
+The target is described here as an approach and shape rather than a deployable design.
+
+## Steps taken
+
+The rebuild followed the Defra Legacy Application Programme (LAP) modernisation pipeline, so that functionality was traceable and nothing was silently lost:
+
+1. **Reverse-engineered the legacy system** from its source code and database into an evidence-cited Product Requirements Document, with headline counts (for example 117 routes, 58 controllers, 22 tables) and every business rule, workflow and screen catalogued and grounded to the code.
+2. **Applied the delivery and architecture standards** — Defra/GDS software development standards, the ≥90% test-coverage rule, WCAG 2.2 AA, secure-by-design and observability — as cross-cutting requirements.
+3. **Decomposed the PRD into 18 individually deliverable features** (71 user stories, 143 acceptance criteria), each mapped back to the requirements it satisfies in a traceability manifest.
+4. **Rebuilt the application feature by feature** on Node.js/Hapi and PostgreSQL, re-creating the reference-data model, the eight-step wizard, paired (second-of-pair) submissions, reporting and print outputs, and the full administration capability.
+5. **Wrote tests to the acceptance criteria** in Jest, including automated accessibility scans, and enforced a traceability check that fails the build if any acceptance criterion has no mapped test.
+6. **Ran a completeness audit** against the traceability manifest to confirm every feature, story and acceptance criterion was implemented and covered, and recorded the single explicit descope (development-only mock endpoints that were never part of production behaviour).
 
 ## Benefits, outcomes and success metrics
 

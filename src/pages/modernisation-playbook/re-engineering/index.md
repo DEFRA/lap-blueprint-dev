@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Re-Engineering
-order: 3
+order: 4
+group: The process
 ---
 
 # Re-Engineering
@@ -16,10 +17,10 @@ Features are implemented one at a time in build-layer order. Each completed impl
 2. Review the plan, feature scope, dependencies and priorities.
 3. Review and approve each feature specification before implementation.
 4. Prepare the target project, agent guidance and autonomous-build controls.
-5. Implement one approved feature through a sandboxed plan-and-build loop.
+5. Implement one approved feature through an autonomous build loop.
 6. Review the implementation from technical and product perspectives.
 
 ## Guidance sections
 
 - [Process](./process/): feature decomposition, reviews, project setup, autonomous build and implementation review
-- [Tooling](./tooling/): feature-decomposition agents, Ralph and the expected project layout
+- [Tooling](./tooling/): feature-decomposition agents, Copilot Ralph and the expected project layout

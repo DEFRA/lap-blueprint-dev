@@ -1,10 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Modernisation Process Overview
+title: Overview
 order: 1
+group: Start here
 ---
 
-# Modernisation Process Overview
+# Overview
 
 This guidance supports teams using AI-assisted reverse engineering to understand legacy applications and prepare them for modernisation. It brings together the delivery approach, the people involved, and the decisions needed to produce a Product Requirements Document (PRD) that stakeholders can approve.
 
@@ -16,8 +17,8 @@ The Legacy Application Programme (LAP) helps Defra understand, document and mode
 
 The playbook covers two phases of legacy application modernisation:
 
-1. [Reverse Engineering](./reverse-engineering/) uses generative AI to analyse legacy application artefacts, including source code, user interface screenshots and stakeholder interview transcripts. The outcome is a Product Requirements Document (PRD) that describes the application's behaviour, purpose and the capabilities a modern replacement needs to provide.
-2. [Re-Engineering](./re-engineering/) uses an approved PRD to design, build and deploy a modern replacement.
+1. [Reverse Engineering](../reverse-engineering/) uses the [LAP Innovation agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) to analyse legacy application artefacts, including source code, user interface screenshots and stakeholder interview transcripts. The outcome is a Product Requirements Document (PRD) that describes the application's behaviour, purpose and the capabilities a modern replacement needs to provide.
+2. [Re-Engineering](../re-engineering/) uses an approved PRD to design, build and deploy a modern replacement.
 
 The phases can be used independently or together. For example, a team may use reverse engineering to document an application without beginning its replacement, or begin re-engineering when an approved PRD already exists.
 
@@ -35,13 +36,13 @@ It assumes that readers are familiar with agile delivery practices and have acce
 ## How to use this guidance
 
 1. Read this Overview to understand the delivery team, stakeholder roles and approach.
-2. Follow the [Reverse Engineering](./reverse-engineering/) or [Re-Engineering](./re-engineering/) guidance that applies to the current stage of work.
+2. Follow the [Reverse Engineering](../reverse-engineering/) or [Re-Engineering](../re-engineering/) guidance that applies to the current stage of work.
 3. Use the phase-specific tooling and output reference material when it is needed.
-4. Review [Considerations & Caveats](./considerations-and-caveats/) before starting work to understand risks, limitations and practical advice.
+4. Review [Considerations & Caveats](../considerations-and-caveats/) before starting work to understand risks, limitations and practical advice.
 
 ## A small, T-shaped delivery team
 
-The reverse engineering approach is designed for a small, T-shaped team. Each person has a primary specialism but can contribute outside it where the work requires. AI tooling performs much of the initial analysis of code, screens and other artefacts; the team focuses on directing the work, validating outputs and engaging stakeholders.
+The reverse engineering approach is designed for a small, T-shaped team. Each person has a primary specialism but can contribute outside it where the work requires. The LAP Innovation agents perform much of the initial analysis of code, screens and other artefacts; the team focuses on directing the work, validating outputs and engaging stakeholders.
 
 ### Delivery Lead
 
@@ -54,11 +55,11 @@ The Delivery Lead coordinates the work and stakeholder engagement. Their respons
 
 ### Developer
 
-The Developer operates the AI tooling, reviews technical outputs and investigates issues. Pairing is optional but can support knowledge sharing and technical review.
+The Developer operates the LAP Innovation agents and other AI tooling, reviews technical outputs and investigates issues. Pairing is optional but can support knowledge sharing and technical review.
 
 The Developer is responsible for:
 
-- setting up and configuring AI tools
+- setting up and configuring the LAP Innovation agents and other approved AI tools
 - running tools against source code and screenshots
 - reviewing and correcting outputs for technical accuracy
 - escalating outputs that appear incomplete or incorrect

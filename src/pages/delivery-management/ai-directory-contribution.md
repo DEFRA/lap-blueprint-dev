@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: How to add your LAP AI Artefacts to our LAMAI's AI Directory
-order: 5
+order: 11
+group: Reuse and contribution
 ---
 
 # How to add your LAP AI Artefacts to our LAMAI's AI Directory

@@ -6,19 +6,20 @@ order: 2
 
 # Tooling
 
-The reverse engineering process uses AI coding assistants with specialised plugins or extensions to analyse legacy application artefacts and produce structured outputs. The referenced playbook documents support for the legacy reverse engineering plugin with GitHub Copilot in Visual Studio Code.
+The reverse engineering process uses AI coding assistants with a set of specialised GitHub Copilot agents to analyse legacy application artefacts and produce structured outputs. This page documents the LAP Innovation agents for GitHub Copilot in Visual Studio Code. The full set of agents, with descriptions and copy-ready definitions, is published on the [LAP Implementations Agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) page.
 
 Before using any AI tooling with legacy application material, confirm that the chosen tool is approved for the information classification and that source code, screenshots and transcripts have been prepared in line with information governance requirements.
 
 ## What the tooling supports
 
-The plugin provides skills and autonomous agents for the reverse engineering process. It supports:
+The LAP Innovation agents provide skills and autonomous agents for the reverse engineering process. They support:
 
 - converting screenshots into semantic HTML mock-ups
 - curating interview transcripts for downstream analysis
 - analysing application and database source code
 - analysing domain language, user workflows and screen navigation
 - synthesising analysis outputs into a Product Requirements Document (PRD)
+- decomposing the PRD into traceable, standards-compliant feature specifications
 
 Use the [Process](../process/) guidance to understand where these activities fit in the delivery journey.
 
@@ -26,49 +27,42 @@ Use the [Process](../process/) guidance to understand where these activities fit
 
 ### Prerequisites
 
-Before installing the plugin:
+Before using the agents:
 
 1. Install and authenticate GitHub Copilot in Visual Studio Code. Follow the [official GitHub Copilot setup guide](https://code.visualstudio.com/docs/copilot/setup).
 2. Confirm that you have the required GitHub and repository access. See the local [GitHub Access](~/delivery-management/github-access/) guidance.
-3. In Visual Studio Code Settings, enable the settings documented by the plugin:
+3. In Visual Studio Code Settings, enable the following settings:
    - `chat.customAgentInSubagent.enabled`
    - `chat.useAgentSkills`
 4. Prepare a working project folder using the directory structure below.
 
-The availability of models, agents and plugin features can change. Check the plugin documentation and your organisation's current AI-tooling standards before beginning a delivery engagement.
+The availability of models, agents and features can change. Check the [LAP Implementations Agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) page and your organisation's current AI-tooling standards before beginning a delivery engagement.
 
-### Install the plugin
+### Install the agents
 
-The plugin repository provides an installer script. From the root of the legacy application project, download and run it in a compatible shell:
+The agents are published as individual `.agent.md` files on the [LAP Implementations Agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) page. Add the ones you need to your project so they appear in the Copilot agent picker:
 
-```sh
-curl -O https://raw.githubusercontent.com/DEFRA/claude-legacy-reveng-plugin/main/scripts/install-as-copilot-plugin.sh
-chmod +x install-as-copilot-plugin.sh
-./install-as-copilot-plugin.sh
-```
+1. On the agents page, choose the agents for your process phase and open each one.
+2. Copy the agent's `.agent.md` file into the `.github/agents/` directory in the root of the legacy application project.
+3. Edit any project-specific details, such as the service name, tech stack and team conventions.
+4. Reload Visual Studio Code so the agents appear in the Copilot agent picker.
 
-After the configuration has been installed, remove the downloaded installer script if it is no longer needed:
-
-```sh
-rm install-as-copilot-plugin.sh
-```
-
-Review the files added by the installer before processing application material. The plugin source and its agent and skill definitions are available in the [legacy reverse engineering plugin repository](https://github.com/DEFRA/claude-legacy-reveng-plugin).
+Review each agent definition before processing application material. The agent and skill definitions are published on the [LAP Implementations Agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) page.
 
 ### Run the reverse engineering workflow
 
-Open a new GitHub Copilot Chat session in Visual Studio Code and select the agent appropriate to the current process phase:
+Open a new GitHub Copilot Chat session in Visual Studio Code and select the agent appropriate to the current process phase. To run the pipeline end to end, use the [LAP Orchestrator](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-lap-orchestrator.agent) agent; to run the phases individually:
 
-1. Select the digital-content-curator agent for content curation of screenshots and transcripts.
+1. Select the [Digital Content Curator](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-digital-content-curator.agent) agent for content curation of screenshots and transcripts.
 2. Follow the [Process](../process/) guidance to review the generated mock-ups and curated transcripts.
-3. Select the product-manager agent for analysis and PRD generation.
+3. Select the [Product Manager](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-product-manager.agent) agent for analysis and PRD generation.
 4. Review the resulting PRD with the delivery team and Application Product Owner before sign-off.
 
 Do not treat generated content as authoritative without review. The delivery team remains responsible for checking accuracy, completeness, traceability and the absence of personal data.
 
 ## Project directory structure
 
-Set up the project folder before running the plugin. Input directories hold material supplied by the team; the tooling creates the output directories and analysis files.
+Set up the project folder before running the agents. Input directories hold material supplied by the team; the agents create the output directories and analysis files.
 
 | Directory             | Type      | Contents                                                 |
 | --------------------- | --------- | -------------------------------------------------------- |

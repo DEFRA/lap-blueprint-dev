@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: PII scanning
-order: 2
+order: 3
 group: Start-up and feasability
 ---
 
 # PII Screener tool
 
-The [LAP PII Screener](https://github.com/DEFRA/lap-pii-screener) is a multi-scanner static analysis tool that finds secrets, API keys, and personally identifiable information (PII) in source code repositories. It combines four scanners into a single CLI, deduplicates their results, maps every finding to remediation guidance and applicable regulation, and can optionally replace sensitive values directly in source files.
+The [LAP PII Screener](https://github.com/DEFRA/lap-pii-screener) is a tool that scans source code for sensitive information — passwords, API keys, and personal data (PII) — before the code is shared or reused. It runs several scanners, combines and de-duplicates their results, explains how to fix each finding and which regulation applies, and can optionally replace sensitive values in the files for you.
 
 The tool is intended to be run before source code is shared outside the current team, used with AI-assisted tooling, or moved into environments with wider access.
 

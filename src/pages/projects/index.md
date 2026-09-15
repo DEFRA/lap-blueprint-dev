@@ -2,6 +2,7 @@
 layout: "@lap/layouts/BaseLayout.astro"
 title: Projects
 order: 5
+hidden: true
 ---
 
 # Projects

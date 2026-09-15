@@ -6,9 +6,22 @@ order: 2
 
 # Delivery Management
 
+Practical, task-based guides for the common delivery activities on a LAP project — getting access, setting up environments, and handling source code safely.
+
+## Guides in this section
+
+- [Azure Virtual Desktop Access](./azure-virtual-desktop-access/)
+- [Open VPN Access](./open-vpn/)
+- [Sandbox Provisioning](./sandbox-provisioning/)
+- [GitHub Access](./github-access/)
+- [How to access default tools and licences](./access-license/)
+- [Source code acquisition](./source-code-acquisition/)
+- [PII scanning](./pii-scanning/)
+- [Security Access Request](./security-waiver/)
+
 ## Product delivery life cycle
 
-LAP projects follow a linear, waterfall product delivery life cycle made up of eight sequential stages. The stages run in order, with the outputs of each forming the inputs to the next, providing a consistent structure for planning, governance and assurance across delivery. The nine stages are as follows:
+LAP projects follow a structured, step-by-step delivery process (a waterfall life cycle) made up of eight stages. The stages run in order, with each stage's output becoming the next stage's starting point. This gives a consistent structure for planning, governance and assurance across delivery. The eight stages are as follows:
 
 <details><summary>
 

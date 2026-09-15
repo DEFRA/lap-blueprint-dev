@@ -98,34 +98,30 @@ The product manager, business analyst and relevant stakeholders approve the feat
 
 ### 4. Project setup
 
-Prepare the target project before autonomous build begins. The AI agent needs clear operational instructions, project-specific rules and an isolated execution environment.
+Prepare the target project before autonomous build begins. The AI agent needs clear operational instructions and project-specific rules.
 
 Set up:
 
-- approved AI tooling, Docker and the devcontainer command-line tooling required for the sandbox
-- an `AGENTS.md` or `CLAUDE.md` file that explains project purpose, commands, ports and environment, Git workflow, and non-obvious gotchas
+- approved AI tooling, including Copilot Ralph and authenticated GitHub Copilot access
+- an `AGENTS.md` file that explains project purpose, commands, ports and environment, Git workflow, and non-obvious gotchas
 - a `rules/` directory containing focused guidance for architecture, languages, frameworks, testing, infrastructure and design systems relevant to the project
 
 Keep the agent instruction file concise. Include information the agent cannot infer from the codebase; place detailed standards in the `rules/` files. Validate installation, build, test, lint and type-check commands before the autonomous loop is allowed to use them.
 
 ### 5. Autonomous build
 
-Use an approved autonomous loop runner to implement one signed-off feature at a time. The loop separates planning from implementation:
+Use an approved autonomous loop runner, such as Copilot Ralph, to implement one signed-off feature at a time:
 
-1. Initialise the workspace and copy the next approved feature specification into the target project's `specs/` directory.
-2. Enter the isolated devcontainer sandbox.
-3. Run the planning loop to compare the feature specification with the codebase and produce `IMPLEMENTATION_PLAN.md`.
-4. Run the build loop. Each iteration takes the highest-priority incomplete item, implements it, runs checks, commits the result and records progress.
-5. Review the implementation before continuing.
-6. Archive loop artefacts before preparing the next feature.
+1. Copy the next approved feature specification into the target project's `specs/` directory.
+2. Start the loop with the feature specification as the prompt. Each iteration builds on the previous one, implementing the specification, running checks and committing the result.
+3. Set a deliberate maximum iteration count and timeout so the loop cannot run unattended beyond an agreed budget.
+4. Review the implementation before continuing to the next feature.
 
-`IMPLEMENTATION_PLAN.md` is the shared plan between fresh agent sessions. `PROGRESS.md` is an append-only record of work completed, learning, failures and unresolved items. If an iteration is interrupted, restart the loop from the existing implementation plan rather than recreating project state.
-
-The sandbox is a required control. Autonomous agents may run with elevated tool permissions; do not run an unattended build loop directly on the host machine.
+If an iteration is interrupted, re-run the loop against the current state of the codebase rather than recreating project state. Each iteration commits its work, so the Git history is the record of what was done.
 
 ### 6. Implementation review
 
-After each build loop, the product manager and a software engineer review the feature before integration and before work begins on the next feature.
+After each build loop, the product manager and a software engineer review the feature before integration and before work begins on the next feature. The [Completeness Auditor](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-completeness-auditor.agent) agent reconciles the build against the feature traceability manifest so that no functionality is lost.
 
 Review:
 
@@ -133,6 +129,6 @@ Review:
 - whether tests are meaningful and cover acceptance criteria
 - code quality, project conventions, dead code, placeholders and incomplete work
 - workflow behaviour, usability and unanticipated edge cases
-- `PROGRESS.md` for recurring failures, unresolved work, useful learning and commands that did not run as expected
+- the iteration history and commit log for recurring failures, unresolved work, useful learning and commands that did not run as expected
 
-If issues are found, improve the implementation or update the relevant specification before continuing. When the feature is accepted, archive the loop artefacts and move to the next feature in build-layer order.
+If issues are found, improve the implementation or update the relevant specification before continuing. When the feature is accepted, move to the next feature in build-layer order.

@@ -1,7 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Source code acquisition
-order: 1
+order: 2
 group: Start-up and feasability
 ---
 

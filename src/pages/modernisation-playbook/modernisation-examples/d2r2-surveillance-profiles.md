@@ -1,6 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: D2R2 (Surveillance Profiles) modernisation
+title: D2R2 (Surveillance Profiles)
 ---
 
 <!-- Provenance: synthesised from the project's Product Requirements Document
@@ -17,7 +17,7 @@ title: D2R2 (Surveillance Profiles) modernisation
      integration is deferred to a later iteration; feature-parity gaps remain).
      Internal note — not rendered on the page. -->
 
-# D2R2 (Surveillance Profiles) modernisation
+# D2R2 (Surveillance Profiles)
 
 ## Project summary
 
@@ -48,9 +48,23 @@ exceeds the 90% Defra target.
 | Users | Internal profile editors and policy users, external technical, policy and veterinary-advice authors and reviewers, administrators, and public read-only visitors |
 | Status | In delivery |
 
-## Modernisation approach
+## Tech stack
 
-### As-is
+Grounded in the re-engineered codebase's project and configuration files, and in the
+PRD and parity analysis for the "before" column.
+
+| Layer | Legacy (as-is) | Modernised (to-be) |
+|-------|----------------|--------------------|
+| Language | Mixed VB.NET and C# | C# |
+| Platform | .NET Framework (out of support) | .NET 10 |
+| Front end | ASP.NET Web Forms with a proprietary UI toolkit and bespoke screens | Blazor (interactive server) with the GOV.UK Design System Frontend, GDS Transport fonts and the current GOV.UK header |
+| Back end / services | CSLA business objects and older service technologies | Layered .NET solution: an isolated domain project, an application services project, an infrastructure project and a Blazor web project as the composition root |
+| Data | SQL Server with much behaviour in stored procedures (around 50 tables and 137 stored procedures) | Entity Framework Core over SQL Server with code-first migrations applied on startup and deterministic seed data |
+| Reporting | Proprietary end-of-life PDF component | Pluggable report renderer: GDS-styled HTML converted to PDF with headless Chromium, with a built-in text renderer as a graceful fallback |
+| CI/CD & quality | No automated tests | xUnit and bUnit test suite with coverage collection via coverlet; migrations and startup glue excluded from coverage |
+| Security & accessibility | Forms authentication (external) and Windows authentication (internal), non-standard UI | Authentication bypassed in development, with Gov.UK One Login / Customer Identity Management (external) and Entra ID (internal) as the target; role-based access; WCAG 2.2 AA accessible GOV.UK components with a published accessibility statement |
+
+## As-is
 
 The legacy D2R2 was a mixed VB.NET and C# web application built on ASP.NET Web Forms,
 running on an out-of-support version of the .NET Framework. Its business logic sat in a
@@ -82,7 +96,7 @@ The main characteristics and pain points of the legacy system were:
   authentication and internal users through Windows authentication, neither of which
   aligns with the current cross-government identity approach.
 
-### To-be
+## To-be
 
 The target is a cloud-ready web application that preserves D2R2's workflows, user and
 role model and business logic, while moving to a modern, supported and well-tested
@@ -110,7 +124,7 @@ design:
 - **A restyleable reporting pipeline** that reuses the GDS web styling to produce
   print-accurate disease reports, replacing the end-of-life proprietary PDF component.
 
-### Steps taken
+## Steps taken
 
 The modernisation followed the Defra Legacy Application Programme path:
 
@@ -148,22 +162,6 @@ editor (scientific and legislative references, further-information sources,
 contributions and author-facing revision dates), richer profile search and
 version comparison, and the disease-characteristic and saved-filter options on disease
 ranking.
-
-## Tech stack
-
-Grounded in the re-engineered codebase's project and configuration files, and in the
-PRD and parity analysis for the "before" column.
-
-| Layer | Legacy (as-is) | Modernised (to-be) |
-|-------|----------------|--------------------|
-| Language | Mixed VB.NET and C# | C# |
-| Platform | .NET Framework (out of support) | .NET 10 |
-| Front end | ASP.NET Web Forms with a proprietary UI toolkit and bespoke screens | Blazor (interactive server) with the GOV.UK Design System Frontend, GDS Transport fonts and the current GOV.UK header |
-| Back end / services | CSLA business objects and older service technologies | Layered .NET solution: an isolated domain project, an application services project, an infrastructure project and a Blazor web project as the composition root |
-| Data | SQL Server with much behaviour in stored procedures (around 50 tables and 137 stored procedures) | Entity Framework Core over SQL Server with code-first migrations applied on startup and deterministic seed data |
-| Reporting | Proprietary end-of-life PDF component | Pluggable report renderer: GDS-styled HTML converted to PDF with headless Chromium, with a built-in text renderer as a graceful fallback |
-| CI/CD & quality | No automated tests | xUnit and bUnit test suite with coverage collection via coverlet; migrations and startup glue excluded from coverage |
-| Security & accessibility | Forms authentication (external) and Windows authentication (internal), non-standard UI | Authentication bypassed in development, with Gov.UK One Login / Customer Identity Management (external) and Entra ID (internal) as the target; role-based access; WCAG 2.2 AA accessible GOV.UK components with a published accessibility statement |
 
 ## Benefits, outcomes and success metrics
 

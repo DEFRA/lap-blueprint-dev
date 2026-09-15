@@ -1,6 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Animal health case management modernisation example
+title: Animal health case management
 ---
 
 <!-- Provenance: synthesised from the project's PRDs (four clean-room capability
@@ -9,7 +9,7 @@ title: Animal health case management modernisation example
      document or delivery manifest was present, so the To-be and tech stack are
      drawn from the codebase and PRDs alone. Internal note — not rendered on the page. -->
 
-# Animal health case management modernisation example
+# Animal health case management
 
 ## Project summary
 
@@ -36,9 +36,19 @@ not lost in the move.
 | Users | Regulatory staff — caseworker, supervisor, regulatory officer, and official veterinarian role types |
 | Status | In delivery — runnable reference slice |
 
-## Modernisation approach
+## Tech stack
 
-### As-is
+Grounded in the re-engineered codebase's project and configuration files.
+
+| Layer | Technology |
+|-------|-----------|
+| Front end | Blazor interactive server components, Razor, Bootstrap CSS |
+| Back end / services | ASP.NET Core on .NET 10, C#; REST API controllers; clean-architecture layering (Domain, Application, Infrastructure, Web) with dependency injection |
+| Data | Entity Framework Core with SQL Server; database migrations and reference-data seeding; SQLite used for tests |
+| CI/CD &amp; quality | xUnit test framework; Coverlet code-coverage collection; .NET SDK test tooling |
+| Security &amp; accessibility | Cookie-based authentication; permission-based authorisation; anti-forgery protection; HTTPS redirection and HSTS; centralised problem-details error handling |
+
+## As-is
 
 The legacy service ran on a proprietary low-code BPM and case-management rules platform. Its
 defining characteristics — and the pain points that drove modernisation — were:
@@ -59,7 +69,7 @@ defining characteristics — and the pain points that drove modernisation — we
 The legacy technology and its weaknesses are described here in general terms only, because the legacy
 system may still be live.
 
-### To-be
+## To-be
 
 The target state is a conventional, cloud-hostable web application built to mainstream enterprise
 patterns, described here as an approach and shape rather than a deployable design:
@@ -77,7 +87,7 @@ patterns, described here as an approach and shape rather than a deployable desig
   authorisation, input handling and safe error responses), **accessibility to WCAG 2.2 AA**,
   **automated testing**, and **observability** through structured logging.
 
-### Steps taken
+## Steps taken
 
 The delivery followed a repeatable, clean-room modernisation path:
 
@@ -98,18 +108,6 @@ The delivery followed a repeatable, clean-room modernisation path:
    handling and structured logging were built in as the capabilities were delivered, not added later.
 6. **Prove it end to end.** The capabilities are covered by an automated test suite and packaged as a
    runnable reference slice with seeded reference data, so reviewers can exercise the journeys.
-
-## Tech stack
-
-Grounded in the re-engineered codebase's project and configuration files.
-
-| Layer | Technology |
-|-------|-----------|
-| Front end | Blazor interactive server components, Razor, Bootstrap CSS |
-| Back end / services | ASP.NET Core on .NET 10, C#; REST API controllers; clean-architecture layering (Domain, Application, Infrastructure, Web) with dependency injection |
-| Data | Entity Framework Core with SQL Server; database migrations and reference-data seeding; SQLite used for tests |
-| CI/CD &amp; quality | xUnit test framework; Coverlet code-coverage collection; .NET SDK test tooling |
-| Security &amp; accessibility | Cookie-based authentication; permission-based authorisation; anti-forgery protection; HTTPS redirection and HSTS; centralised problem-details error handling |
 
 ## Benefits, outcomes and success metrics
 

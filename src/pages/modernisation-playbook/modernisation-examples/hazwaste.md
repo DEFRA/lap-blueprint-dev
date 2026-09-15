@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Hazardous Waste Consignee Returns modernisation example
+title: Hazardous Waste Consignee Returns
 ---
 
 <!-- Provenance: synthesised from the project's PRD, code-derived analyses and the
      re-engineered codebase (Node + hapi + PostgreSQL). Status: In delivery.
      Internal note — not rendered on the page. -->
 
-# Hazardous Waste Consignee Returns modernisation example
+# Hazardous Waste Consignee Returns
 
 ## Project summary
 
@@ -23,39 +23,6 @@ The headline outcome: the operational returns-and-billing core has been rebuilt 
 | Users | Environment Agency hazardous-waste support staff (internal); waste-site operators submit returns by email but do not log in |
 | Status | In delivery |
 
-## Modernisation approach
-
-### As-is
-
-The legacy service was a Java Enterprise Edition application hosted on a proprietary Java application server, backed by a proprietary relational database with a large operational schema (dozens of tables, materialised views, sequences and database triggers) and a separate reporting data warehouse feeding a commercial business-intelligence tool. Staff used a thin-client web front end rendered by the application server; operators submitted returns as structured XML attachments to a monitored mailbox, which were picked up, authenticated per message, validated and processed through an internal messaging pipeline. Documents such as acknowledgement and rejection letters were produced through a separate print-formatting pipeline, and billing was exported as files to a central billing system.
-
-The main pain points that drove modernisation were:
-
-- **An ageing, tightly coupled technology stack** — an end-of-life application-server and proprietary-database combination that was expensive to license and increasingly hard to recruit for and maintain.
-- **Business logic spread across layers** — rules embedded in application code, database triggers, stored procedures and inline SQL, making the true behaviour hard to see and safe change difficult.
-- **No automated test safety net**, so every change carried regression risk.
-- **A front end that pre-dated current government accessibility and design standards.**
-- **Tight coupling to shared platform components and external services**, which made the service hard to evolve independently.
-
-### To-be
-
-The target is a cloud-ready web application, not a like-for-like re-hosting. Its shape is:
-
-- A **server-rendered web application** for internal staff, built to the GOV.UK Design System so it meets government accessibility standards.
-- A **managed relational database** (PostgreSQL) holding the operational data, with schema managed as versioned migrations rather than hand-applied scripts.
-- **Background workflows** — return intake, overdue-return reminders, document generation and billing export — expressed as services that can be run on a schedule or on demand, replacing the legacy messaging and print pipelines.
-- **Integrations described at the boundary** — inbound operator submissions, outbound billing files, notifications and reference-data lookups — kept behind clear seams so each can be implemented and evolved on its own.
-
-The non-functional goals baked into the rebuild are: secure by design (OWASP Top 10 addressed, parameterised data access, no plain-text shared secrets, pluggable authentication), accessible to WCAG 2.2 AA, observable through structured logging, and demonstrably correct through at least 90% automated test coverage. Business behaviour is preserved, not reinvented — the legacy business rules are carried across as named, individually tested rules.
-
-### Steps taken
-
-1. **Reverse-engineered the legacy system into an authoritative specification.** AI-assisted analysis agents read the legacy Java source and database SQL to extract the workflows, domain model and business rules, and synthesised them into a Product Requirements Document plus supporting application and database analyses. This became the contract for the rebuild. Because no screenshots or stakeholder interviews were available, the specification is explicitly code-grounded, with inferred points recorded as open questions.
-2. **Reviewed the specification** at a human gate before any build began.
-3. **Rebuilt the operational core iteratively** on the target stack using an agentic build loop, implementing the specification in coherent slices — return intake and validation, cancellation and extract, quarterly reminders, tariff-based invoicing, billing export, document generation, and consignee and user administration — and porting each legacy business rule with a matching test.
-4. **Baked in the delivery standards** from the start: GOV.UK Design System UI, structured configuration and logging conventions, parameterised database access, seed data for first run, and a Jest test suite run in continuous integration.
-5. **Tracked parity against the legacy specification** with a running gap analysis and a descope register, so what is done, what is outstanding and what has been deliberately deferred are all visible. No requirements have been formally descoped.
-
 ## Tech stack
 
 Grounded in the re-engineered codebase's manifest and configuration files. Technologies are named at a high level; versions are given only where they signal a standards baseline.
@@ -67,6 +34,37 @@ Grounded in the re-engineered codebase's manifest and configuration files. Techn
 | Data | PostgreSQL; Knex query builder with versioned migrations and seed data; native `pg` driver; parameterised queries throughout |
 | CI/CD & quality | Jest automated tests (unit and integration) with a 90% coverage gate; ESLint; Docker Compose for a local PostgreSQL server; npm scripts for build, migrate, seed and job execution |
 | Security & accessibility | Pluggable authentication strategy (external directory / OIDC in production, disabled for local development); OWASP Top 10 addressed; PDF document generation; optional GOV.UK Notify email notifications; structured logging for observability |
+
+## As-is
+
+The legacy service was a Java Enterprise Edition application hosted on a proprietary Java application server, backed by a proprietary relational database with a large operational schema (dozens of tables, materialised views, sequences and database triggers) and a separate reporting data warehouse feeding a commercial business-intelligence tool. Staff used a thin-client web front end rendered by the application server; operators submitted returns as structured XML attachments to a monitored mailbox, which were picked up, authenticated per message, validated and processed through an internal messaging pipeline. Documents such as acknowledgement and rejection letters were produced through a separate print-formatting pipeline, and billing was exported as files to a central billing system.
+
+The main pain points that drove modernisation were:
+
+- **An ageing, tightly coupled technology stack** — an end-of-life application-server and proprietary-database combination that was expensive to license and increasingly hard to recruit for and maintain.
+- **Business logic spread across layers** — rules embedded in application code, database triggers, stored procedures and inline SQL, making the true behaviour hard to see and safe change difficult.
+- **No automated test safety net**, so every change carried regression risk.
+- **A front end that pre-dated current government accessibility and design standards.**
+- **Tight coupling to shared platform components and external services**, which made the service hard to evolve independently.
+
+## To-be
+
+The target is a cloud-ready web application, not a like-for-like re-hosting. Its shape is:
+
+- A **server-rendered web application** for internal staff, built to the GOV.UK Design System so it meets government accessibility standards.
+- A **managed relational database** (PostgreSQL) holding the operational data, with schema managed as versioned migrations rather than hand-applied scripts.
+- **Background workflows** — return intake, overdue-return reminders, document generation and billing export — expressed as services that can be run on a schedule or on demand, replacing the legacy messaging and print pipelines.
+- **Integrations described at the boundary** — inbound operator submissions, outbound billing files, notifications and reference-data lookups — kept behind clear seams so each can be implemented and evolved on its own.
+
+The non-functional goals baked into the rebuild are: secure by design (OWASP Top 10 addressed, parameterised data access, no plain-text shared secrets, pluggable authentication), accessible to WCAG 2.2 AA, observable through structured logging, and demonstrably correct through at least 90% automated test coverage. Business behaviour is preserved, not reinvented — the legacy business rules are carried across as named, individually tested rules.
+
+## Steps taken
+
+1. **Reverse-engineered the legacy system into an authoritative specification.** AI-assisted analysis agents read the legacy Java source and database SQL to extract the workflows, domain model and business rules, and synthesised them into a Product Requirements Document plus supporting application and database analyses. This became the contract for the rebuild. Because no screenshots or stakeholder interviews were available, the specification is explicitly code-grounded, with inferred points recorded as open questions.
+2. **Reviewed the specification** at a human gate before any build began.
+3. **Rebuilt the operational core iteratively** on the target stack using an agentic build loop, implementing the specification in coherent slices — return intake and validation, cancellation and extract, quarterly reminders, tariff-based invoicing, billing export, document generation, and consignee and user administration — and porting each legacy business rule with a matching test.
+4. **Baked in the delivery standards** from the start: GOV.UK Design System UI, structured configuration and logging conventions, parameterised database access, seed data for first run, and a Jest test suite run in continuous integration.
+5. **Tracked parity against the legacy specification** with a running gap analysis and a descope register, so what is done, what is outstanding and what has been deliberately deferred are all visible. No requirements have been formally descoped.
 
 ## Benefits, outcomes and success metrics
 

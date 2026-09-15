@@ -170,6 +170,11 @@ export function buildNavPages(markdownModules, normalizedBase) {
         typeof markdownModule.frontmatter?.redirect === "string"
           ? markdownModule.frontmatter.redirect.trim()
           : "";
+      const navLabel =
+        typeof markdownModule.frontmatter?.navLabel === "string" &&
+        markdownModule.frontmatter.navLabel.trim()
+          ? markdownModule.frontmatter.navLabel.trim()
+          : undefined;
       const href = normalizeHref(
         withBase(`/${normalizedRoutePath}`, normalizedBase),
       );
@@ -181,6 +186,7 @@ export function buildNavPages(markdownModules, normalizedBase) {
         linkHref: redirect ? normalizeHref(withBase(redirect, normalizedBase)) : href,
         label:
           typeof title === "string" && title.trim() ? title : toLabel(slug),
+        navLabel,
         slug,
         order,
         group,

@@ -6,7 +6,7 @@ order: 3
 
 # Output Reference
 
-Reverse engineering produces intermediate artefacts, four analysis outputs and a final Product Requirements Document (PRD). Together, they create an evidence trail from supplied legacy application material to the requirements that stakeholders review and approve.
+Reverse engineering produces intermediate artefacts, four analysis outputs, a Product Requirements Document (PRD) and a consolidated Open Items Register. Together, they create an evidence trail from supplied legacy application material to the requirements that stakeholders review and approve, and can be shared as a single offline documentation pack.
 
 Use this reference with the [Process](../process/) guidance when reviewing generated outputs.
 
@@ -21,6 +21,8 @@ Use this reference with the [Process](../process/) guidance when reviewing gener
 | Analysis          | Application analysis          | `output/application-analysis.md` | Architecture, application behaviour and integrations            |
 | Analysis          | Database analysis             | `output/database-analysis.md`    | Schema, database logic and data constraints                     |
 | Final deliverable | Product Requirements Document | `output/PRD.md`                  | Stakeholder-facing requirements for the replacement application |
+| Register          | Open Items Register           | `output/open-questions.md`       | Document-versus-code discrepancies, findings, functionality-loss risks, open questions and deferred sources |
+| Shareable pack    | Documentation pack            | `output/documentation-pack.html` | A single self-contained, offline interactive pack of every output for reviewers |
 
 ## Intermediate artefacts
 
@@ -28,7 +30,7 @@ Use this reference with the [Process](../process/) guidance when reviewing gener
 
 HTML mock-ups are semantic, unstyled HTML files representing the legacy application's interface. Each source screenshot produces one HTML file. They give later analysis stages a structured representation of visible screens and user interactions.
 
-The `image-to-html` skill produces these files, directly or through the digital-content-curator agent. Each mock-up should:
+The `image-to-html` skill produces these files, directly or through the [`digital-content-curator`](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-digital-content-curator.agent) agent. Each mock-up should:
 
 - use appropriate semantic HTML elements such as `header`, `nav`, `main`, `form` and `table`
 - include all visible text from the source screen
@@ -63,7 +65,7 @@ The four analysis outputs are created from the curated artefacts and source code
 
 ### Domain analysis
 
-The `business-analyst` agent uses curated transcripts and HTML mock-ups to produce a strategic Domain-Driven Design view of the problem domain, without relying on implementation detail.
+The [`business-analyst`](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-business-analyst.agent) agent uses curated transcripts and HTML mock-ups to produce a strategic Domain-Driven Design view of the problem domain, without relying on implementation detail.
 
 The analysis should contain:
 
@@ -78,7 +80,7 @@ All domain terms and rules must be traceable to transcripts or mock-ups. Bounded
 
 ### Interaction analysis
 
-The `interaction-analyst` agent cross-references HTML mock-ups and curated transcripts to describe the application's user-facing behaviour.
+The [`interaction-analyst`](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-interaction-analyst.agent) agent cross-references HTML mock-ups and curated transcripts to describe the application's user-facing behaviour.
 
 The analysis should contain:
 
@@ -92,7 +94,7 @@ Check that every mock-up appears in the inventory, workflows are supported by tr
 
 ### Application analysis
 
-The `application-developer` agent reads the complete application codebase, including source, configuration and project files, to build a technical picture of the system.
+The [`application-developer`](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-application-developer.agent) agent reads the complete application codebase, including source, configuration and project files, to build a technical picture of the system.
 
 The analysis should cover:
 
@@ -109,7 +111,7 @@ Confirm that all source files are accounted for, business rules are numbered wit
 
 ### Database analysis
 
-The `database-analyst` agent reads SQL files, stored procedures, views and inline SQL in application code to document the legacy data architecture.
+The [`database-analyst`](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-database-analyst.agent) agent reads SQL files, stored procedures, views and inline SQL in application code to document the legacy data architecture.
 
 The analysis should cover:
 
@@ -125,7 +127,7 @@ Confirm that all SQL and inline SQL is accounted for, stored procedures are clas
 
 ## Product Requirements Document
 
-The `product-manager` agent synthesises the four analysis outputs into `output/PRD.md`. The PRD is the final reverse engineering deliverable and describes the system to be rebuilt without prescribing implementation choices.
+The [`product-manager`](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-product-manager.agent) agent synthesises the four analysis outputs into `output/PRD.md`. The PRD is the final reverse engineering deliverable and describes the system to be rebuilt without prescribing implementation choices.
 
 Where the analysis provides sufficient evidence, the PRD can cover:
 
@@ -138,3 +140,5 @@ Where the analysis provides sufficient evidence, the PRD can cover:
 - open questions, known limitations and a domain glossary
 
 Before stakeholder review, verify that all four analysis files are used as sources, requirements are traceable to evidence, domain terms are consistent, open questions record genuine ambiguities and all Mermaid diagrams render correctly. The Application Product Owner approves the PRD at the end of the [PRD review and sign-off](../process/) stage.
+
+The `product-manager` agent also records a consolidated Open Items Register in `output/open-questions.md`, capturing document-versus-code discrepancies, findings, functionality-loss risks, open questions and deferred sources. The `html-pack` skill renders every output into a single self-contained, offline documentation pack at `output/documentation-pack.html` for sharing with reviewers.
