@@ -48,25 +48,13 @@ Use this section to get access to the tools, environments and source code you ne
 
 Most teams should complete the following steps before beginning modernisation work:
 
-1. Request OpenVPN access.
-2. Request Azure Virtual Desktop access.
-3. Request GitHub access.
-4. Request access to approved AI tools, if required.
-5. Obtain the application source code.
-6. Complete PII scanning checks.
-7. Request a sandbox environment.
-
-## Popular tasks
-
-Quick links to commonly used services and guidance:
-
-- [Get GitHub access](./github-access/)
-- [Request OpenVPN access](./open-vpn/)
-- [Request Azure Virtual Desktop access](./azure-virtual-desktop-access/)
-- [Get GitHub Copilot or other approved AI tools](./access-license/)
-- [Obtain application source code](./source-code-acquisition/)
-- [Run a PII scan](./pii-scanning/)
-- [Request a sandbox environment](./sandbox-provisioning/)
+1. [Request OpenVPN access](./open-vpn/)
+2. [Request Azure Virtual Desktop access](./azure-virtual-desktop-access/)
+3. [Request GitHub access](./github-access/)
+4. [Request access to approved AI tools](./access-license/), if required
+5. [Obtain the application source code](./source-code-acquisition/)
+6. [Complete PII scanning checks](./pii-scanning/)
+7. [Request a sandbox environment](./sandbox-provisioning/)
 
 ## Product delivery life cycle
 

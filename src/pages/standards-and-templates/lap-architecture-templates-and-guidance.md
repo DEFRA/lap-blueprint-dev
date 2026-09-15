@@ -1,7 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: LAP Architecture Templates and Guidance
-group: Patterns & Templates
+group: Templates
 order: 2
 ---
 

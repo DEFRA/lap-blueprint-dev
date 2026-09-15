@@ -317,6 +317,8 @@ pre.mermaid[data-lightbox] {
 }
 
 .lap-card {
+  display: flex;
+  flex-direction: column;
   padding: govuk-spacing(4);
   border: 1px solid $govuk-border-colour;
   background: govuk-colour("white");
@@ -325,7 +327,22 @@ pre.mermaid[data-lightbox] {
     margin-bottom: govuk-spacing(2);
   }
 
+  // Push the links to the foot of the card so they line up across a row.
   &__links {
+    margin-top: auto;
     margin-bottom: 0;
+    padding-top: govuk-spacing(2);
   }
+}
+
+// ─── Footer: tighten vertical whitespace ─────────────────────────────────────
+
+.govuk-footer {
+  padding-top: govuk-spacing(4);
+  padding-bottom: govuk-spacing(4);
+}
+
+// The small crown sits alone above the crest, leaving a large empty band.
+.govuk-footer__crown {
+  display: none;
 }

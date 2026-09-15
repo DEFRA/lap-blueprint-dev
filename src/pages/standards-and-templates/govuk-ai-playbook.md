@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Gov.UK AI Playbook
+title: GOV.UK AI Playbook
 group: Standards
 order: 1.5
 ---
 
-# Gov.UK AI Playbook
+# GOV.UK AI Playbook
 
 The [AI Playbook for the UK Government](https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government) is the primary guidance for using AI safely, effectively, and securely in government organisations. It covers AI capabilities, limitations, and risks, alongside practical guidance for selecting, buying, and deploying AI.
 

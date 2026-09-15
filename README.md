@@ -44,7 +44,7 @@ Each Markdown page under `src/pages/` can include YAML frontmatter that controls
 | `order` | `2` or `1.1` | Controls sort order in navigation. Lower values appear earlier; decimal values are accepted for ordering within a section. |
 | `group` | `Start-up and feasability` | Groups sibling pages together under a named section in the side navigation. Pages without a group stay ungrouped. |
 | `hidden` | `true` | Removes the page from the generated navigation. This is useful for internal or draft pages, examples, and special-case routes. |
-| `redirect` | `/standards-patterns-and-templates/core-ai-project-requirements/` | Used with `RedirectLayout.astro` to send the page to a different route instead of rendering its own content. |
+| `redirect` | `/standards-and-templates/core-ai-project-requirements/` | Used with `RedirectLayout.astro` to send the page to a different route instead of rendering its own content. |
 | `permalink` | `/404.html` | Astro route override for the output path. This is used for pages that must be emitted at a specific URL, such as the custom 404 page. |
 
 A typical page starts with frontmatter like this:

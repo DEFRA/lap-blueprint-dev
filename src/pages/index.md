@@ -5,7 +5,7 @@ order: 0
 fullWidth: true
 ---
 
-# Legacy Application Modernisation AI (LAMAI) Blueprint
+# Legacy Application Modernisation AI Blueprint
 
 ## What is the LAMAI Blueprint?
 
@@ -19,7 +19,6 @@ The LAMAI Blueprint is a practical guide for teams modernising legacy applicatio
 <p class="govuk-body lap-card__desc">Starting a new modernisation project? Begin here to understand the process, set up access and find the guidance you need.</p>
 <ul class="govuk-list lap-card__links">
 <li><a class="govuk-link" href="./delivery-management/">Delivery Management</a></li>
-<li><a class="govuk-link" href="./FAQs/">Frequently Asked Questions</a></li>
 </ul>
 </div>
 <div class="lap-card">
@@ -31,9 +30,9 @@ The LAMAI Blueprint is a practical guide for teams modernising legacy applicatio
 </div>
 <div class="lap-card">
 <h3 class="govuk-heading-s lap-card__heading">Use standards and templates</h3>
-<p class="govuk-body lap-card__desc">Find approved standards, reusable patterns and templates to support consistent delivery.</p>
+<p class="govuk-body lap-card__desc">Find approved standards and reusable templates to support consistent delivery.</p>
 <ul class="govuk-list lap-card__links">
-<li><a class="govuk-link" href="./standards-patterns-and-templates/">Standards and Templates</a></li>
+<li><a class="govuk-link" href="./standards-and-templates/">Standards and Templates</a></li>
 </ul>
 </div>
 <div class="lap-card">
@@ -45,9 +44,16 @@ The LAMAI Blueprint is a practical guide for teams modernising legacy applicatio
 </div>
 <div class="lap-card">
 <h3 class="govuk-heading-s lap-card__heading">Understand key terms</h3>
-<p class="govuk-body lap-card__desc">Find definitions for terminology used throughout the blueprint.</p>
+<p class="govuk-body lap-card__desc">Find definitions for terminology used throughout the LAMAI Blueprint.</p>
 <ul class="govuk-list lap-card__links">
 <li><a class="govuk-link" href="./glossary-of-terms/">Glossary of Terms</a></li>
+</ul>
+</div>
+<div class="lap-card">
+<h3 class="govuk-heading-s lap-card__heading">Frequently asked questions</h3>
+<p class="govuk-body lap-card__desc">Find quick answers to common onboarding and delivery questions.</p>
+<ul class="govuk-list lap-card__links">
+<li><a class="govuk-link" href="./FAQs/">Frequently Asked Questions</a></li>
 </ul>
 </div>
 </div>
@@ -61,4 +67,3 @@ Quick links to the resources teams use most often:
 - [Request a sandbox environment](./delivery-management/sandbox-provisioning/)
 - [Follow the reverse engineering process](./modernisation-playbook/reverse-engineering/process/)
 - [Browse approved AI tools](./ai-catalogue/)
-- [Read frequently asked questions](./FAQs/)

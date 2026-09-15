@@ -6,23 +6,23 @@ order: -1
 
 # **Defra AI Blueprint - Content Template**
 
-For: Engineers building the live Blueprint website
-Owner: PM maintains this alongside the Blueprint itself
+For: Engineers building the live LAMAI Blueprint website
+Owner: PM maintains this alongside the LAMAI Blueprint itself
 
 # **Purpose and How to Use This**
 
-The Blueprint currently exists as a set of working content files. This document is the content model for turning it into an interactive website, it defines, page-type by page-type, exactly what fields and sections belong on each page, so a new delivery team member with no technical background can land on any page and know: what this is, what to do, and who to ask if it's not enough.
+The LAMAI Blueprint currently exists as a set of working content files. This document is the content model for turning it into an interactive website, it defines, page-type by page-type, exactly what fields and sections belong on each page, so a new delivery team member with no technical background can land on any page and know: what this is, what to do, and who to ask if it's not enough.
 
 # **How to use this as an engineer:**
 
 1. Each "Page Template" in Section 3 becomes one page type / content type on the site.
 1. Every template includes at least one worked example using content already learnt on this engagement. Build the site so a real page looks like the worked example, not the abstract field list.
-1. Do not invent a 7th navigation section for "the 7 blockers or specific to backlog items". These blockers once resolved and documented will feed into the sitemap and pages below which in turn keeps the site's structure identical to the Blueprint's existing 5/6 part structure.
+1. Do not invent a 7th navigation section for "the 7 blockers or specific to backlog items". These blockers once resolved and documented will feed into the sitemap and pages below which in turn keeps the site's structure identical to the LAMAI Blueprint's existing 5/6 part structure.
 1. The Agent & Tool Catalogue page type has a recommended structure set out in Section 3E. Check whether an entry template already exists before building it, and use the structure in Section 3E if not. Example Agent B (PII Scanner) is the reference example.
 
 # **Section 2 — Sitemap**
 
-This matches the existing Blueprint structure exactly. No new top-level sections have been added.
+This matches the existing LAMAI Blueprint structure exactly. No new top-level sections have been added.
 
 ```ascii
 Home
@@ -37,7 +37,7 @@ Home
 
 The homepage is not a new navigation tier, it's a landing page that routes people into the 5 sections above. It should include:
 
-- Mission statement (one sentence summarising the Blueprint's purpose)
+- Mission statement (one sentence summarising the LAMAI Blueprint's purpose)
 - "Common Tasks" quick-link box — the 4 tasks a non-technical new joiner most often needs, linking straight into the relevant page below:
   - "I need source code for my application" → Process P-001
   - "I need a sandbox to build and test in" → Process P-004

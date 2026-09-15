@@ -11,11 +11,95 @@ fullWidth: true
 <details>
 <summary>
 
-## How do I get a supplier access to a Defra-managed desktop?
+## What is the LAMAI Blueprint?
 
 </summary>
 
-Azure Virtual Desktop (AVD) gives approved supplier users a Defra-managed desktop hosted in Azure, rather than accessing Defra systems directly from their own devices. This is the preferred route when suppliers need access to Defra applications and services rather than just network connectivity. See [Azure Virtual Desktop Access](../delivery-management/azure-virtual-desktop-access/) for the request and provisioning flow.
+The LAMAI Blueprint is a practical framework that supports teams in modernising legacy applications. It brings together processes, playbooks, standards, and AI-assisted guidance to help teams at every stage of the modernisation journey.
+
+</details>
+
+<details>
+<summary>
+
+## Who is the LAMAI Blueprint for?
+
+</summary>
+
+The LAMAI Blueprint is intended for delivery teams involved in legacy application modernisation, including product managers, delivery managers, architects, engineers, business analysts, and stakeholders.
+
+</details>
+
+<details>
+<summary>
+
+## What are the main benefits of using the LAMAI Blueprint?
+
+</summary>
+
+The LAMAI Blueprint helps teams:
+
+- Reduce delivery risk
+- Accelerate modernisation activities
+- Improve consistency and quality
+- Reuse proven approaches and standards
+- Make effective use of AI-assisted tooling
+- Create better outcomes for users and stakeholders
+
+</details>
+
+<details>
+<summary>
+
+## Do I need to follow the entire LAMAI Blueprint?
+
+</summary>
+
+No. The LAMAI Blueprint is designed to be flexible. Teams can use individual guidance, playbooks, or lifecycle stages independently, depending on their project's needs.
+
+</details>
+
+<details>
+<summary>
+
+## Does the LAMAI Blueprint replace existing delivery methodologies?
+
+</summary>
+
+No. The LAMAI Blueprint complements existing delivery approaches such as Agile, Scrum, Kanban, and government delivery frameworks by providing modernisation-specific guidance.
+
+</details>
+
+<details>
+<summary>
+
+## Can the LAMAI Blueprint be used for applications of any size?
+
+</summary>
+
+Yes. The guidance can be applied to small applications, large enterprise platforms, or portfolios of systems. Teams should tailor the approach proportionally to the complexity and risk of the application.
+
+</details>
+
+<details>
+<summary>
+
+## When should I start using the LAMAI Blueprint?
+
+</summary>
+
+The LAMAI Blueprint should be used as early as possible, ideally during discovery or assessment activities, to help teams understand the current application landscape and plan modernisation effectively.
+
+</details>
+
+<details>
+<summary>
+
+## How do I know which guidance to use first?
+
+</summary>
+
+If you are new to the LAMAI Blueprint, begin with the introductory guidance and delivery lifecycle content. From there, follow the guidance relevant to your current phase of modernisation.
 
 </details>
 
@@ -33,11 +117,11 @@ Defra uses OpenVPN to give approved supplier personnel a secure, encrypted conne
 <details>
 <summary>
 
-## How do I request a sandbox environment for a LAP project?
+## How do I get a supplier access to a Defra-managed desktop?
 
 </summary>
 
-Sandbox environments are provisioned by Defra's Cloud Centre of Excellence (CCoE) via a ServiceNow catalogue request. Before you start, make sure you have a valid LAP project code and that your technical lead can define the environment's required components. See [Sandbox Provisioning](../delivery-management/sandbox-provisioning/) for the full request process and what to prepare upfront.
+Azure Virtual Desktop (AVD) gives approved supplier users a Defra-managed desktop hosted in Azure, rather than accessing Defra systems directly from their own devices. This is the preferred route when suppliers need access to Defra applications and services rather than just network connectivity. See [Azure Virtual Desktop Access](../delivery-management/azure-virtual-desktop-access/) for the request and provisioning flow.
 
 </details>
 
@@ -59,7 +143,18 @@ Before requesting access to the Defra GitHub organisation, each user must have t
 
 </summary>
 
-[How to access default tools and license](../delivery-management/access-license/) explains how to get a GitHub Copilot licence and access approved AI tools. You can then check [AICE AI Toolkit Links](../standards-patterns-and-templates/ai-tooling-standards/) for approved tooling and practical references.
+[How to access default tools and license](../delivery-management/access-license/) explains how to get a GitHub Copilot licence and access approved AI tools. You can then check [AICE AI Toolkit Links](../standards-and-templates/ai-tooling-standards/) for approved tooling and practical references.
+
+</details>
+
+<details>
+<summary>
+
+## How do I request a sandbox environment for a LAP project?
+
+</summary>
+
+Sandbox environments are provisioned by Defra's Cloud Centre of Excellence (CCoE) via a ServiceNow catalogue request. Before you start, make sure you have a valid LAP project code and that your technical lead can define the environment's required components. See [Sandbox Provisioning](../delivery-management/sandbox-provisioning/) for the full request process and what to prepare upfront.
 
 </details>
 
@@ -99,44 +194,11 @@ Review the findings by severity. For any High or Critical findings you should st
 <details>
 <summary>
 
-## How do I register a LAP AI agent in the directory?
+## What is the difference between Reverse Engineering and Re-Engineering?
 
 </summary>
 
-Follow [How to add your LAP AI Agent to our LAMAI's AI Directory](../delivery-management/ai-directory-contribution/) and browse the [AI Directory](../ai-catalogue/) for existing definitions.
-
-</details>
-
-<details>
-<summary>
-
-## What is the LAMAI Blueprint?
-
-</summary>
-
-The LAMAI Blueprint is a practical framework that supports teams in modernising legacy applications. It brings together processes, playbooks, standards, patterns, and AI-assisted guidance to help teams at every stage of the modernisation journey.
-
-</details>
-
-<details>
-<summary>
-
-## Who is the LAMAI Blueprint for?
-
-</summary>
-
-The blueprint is intended for delivery teams involved in legacy application modernisation, including product managers, delivery managers, architects, engineers, business analysts, and stakeholders.
-
-</details>
-
-<details>
-<summary>
-
-## Do I need to follow the entire blueprint?
-
-</summary>
-
-No. The blueprint is designed to be flexible. Teams can use individual guidance, playbooks, or lifecycle stages independently, depending on their project's needs.
+Reverse Engineering focuses on understanding the existing application and generating evidence-based requirements and documentation. Re-Engineering focuses on designing, building, testing, and deploying a modern replacement solution.
 
 </details>
 
@@ -154,79 +216,6 @@ AI can accelerate activities such as application discovery, reverse engineering,
 <details>
 <summary>
 
-## What is the difference between Reverse Engineering and Re-Engineering?
-
-</summary>
-
-Reverse Engineering focuses on understanding the existing application and generating evidence-based requirements and documentation. Re-Engineering focuses on designing, building, testing, and deploying a modern replacement solution.
-
-</details>
-
-<details>
-<summary>
-
-## Can the blueprint be used for applications of any size?
-
-</summary>
-
-Yes. The guidance can be applied to small applications, large enterprise platforms, or portfolios of systems. Teams should tailor the approach proportionally to the complexity and risk of the application.
-
-</details>
-
-<details>
-<summary>
-
-## When should I start using the LAMAI Blueprint?
-
-</summary>
-
-The blueprint should be used as early as possible, ideally during discovery or assessment activities, to help teams understand the current application landscape and plan modernisation effectively.
-
-</details>
-
-<details>
-<summary>
-
-## Does the blueprint replace existing delivery methodologies?
-
-</summary>
-
-No. The blueprint complements existing delivery approaches such as Agile, Scrum, Kanban, and government delivery frameworks by providing modernisation-specific guidance.
-
-</details>
-
-<details>
-<summary>
-
-## How do I know which guidance to use first?
-
-</summary>
-
-If you are new to the blueprint, begin with the introductory guidance and delivery lifecycle content. From there, follow the guidance relevant to your current phase of modernisation.
-
-</details>
-
-<details>
-<summary>
-
-## What are the main benefits of using the LAMAI Blueprint?
-
-</summary>
-
-The blueprint helps teams:
-
-- Reduce delivery risk
-- Accelerate modernisation activities
-- Improve consistency and quality
-- Reuse proven approaches and standards
-- Make effective use of AI-assisted tooling
-- Create better outcomes for users and stakeholders
-
-</details>
-
-<details>
-<summary>
-
 ## Is AI-generated output always accurate?
 
 </summary>
@@ -238,10 +227,21 @@ No. AI-generated content should be treated as a draft or starting point. Teams m
 <details>
 <summary>
 
+## How do I register a LAP AI agent in the directory?
+
+</summary>
+
+Follow [How to add your LAP AI Agent to our LAMAI's AI Directory](../delivery-management/ai-directory-contribution/) and browse the [AI Directory](../ai-catalogue/) for existing definitions.
+
+</details>
+
+<details>
+<summary>
+
 ## Where can I get support or provide feedback?
 
 </summary>
 
-Feedback is encouraged and helps improve the blueprint. Use the project's feedback channels, repository, or contact routes to suggest improvements, report issues, or share lessons learned.
+Feedback is encouraged and helps improve the LAMAI Blueprint. Use the project's feedback channels, repository, or contact routes to suggest improvements, report issues, or share lessons learned.
 
 </details>
