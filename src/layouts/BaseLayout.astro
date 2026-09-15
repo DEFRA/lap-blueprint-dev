@@ -1,9 +1,15 @@
 ---
 import "../styles/global.scss";
-import Breadcrumbs from "../components/Breadcrumbs.astro";
 import SideNavigation from "../components/SideNavigation.astro";
+import SubNavigation from "../components/SubNavigation.astro";
+import RelatedContent from "../components/RelatedContent.astro";
 import TopNavigation from "../components/TopNavigation.astro";
 import SearchBox from "../components/SearchBox.astro";
+import {
+  getNormalizedBase,
+  normalizePath,
+  stripBase,
+} from "../util/contentNavigation.js";
 
 const base = import.meta.env.BASE_URL;
 const isDev = !!import.meta.env.IS_DEV_SITE;
@@ -19,7 +25,30 @@ const {
       : undefined,
   } = {},
 } = Astro.props;
-const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
+const pageTitle = title ? `${title} - Defra LAP` : "Defra LAP";
+
+// Prototype: header-only navigation via a top-nav mega-menu. Flip this to
+// false to restore the sidebar / sub-navigation.
+const useMegaMenu = true;
+const currentRoutePath = normalizePath(
+  stripBase(normalizePath(Astro.url.pathname), getNormalizedBase(base)) || "/",
+);
+const useSubNav =
+  !useMegaMenu &&
+  (currentRoutePath === "/modernisation-playbook" ||
+    currentRoutePath.startsWith("/modernisation-playbook/"));
+const wide = useMegaMenu || fullWidth || useSubNav;
+
+// Show a GOV.UK-style "In this section" rail on the Playbook subsections only.
+const relatedRoots = [
+  "/modernisation-playbook/reverse-engineering",
+  "/modernisation-playbook/re-engineering",
+  "/modernisation-playbook/modernisation-examples",
+];
+const showRelated = relatedRoots.some(
+  (root) =>
+    currentRoutePath === root || currentRoutePath.startsWith(`${root}/`),
+);
 ---
 
 <!doctype html>
@@ -106,9 +135,18 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
       <main class="govuk-main-wrapper" id="main-content">
         <div class="govuk-grid-row">
           {
-            fullWidth ? (
+            showRelated ? (
+              <Fragment>
+                <div class="govuk-grid-column-two-thirds">
+                  <slot />
+                </div>
+                <div class="govuk-grid-column-one-third">
+                  <RelatedContent />
+                </div>
+              </Fragment>
+            ) : wide ? (
               <div class="govuk-grid-column-full">
-                <Breadcrumbs />
+                {useSubNav && <SubNavigation />}
                 <slot />
               </div>
             ) : (
@@ -117,7 +155,6 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
                   <SideNavigation />
                 </aside>
                 <div class="govuk-grid-column-two-thirds">
-                  <Breadcrumbs />
                   <slot />
                 </div>
               </Fragment>

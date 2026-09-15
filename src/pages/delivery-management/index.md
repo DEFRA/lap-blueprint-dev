@@ -6,18 +6,67 @@ order: 2
 
 # Delivery Management
 
-Practical, task-based guides for the common delivery activities on a LAP project — getting access, setting up environments, and handling source code safely.
+Use this section to get access to the tools, environments and source code you need before starting modernisation work.
 
-## Guides in this section
+## What do you need to do?
 
-- [Azure Virtual Desktop Access](./azure-virtual-desktop-access/)
-- [Open VPN Access](./open-vpn/)
-- [Sandbox Provisioning](./sandbox-provisioning/)
-- [GitHub Access](./github-access/)
-- [How to access default tools and licences](./access-license/)
-- [Source code acquisition](./source-code-acquisition/)
-- [PII scanning](./pii-scanning/)
-- [Security Access Request](./security-waiver/)
+<div class="lap-card-grid">
+<div class="lap-card">
+<h3 class="govuk-heading-s lap-card__heading">Get access to tools and systems</h3>
+<p class="govuk-body lap-card__desc">Set up access to the platforms and tools required for your project.</p>
+<ul class="govuk-list lap-card__links">
+<li><a class="govuk-link" href="./github-access/">GitHub Access</a></li>
+<li><a class="govuk-link" href="./open-vpn/">OpenVPN Access</a></li>
+<li><a class="govuk-link" href="./azure-virtual-desktop-access/">Azure Virtual Desktop (AVD) Access</a></li>
+<li><a class="govuk-link" href="./access-license/">AI Tool Access and Licences</a></li>
+</ul>
+</div>
+<div class="lap-card">
+<h3 class="govuk-heading-s lap-card__heading">Get application source code</h3>
+<p class="govuk-body lap-card__desc">Follow the process to obtain, transfer and review source code securely.</p>
+<ul class="govuk-list lap-card__links">
+<li><a class="govuk-link" href="./source-code-acquisition/">Source Code Acquisition</a></li>
+</ul>
+</div>
+<div class="lap-card">
+<h3 class="govuk-heading-s lap-card__heading">Check for sensitive information</h3>
+<p class="govuk-body lap-card__desc">Scan applications and files for personal or sensitive data before sharing or using them.</p>
+<ul class="govuk-list lap-card__links">
+<li><a class="govuk-link" href="./pii-scanning/">PII Scanning</a></li>
+</ul>
+</div>
+<div class="lap-card">
+<h3 class="govuk-heading-s lap-card__heading">Request a development environment</h3>
+<p class="govuk-body lap-card__desc">Request a sandbox environment for discovery, analysis and development work.</p>
+<ul class="govuk-list lap-card__links">
+<li><a class="govuk-link" href="./sandbox-provisioning/">Sandbox Provisioning</a></li>
+</ul>
+</div>
+</div>
+
+## New to a project?
+
+Most teams should complete the following steps before beginning modernisation work:
+
+1. Request OpenVPN access.
+2. Request Azure Virtual Desktop access.
+3. Request GitHub access.
+4. Request access to approved AI tools, if required.
+5. Obtain the application source code.
+6. Complete PII scanning checks.
+7. Request a sandbox environment.
+
+## Popular tasks
+
+Quick links to commonly used services and guidance:
+
+- [Get GitHub access](./github-access/)
+- [Request OpenVPN access](./open-vpn/)
+- [Request Azure Virtual Desktop access](./azure-virtual-desktop-access/)
+- [Get GitHub Copilot or other approved AI tools](./access-license/)
+- [Obtain application source code](./source-code-acquisition/)
+- [Run a PII scan](./pii-scanning/)
+- [Request a sandbox environment](./sandbox-provisioning/)
 
 ## Product delivery life cycle
 

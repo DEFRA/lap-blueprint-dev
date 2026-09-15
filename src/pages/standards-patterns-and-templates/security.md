@@ -11,7 +11,7 @@ This page brings together security standards and guidance relevant to LAP delive
 
 | Resource | Type | Description |
 | --- | --- | --- |
-| [Secure by Design (Defra)](https://defra.sharepoint.com/sites/def-ddts-portfoliohub/SitePages/Secure-by-Design.aspx) | Standard | DEFRA security assurance framework ensuring security is embedded throughout the delivery lifecycle. |
+| [Secure by Design (Defra)](https://defra.sharepoint.com/sites/def-ddts-portfoliohub/SitePages/Secure-by-Design.aspx) | Standard | Defra security assurance framework ensuring security is embedded throughout the delivery lifecycle. |
 | [UK Government Secure by Design](https://www.security.gov.uk/policy-and-guidance/secure-by-design/) | Standard | Government-wide secure-by-design principles and controls. |
 | [UK NCSC Public Sector Guidance](https://www.ncsc.gov.uk/section/advice-guidance/public-sector) | Guidance hub | Cyber security guidance and controls for UK public sector organisations. All pages within this hub are applicable. |
 | [UK Data Protection Principles](https://ico.org.uk/for-organisations/uk-gdpr-guidance-and-resources/data-protection-principles/) | Standard | Principles for lawful, secure and compliant handling of personal data. |

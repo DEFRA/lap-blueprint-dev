@@ -388,7 +388,7 @@
           /** @param {any} d @returns {{url: string, title: string, section: string|null}} */
           (d) => {
             const subUrl = d.sub_results?.[0]?.url;
-            const pageTitle = d.meta?.title?.replace(/ - DEFRA LAP$/, "");
+            const pageTitle = d.meta?.title?.replace(/ - Defra LAP$/, "");
             const parents = sectionFromUrl(d.url);
             const parts =
               subUrl?.includes("#") && pageTitle

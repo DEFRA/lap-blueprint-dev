@@ -7,11 +7,11 @@ group: Define/Discovery
 
 # How to access default tools and licences
 
-Request access to DEFRA-approved AI tools for modernisation work, including GitHub Copilot, Microsoft 365 Copilot, and Claude Code. Follow the governance requirements for using Claude Code with legacy application source code.
+Request access to Defra-approved AI tools for modernisation work, including GitHub Copilot, Microsoft 365 Copilot, and Claude Code. Follow the governance requirements for using Claude Code with legacy application source code.
 
 ## What you're trying to do
 
-You need to obtain licences and access to the default AI tools used in DEFRA modernisation workflows before delivery begins.
+You need to obtain licences and access to the default AI tools used in Defra modernisation workflows before delivery begins.
 
 ## Who this is for
 
@@ -26,7 +26,7 @@ Primary audience:
 
 The [AI Tools Radar](https://digital.defra.gov.uk/ai-toolkit/tools/diagram) shows all tools across three adoption tiers:
 
-- **Using** — actively adopted across DEFRA teams
+- **Using** — actively adopted across Defra teams
 - **Trialling** — being evaluated and piloted
 - **Exploring** — under investigation, not yet recommended for general use
 
@@ -58,9 +58,9 @@ Current guidance for Microsoft 365 Copilot is available through the Microsoft Co
 
 ### Supplier-owned licences
 
-Suppliers may use their own Claude Code licences and devices, provided they comply with DEFRA's existing AI, security, and data-handling guidance.
+Suppliers may use their own Claude Code licences and devices, provided they comply with Defra's existing AI, security, and data-handling guidance.
 
-This aligns with the existing DEFRA position that the determining factor is **not the AI tool itself**, but the **classification and sensitivity of the information, data, or code being processed**. The default position is:
+This aligns with the existing Defra position that the determining factor is **not the AI tool itself**, but the **classification and sensitivity of the information, data, or code being processed**. The default position is:
 
 - **OFFICIAL** data — permitted with a public consumer tool such as Claude Code, provided privacy settings are on (model training and chat history disabled)
 - **OFFICIAL-SENSITIVE** — not permitted in a public consumer tool; use only within an approved enterprise or Defra-hosted platform

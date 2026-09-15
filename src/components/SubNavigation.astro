@@ -1,0 +1,163 @@
+---
+import {
+  buildChildPagesByParent,
+  buildNavPages,
+  getNormalizedBase,
+  normalizePath,
+  stripBase,
+  type NavPage,
+} from "../util/contentNavigation.js";
+
+const base = import.meta.env.BASE_URL ?? import.meta.env.base;
+const normalizedBase = getNormalizedBase(base);
+const currentPath = normalizePath(Astro.url.pathname);
+const currentRoutePath = normalizePath(
+  stripBase(currentPath, normalizedBase) || "/",
+);
+
+const markdownModules = import.meta.glob("/src/pages/**/*.md", { eager: true });
+const markdownPages = buildNavPages(markdownModules, normalizedBase);
+const childPagesByParentPath = buildChildPagesByParent(markdownPages);
+const topLevelPages = markdownPages.filter(
+  (page) => page.parentPath === null || page.parentPath === "/",
+);
+
+const activeSection = topLevelPages.find(
+  (page) =>
+    page.routePath !== "/" &&
+    (currentRoutePath === page.routePath ||
+      currentRoutePath.startsWith(`${page.routePath}/`)),
+);
+
+const primaryItems: NavPage[] = activeSection
+  ? (childPagesByParentPath.get(activeSection.routePath) ?? [])
+  : [];
+
+const isCurrent = (routePath: string) => currentRoutePath === routePath;
+const isAncestor = (routePath: string) =>
+  currentRoutePath.startsWith(`${routePath}/`);
+const isActive = (routePath: string) =>
+  isCurrent(routePath) || isAncestor(routePath);
+
+// Second row: pages within whichever subsection is currently active.
+const activePrimary = primaryItems.find((page) => isActive(page.routePath));
+const secondaryItems: NavPage[] = activePrimary
+  ? (childPagesByParentPath.get(activePrimary.routePath) ?? [])
+  : [];
+---
+
+{
+  primaryItems.length > 0 && (
+    <nav class="lap-sub-nav" aria-label={`${activeSection?.label ?? ""} sections`}>
+      <ul class="lap-sub-nav__list">
+        {primaryItems.map((page) => (
+          <li class="lap-sub-nav__item">
+            <a
+              class={
+                "lap-sub-nav__link" +
+                (isActive(page.routePath) ? " lap-sub-nav__link--active" : "")
+              }
+              href={page.linkHref}
+              aria-current={isCurrent(page.routePath) ? "page" : undefined}
+            >
+              {page.navLabel ?? page.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      {secondaryItems.length > 0 && (
+        <ul class="lap-sub-nav__list lap-sub-nav__list--secondary">
+          {secondaryItems.map((page) => (
+            <li class="lap-sub-nav__item">
+              <a
+                class={
+                  "lap-sub-nav__link" +
+                  (isCurrent(page.routePath)
+                    ? " lap-sub-nav__link--active"
+                    : "")
+                }
+                href={page.linkHref}
+                aria-current={isCurrent(page.routePath) ? "page" : undefined}
+              >
+                {page.navLabel ?? page.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </nav>
+  )
+}
+
+<style lang="scss">
+  // GOV.UK colours/sizing are hardcoded here because Astro compiles component
+  // styles in isolation, without the global GOV.UK Sass namespace.
+  .lap-sub-nav {
+    margin-bottom: 25px;
+    border-bottom: 1px solid #b1b4b6;
+  }
+
+  .lap-sub-nav__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 25px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    &--secondary {
+      gap: 0 20px;
+      margin-top: 5px;
+      padding-top: 5px;
+      border-top: 1px solid #b1b4b6;
+    }
+  }
+
+  .lap-sub-nav__item {
+    margin: 0;
+  }
+
+  .lap-sub-nav__link {
+    display: inline-block;
+    padding: 12px 0;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.25;
+    color: #1d70b8;
+    text-decoration: none;
+    border-bottom: 4px solid transparent;
+
+    &:hover {
+      color: #003078;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    &:focus {
+      color: #0b0c0c;
+      background-color: #ffdd00;
+      box-shadow:
+        0 -2px #ffdd00,
+        0 4px #0b0c0c;
+      text-decoration: none;
+      outline: 3px solid transparent;
+      border-bottom-color: transparent;
+    }
+  }
+
+  .lap-sub-nav__list--secondary .lap-sub-nav__link {
+    padding: 8px 0;
+    font-size: 16px;
+  }
+
+  .lap-sub-nav__link--active {
+    color: #0b0c0c;
+    font-weight: 700;
+    border-bottom-color: var(--govuk-brand-colour);
+
+    &:hover {
+      color: #0b0c0c;
+    }
+  }
+</style>

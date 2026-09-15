@@ -31,7 +31,7 @@ Confirm the following before raising a request:
 - Existing Application: An SC clearance application must already be in progress ("in flight") before an SC waiver request can be submitted.
 - BPSS: Where BPSS has been completed, evidence may be required and suppliers may be asked to demonstrate their vetting process.
 - Device and Access: Requirements may vary across Defra organisations and ALBs. Some areas may permit access on a Defra-managed device where BPSS is met or supplier devices needing connectivity may attract additional scrutiny.
-- Location Requirement: Location requirements may vary depending on the DEFRA organisation, security classification, access method, and hosting environment. In some circumstances, resources may be required to be UK-based and utilise a DEFRA-managed device as part of the security assessment. Project teams should confirm any location-specific requirements with the DEFRA Vetting and Security Team before submitting a Security Exception to Policy Request.
+- Location Requirement: Location requirements may vary depending on the Defra organisation, security classification, access method, and hosting environment. In some circumstances, resources may be required to be UK-based and utilise a Defra-managed device as part of the security assessment. Project teams should confirm any location-specific requirements with the Defra Vetting and Security Team before submitting a Security Exception to Policy Request.
 
 Completing security onboarding before mobilisation helps avoid delays to account creation, VPN access and delivery.
 
