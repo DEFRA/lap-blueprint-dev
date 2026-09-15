@@ -1,7 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Project Pilot Case Study
+title: Project Pilot case study
 hidden: true
 ---
 
-# Project Pilot Case Study
+# Project Pilot case study

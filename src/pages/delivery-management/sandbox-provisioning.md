@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Sandbox Provisioning
+title: Sandbox provisioning
 order: 9
 group: Define/Discovery
 ---
 
-# Sandbox Provisioning
+# Sandbox provisioning
 
 Setting up a sandbox environment (a safe, non-production space to build and test) for a LAP project is handled by Defra's Cloud Centre of Excellence (CCoE) through a standardised request process. The process involves collecting financial and technical information upfront, submitting a ServiceNow catalogue request, and waiting for CCoE to build and allocate the environment in a sprint cycle.
 
@@ -157,7 +157,7 @@ For project control, keep a simple tracker in your delivery notes:
 
 ## Templates
 
-### Template 1 — Service Registration Form
+### Template 1 — Service registration form
 
 Used in step 2. Submitted to register the service with CCoE and trigger Service Code generation.
 
@@ -178,7 +178,7 @@ Used in step 2. Submitted to register the service with CCoE and trigger Service 
 
 [Access the Service Registration Form on Defra SharePoint](https://defra.sharepoint.com/:l:/s/def-ddts-cloud/FBGK86cyBo5PqWkyhE6U6J0B7Uw9ZoSO7feq3S9sCoypRg?nav=MTZhNDM5MjgtNmNkZC00ZDk3LTgzNmQtYjc0ZGNhOWE1OWUy)
 
-### Template 2 — Shopping List
+### Template 2 — Shopping list
 
 Used in step 4. Defines the technical components to be included in the environment. This is attached to the ServiceNow request in step 5. Values in the second column are notes/hints and should be replaced or removed.
 
@@ -197,7 +197,7 @@ Used in step 4. Defines the technical components to be included in the environme
 
 [Access the Shopping List template on Defra SharePoint](https://defra.sharepoint.com/:x:/r/teams/Team1382/Colab_P2/02%20Capgemini%20Collaboration/AI%20Enablement/CCoE%20AI%20Modernisation%20Sandbox%20Shopping%20List%20-%20Standard%20Requirements.xlsx?d=w6dcab77a588542a0967063d75b76bbb9&csf=1&web=1)
 
-### Template 3 — ServiceNow Catalogue Request
+### Template 3 — ServiceNow catalogue request
 
 Used in step 5. Submitted through the CCoE Azure/AWS Non-Production Service Request catalogue in MyIT.
 

@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Considerations & Caveats
+title: Considerations & caveats
 order: 2
 group: Start here
 ---
 
-# Considerations & Caveats
+# Considerations & caveats
 
 Review these considerations before starting AI-assisted reverse engineering or re-engineering work. They help teams handle information responsibly, maintain evidence quality, control costs and respond to common operational issues.
 

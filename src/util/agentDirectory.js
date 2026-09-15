@@ -1,5 +1,5 @@
 /**
- * Progressive-enhancement behaviour for the AI directory table.
+ * Progressive-enhancement behaviour for the Artefact directory table.
  *
  * The table, filters and rows are rendered statically in the Markdown page so
  * the directory is fully usable without JavaScript. This module adds

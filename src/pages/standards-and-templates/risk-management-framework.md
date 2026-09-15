@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Risk Management Framework
+title: Risk management framework
 group: Standards
 order: 1.6
 ---
 
-# Risk Management Framework
+# Risk management framework
 
 ## What is the NIST AI RMF?
 

@@ -6,7 +6,7 @@ order: 7
 fullWidth: true
 ---
 
-# Glossary of Terms
+# Glossary of terms
 
 These terms are defined for the purpose of their use within these guidelines. This will help you understand how they relate to terms used in business, and in the relevant legislation.
 
@@ -20,13 +20,13 @@ These terms are defined for the purpose of their use within these guidelines. Th
 
 **Artificial Intelligence.** Software systems that perform tasks normally requiring human intelligence, such as understanding language, recognising patterns, or generating content.
 
-### AI-Assisted Modernisation
+### AI-assisted modernisation
 
 **AI-Assisted Modernisation.** The use of artificial intelligence tools and techniques to support activities such as application discovery, analysis, documentation, requirements gathering, code understanding, and migration planning.
 
 ### AICE
 
-**AI Capability and Enablement.** The Defra team responsible for governing and enabling the use of AI tools and practices across Defra programmes, including approving entries in the AI Directory.
+**AI Capability and Enablement.** The Defra team responsible for governing and enabling the use of AI tools and practices across Defra programmes, including approving entries in the Artefact Directory.
 
 ### API
 
@@ -56,7 +56,7 @@ These terms are defined for the purpose of their use within these guidelines. Th
 
 **Department for Environment, Food & Rural Affairs.** The UK government department responsible for environmental protection, food production, and rural communities.
 
-### Delivery Team
+### Delivery team
 
 **Delivery Team.** The multidisciplinary team responsible for planning, designing, building, testing, and delivering a product or service.
 
@@ -96,7 +96,7 @@ These terms are defined for the purpose of their use within these guidelines. Th
 
 **LAMAI Blueprint.** The Legacy Application Modernisation AI Blueprint. A framework that provides delivery teams with guidance, standards, playbooks, and AI-assisted approaches for modernising legacy applications.
 
-### Legacy Application
+### Legacy application
 
 **Legacy Application.** An existing application that remains in use but may rely on outdated technology, processes, or architecture, making it difficult to maintain, enhance, or scale.
 
@@ -136,11 +136,11 @@ These terms are defined for the purpose of their use within these guidelines. Th
 
 **Product Requirements Document.** A document that captures business needs, user requirements, features, and acceptance criteria for a product or service.
 
-### Re-Engineering
+### Re-engineering
 
 **Re-Engineering.** The process of redesigning and rebuilding an application using modern technologies, architectures, and engineering practices.
 
-### Reverse Engineering
+### Reverse engineering
 
 **Reverse Engineering.** The process of analysing an existing application to understand its functionality, requirements, processes, and technical design.
 
@@ -148,11 +148,11 @@ These terms are defined for the purpose of their use within these guidelines. Th
 
 **Stakeholder.** An individual, team, or organisation with an interest in, influence over, or responsibility for a project or service.
 
-### Technical Debt
+### Technical debt
 
 **Technical Debt.** The cost and risk associated with maintaining outdated technology, code, or design decisions that can make future changes more difficult.
 
-### User-Centred Design
+### User-centred design
 
 **User-Centred Design.** An approach that places user needs, behaviours, and outcomes at the centre of design and delivery decisions.
 

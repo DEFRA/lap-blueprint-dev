@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Re-Engineering
+title: Re-engineering
 order: 4
 group: The process
 ---
 
-# Re-Engineering
+# Re-engineering
 
 Re-Engineering uses a signed-off Product Requirements Document (PRD) to design and build a modern replacement for a legacy application. The PRD is the sole input: it provides the agreed requirements that are decomposed into independently deliverable feature specifications.
 

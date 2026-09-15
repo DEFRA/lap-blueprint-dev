@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Azure Virtual Desktop Access
+title: Azure Virtual Desktop access
 order: 7
 group: Define/Discovery
 ---
 
-# Azure Virtual Desktop Access
+# Azure Virtual Desktop access
 
 Request Azure Virtual Desktop (AVD) access to provide approved suppliers with a secure Defra-managed desktop for delivery work. Prepare the required information and follow the request, review, and provisioning flow below.
 

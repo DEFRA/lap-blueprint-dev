@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Open VPN Access
+title: Open VPN access
 order: 8
 group: Define/Discovery
 ---
 
-# Open VPN Access
+# Open VPN access
 
 Request OpenVPN access to give approved supplier personnel a secure, encrypted connection from their own devices into Defra networks. Prepare the required credentials and access group information, then follow the request and connection steps below.
 
