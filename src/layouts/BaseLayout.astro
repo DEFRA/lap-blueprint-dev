@@ -227,13 +227,14 @@ const showRelated = relatedRoots.some(
       </div>
     </footer>
     <script type="module">
-      import { initDetailsFromFragment, initGovUK } from "./BaseLayout.js";
+      import { initDetailsFromFragment, initExternalLinks, initGovUK } from "./BaseLayout.js";
       import { initMermaidLightbox } from "../util/mermaidLightbox.js";
       import { initAgentDirectory } from "../util/agentDirectory.js";
       initGovUK();
       initDetailsFromFragment();
       initMermaidLightbox();
       initAgentDirectory();
+      initExternalLinks();
     </script>
   </body>
 </html>
