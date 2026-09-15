@@ -306,3 +306,26 @@ pre.mermaid[data-lightbox] {
     word-wrap: break-word;
   }
 }
+
+// ─── Cards (task tiles) ──────────────────────────────────────────────────────
+
+.lap-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: govuk-spacing(4);
+  margin-bottom: govuk-spacing(6);
+}
+
+.lap-card {
+  padding: govuk-spacing(4);
+  border: 1px solid $govuk-border-colour;
+  background: govuk-colour("white");
+
+  &__heading {
+    margin-bottom: govuk-spacing(2);
+  }
+
+  &__links {
+    margin-bottom: 0;
+  }
+}

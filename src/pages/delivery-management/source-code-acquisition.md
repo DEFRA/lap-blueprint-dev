@@ -7,7 +7,7 @@ group: Start-up and feasability
 
 # Source code acquisition
 
-Acquire source code for legacy DEFRA applications through coordinated ownership checks, approvals, secure transfer, sanitisation, and sign-off. Because legacy applications vary in age, technology, ownership, and hosting, follow the phases and approval routes in this process.
+Acquire source code for legacy Defra applications through coordinated ownership checks, approvals, secure transfer, sanitisation, and sign-off. Because legacy applications vary in age, technology, ownership, and hosting, follow the phases and approval routes in this process.
 
 ## What you're trying to do
 
@@ -48,10 +48,10 @@ Make sure the following are in place:
 
 - The current source code owner has been identified and located
 - The application has been identified and prioritised for modernisation
-- A DEFRA GitHub repository is ready to receive the source code
-- You have appropriate access to DEFRA GitHub (see [GitHub Access](../github-access/) for details)
+- A Defra GitHub repository is ready to receive the source code
+- You have appropriate access to Defra GitHub (see [GitHub Access](../github-access/) for details)
 - You have access to a dedicated LAP SharePoint for secure code storage
-- You have a DEFRA laptop or dev container available to run the [PII Screener](../pii-scanning/) (screening must be done locally on DEFRA infrastructure)
+- You have a Defra laptop or dev container available to run the [PII Screener](../pii-scanning/) (screening must be done locally on Defra infrastructure)
 
 ## Identify and validate the application
 
@@ -60,7 +60,7 @@ Make sure the following are in place:
 Confirm the following with the current application owner or their manager:
 
 - **Application name and scope**: what is the system, and which business area does it serve?
-- **Current hosting and support**: is it hosted by AMS, another supplier, DEFRA, or on-premises?
+- **Current hosting and support**: is it hosted by AMS, another supplier, Defra, or on-premises?
 - **Current source code location**: where is the repository or codebase currently stored?
 - **Modernisation business case**: why is modernisation being pursued, and what outcomes are expected?
 - **Delivery timeline**: when does modernisation need to begin?
@@ -71,7 +71,7 @@ If the application is hosted by AMS (Application Management Services), proceed t
 
 If the application is hosted by AMS:
 
-1. Submit a "Request for a Minor Enhancement" through the Microsoft Form available to DEFRA users
+1. Submit a "Request for a Minor Enhancement" through the Microsoft Form available to Defra users
 2. Ask for confirmation that the application is in-scope for AMS
 3. Request AMS support for source code acquisition in the same submission
 4. This typically takes 1–2 working days
@@ -96,7 +96,7 @@ Two separate approval routes run in parallel:
 | Approval type           | Led by                          | What's needed                                                                                                  | Timeline         |
 | ----------------------- | ------------------------------- | -------------------------------------------------------------------------------------------------------------- | ---------------- |
 | **Business approval**   | Project Manager or Programme PM | The business owner, ALB representative, or programme manager confirms the modernisation is approved and funded | 1–5 working days |
-| **Supplier management** | Project Manager                 | DEFRA DDTS Supplier Management confirms consent to share the source code with the modernisation team           | 1–3 working days |
+| **Supplier management** | Project Manager                 | Defra DDTS Supplier Management confirms consent to share the source code with the modernisation team           | 1–3 working days |
 
 Both approvals must be in place before code transfer begins. Because business approval timelines vary significantly, submit it early.
 
@@ -118,7 +118,7 @@ Common transfer methods include:
 | ------------------------ | ------------------------------------------------------------------------------------- | -------------------------------------------------- | ----------------------------------------------------------------- |
 | **Repository access**    | You receive read-only access to the live repository; you create a branch to work on   | Always on the latest code; easier to merge updates | Requires VPN/network setup; access must be provisioned in advance |
 | **Offline snapshot**     | You receive a one-off export of the code (usually as a ZIP file) via secure transfer  | Faster to set up; no ongoing access to manage      | Code can diverge from production; document this as a project risk |
-| **Secure file transfer** | Code is transferred via a DEFRA-approved secure transfer tool (e.g., ShareFile, SFTP) | Auditable and compliant; suitable for large files  | Requires coordination with both teams on timing                   |
+| **Secure file transfer** | Code is transferred via a Defra-approved secure transfer tool (e.g., ShareFile, SFTP) | Auditable and compliant; suitable for large files  | Requires coordination with both teams on timing                   |
 
 **Agree the method with the code owner before transfer begins.** Different applications use different infrastructure, so flexibility is important.
 
@@ -135,7 +135,7 @@ Once transfer is agreed:
 When you receive the code:
 
 1. Download and store it in an approved secure location (typically a dedicated SharePoint or secure file share)
-2. If you received a ZIP snapshot, extract it to a secure DEFRA laptop
+2. If you received a ZIP snapshot, extract it to a secure Defra laptop
 3. Delete any `.git` folder or other version history. This ensures historic versions containing sensitive data are not carried forward into the new clean repository
 4. Restrict access to named team members only
 5. Document who has access and apply governance controls
@@ -197,7 +197,7 @@ Once IAO approval is in place, set up the new clean repository:
    ```
    git init
    ```
-2. Add your DEFRA GitHub repository as the remote:
+2. Add your Defra GitHub repository as the remote:
    ```
    git remote add origin https://github.com/DEFRA/<your-repo>.git
    ```
@@ -219,7 +219,7 @@ Once the clean code is successfully in GitHub:
 
 ## Key governance rules
 
-- **Screen on DEFRA infrastructure.** Download and scan the code on a DEFRA laptop so you can run the [personal data screener](../pii-scanning/) locally.
+- **Screen on Defra infrastructure.** Download and scan the code on a Defra laptop so you can run the [personal data screener](../pii-scanning/) locally.
 - **Remove version history.** Always delete the `.git` folder and other version history so historic versions containing sensitive data are not carried into the new repository.
 - **Create a clean repository.** Initialise a new repository and push the sanitised source code. Do not reuse the legacy repository or its history.
 - **Screening and IAO approval first.** Both must be complete before the code is used for modernisation or shared more widely.
@@ -244,8 +244,8 @@ Legacy applications vary widely. These principles help navigate that variability
 
 ## Where to get help
 
-- To confirm ownership or which route applies: your project leads and DEFRA PMO
-- For the AMS route: submit a Request for a Minor Enhancement using the Microsoft Form available to DEFRA users
-- For approvals: the application's business owner and DEFRA DDTS Supplier Management
+- To confirm ownership or which route applies: your project leads and Defra PMO
+- For the AMS route: submit a Request for a Minor Enhancement using the Microsoft Form available to Defra users
+- For approvals: the application's business owner and Defra DDTS Supplier Management
 - For personal data sign-off: the Information Asset Owner (IAO)
-- For repository setup: your engineering lead and [DEFRA's GitHub access standards](https://defra.github.io/software-development-standards/processes/github_access/)
+- For repository setup: your engineering lead and [Defra's GitHub access standards](https://defra.github.io/software-development-standards/processes/github_access/)

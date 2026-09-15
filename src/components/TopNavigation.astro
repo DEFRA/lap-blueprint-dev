@@ -1,9 +1,12 @@
 ---
 import {
+  buildChildPagesByParent,
   buildNavPages,
+  buildPageGroups,
   getNormalizedBase,
   normalizePath,
   stripBase,
+  type NavPage,
 } from "../util/contentNavigation.js";
 
 const base = import.meta.env.BASE_URL ?? import.meta.env.base;
@@ -14,6 +17,7 @@ const currentRoutePath = normalizePath(
 );
 const markdownModules = import.meta.glob("/src/pages/**/*.md", { eager: true });
 const markdownPages = buildNavPages(markdownModules, normalizedBase);
+const childPagesByParentPath = buildChildPagesByParent(markdownPages);
 const topLevelPages = markdownPages
   .filter(
     (page) =>
@@ -22,7 +26,25 @@ const topLevelPages = markdownPages
   )
   .sort((a, b) => a.order - b.order || a.label.localeCompare(b.label));
 
-const isActive = (routePath) =>
+const sections = topLevelPages.map((page) => {
+  const children: NavPage[] = childPagesByParentPath.get(page.routePath) ?? [];
+
+  // List direct children grouped by their tier; deeper pages are reached via
+  // the on-page "In this section" rail rather than the mega-menu.
+  const columns = buildPageGroups(children).map((group) => ({
+    headingLabel: group.name || null,
+    pages: group.pages,
+  }));
+
+  return {
+    page,
+    children,
+    columns,
+    panelId: `mega-menu${page.routePath.replace(/\//g, "-")}`,
+  };
+});
+
+const isActive = (routePath: string) =>
   routePath === "/"
     ? currentRoutePath === "/"
     : currentRoutePath === routePath ||
@@ -33,22 +55,80 @@ const isActive = (routePath) =>
   <div class="govuk-width-container">
     <ul class="lap-primary-nav__list">
       {
-        topLevelPages.map((page) => (
+        sections.map((section) => (
           <li
             class={
               "lap-primary-nav__item" +
-              (isActive(page.routePath)
+              (isActive(section.page.routePath)
                 ? " lap-primary-nav__item--active"
                 : "")
             }
           >
-            <a
-              class="lap-primary-nav__link"
-              href={page.linkHref}
-              aria-current={isActive(page.routePath) ? "page" : undefined}
-            >
-              {page.navLabel ?? page.label}
-            </a>
+            {section.children.length > 0 ? (
+              <button
+                type="button"
+                class="lap-primary-nav__link lap-primary-nav__toggle"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls={section.panelId}
+              >
+                {section.page.navLabel ?? section.page.label}
+                <span class="lap-primary-nav__chevron" aria-hidden="true" />
+              </button>
+            ) : (
+              <a
+                class="lap-primary-nav__link"
+                href={section.page.linkHref}
+                aria-current={
+                  isActive(section.page.routePath) ? "page" : undefined
+                }
+              >
+                {section.page.navLabel ?? section.page.label}
+              </a>
+            )}
+
+            {section.children.length > 0 && (
+              <div class="lap-mega-menu" id={section.panelId} hidden>
+                <div class="govuk-width-container lap-mega-menu__inner">
+                  <a
+                    class="lap-mega-menu__overview"
+                    href={section.page.linkHref}
+                  >
+                    {section.page.navLabel ?? section.page.label} overview
+                  </a>
+                  <div class="lap-mega-menu__columns">
+                    {section.columns.map((column) => (
+                      <div class="lap-mega-menu__column">
+                        {column.headingLabel && (
+                          <h3 class="lap-mega-menu__heading">
+                            {column.headingLabel}
+                          </h3>
+                        )}
+                        {column.pages.length > 0 && (
+                          <ul class="lap-mega-menu__list">
+                            {column.pages.map((child) => (
+                              <li class="lap-mega-menu__item">
+                                <a
+                                  class="lap-mega-menu__link"
+                                  href={child.linkHref}
+                                  aria-current={
+                                    isActive(child.routePath)
+                                      ? "page"
+                                      : undefined
+                                  }
+                                >
+                                  {child.navLabel ?? child.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
           </li>
         ))
       }
@@ -56,8 +136,58 @@ const isActive = (routePath) =>
   </div>
 </nav>
 
+<script>
+  const nav = document.querySelector(".lap-primary-nav");
+  if (nav) {
+    const toggles = Array.from(
+      nav.querySelectorAll(".lap-primary-nav__toggle"),
+    ) as HTMLButtonElement[];
+
+    const panelFor = (toggle: HTMLButtonElement) =>
+      document.getElementById(toggle.getAttribute("aria-controls") ?? "");
+
+    const close = (toggle: HTMLButtonElement) => {
+      toggle.setAttribute("aria-expanded", "false");
+      const panel = panelFor(toggle);
+      if (panel) panel.hidden = true;
+    };
+
+    const closeAll = (except?: HTMLButtonElement) => {
+      for (const toggle of toggles) if (toggle !== except) close(toggle);
+    };
+
+    for (const toggle of toggles) {
+      toggle.addEventListener("click", () => {
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        closeAll(toggle);
+        toggle.setAttribute("aria-expanded", String(!isOpen));
+        const panel = panelFor(toggle);
+        if (panel) panel.hidden = isOpen;
+      });
+    }
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape") return;
+      const openToggle = toggles.find(
+        (toggle) => toggle.getAttribute("aria-expanded") === "true",
+      );
+      if (openToggle) {
+        close(openToggle);
+        openToggle.focus();
+      }
+    });
+
+    document.addEventListener("click", (event) => {
+      if (!nav.contains(event.target as Node)) closeAll();
+    });
+  }
+</script>
+
 <style lang="scss">
+  // GOV.UK colours/sizing hardcoded: Astro compiles component styles in
+  // isolation, without the global GOV.UK Sass namespace.
   .lap-primary-nav {
+    position: relative;
     background-color: var(--govuk-brand-colour);
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
@@ -76,7 +206,9 @@ const isActive = (routePath) =>
   }
 
   .lap-primary-nav__link {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     padding: 12px 15px;
     color: #ffffff;
     font-family: Arial, sans-serif;
@@ -84,7 +216,10 @@ const isActive = (routePath) =>
     font-weight: 700;
     line-height: 1.25;
     text-decoration: none;
+    border: 0;
     border-bottom: 4px solid transparent;
+    background: none;
+    cursor: pointer;
   }
 
   .lap-primary-nav__link:hover {
@@ -95,7 +230,9 @@ const isActive = (routePath) =>
   .lap-primary-nav__link:focus {
     color: #0b0c0c;
     background-color: #ffdd00;
-    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+    box-shadow:
+      0 -2px #ffdd00,
+      0 4px #0b0c0c;
     text-decoration: none;
     outline: 3px solid transparent;
   }
@@ -104,7 +241,101 @@ const isActive = (routePath) =>
     border-bottom-color: #ffffff;
   }
 
-  .lap-primary-nav__item--active .lap-primary-nav__link:focus {
-    border-bottom-color: #0b0c0c;
+  .lap-primary-nav__chevron {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid currentColor;
+  }
+
+  .lap-primary-nav__toggle[aria-expanded="true"] .lap-primary-nav__chevron {
+    transform: rotate(180deg);
+  }
+
+  // Mega-menu panel
+  .lap-mega-menu {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 100;
+    background: #ffffff;
+    border-bottom: 4px solid var(--govuk-brand-colour);
+    box-shadow: 0 6px 12px rgba(11, 12, 12, 0.2);
+
+    &[hidden] {
+      display: none;
+    }
+  }
+
+  .lap-mega-menu__inner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .lap-mega-menu__overview {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #1d70b8;
+
+    &:hover {
+      color: #003078;
+    }
+  }
+
+  .lap-mega-menu__columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px 30px;
+  }
+
+  .lap-mega-menu__heading {
+    margin: 0 0 10px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #505a5f;
+  }
+
+  .lap-mega-menu__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .lap-mega-menu__item {
+    margin: 0 0 8px;
+  }
+
+  .lap-mega-menu__link {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #1d70b8;
+    text-decoration: none;
+
+    &:hover {
+      color: #003078;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    &:focus {
+      color: #0b0c0c;
+      background-color: #ffdd00;
+      box-shadow:
+        0 -2px #ffdd00,
+        0 4px #0b0c0c;
+      text-decoration: none;
+      outline: 3px solid transparent;
+    }
+
+    &[aria-current="page"] {
+      font-weight: 700;
+      color: #0b0c0c;
+    }
   }
 </style>

@@ -7,7 +7,7 @@ group: Define/Discovery
 
 # Sandbox Provisioning
 
-Setting up a sandbox environment (a safe, non-production space to build and test) for a LAP project is handled by DEFRA's Cloud Centre of Excellence (CCoE) through a standardised request process. The process involves collecting financial and technical information upfront, submitting a ServiceNow catalogue request, and waiting for CCoE to build and allocate the environment in a sprint cycle.
+Setting up a sandbox environment (a safe, non-production space to build and test) for a LAP project is handled by Defra's Cloud Centre of Excellence (CCoE) through a standardised request process. The process involves collecting financial and technical information upfront, submitting a ServiceNow catalogue request, and waiting for CCoE to build and allocate the environment in a sprint cycle.
 
 Sandbox environments are non-production Azure environments intended for development, testing, and AI-assisted modernisation activities. Progression beyond sandbox to higher environments (development, test, pre-production, production) requires a separate Cloud Design Review Board (CDRB) approval.
 
@@ -24,7 +24,7 @@ Primary audience:
 Before raising a request, make sure the following are in place:
 
 - You have a valid project code from LAP PMO (for example, **DEFCOOD3P652**) — costs cannot be recharged without this
-- You have access to DEFRA SharePoint and the DEFRA MyIT (ServiceNow) portal
+- You have access to Defra SharePoint and the Defra MyIT (ServiceNow) portal
 - Your technical lead is available to define the environment's components (the "shopping list")
 
 ## The provisioning journey
@@ -86,7 +86,7 @@ flowchart TD
    The Service Registration Form captures project details, the service owner, cost centre, and project code. Once submitted it triggers CCoE FinOps to generate a Service Code for your project. The form collects:
    - application or project name and description
    - delivery manager and business service owner
-   - the DEFRA Group organisation that owns and funds the project
+   - the Defra Group organisation that owns and funds the project
    - the SOP project code and task code for cost recharging
    - the approved budget available for cloud costs this financial year
 
@@ -169,14 +169,14 @@ Used in step 2. Submitted to register the service with CCoE and trigger Service 
 | Official name of the business service being delivered                            |
 | Whether this is a line of business service or a CCoE shared foundational service |
 | Description of the cloud business service or application                         |
-| Which DEFRA Group organisation will be the owner                                 |
-| Which DEFRA Group organisation is funding the project                            |
+| Which Defra Group organisation will be the owner                                 |
+| Which Defra Group organisation is funding the project                            |
 | Budget available to fund cloud costs this financial year                         |
 | SOP Project Code for CCoE to use when recharging cloud consumption costs         |
 | SOP Task Code to be used when recharging to the SOP Project Code                 |
 | Responsible owner for managing costs incurred by this service                    |
 
-[Access the Service Registration Form on DEFRA SharePoint](https://defra.sharepoint.com/:l:/s/def-ddts-cloud/FBGK86cyBo5PqWkyhE6U6J0B7Uw9ZoSO7feq3S9sCoypRg?nav=MTZhNDM5MjgtNmNkZC00ZDk3LTgzNmQtYjc0ZGNhOWE1OWUy)
+[Access the Service Registration Form on Defra SharePoint](https://defra.sharepoint.com/:l:/s/def-ddts-cloud/FBGK86cyBo5PqWkyhE6U6J0B7Uw9ZoSO7feq3S9sCoypRg?nav=MTZhNDM5MjgtNmNkZC00ZDk3LTgzNmQtYjc0ZGNhOWE1OWUy)
 
 ### Template 2 — Shopping List
 
@@ -195,7 +195,7 @@ Used in step 4. Defines the technical components to be included in the environme
 | App registrations                   | _Requested from CCoE via MyIT; specify the DefraDev tenant_                                     |
 | Network integration and VPN         | _AVD is required for private access; service endpoints or IP whitelisting may be needed_        |
 
-[Access the Shopping List template on DEFRA SharePoint](https://defra.sharepoint.com/:x:/r/teams/Team1382/Colab_P2/02%20Capgemini%20Collaboration/AI%20Enablement/CCoE%20AI%20Modernisation%20Sandbox%20Shopping%20List%20-%20Standard%20Requirements.xlsx?d=w6dcab77a588542a0967063d75b76bbb9&csf=1&web=1)
+[Access the Shopping List template on Defra SharePoint](https://defra.sharepoint.com/:x:/r/teams/Team1382/Colab_P2/02%20Capgemini%20Collaboration/AI%20Enablement/CCoE%20AI%20Modernisation%20Sandbox%20Shopping%20List%20-%20Standard%20Requirements.xlsx?d=w6dcab77a588542a0967063d75b76bbb9&csf=1&web=1)
 
 ### Template 3 — ServiceNow Catalogue Request
 

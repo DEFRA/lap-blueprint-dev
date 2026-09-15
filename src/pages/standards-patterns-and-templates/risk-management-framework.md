@@ -20,7 +20,7 @@ Published by the US National Institute of Standards and Technology in January 20
 
 The framework has two parts: a conceptual foundation, known as the Core, and an operational model, made up of Profiles and Tiers. Together, these allow organisations to tailor implementation to their risk appetite.
 
-## DEFRA LAP alignment
+## Defra LAP alignment
 
 The RMF's public-sector emphasis on safety, fairness and accountability directly mirrors our obligations under the Civil Service Code and Government Digital Service standards.
 

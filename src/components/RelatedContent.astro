@@ -1,0 +1,133 @@
+---
+import {
+  buildChildPagesByParent,
+  buildNavPages,
+  getNormalizedBase,
+  normalizePath,
+  stripBase,
+  type NavPage,
+} from "../util/contentNavigation.js";
+
+const base = import.meta.env.BASE_URL ?? import.meta.env.base;
+const normalizedBase = getNormalizedBase(base);
+const currentRoutePath = normalizePath(
+  stripBase(normalizePath(Astro.url.pathname), normalizedBase) || "/",
+);
+
+const markdownModules = import.meta.glob("/src/pages/**/*.md", { eager: true });
+const markdownPages = buildNavPages(markdownModules, normalizedBase);
+const childPagesByParentPath = buildChildPagesByParent(markdownPages);
+
+// Subsections that opt into the "In this section" rail.
+const enabledRoots = [
+  "/modernisation-playbook/reverse-engineering",
+  "/modernisation-playbook/re-engineering",
+  "/modernisation-playbook/modernisation-examples",
+];
+
+const subRoute = enabledRoots.find(
+  (root) =>
+    currentRoutePath === root || currentRoutePath.startsWith(`${root}/`),
+);
+const subsection = subRoute
+  ? markdownPages.find((page) => page.routePath === subRoute)
+  : undefined;
+const pages: NavPage[] = subsection
+  ? (childPagesByParentPath.get(subsection.routePath) ?? [])
+  : [];
+
+const isCurrent = (routePath: string) => currentRoutePath === routePath;
+---
+
+{
+  subsection && (
+    <nav class="lap-related" aria-labelledby="lap-related-heading">
+      <h2 class="lap-related__heading" id="lap-related-heading">
+        In this section
+      </h2>
+      <ul class="lap-related__list">
+        <li class="lap-related__item">
+          <a
+            class="lap-related__link"
+            href={subsection.linkHref}
+            aria-current={isCurrent(subsection.routePath) ? "page" : undefined}
+          >
+            {subsection.navLabel ?? subsection.label} overview
+          </a>
+        </li>
+        {pages.map((page) => (
+          <li class="lap-related__item">
+            <a
+              class="lap-related__link"
+              href={page.linkHref}
+              aria-current={isCurrent(page.routePath) ? "page" : undefined}
+            >
+              {page.navLabel ?? page.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<style lang="scss">
+  // GOV.UK "related content" styling; values hardcoded because Astro compiles
+  // component styles in isolation, without the global GOV.UK Sass namespace.
+  .lap-related {
+    border-top: 4px solid var(--govuk-brand-colour);
+    padding-top: 15px;
+  }
+
+  .lap-related__heading {
+    margin: 0 0 10px;
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #0b0c0c;
+  }
+
+  .lap-related__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .lap-related__item {
+    margin: 0 0 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b1b4b6;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  .lap-related__link {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #1d70b8;
+    text-decoration: none;
+
+    &:hover {
+      color: #003078;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    &:focus {
+      color: #0b0c0c;
+      background-color: #ffdd00;
+      box-shadow:
+        0 -2px #ffdd00,
+        0 4px #0b0c0c;
+      text-decoration: none;
+      outline: 3px solid transparent;
+    }
+
+    &[aria-current="page"] {
+      font-weight: 700;
+      color: #0b0c0c;
+    }
+  }
+</style>

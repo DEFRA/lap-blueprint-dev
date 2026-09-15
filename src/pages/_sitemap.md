@@ -4,7 +4,7 @@ title: Home
 order: -1
 ---
 
-# **DEFRA AI Blueprint - Content Template**
+# **Defra AI Blueprint - Content Template**
 
 For: Engineers building the live Blueprint website
 Owner: PM maintains this alongside the Blueprint itself
@@ -177,7 +177,7 @@ _(Full stage-by-stage content to be completed once each linked Process page is w
 
 **Who Must Comply:** All engineers and any AI tool used on LAP delivery.
 
-**Source / Authority:** UK GDPR / Data Protection Act; DEFRA Data Protection team (DPO).
+**Source / Authority:** UK GDPR / Data Protection Act; Defra Data Protection team (DPO).
 
 **Approval Required Before Proceeding:** Security sign-off from the designated security approver — see Agent Catalogue, Agent B, "Governance & Approval" section for the full detail. Do not duplicate that content here — link to it.
 

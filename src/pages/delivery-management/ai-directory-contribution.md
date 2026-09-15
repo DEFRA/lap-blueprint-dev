@@ -21,18 +21,18 @@ The review and assurance process ensures that:
 
 ## Prerequisites
 
-Please proceed with the links and resources below to first make sure your AI Artefacts are compliant with DEFRA standards
+Please proceed with the links and resources below to first make sure your AI Artefacts are compliant with Defra standards
 
 <details>
-<summary>Does your AI Agent conform to these DEFRA standards?</summary>
+<summary>Does your AI Agent conform to these Defra standards?</summary>
 
-Before adding a LAP-specific AI Agent to the LAMAI Agent Directory, the agent and its supporting solution must comply with DEFRA’s AI Agent Playbook standards and governance requirements.
+Before adding a LAP-specific AI Agent to the LAMAI Agent Directory, the agent and its supporting solution must comply with Defra’s AI Agent Playbook standards and governance requirements.
 
-This includes demonstrating that the agent has been designed using the appropriate AI approach, completed the required AI readiness and assurance checks, follows DEFRA’s Responsible Design Principles, adheres to the Technical Delivery Guidance, and has appropriate governance, ownership, risk management, and oversight arrangements in place.
+This includes demonstrating that the agent has been designed using the appropriate AI approach, completed the required AI readiness and assurance checks, follows Defra’s Responsible Design Principles, adheres to the Technical Delivery Guidance, and has appropriate governance, ownership, risk management, and oversight arrangements in place.
 
 Teams are responsible for ensuring their agent is lawful, secure, ethical, transparent, and subject to meaningful human oversight before it is registered within LAMAI. Evidence of compliance with these requirements should be available as part of the onboarding and approval process.
 
-**Required DEFRA Guidance**
+**Required Defra Guidance**
 
 This below resource could be used to conform to Defra software development standards and generally good coding standards that comply with DDTS code quality standards etc.
 

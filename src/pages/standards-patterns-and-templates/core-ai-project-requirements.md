@@ -16,7 +16,7 @@ The core requirements that apply to all AI-enabled modernisation projects are se
 When engaged on a project a supplier is expected to design, build, and evidence delivery against the following requirements.
 
 1. **Agentic AI by Default**
-   The Programme has adopted an ‘Agentic AI by Default’ posture. Suppliers shall demonstrate how AI agents and emerging AI more generally has been considered by default throughout solution design, delivery, testing and operation. Any decision not to use Agentic AI for a relevant use case must be justified. All AI capabilities must comply with DEFRA AI policies, governance requirements, security controls, and responsible AI guardrails.
+   The Programme has adopted an ‘Agentic AI by Default’ posture. Suppliers shall demonstrate how AI agents and emerging AI more generally has been considered by default throughout solution design, delivery, testing and operation. Any decision not to use Agentic AI for a relevant use case must be justified. All AI capabilities must comply with Defra AI policies, governance requirements, security controls, and responsible AI guardrails.
 
 2. **GDS based Back Office Operational User Interface**
    The Supplier must develop a user interface based on a Government Digital Standard (GDS) standard, the style sheet, and optimised and tuned for frequent continual operational use. The interface should be designed for back-office operational users, not to the citizen-facing standard, which is designed for infrequent, occasional use. The Supplier should produce a UI design that can be reviewed and assured.
@@ -27,7 +27,7 @@ When engaged on a project a supplier is expected to design, build, and evidence 
 
 4. **Modern Architecture**
    The Supplier shall propose a modern target-state architecture, not a like-for-like migration or re-platforming of the existing solution. For example, an n-tier or microservices-based architecture where sensible to do so.
-   The proposed design must align with DEFRA architecture principles, standards, approved technology patterns, and industry best practice. It must demonstrate how it improves scalability, resilience, security, quality, maintainability, supportability, and reduces technical debt.
+   The proposed design must align with Defra architecture principles, standards, approved technology patterns, and industry best practice. It must demonstrate how it improves scalability, resilience, security, quality, maintainability, supportability, and reduces technical debt.
    Where legacy components are retained, suppliers must provide a clear rationale and demonstrate how their approach supports progressive modernisation, refactoring, or replacement over time.
 
 5. **Evergreen Continuous Remediation**
