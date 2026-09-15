@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Virus Isolates Repository modernisation
+title: Virus Isolates Repository
 ---
 
 <!-- Provenance: synthesised from the project's PRD, source-based analyses, decomposed
      feature specifications, the legacy source tree and the re-engineered codebase.
      Status: In delivery (proof-of-concept modernisation). Internal note — not rendered. -->
 
-# Virus Isolates Repository modernisation
+# Virus Isolates Repository
 
 ## Project summary
 
@@ -33,9 +33,23 @@ interface and an automated test suite that exceeds the 90% coverage target.
 | Users | Laboratory staff acting as isolate managers, isolate viewers, isolate deleters, look-up data managers, report viewers and system administrators |
 | Status | In delivery (proof-of-concept modernisation) |
 
-## Modernisation approach
+## Tech stack
 
-### As-is
+Grounded in the re-engineered codebase's project and configuration files, and in the legacy
+source tree for the "before" column.
+
+| Layer | Legacy (as-is) | Modernised (to-be) |
+|-------|----------------|--------------------|
+| Language | VB.NET | C# |
+| Platform | .NET Framework (out of support) | .NET 10 |
+| Front end | ASP.NET Web Forms (`.aspx` / `.ascx`), AjaxControlToolkit, bespoke UI | Blazor (interactive server), GOV.UK Design System Frontend with GDS Transport fonts and the current GOV.UK header and logo |
+| Back end / services | VB.NET class library with in-code business rules and authorisation | Layered .NET solution: an isolated domain project, an infrastructure/services project, and a Blazor web project as the composition root |
+| Data | Hand-written data access over SQL Server stored procedures | Entity Framework Core with a database-independent context, automatic audit stamping and optimistic concurrency; a file-based store for zero-configuration first run |
+| Reporting | Proprietary reporting tool | Operational reports rendered in-application |
+| CI/CD & quality | No automated tests | xUnit and bUnit test suite with coverage collection; deterministic, idempotent seed data |
+| Security & accessibility | Windows authentication, role checks in code, secrets in plain configuration | Windows (Negotiate) authentication with authentication skipped in development; role-based authorisation; WCAG 2.2 AA accessible GOV.UK components (skip link, correct heading order, accessible tables and error summaries) |
+
+## As-is
 
 The legacy service was a VB.NET application built on ASP.NET Web Forms, targeting an
 out-of-support version of the .NET Framework. It was arranged as two projects: a class library
@@ -65,7 +79,7 @@ The main characteristics and pain points of the legacy system were:
 The service authenticated users with Windows authentication and applied role-based
 authorisation in code, showing or hiding functionality by role.
 
-### To-be
+## To-be
 
 The target is a cloud-ready web application that preserves the laboratory's workflows while
 moving to a modern, supported and well-tested platform. Described as an approach and shape
@@ -86,7 +100,7 @@ The legacy business rules were carried across explicitly — for example AV subm
 validation, isolate nomenclature construction, repository search validation, optimistic
 concurrency, and the rules that stop in-use or non-empty records being deleted.
 
-### Steps taken
+## Steps taken
 
 The modernisation followed the Defra Legacy Application Programme path:
 
@@ -109,22 +123,6 @@ The modernisation followed the Defra Legacy Application Programme path:
 5. **Added an automated test suite** using xUnit for the domain and services and bUnit for the
    Blazor components, with end-to-end tests exercising the whole application, and measured
    coverage against the 90% target.
-
-## Tech stack
-
-Grounded in the re-engineered codebase's project and configuration files, and in the legacy
-source tree for the "before" column.
-
-| Layer | Legacy (as-is) | Modernised (to-be) |
-|-------|----------------|--------------------|
-| Language | VB.NET | C# |
-| Platform | .NET Framework (out of support) | .NET 10 |
-| Front end | ASP.NET Web Forms (`.aspx` / `.ascx`), AjaxControlToolkit, bespoke UI | Blazor (interactive server), GOV.UK Design System Frontend with GDS Transport fonts and the current GOV.UK header and logo |
-| Back end / services | VB.NET class library with in-code business rules and authorisation | Layered .NET solution: an isolated domain project, an infrastructure/services project, and a Blazor web project as the composition root |
-| Data | Hand-written data access over SQL Server stored procedures | Entity Framework Core with a database-independent context, automatic audit stamping and optimistic concurrency; a file-based store for zero-configuration first run |
-| Reporting | Proprietary reporting tool | Operational reports rendered in-application |
-| CI/CD & quality | No automated tests | xUnit and bUnit test suite with coverage collection; deterministic, idempotent seed data |
-| Security & accessibility | Windows authentication, role checks in code, secrets in plain configuration | Windows (Negotiate) authentication with authentication skipped in development; role-based authorisation; WCAG 2.2 AA accessible GOV.UK components (skip link, correct heading order, accessible tables and error summaries) |
 
 ## Benefits, outcomes and success metrics
 

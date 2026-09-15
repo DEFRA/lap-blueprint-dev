@@ -2,6 +2,7 @@
 import "../styles/global.scss";
 import Breadcrumbs from "../components/Breadcrumbs.astro";
 import SideNavigation from "../components/SideNavigation.astro";
+import TopNavigation from "../components/TopNavigation.astro";
 import SearchBox from "../components/SearchBox.astro";
 
 const base = import.meta.env.BASE_URL;
@@ -9,6 +10,7 @@ const isDev = !!import.meta.env.IS_DEV_SITE;
 const {
   frontmatter: {
     title,
+    fullWidth = false,
     phase = isDev
       ? [
           "review",
@@ -84,6 +86,7 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
         </div>
       </div>
     </header>
+    <TopNavigation />
     <div class="govuk-width-container">
       {
         phase && (
@@ -102,13 +105,24 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
       }
       <main class="govuk-main-wrapper" id="main-content">
         <div class="govuk-grid-row">
-          <aside class="govuk-grid-column-one-third">
-            <SideNavigation />
-          </aside>
-          <div class="govuk-grid-column-two-thirds">
-            <Breadcrumbs />
-            <slot />
-          </div>
+          {
+            fullWidth ? (
+              <div class="govuk-grid-column-full">
+                <Breadcrumbs />
+                <slot />
+              </div>
+            ) : (
+              <Fragment>
+                <aside class="govuk-grid-column-one-third">
+                  <SideNavigation />
+                </aside>
+                <div class="govuk-grid-column-two-thirds">
+                  <Breadcrumbs />
+                  <slot />
+                </div>
+              </Fragment>
+            )
+          }
         </div>
       </main>
     </div>
@@ -178,9 +192,11 @@ const pageTitle = title ? `${title} - DEFRA LAP` : "DEFRA LAP";
     <script type="module">
       import { initDetailsFromFragment, initGovUK } from "./BaseLayout.js";
       import { initMermaidLightbox } from "../util/mermaidLightbox.js";
+      import { initAgentDirectory } from "../util/agentDirectory.js";
       initGovUK();
       initDetailsFromFragment();
       initMermaidLightbox();
+      initAgentDirectory();
     </script>
   </body>
 </html>

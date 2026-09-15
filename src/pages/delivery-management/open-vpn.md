@@ -1,7 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Open VPN Access
-order: 3
+order: 8
 group: Define/Discovery
 ---
 

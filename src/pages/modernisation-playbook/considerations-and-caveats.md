@@ -1,7 +1,8 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Considerations & Caveats
-order: 4
+order: 2
+group: Start here
 ---
 
 # Considerations & Caveats
@@ -47,7 +48,7 @@ The team must also verify that personal data and secrets do not remain in:
 
 Automated transformations can replace visible personal data with fictional equivalents, but this remains a best-effort control. Review the output yourself. If personal data or secrets are found, remove them, rerun the relevant processing activity and repeat the check before proceeding.
 
-Use the local [PII Screener guidance](../delivery-management/pii-scanning/) to scan code before it is shared, used with AI tooling or committed to a wider-access repository.
+Use the local [PII Screener guidance](~/delivery-management/pii-scanning/) to scan code before it is shared, used with AI tooling or committed to a wider-access repository.
 
 ## AI output quality and hallucination risk
 

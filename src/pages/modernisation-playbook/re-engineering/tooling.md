@@ -5,7 +5,7 @@ title: Tooling
 
 # Tooling
 
-Re-Engineering combines feature decomposition with Ralph for iterative autonomous implementation. Both activities must operate within the project's approved information-governance and security controls.
+Re-Engineering combines feature decomposition with Copilot Ralph for iterative autonomous implementation. Both activities must operate within the project's approved information-governance and security controls.
 
 ## Toolchain
 
@@ -14,7 +14,7 @@ flowchart TD
 	PRD["Approved PRD"]
 	Decomposition["Feature decomposition"]
 	Specifications["Feature specifications"]
-	Ralph["Ralph plan and build"]
+	Ralph["Copilot Ralph run loop"]
 	Feature["Implemented feature"]
 
 	PRD --> Decomposition
@@ -30,46 +30,56 @@ flowchart TD
 
 ## Feature decomposition
 
-Feature decomposition turns the approved PRD into independently deliverable feature specifications. Use the [Process](../process/) guidance to review the proposed feature plan, confirm dependencies and priorities, and obtain approval before implementation begins.
+The [PRD to Features](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-prd-to-features.agent) agent turns the approved PRD into independently deliverable feature specifications, verifying full coverage and emitting a traceability manifest, with individual specifications written by the [Feature Writer](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-feature-writer.agent) agent. Use the [Process](../process/) guidance to review the proposed feature plan, confirm dependencies and priorities, and obtain approval before implementation begins.
 
-## Ralph autonomous build loop
+## Copilot Ralph autonomous build loop
 
-[Ralph](https://github.com/marc0der/ralph) runs an AI coding agent through repeated planning and implementation iterations. Fresh agent sessions use shared project artefacts to continue work without relying on a single, long-lived context.
+[Copilot Ralph](https://github.com/JanDeDobbeleer/copilot-ralph) runs GitHub Copilot through repeated iterations, feeding a prompt to the agent so each pass builds on the previous one until the task is complete. It implements the "Ralph Wiggum" loop pattern using the GitHub Copilot SDK.
 
 ### Prerequisites
 
 Before use, ensure that the following are installed and approved for the project:
 
-- Docker with the capability to run the devcontainer sandbox
-- the devcontainer command-line tool
-- Ralph
-- an authenticated supported AI backend
+- Go 1.24 or later
+- Git
+- authenticated GitHub Copilot access
 
-Confirm current installation steps and supported backends in the [Ralph documentation](https://github.com/marc0der/ralph). Tool versions, model availability and organisational approval requirements can change.
+Install the command line tool with Go:
 
-### Key commands
+```sh
+go install github.com/JanDeDobbeleer/copilot-ralph/cmd/ralph@latest
+```
 
-| Command         | Purpose                                                                      |
-| --------------- | ---------------------------------------------------------------------------- |
-| `ralph sandbox` | Enter the devcontainer sandbox before autonomous work                        |
-| `ralph init`    | Initialise the shared workspace artefacts                                    |
-| `ralph plan`    | Create or update the implementation plan from the specification and codebase |
-| `ralph build`   | Implement, test, commit and push plan items one at a time                    |
-| `ralph archive` | Archive loop artefacts before starting the next feature                      |
+Confirm current installation steps and supported models in the [Copilot Ralph documentation](https://github.com/JanDeDobbeleer/copilot-ralph). Tool versions, model availability and organisational approval requirements can change.
 
-Always start autonomous work with `ralph sandbox`. Ralph can use non-interactive tool permissions; the devcontainer is the isolation boundary that prevents an unattended agent from operating directly on the host machine.
+### Running the loop
 
-Before starting a build loop, review the proposed scope. When an explicit iteration count is supplied, it can override the tool's normal confirmation and stall safeguards. Use fixed unattended iteration budgets only where this is deliberate, understood and appropriately governed.
+Run the loop with a prompt, or with a Markdown file such as an approved feature specification:
+
+```sh
+ralph run "Implement the next feature specification in specs/"
+ralph run specs/FT-001-feature-name.md
+```
+
+Common options:
+
+| Option             | Purpose                                                     |
+| ------------------ | ----------------------------------------------------------- |
+| `--max-iterations` | Maximum loop iterations before stopping (default 10)        |
+| `--timeout`        | Maximum runtime before stopping, for example `30m` or `1h`  |
+| `--model`          | The AI model to use                                         |
+| `--promise`        | The completion phrase that signals the task is done         |
+| `--dry-run`        | Show the configuration and planned run without executing it |
+
+The loop exits when the task reports completion, the maximum iterations are reached, the timeout is exceeded, an error occurs, or you cancel it. Set `--max-iterations` and `--timeout` deliberately: unattended iteration budgets must be understood and appropriately governed.
 
 ### Project artefacts
 
-| Artefact                   | Purpose                                                                               |
-| -------------------------- | ------------------------------------------------------------------------------------- |
-| `AGENTS.md` or `CLAUDE.md` | Operational instructions, commands, conventions and guardrails maintained by the team |
-| `IMPLEMENTATION_PLAN.md`   | Prioritised work shared between agent iterations                                      |
-| `PROGRESS.md`              | Append-only log of activity, learning, failures and unresolved work                   |
-| `specs/`                   | Approved feature specifications that drive the current build                          |
-| `rules/`                   | Detailed project standards used by the agent when making implementation decisions     |
+| Artefact    | Purpose                                                                               |
+| ----------- | ------------------------------------------------------------------------------------- |
+| `AGENTS.md` | Operational instructions, commands, conventions and guardrails maintained by the team |
+| `specs/`    | Approved feature specifications that drive the current build                           |
+| `rules/`    | Detailed project standards used by the agent when making implementation decisions      |
 
 ## Working across the two projects
 
@@ -87,10 +97,8 @@ target-application-project/
 	rules/
 	specs/
 		FT-001-feature-name.md
-	IMPLEMENTATION_PLAN.md
-	PROGRESS.md
 	src/
 	test/
 ```
 
-Copy one approved feature specification into the target project's `specs/` directory at a time. Complete the plan, build and implementation-review cycle before progressing to the next feature.
+Copy one approved feature specification into the target project's `specs/` directory at a time. Complete the build and implementation-review cycle before progressing to the next feature.

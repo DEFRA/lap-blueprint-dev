@@ -1,7 +1,9 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Frequently Asked Questions
-order: 1
+navLabel: FAQs
+order: 6
+fullWidth: true
 ---
 
 # Frequently Asked Questions
@@ -9,55 +11,11 @@ order: 1
 <details>
 <summary>
 
-## How do I get a GitHub Copilot license or access approved AI tools?
+## How do I get a supplier access to a DEFRA-managed desktop?
 
 </summary>
 
-[How to access default tools and license](../delivery-management/access-license/) explains how to get a GitHub Copilot licence and access approved AI tools. You can then check [AICE AI Toolkit Links](../standards-patterns-and-templates/ai-tooling-standards/) for approved tooling and practical references.
-
-</details>
-
-<details>
-<summary>
-
-## How do I register a LAP AI agent in the directory?
-
-</summary>
-
-Follow [How to add your LAP AI Agent to our LAMAI's AI Directory](../ai-catalogue/ai-directory-contribution/) and browse the [AI Directory](../ai-catalogue/ai-directory/) for existing definitions.
-
-</details>
-
-<details>
-<summary>
-
-## Do I need to run the PII Screener before using AI tooling on source code?
-
-</summary>
-
-Yes. Source code must be scanned for PII and secrets before it is used with AI-assisted tools or shared outside the current team. See [PII scanning](../delivery-management/pii-scanning/) for an overview of the tool and how to run it.
-
-</details>
-
-<details>
-<summary>
-
-## What should I do if the scanner finds PII or secrets?
-
-</summary>
-
-Review the findings by severity. For any High or Critical findings you should stop sharing the code or using it with AI tooling until they are resolved. The tool includes an interactive obfuscation workflow that lets you review, preview, and apply replacements file by file, with rollback support. See the [obfuscation guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/guides/obfuscation.md) for step-by-step instructions.
-
-</details>
-
-<details>
-<summary>
-
-## How do I get hold of the source code for a legacy application?
-
-</summary>
-
-Source code acquisition is a multi-phase process: you need to identify the application owner, confirm the code is in scope, obtain business and supplier approvals, arrange secure transfer, and get IAO sign-off before modernisation work can begin. See [Source code acquisition](../delivery-management/source-code-acquisition/) for the full process and approval routes.
+Azure Virtual Desktop (AVD) gives approved supplier users a DEFRA-managed desktop hosted in Azure, rather than accessing DEFRA systems directly from their own devices. This is the preferred route when suppliers need access to DEFRA applications and services rather than just network connectivity. See [Azure Virtual Desktop Access](../delivery-management/azure-virtual-desktop-access/) for the request and provisioning flow.
 
 </details>
 
@@ -97,10 +55,54 @@ Before requesting access to the DEFRA GitHub organisation, each user must have t
 <details>
 <summary>
 
-## How do I get a supplier access to a DEFRA-managed desktop?
+## How do I get a GitHub Copilot license or access approved AI tools?
 
 </summary>
 
-Azure Virtual Desktop (AVD) gives approved supplier users a DEFRA-managed desktop hosted in Azure, rather than accessing DEFRA systems directly from their own devices. This is the preferred route when suppliers need access to DEFRA applications and services rather than just network connectivity. See [Azure Virtual Desktop Access](../delivery-management/azure-virtual-desktop-access/) for the request and provisioning flow.
+[How to access default tools and license](../delivery-management/access-license/) explains how to get a GitHub Copilot licence and access approved AI tools. You can then check [AICE AI Toolkit Links](../standards-patterns-and-templates/ai-tooling-standards/) for approved tooling and practical references.
+
+</details>
+
+<details>
+<summary>
+
+## How do I get hold of the source code for a legacy application?
+
+</summary>
+
+Source code acquisition is a multi-phase process: you need to identify the application owner, confirm the code is in scope, obtain business and supplier approvals, arrange secure transfer, and get IAO sign-off before modernisation work can begin. See [Source code acquisition](../delivery-management/source-code-acquisition/) for the full process and approval routes.
+
+</details>
+
+<details>
+<summary>
+
+## Do I need to run the PII Screener before using AI tooling on source code?
+
+</summary>
+
+Yes. Source code must be scanned for PII and secrets before it is used with AI-assisted tools or shared outside the current team. See [PII scanning](../delivery-management/pii-scanning/) for an overview of the tool and how to run it.
+
+</details>
+
+<details>
+<summary>
+
+## What should I do if the scanner finds PII or secrets?
+
+</summary>
+
+Review the findings by severity. For any High or Critical findings you should stop sharing the code or using it with AI tooling until they are resolved. The tool includes an interactive obfuscation workflow that lets you review, preview, and apply replacements file by file, with rollback support. See the [obfuscation guide](https://github.com/DEFRA/lap-pii-screener/blob/main/docs/guides/obfuscation.md) for step-by-step instructions.
+
+</details>
+
+<details>
+<summary>
+
+## How do I register a LAP AI agent in the directory?
+
+</summary>
+
+Follow [How to add your LAP AI Agent to our LAMAI's AI Directory](../delivery-management/ai-directory-contribution/) and browse the [AI Directory](../ai-catalogue/) for existing definitions.
 
 </details>

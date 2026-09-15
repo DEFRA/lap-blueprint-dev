@@ -1,7 +1,9 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: Glossary of terms
-order: 6
+navLabel: Glossary
+order: 7
+fullWidth: true
 ---
 
 # Glossary of Terms

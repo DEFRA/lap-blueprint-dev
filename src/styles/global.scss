@@ -165,3 +165,144 @@ pre.mermaid[data-lightbox] {
     }
   }
 }
+
+// ─── AI directory (searchable, filterable, sortable agent table) ─────────────
+
+.lap-agent-filter {
+  padding: govuk-spacing(3);
+  margin-bottom: govuk-spacing(4);
+  border: 1px solid $govuk-border-colour;
+  background: govuk-colour("light-grey");
+
+  &__header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: govuk-spacing(2);
+  }
+
+  // Lay the search and facet groups out side by side above the table
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: govuk-spacing(3) govuk-spacing(6);
+    align-items: flex-start;
+
+    .govuk-form-group,
+    .govuk-fieldset {
+      margin-bottom: 0;
+    }
+
+    // Search takes the left half; the Type filter is centred in the right half
+    .govuk-form-group {
+      flex: 0 1 50%;
+      min-width: 0;
+    }
+
+    .govuk-fieldset {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  .govuk-input {
+    max-width: none;
+    height: 2.75rem;
+    @include govuk-font($size: 24);
+  }
+}
+
+.lap-agent-directory__toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: govuk-spacing(2);
+
+  .govuk-button {
+    margin-bottom: 0;
+  }
+}
+
+// Removable selected-filter tags
+.lap-agent-selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: govuk-spacing(1);
+  margin-bottom: govuk-spacing(3);
+
+  &[hidden] {
+    display: none;
+  }
+}
+
+.lap-agent-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: govuk-spacing(1) govuk-spacing(2);
+  border: 1px solid $govuk-border-colour;
+  border-radius: 2px;
+  background: govuk-colour("white");
+  color: $govuk-text-colour;
+  font-family: $govuk-font-family;
+  font-size: 16px;
+  line-height: 1.25;
+  cursor: pointer;
+
+  &:hover {
+    background: govuk-colour("light-grey");
+  }
+
+  &:focus-visible {
+    outline: govuk-spacing(1) solid govuk-colour("yellow");
+    outline-offset: 0;
+    box-shadow: 0 2px 0 govuk-colour("black");
+  }
+}
+
+// Sortable column header button
+.lap-agent-sort {
+  display: inline-flex;
+  align-items: center;
+  gap: govuk-spacing(1);
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+
+  &::after {
+    content: "\2195"; // up-down arrow, indicating "sortable"
+    font-weight: 400;
+    opacity: 0.5;
+  }
+
+  &:focus-visible {
+    outline: govuk-spacing(1) solid govuk-colour("yellow");
+    outline-offset: 0;
+    background: govuk-colour("yellow");
+    box-shadow: 0 2px 0 govuk-colour("black");
+  }
+}
+
+[aria-sort="ascending"] .lap-agent-sort::after {
+  content: "\2191"; // up arrow
+  opacity: 1;
+}
+
+[aria-sort="descending"] .lap-agent-sort::after {
+  content: "\2193"; // down arrow
+  opacity: 1;
+}
+
+.lap-agent-table {
+  table-layout: fixed;
+
+  td,
+  th {
+    word-wrap: break-word;
+  }
+}

@@ -1,6 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Financial Planning System (FPS) modernisation
+title: Financial Planning System (FPS)
 ---
 
 <!-- Provenance: synthesised from the project PRD and analyses (domain-analysis.md,
@@ -14,7 +14,7 @@ title: Financial Planning System (FPS) modernisation
      Status: In delivery.
      Internal note — not rendered on the page. -->
 
-# Financial Planning System (FPS) modernisation
+# Financial Planning System (FPS)
 
 ## Project summary
 
@@ -43,9 +43,22 @@ tests.
 | Users | Programme Managers, Resource Managers, Lab Services Managers, Finance and Budget Analysts, Management Accountants, Administrators, Standard Users |
 | Status | In delivery |
 
-## Modernisation approach
+## Tech stack
 
-### As-is
+Grounded in the re-engineered codebase's project and configuration files, and in the
+legacy-system analyses for the "before" column.
+
+| Layer | Legacy (as-is) | Modernised (to-be) |
+|-------|----------------|--------------------|
+| Language | VBA | C# |
+| Platform | Microsoft Access (desktop) | .NET 10 |
+| Front end | Access form-based screens (desktop UI), around 80 screens across 18 functional areas | Blazor Interactive Server, govuk-frontend 6.3.0 (GOV.UK Design System) with GDS Transport font, Tudor Crown header and GOV.UK footer |
+| Back end / services | Business logic embedded in VBA behind form event handlers, tightly coupled to the UI | Layered .NET solution: ASP.NET Core services with VBA event logic converted into testable C# services |
+| Data | Microsoft Access database, no code-first schema | SQL Server with Entity Framework Core 10 code-first migrations; ClosedXML for Excel export |
+| CI/CD & quality | No automated tests | Azure Bicep (infrastructure-as-code); xUnit, bUnit, Moq and coverlet (code coverage); Playwright + axe-core (automated accessibility audit) |
+| Security & accessibility | Windows file permissions, no identity provider; form-based desktop UI not meeting WCAG 2.2 AA | Microsoft Entra ID (OpenID Connect) with ASP.NET Core policy-based authorisation; Application Insights and structured logging; WCAG 2.2 AA GOV.UK components |
+
+## As-is
 
 FPS was a Microsoft Access desktop application with its business logic embedded in VBA
 behind form-based screens. The user interface and the calculations were tightly
@@ -65,7 +78,7 @@ Key pain points:
 - **Hard to maintain** — logic tied to UI event handlers, with no separation of concerns.
 - **No observability** — no structured logging, telemetry or real audit trail.
 
-### To-be
+## To-be
 
 The target is a cloud-hosted Blazor web application, reached from any supported
 browser and backed by a managed relational database. Infrastructure is defined as
@@ -83,7 +96,7 @@ and charge-rate management, laboratory services, plan-vs-actual comparison, snap
 access control, reference data, audit, and department income and surveillance
 reporting.
 
-### Steps taken
+## Steps taken
 
 1. **Analysed the legacy system** — reverse-engineered the Access application and database into four analyses (domain, application, database, interaction), capturing every actor, term, entity, screen and business rule.
 
@@ -102,21 +115,6 @@ reporting.
 8. **Added an accessibility audit** — a Playwright + axe-core script runs WCAG 2.2 AA checks across all pages, ready for the delivery pipeline.
 
 9. **Infrastructure as code** — Azure Bicep templates provision the environment consistently.
-
-## Tech stack
-
-Grounded in the re-engineered codebase's project and configuration files, and in the
-legacy-system analyses for the "before" column.
-
-| Layer | Legacy (as-is) | Modernised (to-be) |
-|-------|----------------|--------------------|
-| Language | VBA | C# |
-| Platform | Microsoft Access (desktop) | .NET 10 |
-| Front end | Access form-based screens (desktop UI), around 80 screens across 18 functional areas | Blazor Interactive Server, govuk-frontend 6.3.0 (GOV.UK Design System) with GDS Transport font, Tudor Crown header and GOV.UK footer |
-| Back end / services | Business logic embedded in VBA behind form event handlers, tightly coupled to the UI | Layered .NET solution: ASP.NET Core services with VBA event logic converted into testable C# services |
-| Data | Microsoft Access database, no code-first schema | SQL Server with Entity Framework Core 10 code-first migrations; ClosedXML for Excel export |
-| CI/CD & quality | No automated tests | Azure Bicep (infrastructure-as-code); xUnit, bUnit, Moq and coverlet (code coverage); Playwright + axe-core (automated accessibility audit) |
-| Security & accessibility | Windows file permissions, no identity provider; form-based desktop UI not meeting WCAG 2.2 AA | Microsoft Entra ID (OpenID Connect) with ASP.NET Core policy-based authorisation; Application Insights and structured logging; WCAG 2.2 AA GOV.UK components |
 
 ## Benefits, outcomes and success metrics
 

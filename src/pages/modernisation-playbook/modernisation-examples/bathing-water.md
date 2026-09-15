@@ -1,6 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Bathing Water Quality Forecasting System modernisation example
+title: Bathing Water Quality Forecasting System
 ---
 
 <!-- Provenance: synthesised from the project's PRD, domain analysis, application analysis,
@@ -11,7 +11,7 @@ title: Bathing Water Quality Forecasting System modernisation example
      web/package.json, README.md) and PRD alone.
      Internal note — not rendered on the page. -->
 
-# Bathing Water Quality Forecasting System modernisation example
+# Bathing Water Quality Forecasting System
 
 ## Project summary
 
@@ -42,9 +42,24 @@ production replacement is still in delivery.
 | Users | EA Marine Modellers; EA FEWS Administrators |
 | Status | Proof of concept |
 
-## Modernisation approach
+## Tech stack
 
-### As-is
+Stack drawn from `api/requirements.txt`, `api/pyproject.toml`, `web/package.json`, and
+`README.md`.
+
+| Layer | Technology |
+|-------|-----------|
+| Front end | Node.js 20, Hapi.js, Nunjucks, GOV.UK Frontend |
+| Back end / services | Python 3.12, FastAPI, Uvicorn, SQLAlchemy, pandas, statsmodels, numpy |
+| Data | PostgreSQL 16; pyodbc for the Access-to-PostgreSQL migration |
+| CI/CD and quality | pytest (BDD-style acceptance tests); Jest (frontend unit tests); Ruff (Python linting with flake8-bandit security rules); Docker Compose (local development) |
+| Security and accessibility | HTTP security headers (Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy); CSRF protection via @hapi/crumb; GOV.UK Design System (WCAG 2.1 AA target) |
+
+No CI/CD pipeline exists at proof-of-concept stage. The test suite is run manually on a
+developer machine. Establishing an automated pipeline is a prerequisite for production
+deployment.
+
+## As-is
 
 The legacy system was not a single application but a collection of loosely coupled
 desktop tools held together by manual processes.
@@ -82,7 +97,7 @@ prior statistical analysis had demonstrated a 35% improvement in forecast accura
 the rainfall-threshold method that MLR models are intended to replace (source: BWQFS
 PRD, Section 1).
 
-### To-be
+## To-be
 
 The target is a cloud-ready web application that allows an EA Marine Modeller to run the
 full annual model-build cycle — data readiness check, predictor computation, MLR model
@@ -101,7 +116,7 @@ Key non-functional goals are:
 - meeting GOV.UK accessibility and security standards from the outset
 - providing a structured data readiness check before the modelling cycle is triggered
 
-### Steps taken
+## Steps taken
 
 1. **Reverse-engineering to a PRD.** The legacy system had no formal specification. The
    team produced a product requirements document, domain analysis, application analysis,
@@ -146,23 +161,6 @@ Key non-functional goals are:
    river flow) into PostgreSQL, and to compute the aggregated predictor variables from
    those raw data. The scripts are complete but the full data load for all historical
    years has not yet been run.
-
-## Tech stack
-
-Stack drawn from `api/requirements.txt`, `api/pyproject.toml`, `web/package.json`, and
-`README.md`.
-
-| Layer | Technology |
-|-------|-----------|
-| Front end | Node.js 20, Hapi.js, Nunjucks, GOV.UK Frontend |
-| Back end / services | Python 3.12, FastAPI, Uvicorn, SQLAlchemy, pandas, statsmodels, numpy |
-| Data | PostgreSQL 16; pyodbc for the Access-to-PostgreSQL migration |
-| CI/CD and quality | pytest (BDD-style acceptance tests); Jest (frontend unit tests); Ruff (Python linting with flake8-bandit security rules); Docker Compose (local development) |
-| Security and accessibility | HTTP security headers (Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, Referrer-Policy); CSRF protection via @hapi/crumb; GOV.UK Design System (WCAG 2.1 AA target) |
-
-No CI/CD pipeline exists at proof-of-concept stage. The test suite is run manually on a
-developer machine. Establishing an automated pipeline is a prerequisite for production
-deployment.
 
 ## Benefits, outcomes and success metrics
 

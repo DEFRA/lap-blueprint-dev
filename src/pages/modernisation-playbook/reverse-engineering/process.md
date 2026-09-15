@@ -8,6 +8,8 @@ order: 1
 
 The reverse engineering process turns legacy application artefacts into a Product Requirements Document (PRD). It has five phases, with an internal quality gate before automated analysis and a stakeholder approval gate at the end.
 
+The process is delivered by the [LAP Innovation agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/). Each phase below names the agent that performs it. The [LAP Orchestrator](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-lap-orchestrator.agent) agent can run the whole pipeline — from content curation through to the PRD and its Open Items Register — or you can run each agent individually.
+
 ## Before you start
 
 Collect all three mandatory input types. Omitting an input type will reduce the completeness of the resulting analysis and PRD.
@@ -60,7 +62,7 @@ Content curation prepares the non-code inputs for analysis:
 
 The expected outputs are semantic HTML mock-ups in `output/html/` and curated transcripts in `output/transcripts/`.
 
-Run the approved curation tooling against all collected screenshots and transcripts. For a large set of files, monitor progress and divide or resume the work if the tool does not finish the full set in one run.
+Run the [Digital Content Curator](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-digital-content-curator.agent) agent against all collected screenshots and transcripts. It processes each file in turn through the digital-content-processor, converting screenshots to semantic HTML and curating transcripts. For a large set of files, monitor progress and divide or resume the work if the agent does not finish the full set in one run.
 
 ### 3. Review curated outputs
 
@@ -85,14 +87,14 @@ If an output fails review, rerun the relevant curation step against the original
 
 ### 4. Analysis and PRD generation
 
-Specialist analysis roles examine the curated content and source code. The content and code analysis can run in parallel, while PRD synthesis waits for all analysis outputs.
+Specialist LAP Innovation agents examine the curated content and source code. The content and code analysis can run in parallel, while PRD synthesis waits for all analysis outputs.
 
-| Analyst               | Focus                                                                                                     | Output                           |
-| --------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------- |
-| Business analyst      | Domain language, bounded contexts, subdomains and context maps from curated transcripts and HTML mock-ups | `output/domain-analysis.md`      |
-| Interaction analyst   | Screen inventory, user workflows and navigation from HTML mock-ups and curated transcripts                | `output/interaction-analysis.md` |
-| Application developer | Application workflows, behaviour, domain model, business rules and integration points from source code    | `output/application-analysis.md` |
-| Database analyst      | Schema, stored procedures, triggers, constraints and database business rules from SQL and database code   | `output/database-analysis.md`    |
+| Agent                                                                                                                                     | Focus                                                                                                     | Output                           |
+| ----------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| [Business Analyst](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-business-analyst.agent)           | Domain language, bounded contexts, subdomains and context maps from curated transcripts and HTML mock-ups | `output/domain-analysis.md`      |
+| [Interaction Analyst](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-interaction-analyst.agent)     | Screen inventory, user workflows and navigation from HTML mock-ups and curated transcripts                | `output/interaction-analysis.md` |
+| [Application Developer](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-application-developer.agent)  | Application workflows, behaviour, domain model, business rules and integration points from source code    | `output/application-analysis.md` |
+| [Database Analyst](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-database-analyst.agent)           | Schema, stored procedures, triggers, constraints and database business rules from SQL and database code   | `output/database-analysis.md`    |
 
 ```mermaid
 flowchart TD
@@ -102,7 +104,7 @@ flowchart TD
 	InteractionAnalysis["Interaction analysis"]
 	ApplicationAnalysis["Application analysis"]
 	DatabaseAnalysis["Database analysis"]
-	Synthesis["PRD synthesis"]
+	Synthesis["PRD synthesis (Product Manager)"]
 	PRD["Product Requirements Document"]
 
 	CuratedContent --> BusinessAnalysis
@@ -121,18 +123,18 @@ flowchart TD
 	class PRD termination
 ```
 
-The synthesis stage cross-references all four analysis outputs and produces a PRD covering application behaviour, the domain model, workflows and business rules.
+The [Product Manager](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-product-manager.agent) agent cross-references all four analysis outputs and produces a PRD covering application behaviour, the domain model, workflows and business rules, together with a consolidated Open Items Register (`output/open-questions.md`) that captures document-versus-code discrepancies, findings, functionality-loss risks, open questions and deferred sources.
 
 ### 5. PRD review and sign-off
 
-The delivery team reviews the PRD for completeness and accuracy before the Application Product Owner approves it. Publish the document in the agreed controlled location so stakeholders can access it for review.
+The delivery team reviews the PRD for completeness and accuracy before the Application Product Owner approves it. Publish the document in the agreed controlled location so stakeholders can access it for review. The analysis outputs, PRD and Open Items Register can be rendered into a single, self-contained offline documentation pack (`output/documentation-pack.html`) to share with reviewers.
 
 Check the PRD against the source material and interview evidence:
 
 - **Completeness**: features, workflows and business rules are included.
 - **Accuracy**: the PRD agrees with what stakeholders described and what the code reveals.
 - **Traceability**: every factual claim is supported by source code, screenshots or transcripts. Investigate unsupported claims rather than treating them as facts.
-- **Open questions**: gaps are recorded and resolved through further evidence or stakeholder discussion where possible.
+- **Open questions**: gaps recorded by the Product Manager in the Open Items Register (`output/open-questions.md`) are resolved through further evidence or stakeholder discussion where possible.
 - **Domain language**: terms, bounded contexts and concepts reflect stakeholder understanding rather than only code-level naming.
 
 The phase ends when the Application Product Owner confirms that the PRD accurately represents the application and signs it off. The approved PRD is then ready for implementation planning.

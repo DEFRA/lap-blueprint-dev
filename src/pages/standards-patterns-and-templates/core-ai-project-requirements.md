@@ -7,9 +7,9 @@ order: 1
 
 # Core AI project requirements
 
-The Legacy Application Programme (the ‘Programme’) has adopted an ‘AI by Default’ posture, using agentic AI wherever possible, to accelerate delivery timescales and dramatically increase Value for Money in modernising of Defra systems.
+The Legacy Application Programme (the ‘Programme’) has adopted an ‘AI by Default’ posture, using agentic AI (AI agents that can plan and carry out tasks with limited human input) wherever possible, to accelerate delivery and increase value for money when modernising Defra systems.
 
-The core requirements that apply to all AI enabled modernisation projects is set out below. These requirements must be met for a proposal or Statement of Work to be deemed acceptable. Any deviation will be by exception and at the discretion of the Programme team.
+The core requirements that apply to all AI-enabled modernisation projects are set out below. These requirements must be met for a proposal or Statement of Work to be deemed acceptable. Any deviation will be by exception and at the discretion of the Programme team.
 
 ## Core Requirements
 
@@ -19,14 +19,14 @@ When engaged on a project a supplier is expected to design, build, and evidence 
    The Programme has adopted an ‘Agentic AI by Default’ posture. Suppliers shall demonstrate how AI agents and emerging AI more generally has been considered by default throughout solution design, delivery, testing and operation. Any decision not to use Agentic AI for a relevant use case must be justified. All AI capabilities must comply with DEFRA AI policies, governance requirements, security controls, and responsible AI guardrails.
 
 2. **GDS based Back Office Operational User Interface**
-   The Supplier must develop a user interface based on a Government Digital Standard (GDS) standard, the style sheet, and optimised and tuned for frequent continual operational use. The interface for should be designed for back office operational users and not the citizen facing standard which is designed for infrequent very occasional use. The Supplier should produce a UI design that can be reviewed and assured.
+   The Supplier must develop a user interface based on a Government Digital Standard (GDS) standard, the style sheet, and optimised and tuned for frequent continual operational use. The interface should be designed for back-office operational users, not to the citizen-facing standard, which is designed for infrequent, occasional use. The Supplier should produce a UI design that can be reviewed and assured.
    The Programme is currently developing a GDS based Back Office Operational UI standard that will be shared with suppliers at the earliest opportunity.
 
 3. **Accessibility and WCAG 2.2**
    All modernised application user interfaces must meet WCAG 2.2 level AA as a minimum, ideally AAA. The Supplier should provide accessibility conformance evidence as part of delivery.
 
 4. **Modern Architecture**
-   The Supplier shall propose a modern target-state architecture, not a like-for-like migration or re-platforming of the existing solution. For example, an n-tier architecture and or Microservices based where sensible to do so.
+   The Supplier shall propose a modern target-state architecture, not a like-for-like migration or re-platforming of the existing solution. For example, an n-tier or microservices-based architecture where sensible to do so.
    The proposed design must align with DEFRA architecture principles, standards, approved technology patterns, and industry best practice. It must demonstrate how it improves scalability, resilience, security, quality, maintainability, supportability, and reduces technical debt.
    Where legacy components are retained, suppliers must provide a clear rationale and demonstrate how their approach supports progressive modernisation, refactoring, or replacement over time.
 
@@ -36,7 +36,7 @@ When engaged on a project a supplier is expected to design, build, and evidence 
 
 6. **AI Security, Risk Management and Assurance**
    Suppliers shall demonstrate that AI-assisted and agentic delivery activities are governed through a documented, risk-based assurance process proportionate to the application, data classification, deployment environment and degree of AI autonomy.
-   The Supplier shall align its approach with applicable Defra security and engineering standards, the UK Government AI Playbook and NCSC Guidelines for Secure AI System Development. The NIST AI Risk Management Framework and, where generative and agentic AI is used, the NIST Generative AI Profile should be used as a supporting structure for identifying, measuring, managing and evidencing AI-specific risks.
+   The Supplier shall align its approach with applicable Defra security and engineering standards, the UK Government AI Playbook and NCSC Guidelines for Secure AI System Development. The NIST AI Risk Management Framework and, where generative and agentic AI are used, the NIST Generative AI Profile should be used as a supporting structure for identifying, measuring, managing and evidencing AI-specific risks.
    The Supplier shall maintain an AI risk and assurance record covering the AI systems, models, agents and tools used in delivery; their permitted use cases and autonomy boundaries; data accessed or processed; model and service providers; hosting and processing locations; human oversight arrangements; security controls; testing and evaluation results; known limitations; residual risks; and accountable risk owners. This risk and assurance record shall be developed in partnership with the Programme’s security team and mutually agreed.
 
 7. **Intellectual Property Rights (IPR) – Project Related IPR Rests with Defra and HMG**

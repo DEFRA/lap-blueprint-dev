@@ -9,7 +9,7 @@ fullWidth: true
 
 A searchable catalogue of the AI agents used across the Legacy Application Programme (LAP). Suppliers contribute their own agents so the directory keeps growing — use the search and filters to find an agent for a particular technology, such as an Oracle or .NET migration agent.
 
-Each agent name links to its published definition, which you can copy into your own repository. To add your agent, follow the [How to add your AI artefacts](../delivery-management/ai-directory-contribution/) guidance — a new entry is a single commit that adds a row to the table below.
+Each agent name links to its published definition, which you can copy into your own repository. To add your agent, follow the [How to add your AI artefacts](../ai-directory-contribution/) guidance — a new entry is a single commit that adds a row to the table below.
 
 <div class="lap-agent-directory" id="agent-directory">
 <div class="lap-agent-filter">

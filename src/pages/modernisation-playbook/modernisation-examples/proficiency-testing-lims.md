@@ -1,6 +1,6 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Proficiency Testing LIMS (PT-LIMS) modernisation
+title: Proficiency Testing LIMS (PT-LIMS)
 ---
 
 <!-- Provenance: synthesised from the project's Product Requirements Document, the
@@ -15,7 +15,7 @@ title: Proficiency Testing LIMS (PT-LIMS) modernisation
      Status: In delivery (completed greenfield rebuild, now in iterative improvement).
      Internal note — not rendered on the page. -->
 
-# Proficiency Testing LIMS (PT-LIMS) modernisation
+# Proficiency Testing LIMS (PT-LIMS)
 
 ## Project summary
 
@@ -47,9 +47,22 @@ automated tests.
 | Users | Internal APHA staff (contracts, scheme, scheduling, assessor, results sign-off, test consultant, support and administrator roles) and external participating laboratories (participant and viewer roles) |
 | Status | In delivery |
 
-## Modernisation approach
+## Tech stack
 
-### As-is
+Grounded in the re-engineered codebase's project and configuration files, and in the
+legacy-system analyses for the "before" column.
+
+| Layer | Legacy (as-is) | Modernised (to-be) |
+|-------|----------------|--------------------|
+| Language | VB.NET, with some C# for the background services | C# |
+| Platform | An older Microsoft web-forms framework on the .NET Framework | .NET 10 |
+| Front end | Two server-rendered web-forms portals (internal and external) | Blazor Interactive Server, govuk-frontend 6.4.0 (GOV.UK Design System) with GDS Transport font, Tudor Crown header, phase banner and footer |
+| Back end / services | Business logic in page-behind code and a bespoke business-object layer; SOAP web services; four background Windows services for email and retention | Layered clean architecture (domain, application, infrastructure, web); business rules re-expressed as testable C# services; a single background retention worker |
+| Data | SQL Server accessed through hand-written stored procedures and a hand-rolled data-access layer | SQL Server with Entity Framework Core 10 code-first migrations and idempotent startup seed data |
+| CI/CD & quality | No automated test suite | xUnit and bUnit tests with SQLite and in-memory providers; coverlet code coverage; startup migrations and seed for reproducible environments |
+| Security & accessibility | Role and folder-based access control on the older framework; interface not meeting WCAG 2.2 AA; end-of-life reporting and document components | Microsoft Entra ID (internal) and GOV.UK One Login (external) over OpenID Connect; role-based page authorisation; GOV.UK and NCSC baseline security headers, HSTS and antiforgery; health probes; WCAG 2.2 AA GOV.UK components with an accessibility statement |
+
+## As-is
 
 PT-LIMS was a pair of web portals — an internal portal for APHA staff and an external
 portal for participating laboratories — built on an older Microsoft web-forms
@@ -74,7 +87,7 @@ Key pain points that drove the modernisation:
 - **Fragmented background processing** — separate Windows services for email and
   retention added operational overhead and were awkward to observe.
 
-### To-be
+## To-be
 
 The target is a cloud-hosted Blazor web application, reached from a supported browser
 and backed by a managed relational database. The domain and business rules are
@@ -96,7 +109,7 @@ reproduced faithfully but re-expressed as isolated, testable services.
   applies its database migrations and seed data on startup, and folds the former
   background Windows services into a single, observable background retention worker.
 
-### Steps taken
+## Steps taken
 
 1. **Analysed the legacy system** — reverse-engineered the two portals, the
    business-object layer, the database and the background services into four structured
@@ -134,21 +147,6 @@ reproduced faithfully but re-expressed as isolated, testable services.
 9. **Iterative hardening** — worked a prioritised gap analysis against the legacy
    behaviour, deepening the testing lifecycle, approval workflows, notifications,
    retention and audit so each feature meets its acceptance criteria.
-
-## Tech stack
-
-Grounded in the re-engineered codebase's project and configuration files, and in the
-legacy-system analyses for the "before" column.
-
-| Layer | Legacy (as-is) | Modernised (to-be) |
-|-------|----------------|--------------------|
-| Language | VB.NET, with some C# for the background services | C# |
-| Platform | An older Microsoft web-forms framework on the .NET Framework | .NET 10 |
-| Front end | Two server-rendered web-forms portals (internal and external) | Blazor Interactive Server, govuk-frontend 6.4.0 (GOV.UK Design System) with GDS Transport font, Tudor Crown header, phase banner and footer |
-| Back end / services | Business logic in page-behind code and a bespoke business-object layer; SOAP web services; four background Windows services for email and retention | Layered clean architecture (domain, application, infrastructure, web); business rules re-expressed as testable C# services; a single background retention worker |
-| Data | SQL Server accessed through hand-written stored procedures and a hand-rolled data-access layer | SQL Server with Entity Framework Core 10 code-first migrations and idempotent startup seed data |
-| CI/CD & quality | No automated test suite | xUnit and bUnit tests with SQLite and in-memory providers; coverlet code coverage; startup migrations and seed for reproducible environments |
-| Security & accessibility | Role and folder-based access control on the older framework; interface not meeting WCAG 2.2 AA; end-of-life reporting and document components | Microsoft Entra ID (internal) and GOV.UK One Login (external) over OpenID Connect; role-based page authorisation; GOV.UK and NCSC baseline security headers, HSTS and antiforgery; health probes; WCAG 2.2 AA GOV.UK components with an accessibility statement |
 
 ## Benefits, outcomes and success metrics
 
