@@ -20,4 +20,4 @@ Standards and Templates brings together the baseline standards teams must follow
 | [Risk Management Framework](./risk-management-framework/) | An overview of the NIST AI Risk Management Framework and its relevance to managing AI risk across the lifecycle. |
 | [Security](./security/) | Security standards and guidance covering secure by design, public sector cyber security, data protection and AI security controls. |
 | [WCAG 2.2](./wcag2.2/) | The authoritative accessibility guidance and conformance levels for designing, developing, testing and maintaining digital services. |
-| [Patterns & Templates](./lap-architecture-templates-and-guidance/) | Reusable LAP templates for high-level designs, design decisions, governance summaries and technology patterns. |
+| [Templates](./lap-architecture-templates-and-guidance/) | Reusable LAP templates for high-level designs, design decisions, governance summaries and technology guidance. |

@@ -7,7 +7,7 @@ order: 1.4
 
 # GDS Design System
 
-The [GOV.UK Design System](https://design-system.service.gov.uk/) is the authoritative source for designing accessible, consistent, user-centred government digital services. Use its components, patterns, and guidance when planning and delivering services.
+The GOV.UK Design System is the authoritative source for designing accessible, consistent, user-centred government digital services. Use its components, patterns, and guidance when planning and delivering services.
 
 ## Read the GOV.UK Design Guidance
 
