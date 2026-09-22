@@ -88,21 +88,25 @@ These terms are defined for the purpose of their use within these guidelines. Th
 
 **Legacy Application Programme.** The Defra programme for modernising legacy applications using AI-assisted tooling and structured delivery processes.
 
-### LAMAI
+### AIM Blueprint
 
-**Legacy Application Modernisation Artificial Intelligence.** The AI tooling and configuration layer used within the LAP programme.
-
-### LAMAI Blueprint
-
-**LAMAI Blueprint.** The Legacy Application Modernisation AI Blueprint. A framework that provides delivery teams with guidance, standards, playbooks, and AI-assisted approaches for modernising legacy applications.
+**AIM Blueprint.** The AI Modernisation (AIM) Blueprint. A framework that provides delivery teams with guidance, standards, playbooks, and AI-assisted approaches for modernising legacy applications.
 
 ### Legacy application
 
 **Legacy Application.** An existing application that remains in use but may rely on outdated technology, processes, or architecture, making it difficult to maintain, enhance, or scale.
 
+### Legacy code analysis
+
+**Legacy Code Analysis.** The phase of analysing an existing application to understand its functionality, requirements, processes and technical design, and documenting the findings as evidence-based requirements.
+
 ### MFA
 
 **Multi-Factor Authentication.** A security method requiring more than one form of verification before granting access. MFA is required to connect to Defra systems via OpenVPN.
+
+### Modern rebuild
+
+**Modern Rebuild.** The phase of redesigning and rebuilding an application using modern technologies, architectures, and engineering practices, working from an approved PRD.
 
 ### Modernisation
 
@@ -135,14 +139,6 @@ These terms are defined for the purpose of their use within these guidelines. Th
 ### PRD
 
 **Product Requirements Document.** A document that captures business needs, user requirements, features, and acceptance criteria for a product or service.
-
-### Re-engineering
-
-**Re-Engineering.** The process of redesigning and rebuilding an application using modern technologies, architectures, and engineering practices.
-
-### Reverse engineering
-
-**Reverse Engineering.** The process of analysing an existing application to understand its functionality, requirements, processes, and technical design.
 
 ### Stakeholder
 

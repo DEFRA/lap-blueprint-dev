@@ -7,7 +7,7 @@ group: Start here
 
 # Overview
 
-This guidance supports teams using AI-assisted reverse engineering to understand legacy applications and prepare them for modernisation. It brings together the delivery approach, the people involved, and the decisions needed to produce a Product Requirements Document (PRD) that stakeholders can approve.
+This guidance supports teams using AI-assisted analysis to understand legacy applications and prepare them for modernisation. It brings together the delivery approach, the people involved, and the decisions needed to produce a Product Requirements Document (PRD) that stakeholders can approve.
 
 ## What is LAP?
 
@@ -17,10 +17,10 @@ The Legacy Application Programme (LAP) helps Defra understand, document and mode
 
 The playbook covers two phases of legacy application modernisation:
 
-1. [Reverse Engineering](../reverse-engineering/) uses the [LAP Innovation agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) to analyse legacy application artefacts, including source code, user interface screenshots and stakeholder interview transcripts. The outcome is a Product Requirements Document (PRD) that describes the application's behaviour, purpose and the capabilities a modern replacement needs to provide.
-2. [Re-Engineering](../re-engineering/) uses an approved PRD to design, build and deploy a modern replacement.
+1. [Legacy code analysis](../legacy-code-analysis/) uses the [LAP Innovation agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) to analyse legacy application artefacts, including source code, user interface screenshots and stakeholder interview transcripts. The outcome is a Product Requirements Document (PRD) that describes the application's behaviour, purpose and the capabilities a modern replacement needs to provide.
+2. [Modern rebuild](../modern-rebuild/) uses an approved PRD to design, build and deploy a modern replacement.
 
-The phases can be used independently or together. For example, a team may use reverse engineering to document an application without beginning its replacement, or begin re-engineering when an approved PRD already exists.
+The phases can be used independently or together. For example, a team may use the legacy code analysis phase to document an application without beginning its replacement, or begin the modern rebuild when an approved PRD already exists.
 
 ## Scope and audience
 
@@ -36,13 +36,13 @@ It assumes that readers are familiar with agile delivery practices and have acce
 ## How to use this guidance
 
 1. Read this Overview to understand the delivery team, stakeholder roles and approach.
-2. Follow the [Reverse Engineering](../reverse-engineering/) or [Re-Engineering](../re-engineering/) guidance that applies to the current stage of work.
+2. Follow the [Legacy code analysis](../legacy-code-analysis/) or [Modern rebuild](../modern-rebuild/) guidance that applies to the current stage of work.
 3. Use the phase-specific tooling and output reference material when it is needed.
 4. Review [Considerations & Caveats](../considerations-and-caveats/) before starting work to understand risks, limitations and practical advice.
 
 ## A small, T-shaped delivery team
 
-The reverse engineering approach is designed for a small, T-shaped team. Each person has a primary specialism but can contribute outside it where the work requires. The LAP Innovation agents perform much of the initial analysis of code, screens and other artefacts; the team focuses on directing the work, validating outputs and engaging stakeholders.
+The legacy code analysis approach is designed for a small, T-shaped team. Each person has a primary specialism but can contribute outside it where the work requires. The LAP Innovation agents perform much of the initial analysis of code, screens and other artefacts; the team focuses on directing the work, validating outputs and engaging stakeholders.
 
 ### Delivery lead
 
@@ -87,7 +87,7 @@ All three roles work together during PRD review and sign-off to ensure the docum
 
 ## Stakeholders outside the delivery team
 
-External stakeholders provide access, context and final approval for reverse engineering outputs.
+External stakeholders provide access, context and final approval for legacy code analysis outputs.
 
 ### Programme product managers
 

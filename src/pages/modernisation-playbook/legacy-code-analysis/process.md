@@ -6,7 +6,7 @@ order: 1
 
 # Process
 
-The reverse engineering process turns legacy application artefacts into a Product Requirements Document (PRD). It has five phases, with an internal quality gate before automated analysis and a stakeholder approval gate at the end.
+The legacy code analysis process turns legacy application artefacts into a Product Requirements Document (PRD). It has five phases, with an internal quality gate before automated analysis and a stakeholder approval gate at the end.
 
 The process is delivered by the [LAP Innovation agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/). Each phase below names the agent that performs it. The [LAP Orchestrator](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-lap-orchestrator.agent) agent can run the whole pipeline — from content curation through to the PRD and its Open Items Register — or you can run each agent individually.
 

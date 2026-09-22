@@ -5,7 +5,7 @@ title: D2R2 (Surveillance Profiles)
 
 <!-- Provenance: synthesised from the project's Product Requirements Document
      (docs/specs/PRD.md), the legacy parity gap analysis and gap-closure iteration
-     spec, the PDF-rendering note, and the re-engineered codebase (README, the .NET
+     spec, the PDF-rendering note, and the rebuilt codebase (README, the .NET
      project files and the web project's package.json).
      The legacy source tree was not available in this workspace; the As-is is
      reconstructed from the PRD and the parity gap analysis rather than read from
@@ -36,7 +36,7 @@ platform relied on out-of-support and end-of-life technologies, which raised
 supportability, security and accessibility risk and made the service hard to change
 safely.
 
-The headline outcome is a like-for-like re-engineering of the core service onto a
+The headline outcome is a like-for-like rebuild of the core service onto a
 current, supported platform — .NET 10 and Blazor with Entity Framework Core — with a
 GOV.UK Design System interface and an automated test suite whose line coverage
 exceeds the 90% Defra target.
@@ -50,7 +50,7 @@ exceeds the 90% Defra target.
 
 ## Tech stack
 
-Grounded in the re-engineered codebase's project and configuration files, and in the
+Grounded in the rebuilt codebase's project and configuration files, and in the
 PRD and parity analysis for the "before" column.
 
 | Layer | Legacy (as-is) | Modernised (to-be) |

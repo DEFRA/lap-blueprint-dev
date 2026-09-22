@@ -5,7 +5,7 @@ title: Proficiency Testing LIMS (PT-LIMS)
 
 <!-- Provenance: synthesised from the project's Product Requirements Document, the
      legacy-system analyses (domain, application, database and interaction) and the
-     re-engineered .NET 10 codebase (verified from the solution's project files,
+     rebuilt .NET 10 codebase (verified from the solution's project files,
      the bundled GOV.UK Design System assets and the test projects).
      Facts verified directly from the repository: target framework net10.0; Blazor
      Interactive Server; Entity Framework Core 10 for SQL Server; govuk-frontend 6.4.0;
@@ -49,7 +49,7 @@ automated tests.
 
 ## Tech stack
 
-Grounded in the re-engineered codebase's project and configuration files, and in the
+Grounded in the rebuilt codebase's project and configuration files, and in the
 legacy-system analyses for the "before" column.
 
 | Layer | Legacy (as-is) | Modernised (to-be) |
@@ -124,7 +124,7 @@ reproduced faithfully but re-expressed as isolated, testable services.
    specifications (FT-001 to FT-017), each with acceptance criteria, giving a
    no-silent-loss chain from legacy screen to test.
 
-4. **Re-engineered the application** — rebuilt on .NET 10 Blazor Interactive Server
+4. **Rebuilt the application** — built on .NET 10 Blazor Interactive Server
    with Entity Framework Core in a layered clean architecture, converting page-behind
    and business-object logic into testable C# services.
 
@@ -150,7 +150,7 @@ reproduced faithfully but re-expressed as isolated, testable services.
 
 ## Benefits, outcomes and success metrics
 
-The outcomes below are evidenced from the re-engineered codebase and the project's
+The outcomes below are evidenced from the rebuilt codebase and the project's
 delivery records.
 
 | Benefit / outcome | Metric / evidenced result |
@@ -168,7 +168,7 @@ delivery records.
 
 Other teams modernising a similar legacy application can reuse the following patterns:
 
-- **Analyse the legacy system into structured analyses first.** Reverse-engineering the
+- **Analyse the legacy system into structured analyses first.** Analysing the
   portals, business objects, database and background services into domain, application,
   database and interaction analyses captured every actor, entity, screen and rule
   before any rebuild began.

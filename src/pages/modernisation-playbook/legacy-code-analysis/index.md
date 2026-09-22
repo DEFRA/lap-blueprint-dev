@@ -1,13 +1,13 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Reverse engineering
+title: Legacy code analysis
 order: 3
 group: The process
 ---
 
-# Reverse engineering
+# Legacy code analysis
 
-Reverse engineering takes a legacy application and produces a Product Requirements Document (PRD) that explains the application's behaviour, purpose and the capabilities a modern replacement must provide. The [LAP Innovation agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) support the analysis of source code, user interface screenshots and stakeholder knowledge, while the delivery team directs the work, validates outputs and engages stakeholders.
+Legacy code analysis takes a legacy application and produces a Product Requirements Document (PRD) that explains the application's behaviour, purpose and the capabilities a modern replacement must provide. The [LAP Innovation agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) support the analysis of source code, user interface screenshots and stakeholder knowledge, while the delivery team directs the work, validates outputs and engages stakeholders.
 
 ## Inputs and outcome
 
@@ -20,7 +20,7 @@ These inputs are optional, but can improve the results drastically:
 - screenshots of the application's user interface
 - transcripts from interviews with application users and product owners
 
-The outcome is a PRD that stakeholders have reviewed and signed off, ready for [Re-Engineering](../re-engineering/).
+The outcome is a PRD that stakeholders have reviewed and signed off, ready for [Modern rebuild](../modern-rebuild/).
 
 ## The process
 
@@ -34,4 +34,4 @@ The outcome is a PRD that stakeholders have reviewed and signed off, ready for [
 
 - [Process](./process/): the five-phase journey, inputs, review gates and final outcome
 - [Tooling](./tooling/): the LAP Innovation agents, GitHub Copilot setup and project structure
-- [Output Reference](./output-reference/): artefacts produced during reverse engineering
+- [Output Reference](./output-reference/): artefacts produced during legacy code analysis

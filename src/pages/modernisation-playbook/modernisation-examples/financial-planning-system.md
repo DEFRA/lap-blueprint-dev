@@ -5,7 +5,7 @@ title: Financial Planning System (FPS)
 
 <!-- Provenance: synthesised from the project PRD and analyses (domain-analysis.md,
      application-analysis.md, database-analysis.md, interaction-analysis.md — all
-     produced during the legacy-system analysis phase) and the re-engineered codebase
+     produced during the legacy-system analysis phase) and the rebuilt codebase
      (FPSWeb/ directory, FPSWeb.csproj, package.json, FPSWeb.Tests.csproj,
      accessibility/package.json, coverage report dated 09/07/2026).
      Architecture requirements document (architecture-requirements.md) was not
@@ -45,7 +45,7 @@ tests.
 
 ## Tech stack
 
-Grounded in the re-engineered codebase's project and configuration files, and in the
+Grounded in the rebuilt codebase's project and configuration files, and in the
 legacy-system analyses for the "before" column.
 
 | Layer | Legacy (as-is) | Modernised (to-be) |
@@ -104,7 +104,7 @@ reporting.
 
 3. **Decomposed into features** — broke the PRD into 20 traceable feature tickets (FT-001 to FT-020), each with acceptance criteria mapped to tests, giving a no-silent-loss chain from screen to test.
 
-4. **Re-engineered the application** — rebuilt on .NET 10 Blazor Interactive Server with Entity Framework Core in a layered architecture, converting VBA event logic into testable C# services.
+4. **Rebuilt the application** — built on .NET 10 Blazor Interactive Server with Entity Framework Core in a layered architecture, converting VBA event logic into testable C# services.
 
 5. **Applied GDS standards** — integrated the GOV.UK Design System (govuk-frontend 6.3.0): Tudor Crown header, GOV.UK footer, service navigation, GDS Transport font, skip link and accessible tables.
 
@@ -133,7 +133,7 @@ Evidence-based outcomes of the rebuild are shown below.
 
 Other teams modernising a similar legacy application can reuse the following patterns:
 
-- **Analyse the legacy system into structured analyses first.** Reverse-engineering
+- **Analyse the legacy system into structured analyses first.** Analysing
   the Access application and database into domain, application, database and
   interaction analyses captured every actor, term, entity, screen and business rule
   before any rebuild began.

@@ -4,7 +4,7 @@ title: Animal health case management
 ---
 
 <!-- Provenance: synthesised from the project's PRDs (four clean-room capability
-     specifications) and the re-engineered .NET codebase in the workspace.
+     specifications) and the rebuilt .NET codebase in the workspace.
      Status: In delivery — runnable reference slice. No architecture-requirements
      document or delivery manifest was present, so the To-be and tech stack are
      drawn from the codebase and PRDs alone. Internal note — not rendered on the page. -->
@@ -22,7 +22,7 @@ results to decide the follow-on regulatory action.
 The capabilities were previously delivered on an ageing, proprietary low-code business process
 management (BPM) rules platform, where the user interface, data model, business rules and workflow
 were tightly coupled to the platform. That made the service costly to change, dependent on
-specialist skills, and difficult to test. The modernisation re-engineers the same behaviour on a
+specialist skills, and difficult to test. The modernisation rebuilds the same behaviour on a
 mainstream, open, well-supported technology stack using clean architecture, so the service can be
 maintained by a wider pool of engineers and evolved safely.
 
@@ -38,7 +38,7 @@ not lost in the move.
 
 ## Tech stack
 
-Grounded in the re-engineered codebase's project and configuration files.
+Grounded in the rebuilt codebase's project and configuration files.
 
 | Layer | Technology |
 |-------|-----------|

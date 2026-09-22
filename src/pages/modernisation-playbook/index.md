@@ -16,8 +16,8 @@ The Modernisation Playbook brings together practical guidance and real project e
 <p class="govuk-body lap-card__desc">Find reusable guidance, principles and recommended ways of working that can be applied across projects.</p>
 <ul class="govuk-list lap-card__links">
 <li><a class="govuk-link" href="./overview/">Overview</a></li>
-<li><a class="govuk-link" href="./reverse-engineering/">Reverse Engineering</a></li>
-<li><a class="govuk-link" href="./re-engineering/">Re-Engineering</a></li>
+<li><a class="govuk-link" href="./legacy-code-analysis/">Legacy code analysis</a></li>
+<li><a class="govuk-link" href="./modern-rebuild/">Modern rebuild</a></li>
 </ul>
 </div>
 <div class="lap-card">

@@ -4,7 +4,7 @@ title: Animal Disease Testing Service
 ---
 
 <!-- Provenance: synthesised from the project's PRD, architecture requirements and
-     re-engineered codebase, with the legacy PHP/Laravel source read to ground the
+     rebuilt codebase, with the legacy PHP/Laravel source read to ground the
      As-is. Status: In delivery. Internal note — not rendered on the page. -->
 
 # Animal Disease Testing Service
@@ -25,7 +25,7 @@ The headline outcome is a like-for-like rebuild on a modern, supported stack —
 
 ## Tech stack
 
-Grounded in the re-engineered codebase's manifest and configuration files.
+Grounded in the rebuilt codebase's manifest and configuration files.
 
 | Layer | Technology |
 |-------|-----------|

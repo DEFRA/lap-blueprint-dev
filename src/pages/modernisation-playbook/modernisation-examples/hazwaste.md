@@ -4,7 +4,7 @@ title: Hazardous Waste Consignee Returns
 ---
 
 <!-- Provenance: synthesised from the project's PRD, code-derived analyses and the
-     re-engineered codebase (Node + hapi + PostgreSQL). Status: In delivery.
+     rebuilt codebase (Node + hapi + PostgreSQL). Status: In delivery.
      Internal note — not rendered on the page. -->
 
 # Hazardous Waste Consignee Returns
@@ -25,7 +25,7 @@ The headline outcome: the operational returns-and-billing core has been rebuilt 
 
 ## Tech stack
 
-Grounded in the re-engineered codebase's manifest and configuration files. Technologies are named at a high level; versions are given only where they signal a standards baseline.
+Grounded in the rebuilt codebase's manifest and configuration files. Technologies are named at a high level; versions are given only where they signal a standards baseline.
 
 | Layer | Technology |
 |-------|-----------|
@@ -72,7 +72,7 @@ Evidence-based. Intended benefits that have not yet been measured are marked "To
 
 | Benefit / outcome | Evidence / metric | Status |
 |-------------------|-------------------|--------|
-| Moved off an end-of-life, proprietary application-server and database stack onto a supported open-source stack | Re-engineered codebase runs on Node.js, hapi and PostgreSQL (project manifest and configuration) | Achieved |
+| Moved off an end-of-life, proprietary application-server and database stack onto a supported open-source stack | Rebuilt codebase runs on Node.js, hapi and PostgreSQL (project manifest and configuration) | Achieved |
 | Legacy business rules preserved and made testable | Business rules ported rule-for-rule (intake authentication and validation, invoicing, cancellation/extract, reminders, billing export) each with a matching automated test | Achieved |
 | High automated test safety net where the legacy system had none | Jest suite of around 195 tests across 21 suites; measured coverage of 95.7% of statements, 94.3% of functions and 83.2% of branches, against a 90% gate (project coverage report) | Achieved |
 | Accessible, standards-based user interface | Front end built on the GOV.UK Design System (v5) with GDS Transport font | Achieved |

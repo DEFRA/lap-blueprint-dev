@@ -7,7 +7,7 @@ group: Start here
 
 # Considerations & caveats
 
-Review these considerations before starting AI-assisted reverse engineering or re-engineering work. They help teams handle information responsibly, maintain evidence quality, control costs and respond to common operational issues.
+Review these considerations before starting AI-assisted analysis or modern rebuild work. They help teams handle information responsibly, maintain evidence quality, control costs and respond to common operational issues.
 
 ## Before you begin
 

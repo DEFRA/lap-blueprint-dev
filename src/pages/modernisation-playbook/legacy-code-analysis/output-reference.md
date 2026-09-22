@@ -6,7 +6,7 @@ order: 3
 
 # Output reference
 
-Reverse engineering produces intermediate artefacts, four analysis outputs, a Product Requirements Document (PRD) and a consolidated Open Items Register. Together, they create an evidence trail from supplied legacy application material to the requirements that stakeholders review and approve, and can be shared as a single offline documentation pack.
+Legacy code analysis produces intermediate artefacts, four analysis outputs, a Product Requirements Document (PRD) and a consolidated Open Items Register. Together, they create an evidence trail from supplied legacy application material to the requirements that stakeholders review and approve, and can be shared as a single offline documentation pack.
 
 Use this reference with the [Process](../process/) guidance when reviewing generated outputs.
 
@@ -127,7 +127,7 @@ Confirm that all SQL and inline SQL is accounted for, stored procedures are clas
 
 ## Product requirements document
 
-The [`product-manager`](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-product-manager.agent) agent synthesises the four analysis outputs into `output/PRD.md`. The PRD is the final reverse engineering deliverable and describes the system to be rebuilt without prescribing implementation choices.
+The [`product-manager`](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-product-manager.agent) agent synthesises the four analysis outputs into `output/PRD.md`. The PRD is the final legacy code analysis deliverable and describes the system to be rebuilt without prescribing implementation choices.
 
 Where the analysis provides sufficient evidence, the PRD can cover:
 

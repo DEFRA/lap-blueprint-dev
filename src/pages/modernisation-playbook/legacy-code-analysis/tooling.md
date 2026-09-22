@@ -6,13 +6,13 @@ order: 2
 
 # Tooling
 
-The reverse engineering process uses AI coding assistants with a set of specialised GitHub Copilot agents to analyse legacy application artefacts and produce structured outputs. This page documents the LAP Innovation agents for GitHub Copilot in Visual Studio Code. The full set of agents, with descriptions and copy-ready definitions, is published on the [LAP Implementations Agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) page.
+The legacy code analysis process uses AI coding assistants with a set of specialised GitHub Copilot agents to analyse legacy application artefacts and produce structured outputs. This page documents the LAP Innovation agents for GitHub Copilot in Visual Studio Code. The full set of agents, with descriptions and copy-ready definitions, is published on the [LAP Implementations Agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) page.
 
 Before using any AI tooling with legacy application material, confirm that the chosen tool is approved for the information classification and that source code, screenshots and transcripts have been prepared in line with information governance requirements.
 
 ## What the tooling supports
 
-The LAP Innovation agents provide skills and autonomous agents for the reverse engineering process. They support:
+The LAP Innovation agents provide skills and autonomous agents for the legacy code analysis process. They support:
 
 - converting screenshots into semantic HTML mock-ups
 - curating interview transcripts for downstream analysis
@@ -49,7 +49,7 @@ The agents are published as individual `.agent.md` files on the [LAP Implementat
 
 Review each agent definition before processing application material. The agent and skill definitions are published on the [LAP Implementations Agents for GitHub Copilot](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/) page.
 
-### Run the reverse engineering workflow
+### Run the legacy code analysis workflow
 
 Open a new GitHub Copilot Chat session in Visual Studio Code and select the agent appropriate to the current process phase. To run the pipeline end to end, use the [LAP Orchestrator](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/lap-innovation-lap-orchestrator.agent) agent; to run the phases individually:
 

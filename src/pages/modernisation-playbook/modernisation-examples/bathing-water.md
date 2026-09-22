@@ -4,7 +4,7 @@ title: Bathing Water Quality Forecasting System
 ---
 
 <!-- Provenance: synthesised from the project's PRD, domain analysis, application analysis,
-     database analysis, gap analysis, and re-engineered codebase (api/, web/, db_migration/).
+     database analysis, gap analysis, and rebuilt codebase (api/, web/, db_migration/).
      Status: Proof of concept.
      Note: output/architecture-requirements.md was not available; the To-be and Tech stack
      sections are drawn from the codebase (api/requirements.txt, api/pyproject.toml,
@@ -26,7 +26,7 @@ that is published to data.gov.uk for public information.
 The legacy system combined a licensed desktop statistical application, Microsoft Access
 databases, Excel VBA workbooks, and a specialist operational forecasting platform. The
 annual model-build cycle was largely manual and depended on locally installed software.
-There was no web interface. The modernisation re-engineers the statistical modelling
+There was no web interface. The modernisation rebuilds the statistical modelling
 pipeline in Python, migrates all data from Access to PostgreSQL, and delivers a
 GOV.UK-standard web interface so that the model-build cycle can eventually be operated
 entirely from a browser.
@@ -118,7 +118,7 @@ Key non-functional goals are:
 
 ## Steps taken
 
-1. **Reverse-engineering to a PRD.** The legacy system had no formal specification. The
+1. **Analysis and documentation to a PRD.** The legacy system had no formal specification. The
    team produced a product requirements document, domain analysis, application analysis,
    database analysis, and interaction analysis from the available artefacts (system
    specification documents, Access database schemas, and exported VBA source code)
@@ -169,7 +169,7 @@ Key non-functional goals are:
 | MLR models give a 35% improvement in forecast accuracy over the rainfall-threshold method | Evidenced in BWQFS PRD Section 1, from prior statistical analysis | Achieved (methodology); the Python pipeline is intended to operationalise this benefit at scale |
 | Python MLR engine reproduces SPSS model for the test bathing water site | Python adjusted R² and variable selection compared against stored SPSS values in BDD acceptance tests; adjusted R² is within tolerance for the test site | Achieved for the test site; cross-site result not yet established |
 | All 11 MLR modelling and site configuration tables migrated from Access to PostgreSQL | Row count and schema acceptance tests pass; confirmed by gap analysis | Achieved |
-| BDD acceptance test suite covers migration, MLR engine, forecast validation, and data readiness | pytest suite present in the re-engineered codebase | Achieved |
+| BDD acceptance test suite covers migration, MLR engine, forecast validation, and data readiness | pytest suite present in the rebuilt codebase | Achieved |
 | SPSS licence dependency removed from the model-build pipeline | Depends on cross-site reproducibility report confirming acceptable agreement across all sites — not yet complete | Expected |
 | Annual model-build cycle operable from a browser without desktop software | Demonstrated for proof-of-concept scope; authentication, async job management, and CI/CD remain as gaps | Expected |
 | GOV.UK-standard accessible web interface for modellers | GOV.UK Design System applied; no formal WCAG 2.1 AA audit has been performed | To be confirmed |
