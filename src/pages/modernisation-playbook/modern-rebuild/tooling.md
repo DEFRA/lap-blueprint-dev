@@ -5,7 +5,7 @@ title: Tooling
 
 # Tooling
 
-Re-Engineering combines feature decomposition with Copilot Ralph for iterative autonomous implementation. Both activities must operate within the project's approved information-governance and security controls.
+Modern rebuild combines feature decomposition with Copilot Ralph for iterative autonomous implementation. Both activities must operate within the project's approved information-governance and security controls.
 
 ## Toolchain
 
@@ -83,10 +83,10 @@ The loop exits when the task reports completion, the maximum iterations are reac
 
 ## Working across the two projects
 
-Re-Engineering normally uses a source project containing the PRD and feature specifications, and a separate target application project where the replacement is built.
+Modern rebuild normally uses a source project containing the PRD and feature specifications, and a separate target application project where the replacement is built.
 
 ```ascii
-re-engineering-project/
+modern-rebuild-project/
 	output/
 		PRD.md
 		features/

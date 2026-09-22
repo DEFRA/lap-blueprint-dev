@@ -4,7 +4,7 @@ title: Virus Isolates Repository
 ---
 
 <!-- Provenance: synthesised from the project's PRD, source-based analyses, decomposed
-     feature specifications, the legacy source tree and the re-engineered codebase.
+     feature specifications, the legacy source tree and the rebuilt codebase.
      Status: In delivery (proof-of-concept modernisation). Internal note — not rendered. -->
 
 # Virus Isolates Repository
@@ -23,7 +23,7 @@ mainstream support. It was modernised to reduce the security and supportability 
 legacy stack, to meet current Defra software development, accessibility and security standards,
 and to give the laboratory a maintainable platform it can keep improving.
 
-The headline outcome is a like-for-like re-engineering of the service onto a current, supported
+The headline outcome is a like-for-like rebuild of the service onto a current, supported
 platform — .NET 10 and Blazor with Entity Framework Core — with a GOV.UK Design System user
 interface and an automated test suite that exceeds the 90% coverage target.
 
@@ -35,7 +35,7 @@ interface and an automated test suite that exceeds the 90% coverage target.
 
 ## Tech stack
 
-Grounded in the re-engineered codebase's project and configuration files, and in the legacy
+Grounded in the rebuilt codebase's project and configuration files, and in the legacy
 source tree for the "before" column.
 
 | Layer | Legacy (as-is) | Modernised (to-be) |

@@ -11,33 +11,33 @@ fullWidth: true
 <details>
 <summary>
 
-## What is the LAMAI Blueprint?
+## What is the AIM Blueprint?
 
 </summary>
 
-The LAMAI Blueprint is a practical framework that supports teams in modernising legacy applications. It brings together processes, playbooks, standards, and AI-assisted guidance to help teams at every stage of the modernisation journey.
+The AIM Blueprint is a practical framework that supports teams in modernising legacy applications. It brings together processes, playbooks, standards, and AI-assisted guidance to help teams at every stage of the modernisation journey.
 
 </details>
 
 <details>
 <summary>
 
-## Who is the LAMAI Blueprint for?
+## Who is the AIM Blueprint for?
 
 </summary>
 
-The LAMAI Blueprint is intended for delivery teams involved in legacy application modernisation, including product managers, delivery managers, architects, engineers, business analysts, and stakeholders.
+The AIM Blueprint is intended for delivery teams involved in legacy application modernisation, including product managers, delivery managers, architects, engineers, business analysts, and stakeholders.
 
 </details>
 
 <details>
 <summary>
 
-## What are the main benefits of using the LAMAI Blueprint?
+## What are the main benefits of using the AIM Blueprint?
 
 </summary>
 
-The LAMAI Blueprint helps teams:
+The AIM Blueprint helps teams:
 
 - Reduce delivery risk
 - Accelerate modernisation activities
@@ -51,29 +51,29 @@ The LAMAI Blueprint helps teams:
 <details>
 <summary>
 
-## Do I need to follow the entire LAMAI Blueprint?
+## Do I need to follow the entire AIM Blueprint?
 
 </summary>
 
-No. The LAMAI Blueprint is designed to be flexible. Teams can use individual guidance, playbooks, or lifecycle stages independently, depending on their project's needs.
+No. The AIM Blueprint is designed to be flexible. Teams can use individual guidance, playbooks, or lifecycle stages independently, depending on their project's needs.
 
 </details>
 
 <details>
 <summary>
 
-## Does the LAMAI Blueprint replace existing delivery methodologies?
+## Does the AIM Blueprint replace existing delivery methodologies?
 
 </summary>
 
-No. The LAMAI Blueprint complements existing delivery approaches such as Agile, Scrum, Kanban, and government delivery frameworks by providing modernisation-specific guidance.
+No. The AIM Blueprint complements existing delivery approaches such as Agile, Scrum, Kanban, and government delivery frameworks by providing modernisation-specific guidance.
 
 </details>
 
 <details>
 <summary>
 
-## Can the LAMAI Blueprint be used for applications of any size?
+## Can the AIM Blueprint be used for applications of any size?
 
 </summary>
 
@@ -84,11 +84,11 @@ Yes. The guidance can be applied to small applications, large enterprise platfor
 <details>
 <summary>
 
-## When should I start using the LAMAI Blueprint?
+## When should I start using the AIM Blueprint?
 
 </summary>
 
-The LAMAI Blueprint should be used as early as possible, ideally during discovery or assessment activities, to help teams understand the current application landscape and plan modernisation effectively.
+The AIM Blueprint should be used as early as possible, ideally during discovery or assessment activities, to help teams understand the current application landscape and plan modernisation effectively.
 
 </details>
 
@@ -99,7 +99,7 @@ The LAMAI Blueprint should be used as early as possible, ideally during discover
 
 </summary>
 
-If you are new to the LAMAI Blueprint, begin with the introductory guidance and delivery lifecycle content. From there, follow the guidance relevant to your current phase of modernisation.
+If you are new to the AIM Blueprint, begin with the introductory guidance and delivery lifecycle content. From there, follow the guidance relevant to your current phase of modernisation.
 
 </details>
 
@@ -194,11 +194,11 @@ Review the findings by severity. For any High or Critical findings you should st
 <details>
 <summary>
 
-## What is the difference between reverse engineering and re-engineering?
+## What is the difference between legacy code analysis and modern rebuild?
 
 </summary>
 
-Reverse Engineering focuses on understanding the existing application and generating evidence-based requirements and documentation. Re-Engineering focuses on designing, building, testing, and deploying a modern replacement solution.
+Legacy code analysis focuses on understanding the existing application and generating evidence-based requirements and documentation. Modern rebuild focuses on designing, building, testing, and deploying a modern replacement solution.
 
 </details>
 
@@ -209,7 +209,7 @@ Reverse Engineering focuses on understanding the existing application and genera
 
 </summary>
 
-AI can accelerate activities such as application discovery, reverse engineering, requirements analysis, documentation creation, code understanding, and migration planning. Human review and validation remain essential throughout the process.
+AI can accelerate activities such as application discovery, legacy application analysis, requirements analysis, documentation creation, code understanding, and migration planning. Human review and validation remain essential throughout the process.
 
 </details>
 
@@ -231,7 +231,7 @@ No. AI-generated content should be treated as a draft or starting point. Teams m
 
 </summary>
 
-Follow [How to add your LAP AI artefacts to our LAMAI's Artefact Directory](../delivery-management/ai-directory-contribution/) and browse the [Artefact Directory](../artefact-directory/) for existing definitions.
+Follow [How to add your LAP AI artefacts to our Artefact Directory](../delivery-management/ai-directory-contribution/) and browse the [Artefact Directory](../artefact-directory/) for existing definitions.
 
 </details>
 
@@ -242,6 +242,6 @@ Follow [How to add your LAP AI artefacts to our LAMAI's Artefact Directory](../d
 
 </summary>
 
-Feedback is encouraged and helps improve the LAMAI Blueprint. Use the project's feedback channels, repository, or contact routes to suggest improvements, report issues, or share lessons learned.
+Feedback is encouraged and helps improve the AIM Blueprint. Use the project's feedback channels, repository, or contact routes to suggest improvements, report issues, or share lessons learned.
 
 </details>

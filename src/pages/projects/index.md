@@ -11,7 +11,7 @@ Projects is a directory of completed projects, including how each one was delive
 
 ## Request further information
 
-If you would like to learn more about any of the projects featured within the LAMAI Blueprint including architectural decisions, delivery approaches, AI-enabled modernisation techniques, lessons learned, or reusable assets, please contact the AI Enablement Team.
+If you would like to learn more about any of the projects featured within the AIM Blueprint including architectural decisions, delivery approaches, AI-enabled modernisation techniques, lessons learned, or reusable assets, please contact the AI Enablement Team.
 
 Email: LAP-AIEnablement@defra.gov.uk
 

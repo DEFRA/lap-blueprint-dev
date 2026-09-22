@@ -5,7 +5,7 @@ title: Process
 
 # Process
 
-The Re-Engineering process takes an approved PRD and turns it into reviewed, implemented features for a modern replacement application. It begins by creating feature specifications and then repeats an autonomous build and review cycle for each approved feature.
+The modern rebuild process takes an approved PRD and turns it into reviewed, implemented features for a modern replacement application. It begins by creating feature specifications and then repeats an autonomous build and review cycle for each approved feature.
 
 ## Input and outputs
 

@@ -94,7 +94,7 @@ The Supplier shall, as a condition of delivery:
 - Capture and document all AI-derived metrics, methodologies, and operational learning generated during the engagement
 - Package this material, including underlying know-how and intellectual property, for formal handover to the Defra AI Enablement Team
 - Complete this handover prior to final acceptance, in a format and structure specified by the AI Enablement Team
-- Ensure the package supports inclusion in the LAP AI Modernisation Blueprint and integration into the Legacy Application Modernisation AI (LAMAI) tool
+- Ensure the package supports inclusion in the AI Modernisation (AIM) Blueprint and integration into the AI modernisation tooling
 
 9. **AI Modernisation Metrics**
    The Programme requires a consistent and evidence-based approach to measuring the benefits of AI enabled application modernisation.

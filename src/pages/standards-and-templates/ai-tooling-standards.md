@@ -42,7 +42,7 @@ Use this link for Practical setup guidance for configuring GitHub Copilot in Def
 
 ## Defra Group Modernisation Playbook
 
-A step-by-step guide to using AI-assisted reverse engineering to produce Product Requirements Documents from legacy application artefacts, developed by Defra's Legacy Application Programme.
+A step-by-step guide to using AI-assisted analysis to produce Product Requirements Documents from legacy application artefacts, developed by Defra's Legacy Application Programme.
 
 - [Defra AI Modernisation Playbook](https://github.com/DEFRA/defra-ai-modernisation-playbook)
 
@@ -53,7 +53,7 @@ A step-by-step guide to using AI-assisted reverse engineering to produce Product
 ## AICE (AI Centre of Excellence) resources
 
 - Includes prompt libraries, prompting guidance, and AI best practices.
-- [LAP Innovation agents for GitHub Copilot to aid in the reverse engineering of legacy applications.](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/)
+- [LAP Innovation agents for GitHub Copilot to aid in the analysis of legacy applications.](https://defra.github.io/defra-ai-config-examples/pages/agents/lap-gitHub-copilot/)
 
 ## Copilot Ralph
 

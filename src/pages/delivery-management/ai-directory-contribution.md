@@ -1,11 +1,11 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: How to add your LAP AI artefacts to our LAMAI's Artefact Directory
+title: How to add your LAP AI artefacts to our Artefact Directory
 order: 11
 group: Reuse and contribution
 ---
 
-# How to add your LAP AI artefacts to our LAMAI's Artefact Directory
+# How to add your LAP AI artefacts to our Artefact Directory
 
 The Artefact Directory provides a trusted catalogue of AI agents, skills, prompts, accelerators, templates, and supporting artefacts that can be reused across Defra and, where appropriate, the wider government. To maintain quality, consistency, and security, all submissions must follow the review and assurance process set out below.
 
@@ -26,11 +26,11 @@ Please proceed with the links and resources below to first make sure your AI Art
 <details>
 <summary>Does your AI Agent conform to these Defra standards?</summary>
 
-Before adding a LAP-specific AI Agent to the LAMAI Agent Directory, the agent and its supporting solution must comply with Defra’s AI Agent Playbook standards and governance requirements.
+Before adding a LAP-specific AI Agent to the Artefact Directory, the agent and its supporting solution must comply with Defra’s AI Agent Playbook standards and governance requirements.
 
 This includes demonstrating that the agent has been designed using the appropriate AI approach, completed the required AI readiness and assurance checks, follows Defra’s Responsible Design Principles, adheres to the Technical Delivery Guidance, and has appropriate governance, ownership, risk management, and oversight arrangements in place.
 
-Teams are responsible for ensuring their agent is lawful, secure, ethical, transparent, and subject to meaningful human oversight before it is registered within LAMAI. Evidence of compliance with these requirements should be available as part of the onboarding and approval process.
+Teams are responsible for ensuring their agent is lawful, secure, ethical, transparent, and subject to meaningful human oversight before it is registered within the Artefact Directory. Evidence of compliance with these requirements should be available as part of the onboarding and approval process.
 
 **Required Defra Guidance**
 
@@ -46,7 +46,7 @@ The following guidance documents could also be reviewed and adhered to:
 - [Technical Delivery Guidance](https://github.com/DEFRA/defra-ai-agents/blob/main/playbook/pages/getting-started/technical-delivery-guidance.md)
 - [Governance and Oversight](https://github.com/DEFRA/defra-ai-agents/blob/main/playbook/pages/getting-started/governance-oversight.md)
 
-These standards must be reviewed and satisfied prior to submitting a LAP AI Agent for inclusion in the LAMAI Agent Directory.
+These standards must be reviewed and satisfied prior to submitting a LAP AI Agent for inclusion in the Artefact Directory.
 
 </details>
 

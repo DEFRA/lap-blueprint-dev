@@ -1,11 +1,12 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
-title: Artefact Directory
-order: 5
+title: Agents & Artefacts Directory
+navLabel: Agents & Artefacts
+order: 4
 fullWidth: true
 ---
 
-# Artefact Directory
+# Agents & Artefacts Directory
 
 A searchable catalogue of the AI artefacts — such as agents, skills and prompts — used across the Legacy Application Programme (LAP). Suppliers contribute their own artefacts so the directory keeps growing — use the search and filters to find an artefact for a particular technology, such as an Oracle or .NET migration agent.
 

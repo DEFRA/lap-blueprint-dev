@@ -5,11 +5,11 @@ order: 0
 fullWidth: true
 ---
 
-# Legacy Application Modernisation AI Blueprint
+# AI Modernisation (AIM) Blueprint
 
-## What is the LAMAI Blueprint?
+## What is the AIM Blueprint?
 
-The LAMAI Blueprint is a practical guide for teams modernising legacy applications. It provides access to the right processes, playbooks, standards, and AI-enabled guidance at every stage of the modernisation journey.
+The AIM Blueprint is a practical guide for teams modernising legacy applications. It provides access to the right processes, playbooks, standards, and AI-enabled guidance at every stage of the modernisation journey.
 
 ## What do you need to do?
 
@@ -23,7 +23,7 @@ The LAMAI Blueprint is a practical guide for teams modernising legacy applicatio
 </div>
 <div class="lap-card">
 <h3 class="govuk-heading-s lap-card__heading">Modernise a legacy application</h3>
-<p class="govuk-body lap-card__desc">Follow a step-by-step guide covering assessment, planning, reverse engineering and implementation.</p>
+<p class="govuk-body lap-card__desc">Follow a step-by-step guide covering assessment, planning, analysis and implementation.</p>
 <ul class="govuk-list lap-card__links">
 <li><a class="govuk-link" href="./modernisation-playbook/">Modernisation Playbook</a></li>
 </ul>
@@ -44,7 +44,7 @@ The LAMAI Blueprint is a practical guide for teams modernising legacy applicatio
 </div>
 <div class="lap-card">
 <h3 class="govuk-heading-s lap-card__heading">Understand key terms</h3>
-<p class="govuk-body lap-card__desc">Find definitions for terminology used throughout the LAMAI Blueprint.</p>
+<p class="govuk-body lap-card__desc">Find definitions for terminology used throughout the AIM Blueprint.</p>
 <ul class="govuk-list lap-card__links">
 <li><a class="govuk-link" href="./glossary-of-terms/">Glossary of Terms</a></li>
 </ul>
@@ -65,5 +65,5 @@ Quick links to the resources teams use most often:
 - [Get GitHub access](./delivery-management/github-access/)
 - [Request a GitHub Copilot licence](./delivery-management/access-license/)
 - [Request a sandbox environment](./delivery-management/sandbox-provisioning/)
-- [Follow the reverse engineering process](./modernisation-playbook/reverse-engineering/process/)
+- [Follow the legacy code analysis process](./modernisation-playbook/legacy-code-analysis/process/)
 - [Browse approved AI tools](./artefact-directory/)

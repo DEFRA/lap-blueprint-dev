@@ -2,7 +2,7 @@
 layout: "@lap/layouts/BaseLayout.astro"
 title: Standards and Templates
 navLabel: Standards
-order: 4
+order: 5
 ---
 
 # Standards and Templates
