@@ -9,6 +9,8 @@ group: Examples
 
 Modernisation Examples is a directory of project playbooks used by completed projects. Each example will show the approach followed in practice so teams can reuse, adapt, and apply proven delivery patterns.
 
+To add your project, follow [How to publish your project artefacts](~/delivery-management/project-artefact-publication/).
+
 The table below lists each example with the primary legacy tech stack it was modernised from.
 
 | Example | Primary tech stack |

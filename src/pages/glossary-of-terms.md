@@ -36,6 +36,14 @@ These terms are defined for the purpose of their use within these guidelines. Th
 
 **Architecture.** The structure, components, and design principles that define how a system is built and operates.
 
+### Artefact
+
+**Artefact.** A reusable output that teams can copy and adapt, such as an AI agent, skill, prompt, template or project document.
+
+### Artefact Directory
+
+**Artefact Directory.** The searchable list of AI artefacts on the AIM Blueprint, with links to where each one is stored.
+
 ### AVD
 
 **Azure Virtual Desktop.** A Defra-managed virtual desktop environment hosted in Microsoft Azure. Approved supplier personnel access Defra systems through AVD rather than directly from their own devices.
@@ -67,6 +75,10 @@ These terms are defined for the purpose of their use within these guidelines. Th
 ### DPIA
 
 **Data Protection Impact Assessment.** A structured process for identifying and minimising the data protection risks of a project or system, required under GDPR for high-risk processing activities.
+
+### Fork
+
+**Fork.** Your own copy of a GitHub repository. You can make changes in your fork and then ask for them to be added to the original repository.
 
 ### GDPR
 
@@ -119,6 +131,14 @@ These terms are defined for the purpose of their use within these guidelines. Th
 ### NIST
 
 **National Institute of Standards and Technology.** A US standards body whose frameworks, including the NIST Cybersecurity Framework, are used internationally as benchmarks for security and risk management.
+
+### OGL
+
+**Open Government Licence.** The licence that lets anyone copy, share and adapt government information for free, as long as they say where it came from.
+
+### Page owner
+
+**Page owner.** The person or team responsible for keeping a page or artefact on the AIM Blueprint accurate and up to date.
 
 ### PII
 

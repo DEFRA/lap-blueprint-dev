@@ -7,6 +7,8 @@ group: Define/Discovery
 
 # Sandbox provisioning
 
+**This process only applies to Defra.**
+
 Setting up a sandbox environment (a safe, non-production space to build and test) for a LAP project is handled by Defra's Cloud Centre of Excellence (CCoE) through a standardised request process. The process involves collecting financial and technical information upfront, submitting a ServiceNow catalogue request, and waiting for CCoE to build and allocate the environment in a sprint cycle.
 
 Sandbox environments are non-production Azure environments intended for development, testing, and AI-assisted modernisation activities. Progression beyond sandbox to higher environments (development, test, pre-production, production) requires a separate Cloud Design Review Board (CDRB) approval.

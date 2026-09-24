@@ -7,6 +7,8 @@ group: Define/Discovery
 
 # Open VPN access
 
+**This process only applies to Defra.**
+
 Request OpenVPN access to give approved supplier personnel a secure, encrypted connection from their own devices into Defra networks. Prepare the required credentials and access group information, then follow the request and connection steps below.
 
 ## What you're trying to do

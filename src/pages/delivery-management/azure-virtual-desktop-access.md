@@ -7,6 +7,8 @@ group: Define/Discovery
 
 # Azure Virtual Desktop access
 
+**This process only applies to Defra.**
+
 Request Azure Virtual Desktop (AVD) access to provide approved suppliers with a secure Defra-managed desktop for delivery work. Prepare the required information and follow the request, review, and provisioning flow below.
 
 ## What you're trying to do

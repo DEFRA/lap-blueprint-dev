@@ -8,6 +8,24 @@ fullWidth: true
 
 # Frequently asked questions
 
+## Get help and give feedback
+
+The AI Modernisation (AIM) Blueprint is looked after by the LAP AI Enablement Team at Defra. Each page and agent also has a named owner who keeps it up to date. Anyone in government can contact us.
+
+### Ask a question or report a problem
+
+Email [LAP-AIEnablement@defra.gov.uk](mailto:LAP-AIEnablement@defra.gov.uk). Tell us:
+
+- which page or agent your question is about
+- what you need help with
+- which department or organisation you work for
+
+We aim to reply within 5 working days. If we cannot answer your question, we will pass it to the page owner and let you know.
+
+### Give feedback
+
+Tell us if something is wrong, out of date or hard to understand. We review all feedback every 2 weeks and use it to improve the Blueprint. We add common questions to this page.
+
 <details>
 <summary>
 
@@ -243,5 +261,82 @@ Follow [How to add your LAP AI artefacts to our Artefact Directory](../delivery-
 </summary>
 
 Feedback is encouraged and helps improve the AIM Blueprint. Use the project's feedback channels, repository, or contact routes to suggest improvements, report issues, or share lessons learned.
+
+</details>
+
+<details>
+<summary>
+
+## Can I use the Blueprint if I do not work in Defra?
+
+</summary>
+
+Yes. The Blueprint is written for Defra but anyone in government can use it. All content is available under the Open Government Licence v3.0, unless stated otherwise. Some pages describe processes that only apply to Defra, such as getting access to Defra systems. These pages say so at the top.
+
+</details>
+
+<details>
+<summary>
+
+## Does 'approved' mean my department has approved these tools?
+
+</summary>
+
+No. Approved means approved for use in Defra. Before you use any AI tool or agent, check your own department's policies and follow the [AI Playbook for the UK Government](https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government).
+
+</details>
+
+<details>
+<summary>
+
+## Who looks after the AIM Blueprint?
+
+</summary>
+
+The LAP AI Enablement Team at Defra owns the Blueprint as a whole. Each page and agent also has a named owner who keeps it accurate. If you are not sure who to ask, email [LAP-AIEnablement@defra.gov.uk](mailto:LAP-AIEnablement@defra.gov.uk).
+
+</details>
+
+<details>
+<summary>
+
+## Can I contribute if I do not work in Defra?
+
+</summary>
+
+Yes. Follow [How to contribute to the AIM Blueprint](~/delivery-management/blueprint-contribution/). You do not need Defra GitHub access.
+
+</details>
+
+<details>
+<summary>
+
+## How do I suggest new content or report something out of date?
+
+</summary>
+
+Email [LAP-AIEnablement@defra.gov.uk](mailto:LAP-AIEnablement@defra.gov.uk). You can check whether it is already planned on the [Blueprint content roadmap](~/delivery-management/content-roadmap/).
+
+</details>
+
+<details>
+<summary>
+
+## How do I share my project's artefacts?
+
+</summary>
+
+Follow [How to publish your project artefacts](~/delivery-management/project-artefact-publication/). It explains how to remove sensitive information, choose who can see your artefacts and get them approved.
+
+</details>
+
+<details>
+<summary>
+
+## How do I ask for a change to an agent or report a problem with one?
+
+</summary>
+
+Raise an issue in the [DEFRA AI config examples repository](https://github.com/DEFRA/defra-ai-config-examples). See [How to add your LAP AI artefacts to our Artefact Directory](~/delivery-management/ai-directory-contribution/) for how changes to agents are managed.
 
 </details>

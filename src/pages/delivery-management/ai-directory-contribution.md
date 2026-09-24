@@ -1,7 +1,7 @@
 ---
 layout: "@lap/layouts/BaseLayout.astro"
 title: How to add your LAP AI artefacts to our Artefact Directory
-order: 11
+order: 13
 group: Reuse and contribution
 ---
 
@@ -177,16 +177,61 @@ The Artefact Directory will generally signpost users to the approved repository 
 
 </details>
 
-## Ongoing ownership
+## Ownership and approval
 
-The submitting team remains responsible for maintaining their artefact, including:
+Every artefact must have a named owner team. The owner team:
 
-- Updating documentation.
-- Addressing defects or issues.
-- Managing future enhancements.
-- Ensuring continued relevance and accuracy.
+- keeps the artefact and its documentation up to date
+- responds to issues and change requests
+- tells the LAP AI Enablement Team if they can no longer support it
 
-Where an artefact is no longer supported or maintained, it may be archived or removed from the directory.
+New artefacts are approved by Defra's AI Capability and Enablement (AICE) team before they appear in the Artefact Directory.
+
+## Versions
+
+Give every artefact a version number in the format major.minor.patch, for example 1.2.0.
+
+- Major (2.0.0) – a change that works differently or could affect how teams already use it
+- Minor (1.3.0) – a new feature that does not affect existing use
+- Patch (1.2.1) – a small fix
+
+Record what changed in each pull request. The Artefact Directory always links to the latest approved version.
+
+## Ask for a change or report a problem
+
+Raise an issue in the [DEFRA AI config examples repository](https://github.com/DEFRA/defra-ai-config-examples). Say which artefact it is about, what you need and why. The owner team reviews the issue and decides whether to make the change. If you do not get a reply within 10 working days, email [LAP-AIEnablement@defra.gov.uk](mailto:LAP-AIEnablement@defra.gov.uk).
+
+## Contributions from suppliers
+
+Suppliers can submit new artefacts and improve existing ones. They follow the same review and assurance process as Defra teams. Suppliers must:
+
+- submit through a pull request from a fork of the repository
+- show their organisation as the creator in the Artefact Directory
+- declare any of their own tools or platforms the artefact depends on
+- remove any client or commercially sensitive information
+
+Anything a supplier builds for a Defra project belongs to Defra. See [Intellectual Property Rights in Core AI project requirements](~/standards-and-templates/core-ai-project-requirements/). Changes to an artefact owned by another team must be approved by that owner team.
+
+## Using and contributing from other departments
+
+Teams in other departments can reuse any artefact in the directory. Before you do:
+
+- check the licence in the artefact's repository
+- remember it was built and tested for Defra's tools and standards, so test it in your own environment
+- follow your own department's AI policies and the [AI Playbook for the UK Government](https://www.gov.uk/government/publications/ai-playbook-for-the-uk-government)
+
+You are welcome to contribute your own artefacts or improvements. Follow the same process as above and show your department as the creator.
+
+## Artefact lifecycle
+
+Each artefact has a status in the Artefact Directory:
+
+- Pilot – being tested on a live project. Use with care
+- Approved – reviewed and approved for reuse in Defra
+- Deprecated – replaced or no longer recommended. A link points to the replacement
+- Archived – removed from the directory. It stays in the repository history
+
+Owner teams should review their artefacts every 6 months to confirm they still work and are still needed.
 
 ## Access and support
 

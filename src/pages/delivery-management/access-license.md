@@ -7,6 +7,8 @@ group: Define/Discovery
 
 # How to access default tools and licences
 
+**This process only applies to Defra.**
+
 Request access to Defra-approved AI tools for modernisation work, including GitHub Copilot, Microsoft 365 Copilot, and Claude Code. Follow the governance requirements for using Claude Code with legacy application source code.
 
 ## What you're trying to do
