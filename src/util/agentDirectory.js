@@ -46,6 +46,11 @@ function rowMatches(row, searchTerm, facets) {
     return false;
   }
 
+  const selectedStatus = facets.get("status");
+  if (selectedStatus && selectedStatus.size > 0 && !selectedStatus.has(row.dataset.status ?? "")) {
+    return false;
+  }
+
   const selectedTech = facets.get("tech");
   if (selectedTech && selectedTech.size > 0) {
     const rowTech = (row.dataset.tech ?? "")

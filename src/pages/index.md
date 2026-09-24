@@ -67,3 +67,4 @@ Quick links to the resources teams use most often:
 - [Request a sandbox environment](./delivery-management/sandbox-provisioning/)
 - [Follow the legacy code analysis process](./modernisation-playbook/legacy-code-analysis/process/)
 - [Browse approved AI tools](./artefact-directory/)
+- [Contribute to the Blueprint](./delivery-management/blueprint-contribution/)

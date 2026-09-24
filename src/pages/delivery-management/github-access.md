@@ -7,6 +7,8 @@ group: Start-up and feasability
 
 # GitHub access
 
+**This process only applies to Defra.**
+
 Getting GitHub access in Defra covers account setup, joining the right Defra organisation, and requesting the correct level of repository access for your role.
 
 The official process and contact routes are maintained in the Defra Software Development Standards:
